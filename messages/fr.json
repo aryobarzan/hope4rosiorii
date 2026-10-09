@@ -28,5 +28,24 @@
   "PrivacyPage": {
     "title": "Politique de confidentialité",
     "placeholder": "[Texte de la politique de confidentialité à fournir par l'association.]"
+  },
+  "ContactPage": {
+    "eyebrow": "Dites bonjour",
+    "heading": "Des questions ? Des idées ? Envie d'aider ?",
+    "name": "Votre nom",
+    "email": "E-mail",
+    "reason": "Motif",
+    "reasonPlaceholder": "Choisissez un motif",
+    "reasons": {
+      "general": "Question générale",
+      "dogs": "Une question sur l'un de nos chiens",
+      "volunteer": "Bénévolat",
+      "donate": "Dons",
+      "partnership": "Partenariats ou presse",
+      "other": "Autre"
+    },
+    "message": "Votre message",
+    "submit": "Envoyer",
+    "adoptPrompt": "Vous souhaitez adopter ? Utilisez le <link>formulaire d'adoption</link>."
   }
 }

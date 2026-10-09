@@ -28,5 +28,24 @@
   "PrivacyPage": {
     "title": "Dateschutzerklärung",
     "placeholder": "[Text vun der Dateschutzerklärung gëtt vun der Associatioun geliwwert.]"
+  },
+  "ContactPage": {
+    "eyebrow": "Sot Moien",
+    "heading": "Froen? Iddien? Wëllt Dir hëllefen?",
+    "name": "Ären Numm",
+    "email": "E-Mail",
+    "reason": "Grond",
+    "reasonPlaceholder": "Wielt e Grond",
+    "reasons": {
+      "general": "Allgemeng Fro",
+      "dogs": "Eng Fro iwwer ee vun eisen Hënn",
+      "volunteer": "Fräiwëlleg Mataarbecht",
+      "donate": "Dongen",
+      "partnership": "Partnerschaften oder Press",
+      "other": "Soss eppes"
+    },
+    "message": "Är Noriicht",
+    "submit": "Schécken",
+    "adoptPrompt": "Wëllt Dir adoptéieren? Benotzt eise <link>Adoptiounsformular</link>."
   }
 }

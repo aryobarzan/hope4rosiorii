@@ -28,5 +28,24 @@
   "PrivacyPage": {
     "title": "Privacy policy",
     "placeholder": "[Privacy notice text to be provided by the association.]"
+  },
+  "ContactPage": {
+    "eyebrow": "Say hello",
+    "heading": "Questions? Ideas? Want to help?",
+    "name": "Your name",
+    "email": "Email",
+    "reason": "Reason",
+    "reasonPlaceholder": "Choose a reason",
+    "reasons": {
+      "general": "General question",
+      "dogs": "A question about one of our dogs",
+      "volunteer": "Volunteering",
+      "donate": "Donations",
+      "partnership": "Partnerships or press",
+      "other": "Something else"
+    },
+    "message": "Your message",
+    "submit": "Send",
+    "adoptPrompt": "Looking to adopt? Use the <link>adoption form</link>."
   }
 }

@@ -3,7 +3,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 
 const linkClass =
-  "rounded underline underline-offset-4 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white";
+  "rounded underline underline-offset-4 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white font-bold";
 
 const links = [
   { href: "/dogs", key: "ourDogs", ns: "Footer" },

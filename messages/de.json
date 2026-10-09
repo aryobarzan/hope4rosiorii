@@ -28,5 +28,24 @@
   "PrivacyPage": {
     "title": "Datenschutzerklärung",
     "placeholder": "[Text der Datenschutzerklärung wird vom Verein bereitgestellt.]"
+  },
+  "ContactPage": {
+    "eyebrow": "Sag Hallo",
+    "heading": "Fragen? Ideen? Möchtest du helfen?",
+    "name": "Dein Name",
+    "email": "E-Mail",
+    "reason": "Grund",
+    "reasonPlaceholder": "Grund auswählen",
+    "reasons": {
+      "general": "Allgemeine Frage",
+      "dogs": "Eine Frage zu einem unserer Hunde",
+      "volunteer": "Ehrenamt",
+      "donate": "Spenden",
+      "partnership": "Partnerschaften oder Presse",
+      "other": "Sonstiges"
+    },
+    "message": "Deine Nachricht",
+    "submit": "Senden",
+    "adoptPrompt": "Möchtest du adoptieren? Nutze das <link>Adoptionsformular</link>."
   }
 }
