@@ -1,5 +1,31 @@
 {
+  "Nav": {
+    "label": "Haaptnavigatioun",
+    "home": "Startsäit",
+    "about": "Iwwer eis",
+    "dogs": "Eis Hënn",
+    "adopt": "Adoptéieren",
+    "contact": "Kontakt",
+    "donate": "Don",
+    "tagline": "Hënnenrettung"
+  },
+  "Footer": {
+    "tagline": "Eng vu Fräiwëllegen gefouert Associatioun ouni Gewënnzil, déi gerette Hënn aus Rumänien op Lëtzebuerg bréngt.",
+    "explore": "Entdeckt",
+    "ourDogs": "Eis Hënn",
+    "sayHello": "Sot Moien",
+    "navLabel": "Fussnavigatioun",
+    "privacy": "Dateschutz"
+  },
   "HomePage": {
     "title": "Hallo Welt!"
+  },
+  "NotFound": {
+    "title": "Onbekannt",
+    "description": "Entschëllegt, d'Säit, déi Dir sicht, existéiert net."
+  },
+  "PrivacyPage": {
+    "title": "Dateschutzerklärung",
+    "placeholder": "[Text vun der Dateschutzerklärung gëtt vun der Associatioun geliwwert.]"
   }
 }

@@ -1,5 +1,31 @@
 {
+  "Nav": {
+    "label": "Hauptnavigation",
+    "home": "Startseite",
+    "about": "Über uns",
+    "dogs": "Unsere Hunde",
+    "adopt": "Adoptieren",
+    "contact": "Kontakt",
+    "donate": "Spenden",
+    "tagline": "Hunderettung"
+  },
+  "Footer": {
+    "tagline": "Ein ehrenamtlich geführter, gemeinnütziger Verein, der gerettete Hunde aus Rumänien nach Luxemburg bringt.",
+    "explore": "Entdecken",
+    "ourDogs": "Unsere Hunde",
+    "sayHello": "Sag Hallo",
+    "navLabel": "Fußnavigation",
+    "privacy": "Datenschutz"
+  },
   "HomePage": {
     "title": "Hallo Welt!"
+  },
+  "NotFound": {
+    "title": "Unbekannt",
+    "description": "Entschuldigung, die gesuchte Seite existiert nicht."
+  },
+  "PrivacyPage": {
+    "title": "Datenschutzerklärung",
+    "placeholder": "[Text der Datenschutzerklärung wird vom Verein bereitgestellt.]"
   }
 }

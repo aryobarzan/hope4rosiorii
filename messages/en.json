@@ -1,5 +1,31 @@
 {
+  "Nav": {
+    "label": "Main navigation",
+    "home": "Home",
+    "about": "About",
+    "dogs": "Dogs",
+    "adopt": "Adopt",
+    "contact": "Contact",
+    "donate": "Donate",
+    "tagline": "Dog rescue"
+  },
+  "Footer": {
+    "tagline": "A volunteer-run non-profit bringing rescued dogs from Romania to Luxembourg.",
+    "explore": "Explore",
+    "ourDogs": "Our dogs",
+    "sayHello": "Say hello",
+    "navLabel": "Footer navigation",
+    "privacy": "Privacy policy"
+  },
   "HomePage": {
     "title": "Hello World!"
+  },
+  "NotFound": {
+    "title": "Unknown",
+    "description": "Sorry, the page you're looking for does not exist."
+  },
+  "PrivacyPage": {
+    "title": "Privacy policy",
+    "placeholder": "[Privacy notice text to be provided by the association.]"
   }
 }

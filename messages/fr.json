@@ -1,5 +1,31 @@
 {
+  "Nav": {
+    "label": "Navigation principale",
+    "home": "Accueil",
+    "about": "À propos",
+    "dogs": "Nos chiens",
+    "adopt": "Adopter",
+    "contact": "Contact",
+    "donate": "Faire un don",
+    "tagline": "Sauvetage de chiens"
+  },
+  "Footer": {
+    "tagline": "Une association à but non lucratif, gérée par des bénévoles, qui amène des chiens sauvés de Roumanie au Luxembourg.",
+    "explore": "Explorer",
+    "ourDogs": "Nos chiens",
+    "sayHello": "Dites bonjour",
+    "navLabel": "Navigation du pied de page",
+    "privacy": "Politique de confidentialité"
+  },
   "HomePage": {
     "title": "Bonjour le monde !"
+  },
+  "NotFound": {
+    "title": "Inconnu",
+    "description": "Désolé, la page que vous recherchez n'existe pas."
+  },
+  "PrivacyPage": {
+    "title": "Politique de confidentialité",
+    "placeholder": "[Texte de la politique de confidentialité à fournir par l'association.]"
   }
 }
