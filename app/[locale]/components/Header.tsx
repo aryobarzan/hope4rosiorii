@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import styles from "@/app/[locale]/components/Header.module.css";
 import { Link, usePathname } from "@/i18n/navigation";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const links = [
   { href: "/", key: "home" },
@@ -64,6 +65,7 @@ export default function Header() {
           </Link>
         ))}
       </nav>
+      <LanguageSwitcher />
     </header>
   );
 }
