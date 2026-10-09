@@ -6,29 +6,28 @@ import styles from "@/app/[locale]/components/Header.module.css";
 import { Link, usePathname } from "@/i18n/navigation";
 import LanguageSwitcher from "./LanguageSwitcher";
 
+// No "Home" entry: the logo links home.
 const links = [
-  { href: "/", key: "home" },
   { href: "/dogs", key: "dogs" },
   { href: "/adopt", key: "adopt" },
   { href: "/about", key: "about" },
   { href: "/contact", key: "contact" },
-  { href: "/donate", key: "donate" },
 ] as const;
 
 export default function Header() {
   const t = useTranslations("Nav");
   const pathname = usePathname();
 
-  // "/" only matches exactly; other links also match their sub-pages (e.g. /dogs/rex)
+  // Links match their sub-pages too (e.g. /dogs/rex)
   const isActive = (href: string) =>
-    href === "/"
-      ? pathname === "/"
-      : pathname === href || pathname.startsWith(`${href}/`);
+    pathname === href || pathname.startsWith(`${href}/`);
 
   return (
     <header className="flex items-center gap-16">
       <Link
         href="/"
+        aria-label={`Hope 4 Rosiorii – ${t("home")}`}
+        aria-current={pathname === "/" ? "page" : undefined}
         className="flex items-center gap-2 rounded focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
       >
         {/* unoptimized: tiny local logo, keep under Hobby's image-transformation limit */}
@@ -64,6 +63,13 @@ export default function Header() {
             {t(key)}
           </Link>
         ))}
+        <Link
+          href="/donate"
+          aria-current={isActive("/donate") ? "page" : undefined}
+          className="filled-button"
+        >
+          {t("donate")}
+        </Link>
       </nav>
       <LanguageSwitcher />
     </header>

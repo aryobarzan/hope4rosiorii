@@ -39,3 +39,53 @@ body {
 .text-button:active {
   color: rgb(from var(--color-button) r g b / 0.6);
 }
+
+.filled-button {
+  background-color: var(--color-button);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  user-select: none;
+}
+
+/* Solid darker shades (not transparency) so white text keeps its contrast */
+.filled-button:hover {
+  background-color: color-mix(in srgb, var(--color-button), black 15%);
+}
+
+.filled-button:active {
+  background-color: color-mix(in srgb, var(--color-button), black 30%);
+}
+
+.filled-button:focus-visible {
+  outline: 2px solid var(--color-ink);
+  outline-offset: 2px;
+}
+
+/* Current page: ink fill plus a ring, so it is not shown by colour alone */
+.filled-button[aria-current="page"] {
+  background-color: var(--color-ink);
+  box-shadow:
+    0 0 0 2px var(--color-page),
+    0 0 0 4px var(--color-ink);
+}
+
+.filled-button[aria-current="page"]:hover {
+  background-color: color-mix(in srgb, var(--color-ink), white 15%);
+}
+
+.filled-button[aria-current="page"]:active {
+  background-color: color-mix(in srgb, var(--color-ink), white 30%);
+}
+
+.filled-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
