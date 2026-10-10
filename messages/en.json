@@ -53,6 +53,7 @@
       "tooLong": "This is too long.",
       "consentRequired": "Please accept the privacy policy to send your message."
     },
+    "followUs": "Follow us",
     "adoptPrompt": "Looking to adopt? Use the <link>adoption form</link>."
   }
 }

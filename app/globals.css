@@ -94,10 +94,10 @@ body {
 .form-box {
   padding: 32px;
   background-color: white;
-  min-width: 400px;
+  /* min() so the box can't overflow viewports narrower than 400px */
+  min-width: min(400px, 100%);
   max-width: 800px;
-  border-radius: 0.375rem;
-  border: 1px solid gray;
+  border-radius: 2rem;
   display: flex;
   flex-direction: column;
 }
@@ -115,6 +115,18 @@ body {
 
 .form-label {
   font-weight: 700;
+}
+
+.prominent-box {
+  padding: 32px;
+  background-color: var(--color-button);
+  /* inherited by p inside it */
+  color: white;
+  min-width: min(400px, 100%);
+  max-width: 800px;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .input-field {

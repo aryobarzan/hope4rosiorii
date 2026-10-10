@@ -53,6 +53,7 @@
       "tooLong": "Dieser Text ist zu lang.",
       "consentRequired": "Bitte akzeptiere die Datenschutzerklärung, um deine Nachricht zu senden."
     },
+    "followUs": "Folge uns",
     "adoptPrompt": "Möchtest du adoptieren? Nutze das <link>Adoptionsformular</link>."
   }
 }

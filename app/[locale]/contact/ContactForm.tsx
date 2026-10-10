@@ -82,7 +82,7 @@ export default function ContactForm() {
     <form
       onSubmit={handleSubmit(onSubmit)}
       noValidate
-      className="form-box mt-4 gap-4"
+      className="form-box gap-4"
     >
       {/* flex-1 on email and name fields so they take up equal widths in the same row */}
       {/* min-w-0 ensures they do not shrink below their content's minimum width. */}
