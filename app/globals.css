@@ -120,7 +120,9 @@ body {
 .input-field {
   padding: 0.75rem 1rem;
   margin: 0.25rem 0;
-  border: 1px solid black;
+  /* A 1px border with a large radius renders jagged on standard-DPI screens
+     (the curve can't be anti-aliased across a single pixel). 2px smooths it. */
+  border: 1.5px solid var(--color-ink);
   border-radius: 1rem;
   font-size: 1rem;
   box-sizing: border-box;

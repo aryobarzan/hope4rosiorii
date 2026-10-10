@@ -46,6 +46,13 @@
     },
     "message": "Är Noriicht",
     "submit": "Schécken",
+    "consent": "Ech sinn averstan, dass meng Donnéeë benotzt ginn, fir op meng Noriicht ze äntwerten, wéi an der <link>Dateschutzerklärung</link> beschriwwen.",
+    "errors": {
+      "required": "Dëst Feld ass obligatoresch.",
+      "invalidEmail": "Gitt w.e.g. eng gülteg E-Mail-Adress an.",
+      "tooLong": "Dësen Text ass ze laang.",
+      "consentRequired": "Akzeptéiert w.e.g. d'Dateschutzerklärung, fir Är Noriicht ze schécken."
+    },
     "adoptPrompt": "Wëllt Dir adoptéieren? Benotzt eise <link>Adoptiounsformular</link>."
   }
 }

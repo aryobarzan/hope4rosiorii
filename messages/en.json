@@ -46,6 +46,13 @@
     },
     "message": "Your message",
     "submit": "Send",
+    "consent": "I agree that my details are used to answer my message, as described in the <link>privacy policy</link>.",
+    "errors": {
+      "required": "This field is required.",
+      "invalidEmail": "Please enter a valid email address.",
+      "tooLong": "This is too long.",
+      "consentRequired": "Please accept the privacy policy to send your message."
+    },
     "adoptPrompt": "Looking to adopt? Use the <link>adoption form</link>."
   }
 }

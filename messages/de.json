@@ -46,6 +46,13 @@
     },
     "message": "Deine Nachricht",
     "submit": "Senden",
+    "consent": "Ich bin damit einverstanden, dass meine Angaben zur Beantwortung meiner Nachricht verwendet werden, wie in der <link>Datenschutzerklärung</link> beschrieben.",
+    "errors": {
+      "required": "Dieses Feld ist erforderlich.",
+      "invalidEmail": "Bitte gib eine gültige E-Mail-Adresse ein.",
+      "tooLong": "Dieser Text ist zu lang.",
+      "consentRequired": "Bitte akzeptiere die Datenschutzerklärung, um deine Nachricht zu senden."
+    },
     "adoptPrompt": "Möchtest du adoptieren? Nutze das <link>Adoptionsformular</link>."
   }
 }
