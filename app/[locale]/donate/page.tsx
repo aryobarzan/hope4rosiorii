@@ -1,3 +1,3 @@
 export default function Donate() {
-  return <div>Donate page.</div>;
+  return <div className="page-container">Donate page.</div>;
 }

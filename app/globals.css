@@ -26,6 +26,20 @@ body {
   font-family: var(--font-body);
 }
 
+/* Constrains content to a readable width and centres it. Sections that need a
+   full-bleed background put the colour on an outer element and this class on
+   an inner one. */
+.page-container {
+  width: 100%;
+  /* equals 1024px for a font size of 16px */
+  max-width: 64rem;
+  /* with a capped width, auto margins on the left and right lead to equal spacing,
+  i.e., content is centered horizontally. */
+  margin-inline: auto;
+  /* 16px padding on all sides */
+  padding-inline: 1rem;
+}
+
 .text-button {
   color: var(--color-button);
   font-weight: 500;
@@ -153,4 +167,34 @@ select.input-field {
   /* At least 3 lines of height */
   min-height: 6rem;
   line-height: 1.5;
+}
+
+.volunteer-card {
+  background-color: white;
+  color: var(--color-ink);
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  gap: 1rem;
+}
+
+.volunteer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: 1.5rem;
+}
+
+.picture-placeholder {
+  background-color: var(--color-pale);
+  border-radius: 9999px;
+}
+
+/* Organic blob-shaped photo frame. Different horizontal / vertical radii (the
+   part after the slash) give the uneven outline. Keep this after
+   .picture-placeholder so it wins when both are applied. `overflow: hidden`
+   clips a child <Image> to the shape. */
+.blob-frame {
+  border-radius: 60% 40% 55% 45% / 55% 45% 60% 40%;
+  overflow: hidden;
 }

@@ -1,3 +1,3 @@
 export default function Dogs() {
-  return <div>Dog list page.</div>;
+  return <div className="page-container">Dog list page.</div>;
 }

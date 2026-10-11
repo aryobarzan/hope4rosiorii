@@ -1,3 +1,3 @@
 export default function Adopt() {
-  return <div>Adopt contact form page.</div>;
+  return <div className="page-container">Adopt contact form page.</div>;
 }

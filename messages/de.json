@@ -27,7 +27,104 @@
   },
   "PrivacyPage": {
     "title": "Datenschutzerklärung",
-    "placeholder": "[Text der Datenschutzerklärung wird vom Verein bereitgestellt.]"
+    "intro": "Diese Erklärung beschreibt, welche personenbezogenen Daten wir über diese Website erheben, wofür wir sie verwenden und welche Rechte Sie haben.",
+    "sections": [
+      {
+        "title": "Verantwortlicher",
+        "paragraphs": [
+          "Hope 4 Rosiorii, [rechtlicher Name und Registernummer des Vereins], [Postanschrift], ist für die über diese Website erhobenen personenbezogenen Daten verantwortlich. Sie erreichen uns unter [Kontakt-E-Mail-Adresse]."
+        ]
+      },
+      {
+        "title": "Welche Daten wir erheben",
+        "paragraphs": [
+          "Wir erheben nur personenbezogene Daten, die Sie uns durch das Ausfüllen eines Formulars auf dieser Website mitteilen."
+        ],
+        "items": [
+          "Kontaktformular: Ihr Name, Ihre E-Mail-Adresse, der Grund Ihrer Nachricht und die Nachricht selbst.",
+          "Adoptionsanfrage: Ihr vollständiger Name, Ihre E-Mail-Adresse, Ihre vollständige Postanschrift, Ihre Telefonnummer, Ihr Geburtsdatum, ob Sie berufstätig sind und gegebenenfalls Ihr Beruf sowie der Hund, für den Sie sich interessieren."
+        ]
+      },
+      {
+        "title": "Wofür wir Ihre Daten verwenden",
+        "items": [
+          "Um die Nachricht zu beantworten, die Sie über das Kontaktformular gesendet haben.",
+          "Um Ihre Adoptionsanfrage zu prüfen, Sie zu kontaktieren und ein Treffen zu vereinbaren, damit wir ein passendes Zuhause für den Hund finden."
+        ],
+        "paragraphs": [
+          "Wir stützen uns auf Ihre Einwilligung, die Sie durch Anklicken des Kontrollkästchens vor dem Absenden eines Formulars erteilen. Sie können sie jederzeit widerrufen. Wir verwenden Ihre Daten nicht für Werbung und verkaufen sie nie."
+        ]
+      },
+      {
+        "title": "Wie Ihre Daten verarbeitet werden",
+        "paragraphs": [
+          "Wir speichern Formularübermittlungen nicht in einer Datenbank auf der Website. Jede Übermittlung wird als E-Mail an das Postfach unseres Teams gesendet und von dort aus bearbeitet. Nur die Ehrenamtlichen, die Nachrichten und Adoptionsanfragen bearbeiten, haben Zugriff darauf."
+        ]
+      },
+      {
+        "title": "Wer Daten für uns verarbeitet",
+        "paragraphs": [
+          "Für den Betrieb der Website und den Empfang Ihrer Nachrichten nutzen wir Dienstleister, die Daten in unserem Auftrag verarbeiten:"
+        ],
+        "items": [
+          "Vercel, das die Website hostet und die Formularverarbeitung ausführt.",
+          "Resend, das Formularübermittlungen per E-Mail an uns zustellt.",
+          "Google (Gmail), das das Postfach bereitstellt, in dem unser Team sie empfängt."
+        ]
+      },
+      {
+        "title": "Übermittlungen außerhalb der EU",
+        "paragraphs": [
+          "Einige dieser Dienstleister haben ihren Sitz außerhalb des Europäischen Wirtschaftsraums, insbesondere in den USA. In diesem Fall stützen sich die Übermittlungen auf die von der DSGVO geforderten Garantien, etwa einen Angemessenheitsbeschluss oder Standardvertragsklauseln.",
+          "Spenden über PayPal oder per Banküberweisung werden von PayPal bzw. Ihrer Bank nach deren eigenen Datenschutzbestimmungen abgewickelt."
+        ]
+      },
+      {
+        "title": "Wie lange wir Ihre Daten aufbewahren",
+        "paragraphs": [
+          "Wir bewahren Ihre Nachricht oder Adoptionsanfrage nur so lange auf, wie es für ihre Bearbeitung nötig ist. [Aufbewahrungsdauer vom Verein festzulegen.] Sie können eine frühere Löschung verlangen."
+        ]
+      },
+      {
+        "title": "Ihre Rechte",
+        "paragraphs": [
+          "Nach der DSGVO haben Sie das Recht auf:"
+        ],
+        "items": [
+          "Auskunft über die personenbezogenen Daten, die wir über Sie speichern;",
+          "Berichtigung unrichtiger Daten;",
+          "Löschung Ihrer Daten;",
+          "Einschränkung der Verarbeitung oder Widerspruch dagegen;",
+          "Erhalt Ihrer Daten in einem übertragbaren Format;",
+          "jederzeitigen Widerruf Ihrer Einwilligung, ohne dass die zuvor erfolgte Verarbeitung dadurch unrechtmäßig wird."
+        ]
+      },
+      {
+        "title": "Ausübung Ihrer Rechte und Beschwerden",
+        "paragraphs": [
+          "Um diese Rechte auszuüben, schreiben Sie an [Kontakt-E-Mail-Adresse].",
+          "Sie haben außerdem das Recht, eine Beschwerde bei der luxemburgischen Datenschutzbehörde, der Commission nationale pour la protection des données (CNPD), einzureichen: cnpd.lu."
+        ]
+      },
+      {
+        "title": "Sicherheit",
+        "paragraphs": [
+          "Wir treffen angemessene technische und organisatorische Maßnahmen zum Schutz Ihrer Daten, etwa verschlüsselte Verbindungen (HTTPS) und die Beschränkung des Zugriffs auf Ehrenamtliche, die ihn benötigen. Zum Schutz der Formulare vor Spam und Missbrauch können technische Daten wie Ihre IP-Adresse kurzzeitig verarbeitet werden."
+        ]
+      },
+      {
+        "title": "Cookies",
+        "paragraphs": [
+          "Diese Website verwendet keine Werbe- oder Tracking-Cookies. Sie kann ein kleines, technisch notwendiges Cookie speichern, um Ihre Sprachauswahl zu merken."
+        ]
+      },
+      {
+        "title": "Änderungen dieser Erklärung",
+        "paragraphs": [
+          "Wir können diese Erklärung von Zeit zu Zeit aktualisieren. Die aktuelle Fassung finden Sie immer auf dieser Seite. Zuletzt aktualisiert: [Datum]."
+        ]
+      }
+    ]
   },
   "ContactPage": {
     "eyebrow": "Sag Hallo",
@@ -55,5 +152,13 @@
     },
     "followUs": "Folge uns",
     "adoptPrompt": "Möchtest du adoptieren? Nutze das <link>Adoptionsformular</link>."
+  },
+  "AboutPage": {
+    "eyebrow": "Unsere Geschichte",
+    "heading": "Ein paar Freunde, viele Hunde, ein langer Weg",
+    "origins": "[Placeholder: wie Hope 4 Rosiorii begonnen hat]",
+    "values": "[Placeholder: Prüfung der Adoptanten, Pflegestellen, Vermittlung, alles in der Freizeit von Ehrenamtlichen]",
+    "headingVolunteers": "Lerne die Ehrenamtlichen kennen",
+    "socialLabel": "{name} auf {platform}"
   }
 }

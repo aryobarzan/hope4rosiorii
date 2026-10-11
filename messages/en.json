@@ -27,7 +27,104 @@
   },
   "PrivacyPage": {
     "title": "Privacy policy",
-    "placeholder": "[Privacy notice text to be provided by the association.]"
+    "intro": "This policy explains what personal data we collect through this website, why, and what your rights are.",
+    "sections": [
+      {
+        "title": "Who is responsible",
+        "paragraphs": [
+          "Hope 4 Rosiorii, [legal name and registration number of the association], [postal address], is responsible for the personal data collected through this website. You can reach us at [contact email address]."
+        ]
+      },
+      {
+        "title": "What data we collect",
+        "paragraphs": [
+          "We only collect personal data that you give us by filling in a form on this website."
+        ],
+        "items": [
+          "Contact form: your name, email address, the reason for your message and the message itself.",
+          "Adoption request: your full name, email address, full postal address, phone number, date of birth, whether you are employed and, if so, your job, and the dog you are interested in."
+        ]
+      },
+      {
+        "title": "Why we use your data",
+        "items": [
+          "To answer the message you sent through the contact form.",
+          "To assess your adoption request, contact you and arrange a meeting, so that we can find a suitable home for the dog."
+        ],
+        "paragraphs": [
+          "We rely on your consent, which you give by ticking the consent box before sending a form. You can withdraw it at any time. We do not use your data for marketing and we never sell it."
+        ]
+      },
+      {
+        "title": "How your data is handled",
+        "paragraphs": [
+          "We do not store form submissions in a database on the website. Each submission is sent as an email to our team's mailbox and handled from there. Only the volunteers who deal with messages and adoption requests have access to it."
+        ]
+      },
+      {
+        "title": "Who processes data for us",
+        "paragraphs": [
+          "To run the website and receive your messages we use service providers that process data on our behalf:"
+        ],
+        "items": [
+          "Vercel, which hosts the website and runs the form processing.",
+          "Resend, which delivers form submissions to us by email.",
+          "Google (Gmail), which hosts the mailbox where our team receives them."
+        ]
+      },
+      {
+        "title": "Transfers outside the EU",
+        "paragraphs": [
+          "Some of these providers are located outside the European Economic Area, notably in the United States. Where this is the case, transfers rely on the safeguards required by the GDPR, such as an adequacy decision or standard contractual clauses.",
+          "Donations made through PayPal or by bank transfer are handled by PayPal or your bank, under their own privacy policies."
+        ]
+      },
+      {
+        "title": "How long we keep your data",
+        "paragraphs": [
+          "We keep your message or adoption request only for as long as needed to deal with it. [Retention period to be confirmed by the association.] You can ask us to delete it earlier."
+        ]
+      },
+      {
+        "title": "Your rights",
+        "paragraphs": [
+          "Under the GDPR you have the right to:"
+        ],
+        "items": [
+          "access the personal data we hold about you;",
+          "have inaccurate data corrected;",
+          "have your data erased;",
+          "restrict or object to the use of your data;",
+          "receive your data in a portable format;",
+          "withdraw your consent at any time, without affecting the processing carried out before."
+        ]
+      },
+      {
+        "title": "Exercising your rights and complaints",
+        "paragraphs": [
+          "To exercise these rights, write to [contact email address].",
+          "You also have the right to lodge a complaint with the Luxembourg data protection authority, the Commission nationale pour la protection des données (CNPD), at cnpd.lu."
+        ]
+      },
+      {
+        "title": "Security",
+        "paragraphs": [
+          "We take reasonable technical and organisational measures to protect your data, such as encrypted connections (HTTPS) and limiting access to the volunteers who need it. To protect the forms against spam and abuse, technical data such as your IP address may be processed briefly."
+        ]
+      },
+      {
+        "title": "Cookies",
+        "paragraphs": [
+          "This website does not use advertising or tracking cookies. It may store a small, technically necessary cookie to remember your language choice."
+        ]
+      },
+      {
+        "title": "Changes to this policy",
+        "paragraphs": [
+          "We may update this policy from time to time. The current version is always available on this page. Last updated: [date]."
+        ]
+      }
+    ]
   },
   "ContactPage": {
     "eyebrow": "Say hello",
@@ -55,5 +152,13 @@
     },
     "followUs": "Follow us",
     "adoptPrompt": "Looking to adopt? Use the <link>adoption form</link>."
+  },
+  "AboutPage": {
+    "eyebrow": "Our story",
+    "heading": "A few friends, a lot of dogs, one long road",
+    "origins": "[Placeholder: how Hope 4 Rosiorii began]",
+    "values": "[Placeholder: vetting, fostering, matching, everything on volunteer time]",
+    "headingVolunteers": "Meet the volunteers",
+    "socialLabel": "{name} on {platform}"
   }
 }

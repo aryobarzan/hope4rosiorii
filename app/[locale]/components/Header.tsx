@@ -23,7 +23,7 @@ export default function Header() {
     pathname === href || pathname.startsWith(`${href}/`);
 
   return (
-    <header className="flex items-center gap-16">
+    <header className="page-container flex items-center gap-16">
       <Link
         href="/"
         aria-label={`Hope 4 Rosiorii – ${t("home")}`}

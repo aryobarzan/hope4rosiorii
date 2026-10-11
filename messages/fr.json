@@ -27,7 +27,104 @@
   },
   "PrivacyPage": {
     "title": "Politique de confidentialité",
-    "placeholder": "[Texte de la politique de confidentialité à fournir par l'association.]"
+    "intro": "Cette politique explique quelles données personnelles nous collectons via ce site, pourquoi, et quels sont vos droits.",
+    "sections": [
+      {
+        "title": "Responsable du traitement",
+        "paragraphs": [
+          "Hope 4 Rosiorii, [dénomination légale et numéro d'enregistrement de l'association], [adresse postale], est responsable des données personnelles collectées via ce site. Vous pouvez nous joindre à l'adresse [adresse e-mail de contact]."
+        ]
+      },
+      {
+        "title": "Données que nous collectons",
+        "paragraphs": [
+          "Nous ne collectons que les données personnelles que vous nous transmettez en remplissant un formulaire sur ce site."
+        ],
+        "items": [
+          "Formulaire de contact : votre nom, votre adresse e-mail, le motif de votre message et le message lui-même.",
+          "Demande d'adoption : vos nom et prénom, votre adresse e-mail, votre adresse postale complète, votre numéro de téléphone, votre date de naissance, votre situation professionnelle (en emploi ou non) et, le cas échéant, votre profession, ainsi que le chien qui vous intéresse."
+        ]
+      },
+      {
+        "title": "Pourquoi nous utilisons vos données",
+        "items": [
+          "Pour répondre au message que vous avez envoyé via le formulaire de contact.",
+          "Pour examiner votre demande d'adoption, vous contacter et organiser une rencontre, afin de trouver un foyer adapté au chien."
+        ],
+        "paragraphs": [
+          "Nous nous fondons sur votre consentement, que vous donnez en cochant la case de consentement avant d'envoyer un formulaire. Vous pouvez le retirer à tout moment. Nous n'utilisons pas vos données à des fins de prospection et nous ne les vendons jamais."
+        ]
+      },
+      {
+        "title": "Comment vos données sont traitées",
+        "paragraphs": [
+          "Nous ne conservons pas les envois de formulaires dans une base de données sur le site. Chaque envoi est transmis par e-mail à la boîte de réception de notre équipe et traité à partir de là. Seuls les bénévoles qui s'occupent des messages et des demandes d'adoption y ont accès."
+        ]
+      },
+      {
+        "title": "Qui traite des données pour nous",
+        "paragraphs": [
+          "Pour faire fonctionner le site et recevoir vos messages, nous faisons appel à des prestataires qui traitent des données pour notre compte :"
+        ],
+        "items": [
+          "Vercel, qui héberge le site et exécute le traitement des formulaires.",
+          "Resend, qui nous transmet les envois de formulaires par e-mail.",
+          "Google (Gmail), qui héberge la boîte de réception où notre équipe les reçoit."
+        ]
+      },
+      {
+        "title": "Transferts hors de l'UE",
+        "paragraphs": [
+          "Certains de ces prestataires sont situés en dehors de l'Espace économique européen, notamment aux États-Unis. Dans ce cas, les transferts reposent sur les garanties exigées par le RGPD, telles qu'une décision d'adéquation ou des clauses contractuelles types.",
+          "Les dons effectués via PayPal ou par virement bancaire sont gérés par PayPal ou votre banque, selon leurs propres politiques de confidentialité."
+        ]
+      },
+      {
+        "title": "Durée de conservation",
+        "paragraphs": [
+          "Nous ne conservons votre message ou votre demande d'adoption que le temps nécessaire à son traitement. [Durée de conservation à confirmer par l'association.] Vous pouvez demander leur suppression plus tôt."
+        ]
+      },
+      {
+        "title": "Vos droits",
+        "paragraphs": [
+          "En vertu du RGPD, vous avez le droit de :"
+        ],
+        "items": [
+          "accéder aux données personnelles que nous détenons à votre sujet ;",
+          "faire rectifier des données inexactes ;",
+          "faire effacer vos données ;",
+          "demander la limitation du traitement ou vous y opposer ;",
+          "recevoir vos données dans un format portable ;",
+          "retirer votre consentement à tout moment, sans que cela affecte le traitement effectué avant le retrait."
+        ]
+      },
+      {
+        "title": "Exercer vos droits et réclamations",
+        "paragraphs": [
+          "Pour exercer ces droits, écrivez-nous à [adresse e-mail de contact].",
+          "Vous avez également le droit d'introduire une réclamation auprès de l'autorité luxembourgeoise de protection des données, la Commission nationale pour la protection des données (CNPD), sur cnpd.lu."
+        ]
+      },
+      {
+        "title": "Sécurité",
+        "paragraphs": [
+          "Nous prenons des mesures techniques et organisationnelles raisonnables pour protéger vos données, telles que des connexions chiffrées (HTTPS) et la limitation de l'accès aux bénévoles qui en ont besoin. Pour protéger les formulaires contre le spam et les abus, des données techniques comme votre adresse IP peuvent être traitées brièvement."
+        ]
+      },
+      {
+        "title": "Cookies",
+        "paragraphs": [
+          "Ce site n'utilise pas de cookies publicitaires ni de suivi. Il peut enregistrer un petit cookie techniquement nécessaire pour mémoriser votre choix de langue."
+        ]
+      },
+      {
+        "title": "Modifications de cette politique",
+        "paragraphs": [
+          "Nous pouvons mettre à jour cette politique de temps à autre. La version en vigueur est toujours disponible sur cette page. Dernière mise à jour : [date]."
+        ]
+      }
+    ]
   },
   "ContactPage": {
     "eyebrow": "Dites bonjour",
@@ -55,5 +152,13 @@
     },
     "followUs": "Suivez-nous",
     "adoptPrompt": "Vous souhaitez adopter ? Utilisez le <link>formulaire d'adoption</link>."
+  },
+  "AboutPage": {
+    "eyebrow": "Notre histoire",
+    "heading": "Quelques amis, beaucoup de chiens, un long chemin",
+    "origins": "[Placeholder : comment Hope 4 Rosiorii a commencé]",
+    "values": "[Placeholder : vérification des adoptants, familles d'accueil, mise en relation, le tout sur le temps libre des bénévoles]",
+    "headingVolunteers": "Rencontrez les bénévoles",
+    "socialLabel": "{name} sur {platform}"
   }
 }

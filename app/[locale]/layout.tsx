@@ -47,12 +47,12 @@ export default async function LocaleLayout({
       lang={locale}
       className={`${gochiHand.variable} ${nunito.variable} ${pinyonScript.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col items-center justify-center">
+      <body className="flex min-h-full flex-col">
         <NextIntlClientProvider>
           <Header />
-          <main className="flex flex-1 items-center justify-center">
-            {children}
-          </main>
+          {/* Full width: pages decide their own container so they can have
+              full-bleed bands (see .page-container) */}
+          <main className="w-full flex-1">{children}</main>
           <Footer />
         </NextIntlClientProvider>
       </body>

@@ -27,7 +27,104 @@
   },
   "PrivacyPage": {
     "title": "Dateschutzerklärung",
-    "placeholder": "[Text vun der Dateschutzerklärung gëtt vun der Associatioun geliwwert.]"
+    "intro": "Dës Erklärung beschreift, wéi eng perséinlech Donnéeën mir iwwer dës Websäit sammelen, firwat, a wéi eng Rechter Dir hutt.",
+    "sections": [
+      {
+        "title": "Wien ass verantwortlech",
+        "paragraphs": [
+          "Hope 4 Rosiorii, [offiziellen Numm a Registernummer vun der Associatioun], [Postadress], ass verantwortlech fir déi perséinlech Donnéeën, déi iwwer dës Websäit gesammelt ginn. Dir erreecht eis ënner [Kontakt-E-Mail-Adress]."
+        ]
+      },
+      {
+        "title": "Wéi eng Donnéeën mir sammelen",
+        "paragraphs": [
+          "Mir sammelen nëmmen déi perséinlech Donnéeën, déi Dir eis gitt, wann Dir en Formulaire op dëser Websäit ausfëllt."
+        ],
+        "items": [
+          "Kontaktformulaire: Ären Numm, Är E-Mail-Adress, de Grond vun Ärer Noriicht an d'Noriicht selwer.",
+          "Adoptiounsufro: Äre kompletten Numm, Är E-Mail-Adress, Är komplett Postadress, Är Telefonsnummer, Äert Gebuertsdatum, ob Dir beruffstäteg sidd an, wann jo, Äre Beruff, souwéi den Hond, fir deen Dir Iech interesséiert."
+        ]
+      },
+      {
+        "title": "Firwat mir Är Donnéeë benotzen",
+        "items": [
+          "Fir op d'Noriicht ze äntwerten, déi Dir iwwer d'Kontaktformulaire geschéckt hutt.",
+          "Fir Är Adoptiounsufro ze préiwen, Iech ze kontaktéieren an en Treffen ofzemaachen, fir en passenden Heem fir den Hond ze fannen."
+        ],
+        "paragraphs": [
+          "Mir stëtzen eis op Är Averständnis, dat Dir gitt, andeems Dir d'Këscht fir d'Averständnis ukräizt, ier Dir en Formulaire schéckt. Dir kënnt et zu all Moment zréckzéien. Mir benotze Är Donnéeën net fir Reklamm a mir verkafe se ni."
+        ]
+      },
+      {
+        "title": "Wéi Är Donnéeë behandelt ginn",
+        "paragraphs": [
+          "Mir späichere Formulairen net an enger Datebank op der Websäit. All Ofschécken ass als E-Mail un d'Postfach vun eisem Team geschéckt a gëtt vun do aus behandelt. Nëmmen d'Fräiwëlleger, déi sech em Noriichten an Adoptiounsufroe këmmeren, hunn Zougrëff dorop."
+        ]
+      },
+      {
+        "title": "Wien Donnéeë fir eis veraarbecht",
+        "paragraphs": [
+          "Fir d'Websäit ze bedreiwen an Är Noriichten ze kréien, notze mir Déngschtleeschter, déi Donnéeë fir eis veraarbechten:"
+        ],
+        "items": [
+          "Vercel, dat d'Websäit hostet an d'Veraarbechtung vun de Formulairen ausféiert.",
+          "Resend, dat eis d'Formulairen per E-Mail zoustellt.",
+          "Google (Gmail), dat d'Postfach hostet, an dem eist Team se kritt."
+        ]
+      },
+      {
+        "title": "Iwwermëttlung ausserhalb vun der EU",
+        "paragraphs": [
+          "E puer vun dësen Déngschtleeschter sinn ausserhalb vum Europäesche Wirtschaftsraum ugesiedelt, besonnesch an den USA. An dësem Fall baséiere d'Iwwermëttlunge op de Garantië vun der DSGVO, wéi z. B. engem Adequatiounsbeschloss oder Standardvertragsklauselen.",
+          "Dons iwwer PayPal oder per Iwwerweisung gi vu PayPal respektiv vun Ärer Bank no hiren eegene Dateschutzbestëmmunge behandelt."
+        ]
+      },
+      {
+        "title": "Wéi laang mir Är Donnéeë behalen",
+        "paragraphs": [
+          "Mir behalen Är Noriicht oder Adoptiounsufro nëmme sou laang, wéi et fir hir Behandlung néideg ass. [Opbewahrungsdauer vun der Associatioun ze bestätegen.] Dir kënnt eng méi fréi Läschung ufroen."
+        ]
+      },
+      {
+        "title": "Är Rechter",
+        "paragraphs": [
+          "No der DSGVO hutt Dir d'Recht op:"
+        ],
+        "items": [
+          "Zougrëff op déi perséinlech Donnéeën, déi mir iwwer Iech hunn;",
+          "Korrektur vun onrichtegen Donnéeën;",
+          "Läschung vun Ären Donnéeën;",
+          "Aschränkung vun der Veraarbechtung oder Widdersproch dergéint;",
+          "Erhalt vun Ären Donnéeën an engem iwwerdroebare Format;",
+          "Zréckzéie vun Ärem Averständnis zu all Moment, ouni datt d'Veraarbechtung virdrun doduerch onrechtméisseg gëtt."
+        ]
+      },
+      {
+        "title": "Är Rechter ausüben a Beschwerden",
+        "paragraphs": [
+          "Fir dës Rechter auszeüben, schreift un [Kontakt-E-Mail-Adress].",
+          "Dir hutt och d'Recht, eng Beschwerd bei der lëtzebuergescher Dateschutzautoritéit, der Commission nationale pour la protection des données (CNPD), anzereechen: cnpd.lu."
+        ]
+      },
+      {
+        "title": "Sécherheet",
+        "paragraphs": [
+          "Mir huelen raisonnabel technesch an organisatoresch Moossname fir Är Donnéeën ze schützen, wéi verschlësselt Verbindungen (HTTPS) an d'Beschränkung vum Zougrëff op d'Fräiwëlleger, déi en brauchen. Fir d'Formulairen géint Spam a Mëssbrauch ze schützen, kënnen technesch Donnéeën, wéi Är IP-Adress, kuerz veraarbecht ginn."
+        ]
+      },
+      {
+        "title": "Cookien",
+        "paragraphs": [
+          "Dës Websäit benotzt keng Reklamm- oder Tracking-Cookien. Si kann e klenge, technesch néidege Cookie späicheren, fir sech Är Sproochewiel ze mierken."
+        ]
+      },
+      {
+        "title": "Ännerunge vun dëser Erklärung",
+        "paragraphs": [
+          "Mir kënnen dës Erklärung vun Zäit zu Zäit aktualiséieren. Déi aktuell Versioun fannt Dir ëmmer op dëser Säit. Zuletzt aktualiséiert: [Datum]."
+        ]
+      }
+    ]
   },
   "ContactPage": {
     "eyebrow": "Sot Moien",
@@ -55,5 +152,13 @@
     },
     "followUs": "Follegt eis",
     "adoptPrompt": "Wëllt Dir adoptéieren? Benotzt eise <link>Adoptiounsformular</link>."
+  },
+  "AboutPage": {
+    "eyebrow": "Eis Geschicht",
+    "heading": "E puer Frënn, vill Hënn, eng laang Strooss",
+    "origins": "[Placeholder: wéi Hope 4 Rosiorii ugefaangen huet]",
+    "values": "[Placeholder: Kontroll, Pflegefamilljen, Zesummebréngen, alles an der Fräizäit vu Fräiwëllegen]",
+    "headingVolunteers": "Léiert d'Fräiwëlleg kennen",
+    "socialLabel": "{name} op {platform}"
   }
 }

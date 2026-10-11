@@ -6,8 +6,8 @@ export default function Contact() {
   const t = useTranslations("ContactPage");
 
   return (
-    <div className="flex flex-col gap-1 pb-8 pt-8">
-      <p className="font-heading text-xl text-brand">{t("eyebrow")}</p>
+    <div className="page-container flex flex-col gap-1 pb-8 pt-8">
+      <p className="font-heading text-xl text-link">{t("eyebrow")}</p>
       <h1 className="font-heading text-5xl">{t("heading")}</h1>
       {/* Stacked on small screens; side by side from lg. items-start stops the
           box stretching to the form's height, so it only takes what it needs. */}
