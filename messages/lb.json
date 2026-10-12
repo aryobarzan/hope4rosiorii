@@ -300,10 +300,24 @@
       "consentRequired": "W.e.g. akzeptéier d'Dateschutzerklärung, fir deng Ufro ze schécken."
     }
   },
+  "DogsPage": {
+    "eyebrow": "all si gutt Hënn",
+    "heading": "Adoptéier mech!",
+    "description": "All Hond hei gouf a Rumänien gerett, vum Veterinär gekuckt a vun engem Fräiwëllegen betreit. Hues du een fonnt, deen dech laache léisst? Sot eis et.",
+    "card": {
+      "adoptMe": "Adoptéier mech!",
+      "ask": "Frot no {name}"
+    }
+  },
   "DonatePage": {
     "eyebrow": "all Bëssen hëlleft enger Patt",
     "heading": "Hëllef engem Hond op d'Rees",
     "description": "Mir hunn kee bezuelte Personal. Spenden bezuele Veterinär, Iessen, Transportboxen an de Sprit fir déi laang Fuert vu Rumänien. A mir weisen dir ëmmer, wou d'Geld higaangen ass.",
+    "updates": {
+      "eyebrow": "wou däi Geld higaangen ass",
+      "heading": "Neiegkeeten aus dem Team",
+      "spent": "Ausginn: {amount}"
+    },
     "impact": {
       "heading": "Dat kann deng Spend bewierken",
       "food": "E Säck Iessen fir een Hond",

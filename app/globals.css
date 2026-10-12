@@ -33,187 +33,234 @@ body {
   font-family: var(--font-body);
 }
 
-/* Constrains content to a readable width and centres it. Sections that need a
+/* Our own classes live in the `components` layer. Tailwind v4 puts utilities in
+   a later layer, so a utility (`font-bold`, `w-full`, `gap-4`, ...) on an element
+   overrides the same property from these classes. CSS outside any layer would
+   beat every utility, whatever the specificity.
+   The name matters: `@import "tailwindcss"` declares the order
+   `theme, base, components, utilities` (later wins). A layer with any other
+   name is appended after `utilities` and would beat it again. */
+@layer components {
+  /* Constrains content to a readable width and centres it. Sections that need a
    full-bleed background put the colour on an outer element and this class on
    an inner one. */
-.page-container {
-  width: 100%;
-  /* equals 1024px for a font size of 16px */
-  max-width: 64rem;
-  /* with a capped width, auto margins on the left and right lead to equal spacing,
+  .page-container {
+    width: 100%;
+    /* equals 1024px for a font size of 16px */
+    max-width: 64rem;
+    /* with a capped width, auto margins on the left and right lead to equal spacing,
   i.e., content is centered horizontally. */
-  margin-inline: auto;
-  /* 16px padding on all sides */
-  padding-inline: 1rem;
-}
+    margin-inline: auto;
+    /* 16px padding on all sides */
+    padding-inline: 1rem;
+  }
 
-.text-button {
-  color: var(--color-button);
-  font-weight: 500;
-  cursor: pointer;
-  user-select: none;
-}
+  .text-button {
+    color: var(--color-button);
+    font-weight: 500;
+    cursor: pointer;
+    user-select: none;
+  }
 
-.text-button:hover {
-  color: rgb(from var(--color-button) r g b / 0.8);
-}
+  .text-button:hover {
+    color: rgb(from var(--color-button) r g b / 0.8);
+  }
 
-.text-button:active {
-  color: rgb(from var(--color-button) r g b / 0.6);
-}
+  .text-button:active {
+    color: rgb(from var(--color-button) r g b / 0.6);
+  }
 
-.filled-button {
-  background-color: var(--color-button);
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 9999px;
-  font-weight: 500;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.25rem;
-  user-select: none;
-}
+  .filled-button {
+    background-color: var(--color-button);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    user-select: none;
+  }
 
-/* Solid darker shades (not transparency) so white text keeps its contrast */
-.filled-button:hover {
-  background-color: color-mix(in srgb, var(--color-button), black 15%);
-}
+  /* Solid darker shades (not transparency) so white text keeps its contrast */
+  .filled-button:hover {
+    background-color: color-mix(in srgb, var(--color-button), black 15%);
+  }
 
-.filled-button:active {
-  background-color: color-mix(in srgb, var(--color-button), black 30%);
-}
+  .filled-button:active {
+    background-color: color-mix(in srgb, var(--color-button), black 30%);
+  }
 
-.filled-button:focus-visible {
-  outline: 2px solid var(--color-ink);
-  outline-offset: 2px;
-}
+  .filled-button:focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 2px;
+  }
 
-/* Current page: ink fill plus a ring, so it is not shown by colour alone */
-.filled-button[aria-current="page"] {
-  background-color: var(--color-ink);
-  box-shadow:
-    0 0 0 2px var(--color-page),
-    0 0 0 4px var(--color-ink);
-}
+  /* Current page: ink fill plus a ring, so it is not shown by colour alone */
+  .filled-button[aria-current="page"] {
+    background-color: var(--color-ink);
+    box-shadow:
+      0 0 0 2px var(--color-page),
+      0 0 0 4px var(--color-ink);
+  }
 
-.filled-button[aria-current="page"]:hover {
-  background-color: color-mix(in srgb, var(--color-ink), white 15%);
-}
+  .filled-button[aria-current="page"]:hover {
+    background-color: color-mix(in srgb, var(--color-ink), white 15%);
+  }
 
-.filled-button[aria-current="page"]:active {
-  background-color: color-mix(in srgb, var(--color-ink), white 30%);
-}
+  .filled-button[aria-current="page"]:active {
+    background-color: color-mix(in srgb, var(--color-ink), white 30%);
+  }
 
-.filled-button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
+  .filled-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 
-.form-box {
-  padding: 32px;
-  background-color: white;
-  /* min() so the box can't overflow viewports narrower than 400px */
-  min-width: min(400px, 100%);
-  max-width: 800px;
-  border-radius: 2rem;
-  display: flex;
-  flex-direction: column;
-}
+  .form-box {
+    padding: 32px;
+    background-color: white;
+    /* min() so the box can't overflow viewports narrower than 400px */
+    min-width: min(400px, 100%);
+    max-width: 800px;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
 
-.form-box form {
-  display: flex;
-  flex-direction: column;
-}
+  .form-box form {
+    display: flex;
+    flex-direction: column;
+  }
 
-.form-field-error {
-  font-size: 0.8rem;
-  color: #dc2626;
-  margin-top: -0.25rem;
-}
+  .form-field-error {
+    font-size: 0.8rem;
+    color: #dc2626;
+    margin-top: -0.25rem;
+  }
 
-.form-label {
-  font-weight: 700;
-}
+  .form-label {
+    font-weight: 700;
+  }
 
-.prominent-box {
-  padding: 32px;
-  background-color: var(--color-button);
-  /* inherited by p inside it */
-  color: white;
-  min-width: min(400px, 100%);
-  max-width: 800px;
-  border-radius: 2rem;
-  display: flex;
-  flex-direction: column;
-}
+  .prominent-box {
+    padding: 32px;
+    background-color: var(--color-button);
+    /* inherited by p inside it */
+    color: white;
+    min-width: min(400px, 100%);
+    max-width: 800px;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
 
-.alternate-box {
-  padding: 32px;
-  background-color: var(--color-pale);
-  /* inherited by p inside it */
-  color: var(--color-ink);
-  min-width: min(400px, 100%);
-  max-width: 800px;
-  border-radius: 2rem;
-  display: flex;
-  flex-direction: column;
-}
+  .alternate-box {
+    padding: 32px;
+    background-color: var(--color-pale);
+    /* inherited by p inside it */
+    color: var(--color-ink);
+    min-width: min(400px, 100%);
+    max-width: 800px;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
 
-.input-field {
-  padding: 0.75rem 1rem;
-  margin: 0.25rem 0;
-  /* A 1px border with a large radius renders jagged on standard-DPI screens
+  .input-field {
+    padding: 0.75rem 1rem;
+    margin: 0.25rem 0;
+    /* A 1px border with a large radius renders jagged on standard-DPI screens
      (the curve can't be anti-aliased across a single pixel). 2px smooths it. */
-  border: 1.5px solid var(--color-ink);
-  border-radius: 1rem;
-  font-size: 1rem;
-  box-sizing: border-box;
-}
+    border: 1.5px solid var(--color-ink);
+    border-radius: 1rem;
+    font-size: 1rem;
+    box-sizing: border-box;
+  }
 
-select.input-field {
-  /* Set to `none` such that we can use a custom material icon instead of the browser's native/default arrow icon. */
-  appearance: none;
-  width: 100%;
-  cursor: pointer;
-  border-radius: 1rem;
-}
+  select.input-field {
+    /* Set to `none` such that we can use a custom material icon instead of the browser's native/default arrow icon. */
+    appearance: none;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 1rem;
+  }
 
-.textarea-field {
-  resize: vertical;
-  /* At least 3 lines of height */
-  min-height: 6rem;
-  line-height: 1.5;
-}
+  .textarea-field {
+    resize: vertical;
+    /* At least 3 lines of height */
+    min-height: 6rem;
+    line-height: 1.5;
+  }
 
-.volunteer-card {
-  background-color: white;
-  color: var(--color-ink);
-  border-radius: 2rem;
-  display: flex;
-  flex-direction: column;
-  padding: 2rem;
-  gap: 1rem;
-}
+  .update-row {
+    background-color: white;
+    color: var(--color-ink);
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1rem;
+  }
 
-.volunteer-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
-  gap: 1.5rem;
-}
+  /* Stacked on phones (a row would leave the text about 150px); picture beside
+   the text from 640px up. */
+  @media (min-width: 40rem) {
+    .update-row {
+      flex-direction: row;
+      align-items: center;
+      gap: 1.5rem;
+    }
+  }
 
-.picture-placeholder {
-  background-color: var(--color-pale);
-  border-radius: 9999px;
-}
+  .dog-card {
+    background-color: white;
+    color: var(--color-ink);
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    gap: 1rem;
+  }
 
-/* Organic blob-shaped photo frame. Different horizontal / vertical radii (the
+  .dog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    gap: 1.5rem;
+  }
+
+  .volunteer-card {
+    background-color: white;
+    color: var(--color-ink);
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1rem;
+  }
+
+  .volunteer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    gap: 1.5rem;
+  }
+
+  .picture-placeholder {
+    background-color: var(--color-pale);
+    border-radius: 9999px;
+  }
+
+  /* Organic blob-shaped photo frame. Different horizontal / vertical radii (the
    part after the slash) give the uneven outline. Keep this after
    .picture-placeholder so it wins when both are applied. `overflow: hidden`
    clips a child <Image> to the shape. */
-.blob-frame {
-  border-radius: 60% 40% 55% 45% / 55% 45% 60% 40%;
-  overflow: hidden;
+  .blob-frame {
+    border-radius: 60% 40% 55% 45% / 55% 45% 60% 40%;
+    overflow: hidden;
+  }
 }

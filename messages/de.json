@@ -300,10 +300,24 @@
       "consentRequired": "Bitte akzeptiere die Datenschutzerklärung, um deine Anfrage zu senden."
     }
   },
+  "DogsPage": {
+    "eyebrow": "alles gute Hunde",
+    "heading": "Adoptiere mich!",
+    "description": "Alle Hunde hier wurden in Rumänien gerettet, vom Tierarzt untersucht und von Freiwilligen betreut. Hast du jemanden gefunden, der dich zum Lächeln bringt? Sag uns Bescheid.",
+    "card": {
+      "adoptMe": "Adoptiere mich!",
+      "ask": "Frag nach {name}"
+    }
+  },
   "DonatePage": {
     "eyebrow": "jeder Beitrag hilft einer Pfote",
     "heading": "Hilf einem Hund auf die Reise",
     "description": "Wir haben kein bezahltes Personal. Spenden zahlen Tierarzt, Futter, Transportboxen und den Sprit für die lange Fahrt aus Rumänien. Und wir zeigen dir immer, wohin das Geld geflossen ist.",
+    "updates": {
+      "eyebrow": "wohin dein Geld geflossen ist",
+      "heading": "Neuigkeiten aus dem Team",
+      "spent": "Ausgegeben: {amount}"
+    },
     "impact": {
       "heading": "Was deine Spende bewirken kann",
       "food": "Ein Sack Futter für einen Hund",

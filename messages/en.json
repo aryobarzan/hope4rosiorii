@@ -331,6 +331,20 @@
       "donate": "Donate {amount}",
       "donateNoAmount": "Donate",
       "paypalNote": "You’ll complete your donation securely on PayPal."
+    },
+    "updates": {
+      "eyebrow": "where your money went",
+      "heading": "Updates from the team",
+      "spent": "Spent: {amount}"
+    }
+  },
+  "DogsPage": {
+    "eyebrow": "all of them are good dogs",
+    "heading": "Adopt me!",
+    "description": "Every dog here was rescued in Romania, checked by a vet and looked after by a volunteer. Found someone who makes you smile? Tell us.",
+    "card": {
+      "adoptMe": "Adopt me!",
+      "ask": "Ask about {name}"
     }
   }
 }

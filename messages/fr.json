@@ -300,10 +300,24 @@
       "consentRequired": "Veuillez accepter la politique de confidentialité pour envoyer votre demande."
     }
   },
+  "DogsPage": {
+    "eyebrow": "ce sont tous de bons chiens",
+    "heading": "Adopte-moi !",
+    "description": "Tous les chiens présentés ici ont été sauvés en Roumanie, examinés par un vétérinaire et pris en charge par un bénévole. Vous avez trouvé quelqu’un qui vous fait sourire ? Dites-le-nous.",
+    "card": {
+      "adoptMe": "Adopte-moi !",
+      "ask": "Se renseigner sur {name}"
+    }
+  },
   "DonatePage": {
     "eyebrow": "chaque geste aide une patte",
     "heading": "Aidez un chien à faire le voyage",
     "description": "Nous n'avons aucun salarié. Les dons financent les soins vétérinaires, la nourriture, les caisses de transport et le carburant du long trajet depuis la Roumanie. Et nous vous montrerons toujours où est allé l'argent.",
+    "updates": {
+      "eyebrow": "où est allé votre argent",
+      "heading": "Des nouvelles de l’équipe",
+      "spent": "Dépensé : {amount}"
+    },
     "impact": {
       "heading": "Ce que peut faire votre don",
       "food": "Un sac de nourriture pour un chien",
