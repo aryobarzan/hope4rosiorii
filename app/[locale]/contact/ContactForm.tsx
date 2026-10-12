@@ -167,8 +167,10 @@ export default function ContactForm() {
       />
       {fieldError("message")}
 
-      {/* Honeypot: off-screen, skipped by keyboard and screen readers */}
-      <div aria-hidden="true" className="absolute left-[9999px]">
+      {/* Honeypot: clipped to 1px (sr-only) rather than pushed off-screen, which
+          would widen the page and add a horizontal scrollbar. Skipped by
+          keyboard (tabIndex -1) and screen readers (aria-hidden). */}
+      <div aria-hidden="true" className="sr-only">
         <label htmlFor="website">Website</label>
         <input
           id="website"

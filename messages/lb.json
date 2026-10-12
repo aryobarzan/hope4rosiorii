@@ -160,5 +160,144 @@
     "values": "[Placeholder: Kontroll, Pflegefamilljen, Zesummebréngen, alles an der Fräizäit vu Fräiwëllegen]",
     "headingVolunteers": "Léiert d'Fräiwëlleg kennen",
     "socialLabel": "{name} op {platform}"
+  },
+  "AdoptPage": {
+    "eyebrow": "dat éischt Moien",
+    "heading": "Adoptiounsufro",
+    "next": {
+      "heading": "Wat duerno geschitt",
+      "step1": "E Fräiwëllegen list deng Ufro a mellt sech bei dir.",
+      "step2": "Du léiers den Hond kennen, a mir schwätze driwwer, wéi et sech ukënnt.",
+      "step3": "Du ënnerschreifs den Adoptiounsvertrag a bréngs däin Hond heem."
+    },
+    "countryPlaceholder": "Wielt e Land",
+    "countryGroups": {
+      "common": "Am heefegsten",
+      "all": "All Länner"
+    },
+    "sections": {
+      "contact": "Iwwer dech",
+      "household": "Däi Stot",
+      "experience": "Erfarung mat Déieren",
+      "home": "Däi Wunnraum",
+      "daily": "Den Alldag mam Hond",
+      "expectations": "Erwaardungen a Virbereedung",
+      "closing": "Bal fäerdeg"
+    },
+    "fields": {
+      "name": "Däin Numm",
+      "email": "E-Mail",
+      "phone": "Telefonsnummer",
+      "street": "Strooss",
+      "houseNumber": "Hausnummer",
+      "postalCode": "Postleitzuel",
+      "city": "Uertschaft",
+      "country": "Land",
+      "birthDate": "Gebuertsdatum",
+      "employed": "Hues du eng Aarbecht?",
+      "employedOther": "W.e.g. präziséieren",
+      "dogName": "Fir wéi ee Hond interesséiers du dech? (Numm)",
+      "householdMembers": "Liewen nach aner Léit mat dir am Haushalt?",
+      "householdMembersOther": "W.e.g. präziséieren",
+      "everyoneInHouseholdAgreesWithAdoption": "Ass jiddereen am Stot mat der Adoptioun vun engem Hond averstan?",
+      "priorDogExperience": "Hues du schonn Erfarung mat Hënn?",
+      "hasShelterDogExperience": "Hues du Erfarung mat Hënn aus dem Déiereschutz?",
+      "ownedPets": "Hues du schonn Hausdéieren?",
+      "ownedPetsOther": "W.e.g. präziséieren",
+      "positionOnCastration": "Wéi stees du zum Theema Kastratioun? Sollt ee vun dengen Hausdéieren nach net kastréiert sinn, géifs du en kastréiere loossen? W.e.g erklär eis, firwat s du däin Hond kastréiere losse géifs, respektiv firwat net?",
+      "homeOwnership": "Bass du Proprietär oder Locataire?",
+      "homeType": "A wat fir enger Zort Wunnraum wunns du?",
+      "homeTypeOther": "W.e.g. präziséieren",
+      "fencedGarden": "Wanns du e Gaart hues, ass deen agezäunt?",
+      "floor": "Op wéi enger Etage wunns du? Gëtt et e Lift?",
+      "planToMoveOrRenovate": "Hues du an noer Zukunft geplangt ze plënneren? Bzw. si gréisser Renovatiounsaarbechte geplangt?",
+      "squareMeters": "Weivill Quadratmeter huet är Wunnfläche?",
+      "neighbourhood": "Wéi ass d'Ëmgéigend?",
+      "closestGrassField": "Wéi wäit ass et bis bei déi nooste Wiss?",
+      "dogHoursAloneDaily": "Wéi vill Stonne max. ass den Hond am Dag eleng?",
+      "dailyWalks": "Wéi oft a wéi laang plangs du mam Hond spadséieren ze goen?",
+      "offLimitsAreas": "Ginn et Tabu Zone fir den Hond am Haushalt? Wou?",
+      "estimatedCosts": "Mat wéienge Käschte rechens am Ufank nom Anzéie vum Hond?",
+      "plannedDaysOff": "Plangs du dir Congé ze huele fir den Ufank nodeems den Hond ukënnt? Wéi lang?",
+      "canPickUpDogAtMeetingPoint": "Hues du d'Méiglechkeet den Hond mam Auto an enger Begleetpersoun ob en Treffpunkt sichen ze kommen?",
+      "consultedOtherShelters": "Hues du dech bei aner Déiereschutzorganisatioune fir en Hond ausfënneg gemaach?",
+      "preferences": "Wat wënsch du dir an engem Hond? Wéi sollt e sinn? Wéi soll en ausgesinn? Hues du Preferenzen?",
+      "whyShelterDog": "Firwat hues du dech fir en Hond aus dem Déiereschutz entscheet?",
+      "awareOfBehaviourChangeAfterArrival": "Ass dir bewosst, dat Hënn aus déi aus dem Ausland kommen, sech charakterlech verännere kënnen, wann se bis an hirem Doheem ukommen?",
+      "expectedBehaviourAfterArrival": "Mat wéi enge Verhalensweise rechens du nom Ukomme vum Hond?",
+      "wouldHireDogTrainer": "Plangs du bei gréisseren Erausfuerderungen dir en Hondstrainer:in resp. eng Hondsschoul un d'Säit ze huelen?",
+      "hasReasonsToReturnDog": "Ginn et fir dech Grënn en Hond erëm of ze ginn?",
+      "hasReturnedDogBefore": "Hues du scho missen en Hond ofginn?",
+      "willKeepDogUntilRehomed": "Falls et net mam Hond an ärer Liewenssituatioun passt, an eng néi Famill gesicht misst ginn, bass du prett den Hond bei dir ze halen an eis all méiglech Informatiounen zum Hond a Fotoen ze ginn, bis mir eng endgülteg Vermëttlung ofgeschloss hunn? Dat kéint heiansdo bis zu Méint daueren.",
+      "hasEmergencyCareOption": "Hues du d'Méiglechkeet den Hond ënner ze bréngen am Fall vun enger Erkrankung, enger Vakanz oder enger Situatioun déi net viraus ze gesinn ass?",
+      "holidayCaretaker": "Ween passt op den Hond op wann s du an d'Vakanz gees, respektiv an d'Klinik fir eng länger Zäit misst?",
+      "dogStaysWithIfSeparation": "Falls du an enger Partnerschaft oder Wunngemeinschaft liefs, hues du dir scho Gedanke gemaach, bei weem den Hond bléiwe géif?",
+      "consentToCheckupAfterAdoption": "Bass du domadder averstan, dat no der Adoptioun vum Hond eng Nokontroll duerchgefouert gëtt?",
+      "earliestMoveInDate": "Ab wéini kann den Hond bei dir an d'Famill anzéien?",
+      "otherDogsOfInterest": "Hues du nach Interesse un enger anerer Fellnues?",
+      "otherQuestions": "Hues du nach Froen?",
+      "answeredHonestly": "Hues du all d'Froen éierlech beäntwert?",
+      "consentToContact": "Duerfe mir Kontakt mat dir ophuelen?"
+    },
+    "statements": {
+      "answeredHonestly": "Jo, ech hunn d'Froen all éierlech beäntwert, a mir ass bewosst dat falsch Donnée zur Opléisung vum Schutzvertrag kënne féieren.",
+      "consentToContact": "Jo, dir duerft Kontakt mat mir ophuelen."
+    },
+    "options": {
+      "yes": "Jo",
+      "no": "Nee",
+      "employed": {
+        "yes": "Jo",
+        "no": "Nee",
+        "other": "Anescht"
+      },
+      "householdMembers": {
+        "partner": "Mäi Partner / Meng Partnerin",
+        "children": "Kanner",
+        "alone": "Ech wunnen eleng",
+        "other": "Anescht"
+      },
+      "priorDogExperience": {
+        "hadDogsInPast": "An der Vergaangenheet hat ech schonn Hënn",
+        "haveDogsNow": "Ech hu schonn en Hond/Hënn",
+        "experienceWithoutOwning": "Ech hat nach keen Hond, konnt awer schonn Erfarung mat Hënn sammelen",
+        "noExperience": "Ech konnt nach keng Erfarung mat Hënn sammelen"
+      },
+      "ownedPets": {
+        "dogs": "Hond/Hënn",
+        "cats": "Kaz/Kazen",
+        "none": "Ech hu keng Hausdéieren",
+        "other": "Anescht"
+      },
+      "homeOwnership": {
+        "owner": "Proprietär",
+        "tenant": "Locataire"
+      },
+      "homeType": {
+        "apartment": "Appartement",
+        "house": "Haus",
+        "other": "Anescht"
+      },
+      "fencedGarden": {
+        "yes": "Jo, deen ass agezäunt",
+        "no": "Nee, deen ass net agezäunt",
+        "noGarden": "Ech hu kee Gaart"
+      }
+    },
+    "consent": "Ech sinn domadder averstan, dass meng Donnéeë fir d'Behandele vu menger Adoptiounsufro benotzt ginn, wéi an der <link>Dateschutzerklärung</link> beschriwwen.",
+    "submit": "Ufro schécken",
+    "errors": {
+      "required": "Dëst Feld ass obligatoresch.",
+      "tooLong": "Dëst ass ze laang.",
+      "invalidEmail": "W.e.g. gëff eng gülteg E-Mail-Adress an.",
+      "invalidPhone": "W.e.g. gëff eng gülteg Telefonsnummer an.",
+      "invalidNumber": "W.e.g. gëff eng gülteg Zuel an.",
+      "invalidDate": "W.e.g. gëff e gülteg Datum an.",
+      "mustBeAdult": "Du muss mindestens 18 Joer al sinn, fir ze adoptéieren.",
+      "exclusiveOption": "Dës Äntwert kann net mat deenen aneren kombinéiert ginn.",
+      "honestyRequired": "W.e.g. bestätegt, dass du all d'Froen éierlech beäntwert hues.",
+      "contactRequired": "W.e.g. bestätegt, dass mir Kontakt mat dir ophuelen dierfen.",
+      "consentRequired": "W.e.g. akzeptéier d'Dateschutzerklärung, fir deng Ufro ze schécken."
+    }
   }
 }

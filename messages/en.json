@@ -87,9 +87,7 @@
       },
       {
         "title": "Your rights",
-        "paragraphs": [
-          "Under the GDPR you have the right to:"
-        ],
+        "paragraphs": ["Under the GDPR you have the right to:"],
         "items": [
           "access the personal data we hold about you;",
           "have inaccurate data corrected;",
@@ -160,5 +158,144 @@
     "values": "[Placeholder: vetting, fostering, matching, everything on volunteer time]",
     "headingVolunteers": "Meet the volunteers",
     "socialLabel": "{name} on {platform}"
+  },
+  "AdoptPage": {
+    "eyebrow": "the first hello",
+    "heading": "Adoption request",
+    "next": {
+      "heading": "What happens next",
+      "step1": "A volunteer reads your request and gets in touch.",
+      "step2": "You meet the dog, and we talk about how it feels.",
+      "step3": "You sign the adoption agreement and bring your dog home."
+    },
+    "countryPlaceholder": "Choose a country",
+    "countryGroups": {
+      "common": "Most common",
+      "all": "All countries"
+    },
+    "sections": {
+      "contact": "About you",
+      "household": "Your household",
+      "experience": "Experience with animals",
+      "home": "Your home",
+      "daily": "Daily life with the dog",
+      "expectations": "Expectations and preparation",
+      "closing": "Almost done"
+    },
+    "fields": {
+      "name": "Your name",
+      "email": "Email",
+      "phone": "Phone number",
+      "street": "Street",
+      "houseNumber": "House number",
+      "postalCode": "Postal code",
+      "city": "City",
+      "country": "Country",
+      "birthDate": "Date of birth",
+      "employed": "Do you have a job?",
+      "employedOther": "Please specify",
+      "dogName": "Which dog are you interested in? (name)",
+      "householdMembers": "Do other people live with you?",
+      "householdMembersOther": "Please specify",
+      "everyoneInHouseholdAgreesWithAdoption": "Does everyone in the household agree to adopting a dog?",
+      "priorDogExperience": "Do you already have experience with dogs?",
+      "hasShelterDogExperience": "Do you have experience with dogs from an animal shelter?",
+      "ownedPets": "Do you already have pets?",
+      "ownedPetsOther": "Please specify",
+      "positionOnCastration": "What is your view on neutering? If one of your pets is not yet neutered, would you have it neutered? Please explain why you would or would not have your dog neutered.",
+      "homeOwnership": "Do you own or rent your home?",
+      "homeType": "What kind of home do you live in?",
+      "homeTypeOther": "Please specify",
+      "fencedGarden": "If you have a garden, is it fenced?",
+      "floor": "Which floor do you live on? Is there a lift?",
+      "planToMoveOrRenovate": "Do you plan to move in the near future, or are major renovations planned?",
+      "squareMeters": "How many square metres is your living space?",
+      "neighbourhood": "What is the neighbourhood like?",
+      "closestGrassField": "How far is it to the nearest meadow?",
+      "dogHoursAloneDaily": "What is the maximum number of hours per day the dog will be alone?",
+      "dailyWalks": "How often and for how long do you plan to walk the dog?",
+      "offLimitsAreas": "Are there off-limits areas for the dog in your home? Where?",
+      "estimatedCosts": "What costs do you expect at the beginning, after the dog moves in?",
+      "plannedDaysOff": "Do you plan to take time off at the start, once the dog arrives? For how long?",
+      "canPickUpDogAtMeetingPoint": "Are you able to come and pick up the dog at a meeting point, by car and with an accompanying person?",
+      "consultedOtherShelters": "Have you looked into other animal shelters for a dog?",
+      "preferences": "What do you want in a dog? What should it be like? What should it look like? Do you have preferences?",
+      "whyShelterDog": "Why did you decide on a dog from an animal shelter?",
+      "awareOfBehaviourChangeAfterArrival": "Are you aware that dogs coming from abroad can change in character once they arrive in their new home?",
+      "expectedBehaviourAfterArrival": "What behaviour do you expect from the dog after it arrives?",
+      "wouldHireDogTrainer": "If you face bigger challenges, do you plan to bring in a dog trainer or a dog school?",
+      "hasReasonsToReturnDog": "Are there any reasons for you to give a dog back?",
+      "hasReturnedDogBefore": "Have you ever had to give a dog up?",
+      "willKeepDogUntilRehomed": "If the dog does not fit your living situation and has to be placed with a new family, are you ready to keep the dog and give us all possible information and photos until we have found a final placement? This can sometimes take up to several months.",
+      "hasEmergencyCareOption": "Can you arrange care for the dog in case of illness, a holiday or an unforeseen situation?",
+      "holidayCaretaker": "Who will look after the dog when you go on holiday, or if you have to go to hospital for a longer time?",
+      "dogStaysWithIfSeparation": "If you live with a partner or in a shared home, have you thought about who the dog would stay with?",
+      "consentToCheckupAfterAdoption": "Do you agree to a follow-up check after the dog has been adopted?",
+      "earliestMoveInDate": "From when can the dog move in with you and your family?",
+      "otherDogsOfInterest": "Are you interested in another furry friend?",
+      "otherQuestions": "Do you have any other questions?",
+      "answeredHonestly": "Did you answer all the questions honestly?",
+      "consentToContact": "May we contact you?"
+    },
+    "statements": {
+      "answeredHonestly": "Yes, I have answered all the questions honestly, and I am aware that false information can lead to the termination of the protection contract.",
+      "consentToContact": "Yes, you may contact me."
+    },
+    "options": {
+      "yes": "Yes",
+      "no": "No",
+      "employed": {
+        "yes": "Yes",
+        "no": "No",
+        "other": "Something else"
+      },
+      "householdMembers": {
+        "partner": "My partner",
+        "children": "Children",
+        "alone": "I live alone",
+        "other": "Something else"
+      },
+      "priorDogExperience": {
+        "hadDogsInPast": "I have had dogs in the past",
+        "haveDogsNow": "I already have a dog or dogs",
+        "experienceWithoutOwning": "I have never had a dog, but I have been able to gain some experience with dogs",
+        "noExperience": "I have not been able to gain any experience with dogs yet"
+      },
+      "ownedPets": {
+        "dogs": "Dog(s)",
+        "cats": "Cat(s)",
+        "none": "I have no pets",
+        "other": "Something else"
+      },
+      "homeOwnership": {
+        "owner": "Owner",
+        "tenant": "Tenant"
+      },
+      "homeType": {
+        "apartment": "Apartment",
+        "house": "House",
+        "other": "Something else"
+      },
+      "fencedGarden": {
+        "yes": "Yes, it is fenced",
+        "no": "No, it is not fenced",
+        "noGarden": "I don't have a garden"
+      }
+    },
+    "consent": "I agree that my details are used to process my adoption request, as described in the <link>privacy policy</link>.",
+    "submit": "Send request",
+    "errors": {
+      "required": "This field is required.",
+      "tooLong": "This is too long.",
+      "invalidEmail": "Please enter a valid email address.",
+      "invalidPhone": "Please enter a valid phone number.",
+      "invalidNumber": "Please enter a valid number.",
+      "invalidDate": "Please enter a valid date.",
+      "mustBeAdult": "You must be at least 18 years old to adopt.",
+      "exclusiveOption": "This answer can't be combined with the others.",
+      "honestyRequired": "Please confirm that you answered all the questions honestly.",
+      "contactRequired": "Please confirm that we may contact you.",
+      "consentRequired": "Please accept the privacy policy to send your request."
+    }
   }
 }

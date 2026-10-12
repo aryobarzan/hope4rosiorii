@@ -20,6 +20,13 @@
   --font-script: var(--font-pinyon-script);
 }
 
+/* Always reserve space for the vertical scrollbar. Without this, centred
+   content (e.g. the nav) shifts sideways when navigating between pages that
+   overflow the viewport and pages that don't. */
+html {
+  scrollbar-gutter: stable;
+}
+
 body {
   background: var(--color-page);
   color: var(--color-ink);

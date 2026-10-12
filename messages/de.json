@@ -160,5 +160,144 @@
     "values": "[Placeholder: Prüfung der Adoptanten, Pflegestellen, Vermittlung, alles in der Freizeit von Ehrenamtlichen]",
     "headingVolunteers": "Lerne die Ehrenamtlichen kennen",
     "socialLabel": "{name} auf {platform}"
+  },
+  "AdoptPage": {
+    "eyebrow": "das erste Hallo",
+    "heading": "Adoptionsanfrage",
+    "next": {
+      "heading": "Wie es weitergeht",
+      "step1": "Ein:e Ehrenamtliche:r liest deine Anfrage und meldet sich bei dir.",
+      "step2": "Du lernst den Hund kennen, und wir sprechen darüber, wie es sich anfühlt.",
+      "step3": "Du unterschreibst den Adoptionsvertrag und bringst deinen Hund nach Hause."
+    },
+    "countryPlaceholder": "Land auswählen",
+    "countryGroups": {
+      "common": "Am häufigsten",
+      "all": "Alle Länder"
+    },
+    "sections": {
+      "contact": "Über dich",
+      "household": "Dein Haushalt",
+      "experience": "Erfahrung mit Tieren",
+      "home": "Dein Zuhause",
+      "daily": "Der Alltag mit dem Hund",
+      "expectations": "Erwartungen und Vorbereitung",
+      "closing": "Fast geschafft"
+    },
+    "fields": {
+      "name": "Dein Name",
+      "email": "E-Mail",
+      "phone": "Telefonnummer",
+      "street": "Straße",
+      "houseNumber": "Hausnummer",
+      "postalCode": "Postleitzahl",
+      "city": "Ort",
+      "country": "Land",
+      "birthDate": "Geburtsdatum",
+      "employed": "Hast du eine Arbeit?",
+      "employedOther": "Bitte präzisieren",
+      "dogName": "Für welchen Hund interessierst du dich? (Name)",
+      "householdMembers": "Leben noch andere Personen bei dir im Haushalt?",
+      "householdMembersOther": "Bitte präzisieren",
+      "everyoneInHouseholdAgreesWithAdoption": "Sind alle im Haushalt mit der Adoption eines Hundes einverstanden?",
+      "priorDogExperience": "Hast du schon Erfahrung mit Hunden?",
+      "hasShelterDogExperience": "Hast du Erfahrung mit Hunden aus dem Tierschutz?",
+      "ownedPets": "Hast du schon Haustiere?",
+      "ownedPetsOther": "Bitte präzisieren",
+      "positionOnCastration": "Wie stehst du zum Thema Kastration? Falls eines deiner Haustiere noch nicht kastriert ist, würdest du es kastrieren lassen? Bitte erkläre uns, warum du deinen Hund kastrieren lassen würdest bzw. warum nicht.",
+      "homeOwnership": "Wohnst du zur Miete oder im Eigentum?",
+      "homeType": "In welcher Art von Wohnraum lebst du?",
+      "homeTypeOther": "Bitte präzisieren",
+      "fencedGarden": "Falls du einen Garten hast, ist er eingezäunt?",
+      "floor": "In welchem Stockwerk wohnst du? Gibt es einen Aufzug?",
+      "planToMoveOrRenovate": "Planst du in naher Zukunft umzuziehen, oder sind größere Renovierungsarbeiten geplant?",
+      "squareMeters": "Wie viele Quadratmeter hat deine Wohnfläche?",
+      "neighbourhood": "Wie ist die Umgebung?",
+      "closestGrassField": "Wie weit ist es bis zur nächsten Wiese?",
+      "dogHoursAloneDaily": "Wie viele Stunden am Tag ist der Hund maximal allein?",
+      "dailyWalks": "Wie oft und wie lange planst du, mit dem Hund spazieren zu gehen?",
+      "offLimitsAreas": "Gibt es Tabuzonen für den Hund im Haushalt? Wo?",
+      "estimatedCosts": "Mit welchen Kosten rechnest du am Anfang, nach dem Einzug des Hundes?",
+      "plannedDaysOff": "Planst du, dir zu Beginn Urlaub zu nehmen, wenn der Hund ankommt? Wie lange?",
+      "canPickUpDogAtMeetingPoint": "Hast du die Möglichkeit, den Hund mit dem Auto und einer Begleitperson an einem Treffpunkt abzuholen?",
+      "consultedOtherShelters": "Hast du dich bei anderen Tierschutzorganisationen nach einem Hund erkundigt?",
+      "preferences": "Was wünschst du dir von einem Hund? Wie sollte er sein? Wie sollte er aussehen? Hast du Präferenzen?",
+      "whyShelterDog": "Warum hast du dich für einen Hund aus dem Tierschutz entschieden?",
+      "awareOfBehaviourChangeAfterArrival": "Ist dir bewusst, dass Hunde aus dem Ausland ihren Charakter verändern können, wenn sie in ihrem neuen Zuhause ankommen?",
+      "expectedBehaviourAfterArrival": "Mit welchem Verhalten rechnest du nach der Ankunft des Hundes?",
+      "wouldHireDogTrainer": "Planst du bei größeren Herausforderungen, eine:n Hundetrainer:in oder eine Hundeschule hinzuzuziehen?",
+      "hasReasonsToReturnDog": "Gibt es für dich Gründe, einen Hund wieder abzugeben?",
+      "hasReturnedDogBefore": "Hast du schon einmal einen Hund abgeben müssen?",
+      "willKeepDogUntilRehomed": "Falls der Hund nicht zu deiner Lebenssituation passt und eine neue Familie gesucht werden muss: Bist du bereit, den Hund bei dir zu behalten und uns alle möglichen Informationen und Fotos zum Hund zu geben, bis wir eine endgültige Vermittlung abgeschlossen haben? Das kann manchmal bis zu mehreren Monaten dauern.",
+      "hasEmergencyCareOption": "Hast du die Möglichkeit, den Hund bei Krankheit, Urlaub oder in einer unvorhersehbaren Situation unterzubringen?",
+      "holidayCaretaker": "Wer passt auf den Hund auf, wenn du in den Urlaub fährst oder für längere Zeit ins Krankenhaus musst?",
+      "dogStaysWithIfSeparation": "Falls du in einer Partnerschaft oder Wohngemeinschaft lebst, hast du dir schon Gedanken gemacht, bei wem der Hund bleiben würde?",
+      "consentToCheckupAfterAdoption": "Bist du damit einverstanden, dass nach der Adoption des Hundes eine Nachkontrolle durchgeführt wird?",
+      "earliestMoveInDate": "Ab wann kann der Hund bei dir und deiner Familie einziehen?",
+      "otherDogsOfInterest": "Interessierst du dich noch für einen anderen Fellfreund?",
+      "otherQuestions": "Hast du noch Fragen?",
+      "answeredHonestly": "Hast du alle Fragen ehrlich beantwortet?",
+      "consentToContact": "Dürfen wir dich kontaktieren?"
+    },
+    "statements": {
+      "answeredHonestly": "Ja, ich habe alle Fragen ehrlich beantwortet und mir ist bewusst, dass falsche Angaben zur Auflösung des Schutzvertrags führen können.",
+      "consentToContact": "Ja, ihr dürft mich kontaktieren."
+    },
+    "options": {
+      "yes": "Ja",
+      "no": "Nein",
+      "employed": {
+        "yes": "Ja",
+        "no": "Nein",
+        "other": "Etwas anderes"
+      },
+      "householdMembers": {
+        "partner": "Mein Partner / Meine Partnerin",
+        "children": "Kinder",
+        "alone": "Ich wohne allein",
+        "other": "Etwas anderes"
+      },
+      "priorDogExperience": {
+        "hadDogsInPast": "In der Vergangenheit hatte ich schon Hunde",
+        "haveDogsNow": "Ich habe bereits einen Hund bzw. Hunde",
+        "experienceWithoutOwning": "Ich hatte noch keinen Hund, konnte aber schon Erfahrung mit Hunden sammeln",
+        "noExperience": "Ich konnte noch keine Erfahrung mit Hunden sammeln"
+      },
+      "ownedPets": {
+        "dogs": "Hund(e)",
+        "cats": "Katze(n)",
+        "none": "Ich habe keine Haustiere",
+        "other": "Etwas anderes"
+      },
+      "homeOwnership": {
+        "owner": "Eigentum",
+        "tenant": "Miete"
+      },
+      "homeType": {
+        "apartment": "Wohnung",
+        "house": "Haus",
+        "other": "Etwas anderes"
+      },
+      "fencedGarden": {
+        "yes": "Ja, er ist eingezäunt",
+        "no": "Nein, er ist nicht eingezäunt",
+        "noGarden": "Ich habe keinen Garten"
+      }
+    },
+    "consent": "Ich bin damit einverstanden, dass meine Daten zur Bearbeitung meiner Adoptionsanfrage verwendet werden, wie in der <link>Datenschutzerklärung</link> beschrieben.",
+    "submit": "Anfrage senden",
+    "errors": {
+      "required": "Dieses Feld ist erforderlich.",
+      "tooLong": "Dieser Text ist zu lang.",
+      "invalidEmail": "Bitte gib eine gültige E-Mail-Adresse ein.",
+      "invalidPhone": "Bitte gib eine gültige Telefonnummer ein.",
+      "invalidNumber": "Bitte gib eine gültige Zahl ein.",
+      "invalidDate": "Bitte gib ein gültiges Datum ein.",
+      "mustBeAdult": "Du musst mindestens 18 Jahre alt sein, um zu adoptieren.",
+      "exclusiveOption": "Diese Antwort kann nicht mit den anderen kombiniert werden.",
+      "honestyRequired": "Bitte bestätige, dass du alle Fragen ehrlich beantwortet hast.",
+      "contactRequired": "Bitte bestätige, dass wir dich kontaktieren dürfen.",
+      "consentRequired": "Bitte akzeptiere die Datenschutzerklärung, um deine Anfrage zu senden."
+    }
   }
 }
