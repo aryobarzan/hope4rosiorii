@@ -299,5 +299,40 @@
       "contactRequired": "Bitte bestätige, dass wir dich kontaktieren dürfen.",
       "consentRequired": "Bitte akzeptiere die Datenschutzerklärung, um deine Anfrage zu senden."
     }
+  },
+  "DonatePage": {
+    "eyebrow": "jeder Beitrag hilft einer Pfote",
+    "heading": "Hilf einem Hund auf die Reise",
+    "description": "Wir haben kein bezahltes Personal. Spenden zahlen Tierarzt, Futter, Transportboxen und den Sprit für die lange Fahrt aus Rumänien. Und wir zeigen dir immer, wohin das Geld geflossen ist.",
+    "impact": {
+      "heading": "Was deine Spende bewirken kann",
+      "food": "Ein Sack Futter für einen Hund",
+      "vaccination": "Eine Impfung und ein Gesundheitscheck",
+      "crate": "Eine Transportbox für die Reise",
+      "journey": "Die ganze Reise eines Hundes nach Luxemburg"
+    },
+    "bank": {
+      "heading": "Banküberweisung",
+      "intro": "Du kannst auch per Banküberweisung spenden:",
+      "iban": "IBAN",
+      "bic": "BIC",
+      "accountName": "Kontoinhaber",
+      "copy": "{field} kopieren",
+      "copied": "Kopiert"
+    },
+    "picker": {
+      "heading": "Deine Spende",
+      "frequencyLabel": "Wie oft möchtest du spenden?",
+      "once": "Einmalig",
+      "monthly": "Monatlich",
+      "monthlyUnavailable": "Monatliche Spenden sind noch nicht möglich. Bitte wähle vorerst „Einmalig“.",
+      "presetsLabel": "Wähle einen Betrag",
+      "amountLabel": "Oder wähle einen eigenen Betrag (€)",
+      "amountPlaceholder": "z. B. 40",
+      "invalidAmount": "Bitte gib einen Betrag von mindestens {min} ein, z. B. 40.",
+      "donate": "{amount} spenden",
+      "donateNoAmount": "Spenden",
+      "paypalNote": "Du schließt deine Spende sicher auf PayPal ab."
+    }
   }
 }

@@ -299,5 +299,40 @@
       "contactRequired": "Veuillez confirmer que nous pouvons vous contacter.",
       "consentRequired": "Veuillez accepter la politique de confidentialité pour envoyer votre demande."
     }
+  },
+  "DonatePage": {
+    "eyebrow": "chaque geste aide une patte",
+    "heading": "Aidez un chien à faire le voyage",
+    "description": "Nous n'avons aucun salarié. Les dons financent les soins vétérinaires, la nourriture, les caisses de transport et le carburant du long trajet depuis la Roumanie. Et nous vous montrerons toujours où est allé l'argent.",
+    "impact": {
+      "heading": "Ce que peut faire votre don",
+      "food": "Un sac de nourriture pour un chien",
+      "vaccination": "Un vaccin et un bilan de santé",
+      "crate": "Une caisse de transport pour le voyage",
+      "journey": "Le voyage complet d’un chien jusqu’au Luxembourg"
+    },
+    "bank": {
+      "heading": "Virement bancaire",
+      "intro": "Vous pouvez aussi donner par virement bancaire :",
+      "iban": "IBAN",
+      "bic": "BIC",
+      "accountName": "Titulaire du compte",
+      "copy": "Copier {field}",
+      "copied": "Copié"
+    },
+    "picker": {
+      "heading": "Votre don",
+      "frequencyLabel": "Fréquence du don",
+      "once": "Une fois",
+      "monthly": "Chaque mois",
+      "monthlyUnavailable": "Les dons mensuels ne sont pas encore disponibles. Veuillez choisir « Une fois » pour le moment.",
+      "presetsLabel": "Choisissez un montant",
+      "amountLabel": "Ou choisissez votre propre montant (€)",
+      "amountPlaceholder": "p. ex. 40",
+      "invalidAmount": "Veuillez saisir un montant d'au moins {min}, p. ex. 40.",
+      "donate": "Faire un don de {amount}",
+      "donateNoAmount": "Faire un don",
+      "paypalNote": "Vous finaliserez votre don en toute sécurité sur PayPal."
+    }
   }
 }

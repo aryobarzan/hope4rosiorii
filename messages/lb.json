@@ -299,5 +299,40 @@
       "contactRequired": "W.e.g. bestätegt, dass mir Kontakt mat dir ophuelen dierfen.",
       "consentRequired": "W.e.g. akzeptéier d'Dateschutzerklärung, fir deng Ufro ze schécken."
     }
+  },
+  "DonatePage": {
+    "eyebrow": "all Bëssen hëlleft enger Patt",
+    "heading": "Hëllef engem Hond op d'Rees",
+    "description": "Mir hunn kee bezuelte Personal. Spenden bezuele Veterinär, Iessen, Transportboxen an de Sprit fir déi laang Fuert vu Rumänien. A mir weisen dir ëmmer, wou d'Geld higaangen ass.",
+    "impact": {
+      "heading": "Dat kann deng Spend bewierken",
+      "food": "E Säck Iessen fir een Hond",
+      "vaccination": "Eng Impfung an e Gesondheetscheck",
+      "crate": "Eng Transportbox fir d’Rees",
+      "journey": "Déi ganz Rees vun engem Hond op Lëtzebuerg"
+    },
+    "bank": {
+      "heading": "Iwwerweisung",
+      "intro": "Du kanns och per Iwwerweisung spenden:",
+      "iban": "IBAN",
+      "bic": "BIC",
+      "accountName": "Numm vum Kont",
+      "copy": "{field} kopéieren",
+      "copied": "Kopéiert"
+    },
+    "picker": {
+      "heading": "Deng Spend",
+      "frequencyLabel": "Wéi dacks wëlls du spenden?",
+      "once": "Eemol",
+      "monthly": "All Mount",
+      "monthlyUnavailable": "Monatlech Spenden sinn nach net méiglech. Wiel fir de Moment w.e.g. eemol.",
+      "presetsLabel": "Wiel eng Zomm",
+      "amountLabel": "Oder wiel deng eege Zomm (€)",
+      "amountPlaceholder": "z. B. 40",
+      "invalidAmount": "Gëff w.e.g. eng Zomm vun op d'mannst {min} an, z. B. 40.",
+      "donate": "{amount} spenden",
+      "donateNoAmount": "Spenden",
+      "paypalNote": "Du schléisses deng Spend sécher op PayPal of."
+    }
   }
 }

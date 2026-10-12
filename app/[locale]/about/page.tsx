@@ -4,7 +4,7 @@ import { SiFacebook, SiInstagram, SiTiktok } from "react-icons/si";
 const volunteers = [
   {
     id: 1,
-    name: "[NAME]",
+    name: "VICKY CONTATO",
     position: "[position]",
     caption: "[caption]",
   },

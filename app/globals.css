@@ -150,6 +150,18 @@ body {
   flex-direction: column;
 }
 
+.alternate-box {
+  padding: 32px;
+  background-color: var(--color-pale);
+  /* inherited by p inside it */
+  color: var(--color-ink);
+  min-width: min(400px, 100%);
+  max-width: 800px;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
 .input-field {
   padding: 0.75rem 1rem;
   margin: 0.25rem 0;

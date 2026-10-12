@@ -297,5 +297,40 @@
       "contactRequired": "Please confirm that we may contact you.",
       "consentRequired": "Please accept the privacy policy to send your request."
     }
+  },
+  "DonatePage": {
+    "eyebrow": "every bit helps a paw",
+    "heading": "Help a dog make the trip",
+    "description": "We have no paid staff. Donations pay for vet care, food, crates and the fuel for the long drive from Romania. And we will always show you where the money went.",
+    "impact": {
+      "heading": "What your gift can do",
+      "food": "A bag of food for one dog",
+      "vaccination": "A vaccination and health check",
+      "crate": "A transport crate for the journey",
+      "journey": "A dog’s full journey to Luxembourg"
+    },
+    "bank": {
+      "heading": "Bank transfer",
+      "intro": "You can also give by bank transfer:",
+      "iban": "IBAN",
+      "bic": "BIC",
+      "accountName": "Account name",
+      "copy": "Copy {field}",
+      "copied": "Copied"
+    },
+    "picker": {
+      "heading": "Your donation",
+      "frequencyLabel": "Donation frequency",
+      "once": "One time",
+      "monthly": "Monthly",
+      "monthlyUnavailable": "Monthly donations aren't available yet. Please choose one time for now.",
+      "presetsLabel": "Choose an amount",
+      "amountLabel": "Or choose your own amount (€)",
+      "amountPlaceholder": "e.g. 40",
+      "invalidAmount": "Please enter an amount of at least {min}, e.g. 40.",
+      "donate": "Donate {amount}",
+      "donateNoAmount": "Donate",
+      "paypalNote": "You’ll complete your donation securely on PayPal."
+    }
   }
 }
