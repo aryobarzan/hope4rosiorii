@@ -344,7 +344,14 @@
     "description": "Every dog here was rescued in Romania, checked by a vet and looked after by a volunteer. Found someone who makes you smile? Tell us.",
     "card": {
       "adoptMe": "Adopt me!",
-      "ask": "Ask about {name}"
+      "adopted": "Adopted!",
+      "ask": "Ask about {name}",
+      "adopt": "Adopt {name}"
+    },
+    "help": {
+      "title": "Not sure which dog fits?",
+      "body": "Tell us about your home and routine and our volunteers will suggest a dog.",
+      "cta": "Start an adoption request"
     }
   }
 }

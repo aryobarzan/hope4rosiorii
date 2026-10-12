@@ -306,7 +306,14 @@
     "description": "All Hond hei gouf a Rumänien gerett, vum Veterinär gekuckt a vun engem Fräiwëllegen betreit. Hues du een fonnt, deen dech laache léisst? Sot eis et.",
     "card": {
       "adoptMe": "Adoptéier mech!",
-      "ask": "Frot no {name}"
+      "adopted": "Adoptéiert!",
+      "ask": "Frot no {name}",
+      "adopt": "Adoptéier {name}"
+    },
+    "help": {
+      "title": "Net sécher, wéi ee Hond zu dir passt?",
+      "body": "Erzielt eis vun denger Wunneng an denger Routine, a eis Fräiwëlleger proposéieren dir een Hond.",
+      "cta": "Adoptiounsufro starten"
     }
   },
   "DonatePage": {

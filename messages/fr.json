@@ -306,7 +306,14 @@
     "description": "Tous les chiens présentés ici ont été sauvés en Roumanie, examinés par un vétérinaire et pris en charge par un bénévole. Vous avez trouvé quelqu’un qui vous fait sourire ? Dites-le-nous.",
     "card": {
       "adoptMe": "Adopte-moi !",
-      "ask": "Se renseigner sur {name}"
+      "adopted": "Adopté !",
+      "ask": "Se renseigner sur {name}",
+      "adopt": "Adopter {name}"
+    },
+    "help": {
+      "title": "Vous ne savez pas quel chien vous convient ?",
+      "body": "Parlez-nous de votre logement et de votre quotidien, et nos bénévoles vous proposeront un chien.",
+      "cta": "Démarrer une demande d’adoption"
     }
   },
   "DonatePage": {

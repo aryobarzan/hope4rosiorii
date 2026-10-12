@@ -306,7 +306,14 @@
     "description": "Alle Hunde hier wurden in Rumänien gerettet, vom Tierarzt untersucht und von Freiwilligen betreut. Hast du jemanden gefunden, der dich zum Lächeln bringt? Sag uns Bescheid.",
     "card": {
       "adoptMe": "Adoptiere mich!",
-      "ask": "Frag nach {name}"
+      "adopted": "Adoptiert!",
+      "ask": "Frag nach {name}",
+      "adopt": "Adoptiere {name}"
+    },
+    "help": {
+      "title": "Unsicher, welcher Hund zu dir passt?",
+      "body": "Erzähl uns von deinem Zuhause und deinem Alltag, und unsere Freiwilligen schlagen dir einen Hund vor.",
+      "cta": "Adoptionsanfrage starten"
     }
   },
   "DonatePage": {

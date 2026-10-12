@@ -70,13 +70,12 @@ body {
     color: rgb(from var(--color-button) r g b / 0.6);
   }
 
-  .filled-button {
-    background-color: var(--color-button);
-    color: white;
+  /* Layout shared by both pill buttons, so they cannot drift apart */
+  .filled-button,
+  .outlined-button {
     padding: 0.75rem 1.5rem;
     border-radius: 9999px;
     font-weight: 500;
-    border: none;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -85,18 +84,40 @@ body {
     user-select: none;
   }
 
+  .filled-button:focus-visible,
+  .outlined-button:focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 2px;
+  }
+
+  /* --button-bg is the only thing a colour variant has to set. The fallback
+     keeps the default pink, so the order of the rules does not matter. */
+  .filled-button {
+    background-color: var(--button-bg, var(--color-button));
+    color: white;
+    border: none;
+  }
+
   /* Solid darker shades (not transparency) so white text keeps its contrast */
   .filled-button:hover {
-    background-color: color-mix(in srgb, var(--color-button), black 15%);
+    background-color: color-mix(
+      in srgb,
+      var(--button-bg, var(--color-button)),
+      black 15%
+    );
   }
 
   .filled-button:active {
-    background-color: color-mix(in srgb, var(--color-button), black 30%);
+    background-color: color-mix(
+      in srgb,
+      var(--button-bg, var(--color-button)),
+      black 30%
+    );
   }
 
-  .filled-button:focus-visible {
-    outline: 2px solid var(--color-ink);
-    outline-offset: 2px;
+  /* Colour variant: use together with .filled-button */
+  .filled-button-ink {
+    --button-bg: var(--color-ink);
   }
 
   /* Current page: ink fill plus a ring, so it is not shown by colour alone */
@@ -118,6 +139,22 @@ body {
   .filled-button:disabled {
     opacity: 0.5;
     cursor: not-allowed;
+  }
+
+  /* Used on links, so there is no :disabled state */
+  .outlined-button {
+    color: var(--color-button);
+    border: 1.5px solid var(--color-button);
+  }
+
+  .outlined-button:hover {
+    background-color: var(--color-button);
+    color: white;
+  }
+
+  .outlined-button:active {
+    background-color: color-mix(in srgb, var(--color-button), black 30%);
+    color: white;
   }
 
   .form-box {
@@ -226,6 +263,10 @@ body {
     align-items: center;
     padding: 2rem;
     gap: 1rem;
+  }
+
+  .dog-card[data-adopted="true"] {
+    background-color: var(--color-pale);
   }
 
   .dog-grid {
