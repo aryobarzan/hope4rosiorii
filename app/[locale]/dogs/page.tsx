@@ -81,6 +81,5 @@ export default async function Dogs() {
   );
 }
 
-// TODO: adoption form link
 // TODO: additional dog info / separate dog specific page
 // TODO: dog selected preview in contact / adopt pages
