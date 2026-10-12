@@ -1,59 +1,15 @@
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { PawPrint, CircleQuestionMark } from "lucide-react";
 import { Link } from "@/i18n/navigation";
-
-const dogs = [
-  {
-    id: 1,
-    name: "Bali",
-    slug: "bali",
-    age: "ca. 3 months",
-    size: "Medium-sized",
-    type: "Puppy",
-    personality: "Friendly",
-    description: "Hyper, but still gentle.",
-    adopted: false,
-  },
-  {
-    id: 2,
-    name: "Luna",
-    slug: "luna",
-    age: "ca. 4 years",
-    size: "Small-sized",
-    type: "Puppy",
-    personality: "Calm",
-    adopted: false,
-  },
-  {
-    id: 3,
-    name: "Mara",
-    slug: "mara",
-    age: "ca. 5 years",
-    size: "Large-sized",
-    type: "Husky",
-    personality: "Gentle",
-    description: "Quiet and loyal.",
-    adopted: false,
-  },
-  {
-    id: 4,
-    name: "Pichi",
-    slug: "pichi",
-    age: "ca. 8 months",
-    size: "Small-sized",
-    type: "Puppy",
-    personality: "Curious",
-    description: "Loves long hikes.",
-    adopted: true,
-  },
-];
+import { getDogs } from "@/lib/dogs";
 
 const adoptBadge = "text-link font-bold font-heading text-xl";
 const adoptedBadge =
   "bg-white rounded-full text-link px-2 font-bold font-heading text-xl";
 
-export default function Dogs() {
-  const t = useTranslations("DogsPage");
+export default async function Dogs() {
+  const t = await getTranslations("DogsPage");
+  const dogs = await getDogs();
   // Adoptable dogs first, adopted dogs last
   const sortedDogs = dogs.toSorted(
     (a, b) => (a.adopted ? 1 : 0) - (b.adopted ? 1 : 0),

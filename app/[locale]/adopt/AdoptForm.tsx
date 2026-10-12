@@ -49,8 +49,12 @@ const isRequired = (field: Field) =>
 
 export default function AdoptForm({
   countries,
+  dogName,
 }: {
   countries: ReturnType<typeof getCountryOptions>;
+  // Set when the visitor came from a dog's card. The page looked the slug up,
+  // so this is a real dog's name, not text taken from the URL.
+  dogName?: string;
 }) {
   const t = useTranslations("AdoptPage");
 
@@ -78,7 +82,7 @@ export default function AdoptForm({
       city: "",
       birthDate: "",
       employedOther: "",
-      dogName: "",
+      dogName: dogName ?? "",
       householdMembers: [],
       householdMembersOther: "",
       priorDogExperience: [],

@@ -28,7 +28,9 @@ const linkClass =
 const labelClass = "form-label flex items-center gap-2";
 const iconClass = "size-5 shrink-0 text-muted";
 
-export default function ContactForm() {
+// dogName is set when the visitor came from a dog's card. The page has already
+// looked the slug up, so it is a real dog and not text taken from the URL.
+export default function ContactForm({ dogName }: { dogName?: string }) {
   const t = useTranslations("ContactPage");
 
   const {
@@ -42,7 +44,8 @@ export default function ContactForm() {
     defaultValues: {
       name: "",
       email: "",
-      message: "",
+      reason: dogName ? "dogs" : undefined,
+      message: dogName ? t("regarding", { name: dogName }) : "",
       consent: false,
       website: "",
     },

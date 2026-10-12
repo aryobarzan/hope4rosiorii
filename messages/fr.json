@@ -142,6 +142,7 @@
       "other": "Autre"
     },
     "message": "Votre message",
+    "regarding": "Concernant {name} : ",
     "submit": "Envoyer",
     "consent": "J'accepte que mes données soient utilisées pour répondre à mon message, comme décrit dans la <link>politique de confidentialité</link>.",
     "errors": {

@@ -142,6 +142,7 @@
       "other": "Sonstiges"
     },
     "message": "Deine Nachricht",
+    "regarding": "Betrifft {name}: ",
     "submit": "Senden",
     "consent": "Ich bin damit einverstanden, dass meine Angaben zur Beantwortung meiner Nachricht verwendet werden, wie in der <link>Datenschutzerklärung</link> beschrieben.",
     "errors": {

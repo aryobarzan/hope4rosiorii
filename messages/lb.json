@@ -142,6 +142,7 @@
       "other": "Soss eppes"
     },
     "message": "Är Noriicht",
+    "regarding": "Betrëfft {name}: ",
     "submit": "Schécken",
     "consent": "Ech sinn averstan, dass meng Donnéeë benotzt ginn, fir op meng Noriicht ze äntwerten, wéi an der <link>Dateschutzerklärung</link> beschriwwen.",
     "errors": {

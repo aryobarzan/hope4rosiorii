@@ -140,6 +140,7 @@
       "other": "Something else"
     },
     "message": "Your message",
+    "regarding": "Regarding {name}: ",
     "submit": "Send",
     "consent": "I agree that my details are used to answer my message, as described in the <link>privacy policy</link>.",
     "errors": {
