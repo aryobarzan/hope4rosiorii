@@ -306,17 +306,24 @@
     "eyebrow": "ce sont tous de bons chiens",
     "heading": "Adopte-moi !",
     "description": "Tous les chiens présentés ici ont été sauvés en Roumanie, examinés par un vétérinaire et pris en charge par un bénévole. Vous avez trouvé quelqu’un qui vous fait sourire ? Dites-le-nous.",
-    "card": {
-      "adoptMe": "Adopte-moi !",
-      "adopted": "Adopté !",
-      "ask": "Se renseigner sur {name}",
-      "adopt": "Adopter {name}"
-    },
-    "help": {
-      "title": "Vous ne savez pas quel chien vous convient ?",
-      "body": "Parlez-nous de votre logement et de votre quotidien, et nos bénévoles vous proposeront un chien.",
-      "cta": "Démarrer une demande d’adoption"
-    }
+    "card": {
+      "adoptMe": "Adopte-moi !",
+      "adopted": "Adopté !",
+      "ask": "Se renseigner sur {name}",
+      "adopt": "Adopter {name}"
+    },
+    "help": {
+      "title": "Vous ne savez pas quel chien vous convient ?",
+      "body": "Parlez-nous de votre logement et de votre quotidien, et nos bénévoles vous proposeront un chien.",
+      "cta": "Démarrer une demande d’adoption"
+    },
+    "filter": {
+      "label": "Afficher",
+      "all": "Tous",
+      "dog": "Chiens",
+      "cat": "Chats"
+    },
+    "empty": "Aucun animal à afficher pour le moment."
   },
   "DonatePage": {
     "eyebrow": "chaque geste aide une patte",
@@ -356,6 +363,54 @@
       "donate": "Faire un don de {amount}",
       "donateNoAmount": "Faire un don",
       "paypalNote": "Vous finaliserez votre don en toute sécurité sur PayPal."
+    }
+  },
+  "Age": {
+    "months": "env. {count} mois",
+    "years": "env. {count, plural, one {# an} other {# ans}}"
+  },
+  "Animal": {
+    "species": {
+      "dog": "Chien",
+      "cat": "Chat"
+    },
+    "gender": {
+      "female": "Femelle",
+      "male": "Mâle"
+    },
+    "size": {
+      "small": "petite taille",
+      "medium": "taille moyenne",
+      "large": "grande taille"
+    },
+    "sizeRange": "{from} à {to}",
+    "traits": {
+      "playful": "Joueur",
+      "calm": "Calme",
+      "gentle": "Doux",
+      "curious": "Curieux",
+      "friendly": "Amical",
+      "affectionate": "Câlin",
+      "shy": "Timide",
+      "energetic": "Énergique"
+    },
+    "health": {
+      "vaccinated": "Vacciné",
+      "microchipped": "Pucé",
+      "dewormed": "Vermifugé et traité contre les puces",
+      "tested": "Testé",
+      "testedCat": "Testé (FIV/FeLV)",
+      "euPassport": "Passeport européen"
+    },
+    "goodWith": {
+      "dogs": "chiens",
+      "cats": "chats",
+      "children": "enfants"
+    },
+    "location": {
+      "shelter": "Au refuge de Rosiorii",
+      "foster": "En famille d’accueil en Roumanie",
+      "luxembourg": "Déjà au Luxembourg"
     }
   }
 }

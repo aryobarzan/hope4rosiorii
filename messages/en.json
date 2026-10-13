@@ -88,7 +88,9 @@
       },
       {
         "title": "Your rights",
-        "paragraphs": ["Under the GDPR you have the right to:"],
+        "paragraphs": [
+          "Under the GDPR you have the right to:"
+        ],
         "items": [
           "access the personal data we hold about you;",
           "have inaccurate data corrected;",
@@ -354,6 +356,61 @@
       "title": "Not sure which dog fits?",
       "body": "Tell us about your home and routine and our volunteers will suggest a dog.",
       "cta": "Start an adoption request"
+    },
+    "filter": {
+      "label": "Show",
+      "all": "All",
+      "dog": "Dogs",
+      "cat": "Cats"
+    },
+    "empty": "No animals to show here yet."
+  },
+  "Age": {
+    "months": "ca. {count, plural, one {# month} other {# months}}",
+    "years": "ca. {count, plural, one {# year} other {# years}}"
+  },
+  "Animal": {
+    "species": {
+      "dog": "Dog",
+      "cat": "Cat"
+    },
+    "gender": {
+      "female": "Female",
+      "male": "Male"
+    },
+    "size": {
+      "small": "Small",
+      "medium": "Medium-sized",
+      "large": "Large"
+    },
+    "sizeRange": "{from} to {to}",
+    "traits": {
+      "playful": "Playful",
+      "calm": "Calm",
+      "gentle": "Gentle",
+      "curious": "Curious",
+      "friendly": "Friendly",
+      "affectionate": "Affectionate",
+      "shy": "Shy",
+      "energetic": "Energetic"
+    },
+    "health": {
+      "vaccinated": "Vaccinated",
+      "microchipped": "Microchipped",
+      "dewormed": "Dewormed and flea-treated",
+      "tested": "Tested",
+      "testedCat": "Tested (FIV/FeLV)",
+      "euPassport": "EU pet passport"
+    },
+    "goodWith": {
+      "dogs": "dogs",
+      "cats": "cats",
+      "children": "children"
+    },
+    "location": {
+      "shelter": "At the shelter in Rosiorii",
+      "foster": "In a foster home in Romania",
+      "luxembourg": "Already in Luxembourg"
     }
   }
 }

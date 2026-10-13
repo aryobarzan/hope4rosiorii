@@ -1,6 +1,7 @@
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
+import { getSiteSettings } from "@/lib/site-settings";
 
 const linkClass =
   "rounded underline underline-offset-4 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white font-bold";
@@ -13,9 +14,10 @@ const links = [
   { href: "/donate", key: "donate", ns: "Nav" },
 ] as const;
 
-export default function Footer() {
-  const t = useTranslations("Footer");
-  const tNav = useTranslations("Nav");
+export default async function Footer() {
+  const t = await getTranslations("Footer");
+  const tNav = await getTranslations("Nav");
+  const { contactEmail } = await getSiteSettings();
 
   return (
     <footer className="w-full bg-plum px-6 py-10 text-blush">
@@ -46,8 +48,8 @@ export default function Footer() {
         </nav>
         <div className="flex flex-col gap-1">
           <h2 className="font-bold text-white">{t("sayHello")}</h2>
-          <a href="mailto:hope4rosiorii@gmail.com" className={linkClass}>
-            hope4rosiorii@gmail.com
+          <a href={`mailto:${contactEmail}`} className={linkClass}>
+            {contactEmail}
           </a>
           <Link href="/privacy-policy" className={linkClass}>
             {t("privacy")}

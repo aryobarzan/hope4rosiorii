@@ -1,49 +1,34 @@
-import { useFormatter, useTranslations } from "next-intl";
+import Image from "next/image";
+import { getFormatter, getLocale, getTranslations } from "next-intl/server";
 import { Landmark, PawPrint } from "lucide-react";
 import CopyButton from "./CopyButton";
 import DonationPicker from "./DonationPicker";
+import { getSiteSettings } from "@/lib/site-settings";
+import { getUpdates } from "@/lib/updates";
+import { hotspotPosition, sanityImageLoader } from "@/lib/sanity/image";
 
 const stepClass =
   "flex h-8 min-w-16 shrink-0 px-2 items-center justify-center rounded-full bg-white font-heading text-xl text-ink";
 
-const updates = [
-  {
-    id: 1,
-    date: "2026-10-01",
-    amount: 50,
-    title: "Surgery for Maria",
-    caption:
-      "Maria received urgent surgery for her front right paw and is now resting well.",
-  },
-  {
-    id: 2,
-    date: "2026-09-24",
-    amount: 24.32,
-    title: "Dog food",
-    caption: "8 packs of wet food for dogs.",
-  },
-];
-
-// Amounts are shown as examples of what a gift covers; the wording lives in
-// the messages under DonatePage.impact. The amounts are placeholders until
-// the team confirms real figures, hence the square brackets in the badge.
-// Remove the brackets in the markup below once they are confirmed.
-const impact = [
-  { amount: 5, key: "food" },
-  { amount: 50, key: "vaccination" },
-  { amount: 50, key: "crate" },
-  { amount: 100, key: "journey" },
-] as const;
-
-const bank = {
-  iban: "LU96 0030 7235 0218 1000",
-  bic: "BGLLLULL",
-  accountName: "[account name]",
-} as const;
-
-export default function Donate() {
-  const t = useTranslations("DonatePage");
-  const format = useFormatter();
+export default async function Donate() {
+  const t = await getTranslations("DonatePage");
+  const format = await getFormatter();
+  const locale = await getLocale();
+  const [settings, updates] = await Promise.all([
+    getSiteSettings(),
+    getUpdates(locale),
+  ]);
+  const { bank, impactAmounts } = settings;
+  // Amounts are shown as examples of what a gift covers; the wording lives in
+  // the messages under DonatePage.impact and the amounts in Site settings. They
+  // are placeholders until the team confirms real figures, hence the square
+  // brackets in the badge. Remove the brackets in the markup below once confirmed.
+  const impact = [
+    { amount: impactAmounts.food, key: "food" },
+    { amount: impactAmounts.vaccination, key: "vaccination" },
+    { amount: impactAmounts.crate, key: "crate" },
+    { amount: impactAmounts.journey, key: "journey" },
+  ] as const;
 
   return (
     <div className="flex flex-col w-full">
@@ -128,22 +113,38 @@ export default function Donate() {
               the cards (the container's gap-1 is meant for the heading). */}
           <ul className="flex flex-col gap-4">
             {updates.map((update) => (
-              <li className="update-row" key={update.id}>
-                <div className="picture-placeholder blob-frame h-24 w-24 shrink-0" />
+              <li className="update-row" key={update._id}>
+                <div className="relative picture-placeholder blob-frame h-24 w-24 shrink-0">
+                  {update.image?.url && (
+                    <Image
+                      loader={sanityImageLoader}
+                      src={update.image.url}
+                      alt={update.image.alt ?? ""}
+                      fill
+                      sizes="96px"
+                      className="object-cover"
+                      style={{
+                        objectPosition: hotspotPosition(update.image.hotspot),
+                      }}
+                    />
+                  )}
+                </div>
                 <div className="flex min-w-0 flex-col gap-1">
                   <div className="flex flex-wrap items-center gap-2">
-                    <time dateTime={update.date}>
-                      {format.dateTime(new Date(update.date), {
-                        dateStyle: "long",
-                        timeZone: "UTC",
-                      })}
-                    </time>
+                    {update.date && (
+                      <time dateTime={update.date}>
+                        {format.dateTime(new Date(update.date), {
+                          dateStyle: "long",
+                          timeZone: "UTC",
+                        })}
+                      </time>
+                    )}
                     <span className="shrink-0 rounded-full bg-pale px-3 py-0.5 font-bold text-ink">
                       {t("updates.spent", {
-                        amount: format.number(update.amount, {
+                        amount: format.number(update.amountSpent ?? 0, {
                           style: "currency",
                           currency: "EUR",
-                          minimumFractionDigits: Number.isInteger(update.amount)
+                          minimumFractionDigits: Number.isInteger(update.amountSpent)
                             ? 0
                             : 2,
                         }),

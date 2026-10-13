@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import { getLocale, getTranslations } from "next-intl/server";
 import { getCountryOptions } from "@/lib/countries";
-import { getDog } from "@/lib/dogs";
+import { getAnimal } from "@/lib/animals";
 import AdoptForm from "./AdoptForm";
 const stepClass =
   "flex size-8 shrink-0 items-center justify-center rounded-full bg-white font-heading text-ink text-xl";
@@ -17,14 +17,16 @@ async function PrefilledAdoptForm({
   countries: ReturnType<typeof getCountryOptions>;
 }) {
   const { dog: slug } = await searchParams;
-  const dog = typeof slug === "string" ? await getDog(slug) : undefined;
+  const locale = await getLocale();
+  const dog =
+    typeof slug === "string" ? await getAnimal(slug, locale) : undefined;
   // key: useForm only reads defaultValues on mount, so a different dog has to
   // remount the form or the previous dog's name would stay in the field.
   return (
     <AdoptForm
       key={dog?.slug ?? "no-dog"}
       countries={countries}
-      dogName={dog?.name}
+      dogName={dog?.name ?? undefined}
     />
   );
 }

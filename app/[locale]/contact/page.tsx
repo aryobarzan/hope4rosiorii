@@ -1,6 +1,7 @@
 import { Suspense } from "react";
-import { getTranslations } from "next-intl/server";
-import { getDog } from "@/lib/dogs";
+import { getLocale, getTranslations } from "next-intl/server";
+import { getAnimal } from "@/lib/animals";
+import { getSiteSettings } from "@/lib/site-settings";
 import ContactForm from "./ContactForm";
 const linkClass =
   "rounded underline underline-offset-4 hover:bg-white/15 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white";
@@ -14,10 +15,12 @@ async function PrefilledContactForm({
   searchParams: Promise<{ dog?: string | string[] }>;
 }) {
   const { dog: slug } = await searchParams;
-  const dog = typeof slug === "string" ? await getDog(slug) : undefined;
+  const locale = await getLocale();
+  const dog =
+    typeof slug === "string" ? await getAnimal(slug, locale) : undefined;
   // key: useForm only reads defaultValues on mount, so a different dog has to
   // remount the form or the previous dog's name would stay in the message.
-  return <ContactForm key={dog?.slug ?? "no-dog"} dogName={dog?.name} />;
+  return <ContactForm key={dog?.slug ?? "no-dog"} dogName={dog?.name ?? undefined} />;
 }
 
 export default async function Contact({
@@ -26,6 +29,7 @@ export default async function Contact({
   searchParams: Promise<{ dog?: string | string[] }>;
 }) {
   const t = await getTranslations("ContactPage");
+  const settings = await getSiteSettings();
 
   return (
     <div className="page-container flex flex-col gap-1 pb-8 pt-8">
@@ -42,15 +46,15 @@ export default async function Contact({
           <p className="font-bold">{t("email")}</p>
           {/* self-start so it shrinks to its content's width */}
           <a
-            href="mailto:hope4rosiorii@gmail.com"
+            href={`mailto:${settings.contactEmail}`}
             className={`${linkClass} self-start`}
           >
-            hope4rosiorii@gmail.com
+            {settings.contactEmail}
           </a>
           <p className="font-bold mt-4">{t("followUs")}</p>
           <p>
             <a
-              href="https://www.instagram.com/hope4rosiorii/"
+              href={settings.instagramUrl}
               target="_blank"
               className={linkClass}
             >
@@ -58,7 +62,7 @@ export default async function Contact({
             </a>{" "}
             ·{" "}
             <a
-              href="https://www.facebook.com/profile.php?id=61567775880000"
+              href={settings.facebookUrl}
               target="_blank"
               className={linkClass}
             >
@@ -66,7 +70,7 @@ export default async function Contact({
             </a>{" "}
             ·{" "}
             <a
-              href="https://www.tiktok.com/@hope4rosiorii"
+              href={settings.tiktokUrl}
               target="_blank"
               className={linkClass}
             >

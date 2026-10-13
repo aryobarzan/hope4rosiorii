@@ -316,7 +316,14 @@
       "title": "Net sécher, wéi ee Hond zu dir passt?",
       "body": "Erzielt eis vun denger Wunneng an denger Routine, a eis Fräiwëlleger proposéieren dir een Hond.",
       "cta": "Adoptiounsufro starten"
-    }
+    },
+    "filter": {
+      "label": "Weisen",
+      "all": "All",
+      "dog": "Hënn",
+      "cat": "Kazen"
+    },
+    "empty": "Hei sinn nach keng Déieren."
   },
   "DonatePage": {
     "eyebrow": "all Bëssen hëlleft enger Patt",
@@ -356,6 +363,54 @@
       "donate": "{amount} spenden",
       "donateNoAmount": "Spenden",
       "paypalNote": "Du schléisses deng Spend sécher op PayPal of."
+    }
+  },
+  "Age": {
+    "months": "ca. {count, plural, one {# Mount} other {# Méint}}",
+    "years": "ca. {count} Joer"
+  },
+  "Animal": {
+    "species": {
+      "dog": "Hond",
+      "cat": "Kaz"
+    },
+    "gender": {
+      "female": "Weiblech",
+      "male": "Männlech"
+    },
+    "size": {
+      "small": "Kleng",
+      "medium": "Mëttelgrouss",
+      "large": "Grouss"
+    },
+    "sizeRange": "{from} bis {to}",
+    "traits": {
+      "playful": "Verspillt",
+      "calm": "Roueg",
+      "gentle": "Sanft",
+      "curious": "Virwëtzeg",
+      "friendly": "Frëndlech",
+      "affectionate": "Schmuserech",
+      "shy": "Schei",
+      "energetic": "Energesch"
+    },
+    "health": {
+      "vaccinated": "Geimpft",
+      "microchipped": "Gechipt",
+      "dewormed": "Entwuermt an entflout",
+      "tested": "Getest",
+      "testedCat": "Getest FIV/FELV",
+      "euPassport": "EU Pass"
+    },
+    "goodWith": {
+      "dogs": "Hënn",
+      "cats": "Kazen",
+      "children": "Kanner"
+    },
+    "location": {
+      "shelter": "Am Shelter zu Rosiorii",
+      "foster": "Op enger Fleegeplaz a Rumänien",
+      "luxembourg": "Schonn zu Lëtzebuerg"
     }
   }
 }

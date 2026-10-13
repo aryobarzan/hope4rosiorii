@@ -306,17 +306,24 @@
     "eyebrow": "alles gute Hunde",
     "heading": "Adoptiere mich!",
     "description": "Alle Hunde hier wurden in Rumänien gerettet, vom Tierarzt untersucht und von Freiwilligen betreut. Hast du jemanden gefunden, der dich zum Lächeln bringt? Sag uns Bescheid.",
-    "card": {
-      "adoptMe": "Adoptiere mich!",
-      "adopted": "Adoptiert!",
-      "ask": "Frag nach {name}",
-      "adopt": "Adoptiere {name}"
-    },
-    "help": {
-      "title": "Unsicher, welcher Hund zu dir passt?",
-      "body": "Erzähl uns von deinem Zuhause und deinem Alltag, und unsere Freiwilligen schlagen dir einen Hund vor.",
-      "cta": "Adoptionsanfrage starten"
-    }
+    "card": {
+      "adoptMe": "Adoptiere mich!",
+      "adopted": "Adoptiert!",
+      "ask": "Frag nach {name}",
+      "adopt": "Adoptiere {name}"
+    },
+    "help": {
+      "title": "Unsicher, welcher Hund zu dir passt?",
+      "body": "Erzähl uns von deinem Zuhause und deinem Alltag, und unsere Freiwilligen schlagen dir einen Hund vor.",
+      "cta": "Adoptionsanfrage starten"
+    },
+    "filter": {
+      "label": "Anzeigen",
+      "all": "Alle",
+      "dog": "Hunde",
+      "cat": "Katzen"
+    },
+    "empty": "Hier gibt es noch keine Tiere."
   },
   "DonatePage": {
     "eyebrow": "jeder Beitrag hilft einer Pfote",
@@ -356,6 +363,54 @@
       "donate": "{amount} spenden",
       "donateNoAmount": "Spenden",
       "paypalNote": "Du schließt deine Spende sicher auf PayPal ab."
+    }
+  },
+  "Age": {
+    "months": "ca. {count, plural, one {# Monat} other {# Monate}}",
+    "years": "ca. {count, plural, one {# Jahr} other {# Jahre}}"
+  },
+  "Animal": {
+    "species": {
+      "dog": "Hund",
+      "cat": "Katze"
+    },
+    "gender": {
+      "female": "Weiblich",
+      "male": "Männlich"
+    },
+    "size": {
+      "small": "klein",
+      "medium": "mittelgroß",
+      "large": "groß"
+    },
+    "sizeRange": "{from} bis {to}",
+    "traits": {
+      "playful": "Verspielt",
+      "calm": "Ruhig",
+      "gentle": "Sanft",
+      "curious": "Neugierig",
+      "friendly": "Freundlich",
+      "affectionate": "Verschmust",
+      "shy": "Schüchtern",
+      "energetic": "Energiegeladen"
+    },
+    "health": {
+      "vaccinated": "Geimpft",
+      "microchipped": "Gechippt",
+      "dewormed": "Entwurmt und entflöht",
+      "tested": "Getestet",
+      "testedCat": "Getestet (FIV/FeLV)",
+      "euPassport": "EU-Heimtierausweis"
+    },
+    "goodWith": {
+      "dogs": "Hunden",
+      "cats": "Katzen",
+      "children": "Kindern"
+    },
+    "location": {
+      "shelter": "Im Tierheim in Rosiorii",
+      "foster": "In einer Pflegestelle in Rumänien",
+      "luxembourg": "Schon in Luxemburg"
     }
   }
 }
