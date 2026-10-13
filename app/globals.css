@@ -25,6 +25,9 @@
    overflow the viewport and pages that don't. */
 html {
   scrollbar-gutter: stable;
+  /* The header is sticky: keep focused elements and #anchors from ending up
+     underneath it (it is about 5rem tall at its largest). */
+  scroll-padding-top: 6rem;
 }
 
 body {
@@ -68,6 +71,61 @@ body {
 
   .text-button:active {
     color: rgb(from var(--color-button) r g b / 0.6);
+  }
+
+  /* Header navigation link. Text stays ink for contrast; the pink is only used
+     for the underline. Mobile first: a full-width row in the menu panel, with a
+     background for hover and the current page. */
+  .nav-link {
+    display: flex;
+    align-items: center;
+    min-height: 2.75rem; /* 44px touch target */
+    padding: 0 1rem;
+    border-radius: 1rem;
+    color: var(--color-ink);
+    font-weight: 500;
+  }
+
+  /* White, not a pink: the panel sits on the page colour, and blush / pale are
+     too close to it to see on hover */
+  .nav-link:hover {
+    background-color: var(--color-card);
+  }
+
+  .nav-link:focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 2px;
+  }
+
+  /* Current page: bold as well as highlighted, so it is not shown by colour alone */
+  .nav-link[aria-current="page"] {
+    background-color: var(--color-pale);
+    font-weight: 700;
+  }
+
+  /* `lg` (64rem) is where the header becomes a single row: inline links with an
+     underline instead of a background. */
+  @media (min-width: 64rem) {
+    .nav-link {
+      display: inline-flex;
+      padding: 0 0.5rem;
+      border-radius: 0;
+      border-bottom: 2px solid transparent;
+    }
+
+    .nav-link:hover {
+      background-color: transparent;
+      border-bottom-color: var(--color-button);
+    }
+
+    .nav-link:focus-visible {
+      border-radius: 4px;
+    }
+
+    .nav-link[aria-current="page"] {
+      background-color: transparent;
+      border-bottom-color: var(--color-button);
+    }
   }
 
   /* Layout shared by both pill buttons, so they cannot drift apart */
