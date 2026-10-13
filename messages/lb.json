@@ -309,8 +309,7 @@
     "card": {
       "adoptMe": "Adoptéier mech!",
       "adopted": "Adoptéiert!",
-      "ask": "Frot no {name}",
-      "adopt": "Adoptéier {name}"
+      "learnMore": "Liest iwwer {name}"
     },
     "help": {
       "title": "Net sécher, wéi ee Hond zu dir passt?",
@@ -324,6 +323,20 @@
       "cat": "Kazen"
     },
     "empty": "Hei sinn nach keng Déieren."
+  },
+  "AnimalPage": {
+    "notFound": "D'Déier gouf an eisem Verzeechnes net fonnt.",
+    "eyebrow": "Véierbeenege Frënd",
+    "heading": "Iwwer {name}",
+    "healthHeading": "Gesondheet",
+    "goodWith": "Versteet sech gutt mat {list}",
+    "galleryHeading": "Galerie",
+    "galleryOpen": "Foto {index} vun {total} vergréisseren",
+    "galleryClose": "Zoumaachen",
+    "galleryPrevious": "Virescht Foto",
+    "galleryNext": "Nächst Foto",
+    "ask": "Frot no {name}",
+    "adopt": "Adoptéier {name}"
   },
   "DonatePage": {
     "eyebrow": "all Bëssen hëlleft enger Patt",
@@ -378,6 +391,11 @@
       "female": "Weiblech",
       "male": "Männlech"
     },
+    "status": {
+      "available": "Verfügbar",
+      "pending": "Reservéiert",
+      "adopted": "Adoptéiert"
+    },
     "size": {
       "small": "Kleng",
       "medium": "Mëttelgrouss",
@@ -397,10 +415,18 @@
     "health": {
       "vaccinated": "Geimpft",
       "microchipped": "Gechipt",
-      "dewormed": "Entwuermt an entflout",
+      "dewormed": "Entwuermt",
       "tested": "Getest",
       "testedCat": "Getest FIV/FELV",
       "euPassport": "EU Pass"
+    },
+    "healthHint": {
+      "vaccinated": "Duerch Impfunge géint heefeg Infektiounskrankheeten geschützt.",
+      "microchipped": "Huet e klenge Chip ënner der Haut mat enger eenzegaarteger Nummer.",
+      "dewormed": "Géint Wierm an Flou behandelt.",
+      "tested": "Op heefeg Infektiounskrankheeten getest.",
+      "testedCat": "Op d'Kazevirussen FIV a FeLV getest.",
+      "euPassport": "Dat offiziellt Dokument fir mat engem Déier duerch d'EU ze reesen."
     },
     "goodWith": {
       "dogs": "Hënn",

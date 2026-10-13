@@ -333,6 +333,39 @@ body {
     gap: 1.5rem;
   }
 
+  .animal-info-badge {
+    background-color: white;
+    color: var(--color-link);
+    border-radius: 2rem;
+    padding: 0.25rem 0.5rem;
+    font-weight: bold;
+    font-size: small;
+  }
+  /* rounded-full text-link px-2 font-bold font-heading text-xl */
+
+  .animal-status-card {
+    background-color: var(--color-link);
+    color: white;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    padding: 1.5rem;
+    gap: 1rem;
+    /* Safety net for very long words (e.g. "Infektiounskrankheeten"). `anywhere`
+       and not `break-word`: only `anywhere` lowers the minimum width of the
+       children, which are sized to their content because of align-items: start. */
+    overflow-wrap: anywhere;
+  }
+
+  .animal-status-card-grid {
+    display: grid;
+    /* 12rem: wide enough for the longest word we have, with the padding */
+    grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+    gap: 1.5rem;
+  }
+
   .volunteer-card {
     background-color: white;
     color: var(--color-ink);

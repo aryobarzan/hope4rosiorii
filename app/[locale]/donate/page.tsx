@@ -1,11 +1,10 @@
-import Image from "next/image";
 import { getFormatter, getLocale, getTranslations } from "next-intl/server";
 import { Landmark, PawPrint } from "lucide-react";
 import CopyButton from "./CopyButton";
 import DonationPicker from "./DonationPicker";
 import { getSiteSettings } from "@/lib/site-settings";
 import { getUpdates } from "@/lib/updates";
-import { hotspotPosition, sanityImageLoader } from "@/lib/sanity/image";
+import SanityImage from "../components/SanityImage";
 
 const stepClass =
   "flex h-8 min-w-16 shrink-0 px-2 items-center justify-center rounded-full bg-white font-heading text-xl text-ink";
@@ -116,16 +115,11 @@ export default async function Donate() {
               <li className="update-row" key={update._id}>
                 <div className="relative picture-placeholder blob-frame h-24 w-24 shrink-0">
                   {update.image?.url && (
-                    <Image
-                      loader={sanityImageLoader}
+                    <SanityImage
                       src={update.image.url}
                       alt={update.image.alt ?? ""}
-                      fill
                       sizes="96px"
-                      className="object-cover"
-                      style={{
-                        objectPosition: hotspotPosition(update.image.hotspot),
-                      }}
+                      hotspot={update.image.hotspot}
                     />
                   )}
                 </div>

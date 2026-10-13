@@ -38,7 +38,10 @@ export default async function Footer() {
           </div>
           <p>{t("tagline")}</p>
         </div>
-        <nav aria-label={t("navLabel")} className="flex flex-col gap-1">
+        <nav
+          aria-label={t("navLabel")}
+          className="flex flex-col gap-1 md:ml-auto"
+        >
           <h2 className="font-bold text-white">{t("explore")}</h2>
           {links.map(({ href, key, ns }) => (
             <Link key={href} href={href} className={linkClass}>

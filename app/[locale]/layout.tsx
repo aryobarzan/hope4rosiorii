@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import { Gochi_Hand, Nunito, Pinyon_Script } from "next/font/google";
 import { notFound } from "next/navigation";
@@ -49,7 +50,13 @@ export default async function LocaleLayout({
     >
       <body className="flex min-h-full flex-col">
         <NextIntlClientProvider>
-          <Header />
+          {/* usePathname() is runtime data on routes whose params are not
+              known at build time (e.g. /dogs/[animal]), so with
+              cacheComponents it must sit inside Suspense. Static routes still
+              prerender the header into the shell. */}
+          <Suspense fallback={null}>
+            <Header />
+          </Suspense>
           {/* Full width: pages decide their own container so they can have
               full-bleed bands (see .page-container) */}
           <main className="w-full flex-1">{children}</main>

@@ -88,9 +88,7 @@
       },
       {
         "title": "Ihre Rechte",
-        "paragraphs": [
-          "Nach der DSGVO haben Sie das Recht auf:"
-        ],
+        "paragraphs": ["Nach der DSGVO haben Sie das Recht auf:"],
         "items": [
           "Auskunft über die personenbezogenen Daten, die wir über Sie speichern;",
           "Berichtigung unrichtiger Daten;",
@@ -309,8 +307,7 @@
     "card": {
       "adoptMe": "Adoptiere mich!",
       "adopted": "Adoptiert!",
-      "ask": "Frag nach {name}",
-      "adopt": "Adoptiere {name}"
+      "learnMore": "Mehr über {name} lesen"
     },
     "help": {
       "title": "Unsicher, welcher Hund zu dir passt?",
@@ -324,6 +321,20 @@
       "cat": "Katzen"
     },
     "empty": "Hier gibt es noch keine Tiere."
+  },
+  "AnimalPage": {
+    "notFound": "Das Tier wurde in unserer Übersicht nicht gefunden.",
+    "eyebrow": "vierbeiniger Freund",
+    "heading": "Über {name}",
+    "healthHeading": "Gesundheit",
+    "goodWith": "Versteht sich gut mit {list}",
+    "galleryHeading": "Galerie",
+    "galleryOpen": "Foto {index} von {total} vergrößern",
+    "galleryClose": "Schließen",
+    "galleryPrevious": "Vorheriges Foto",
+    "galleryNext": "Nächstes Foto",
+    "ask": "Frag nach {name}",
+    "adopt": "Adoptiere {name}"
   },
   "DonatePage": {
     "eyebrow": "jeder Beitrag hilft einer Pfote",
@@ -378,6 +389,11 @@
       "female": "Weiblich",
       "male": "Männlich"
     },
+    "status": {
+      "available": "Verfügbar",
+      "pending": "Reserviert",
+      "adopted": "Adoptiert"
+    },
     "size": {
       "small": "klein",
       "medium": "mittelgroß",
@@ -397,10 +413,18 @@
     "health": {
       "vaccinated": "Geimpft",
       "microchipped": "Gechippt",
-      "dewormed": "Entwurmt und entflöht",
+      "dewormed": "Entwurmt",
       "tested": "Getestet",
       "testedCat": "Getestet (FIV/FeLV)",
       "euPassport": "EU-Heimtierausweis"
+    },
+    "healthHint": {
+      "vaccinated": "Durch Impfungen vor häufigen Infektionskrankheiten geschützt.",
+      "microchipped": "Trägt einen kleinen Chip unter der Haut mit einer eindeutigen Nummer.",
+      "dewormed": "Gegen Darmwürmer und Flöhe behandelt.",
+      "tested": "Auf häufige Infektionskrankheiten getestet.",
+      "testedCat": "Auf die Katzenviren FIV und FeLV getestet.",
+      "euPassport": "Das offizielle Dokument für Reisen mit einem Tier innerhalb der EU."
     },
     "goodWith": {
       "dogs": "Hunden",

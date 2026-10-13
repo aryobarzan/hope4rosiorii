@@ -309,8 +309,7 @@
     "card": {
       "adoptMe": "Adopte-moi !",
       "adopted": "Adopté !",
-      "ask": "Se renseigner sur {name}",
-      "adopt": "Adopter {name}"
+      "learnMore": "En savoir plus sur {name}"
     },
     "help": {
       "title": "Vous ne savez pas quel chien vous convient ?",
@@ -324,6 +323,20 @@
       "cat": "Chats"
     },
     "empty": "Aucun animal à afficher pour le moment."
+  },
+  "AnimalPage": {
+    "notFound": "Cet animal est introuvable dans notre liste.",
+    "eyebrow": "un ami à quatre pattes",
+    "heading": "À propos de {name}",
+    "healthHeading": "Santé",
+    "goodWith": "S’entend bien avec : {list}",
+    "galleryHeading": "Galerie",
+    "galleryOpen": "Agrandir la photo {index} sur {total}",
+    "galleryClose": "Fermer",
+    "galleryPrevious": "Photo précédente",
+    "galleryNext": "Photo suivante",
+    "ask": "Se renseigner sur {name}",
+    "adopt": "Adopter {name}"
   },
   "DonatePage": {
     "eyebrow": "chaque geste aide une patte",
@@ -378,6 +391,11 @@
       "female": "Femelle",
       "male": "Mâle"
     },
+    "status": {
+      "available": "Disponible",
+      "pending": "Réservé",
+      "adopted": "Adopté"
+    },
     "size": {
       "small": "petite taille",
       "medium": "taille moyenne",
@@ -397,10 +415,18 @@
     "health": {
       "vaccinated": "Vacciné",
       "microchipped": "Pucé",
-      "dewormed": "Vermifugé et traité contre les puces",
+      "dewormed": "Vermifugé",
       "tested": "Testé",
       "testedCat": "Testé (FIV/FeLV)",
       "euPassport": "Passeport européen"
+    },
+    "healthHint": {
+      "vaccinated": "Protégé contre les maladies infectieuses courantes grâce aux vaccins.",
+      "microchipped": "Porte une puce sous la peau avec un numéro d'identification unique.",
+      "dewormed": "Traité contre les vers intestinaux et les puces.",
+      "tested": "Testé pour les maladies infectieuses courantes.",
+      "testedCat": "Testé pour les virus félins FIV et FeLV.",
+      "euPassport": "Le document officiel nécessaire pour voyager avec un animal dans l'UE."
     },
     "goodWith": {
       "dogs": "chiens",

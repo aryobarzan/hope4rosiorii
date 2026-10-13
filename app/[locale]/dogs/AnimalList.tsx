@@ -1,19 +1,18 @@
 "use client";
 
-import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
-import { PawPrint, CircleQuestionMark } from "lucide-react";
+import { PawPrint, Cat, Dog } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { ageParts } from "@/lib/age";
+import { animalDetails } from "@/lib/animal-details";
 import type { Animal } from "@/lib/animals";
-import { hotspotPosition, sanityImageLoader } from "@/lib/sanity/image";
+import SanityImage from "../components/SanityImage";
 
 const adoptBadge = "text-link font-bold font-heading text-xl";
 const adoptedBadge =
   "bg-white rounded-full text-link px-2 font-bold font-heading text-xl";
 
-const SIZE_ORDER = ["small", "medium", "large"];
 const MAX_TRAITS_ON_CARD = 2;
 
 export type SpeciesFilter = "all" | "dog" | "cat";
@@ -24,7 +23,8 @@ export type SpeciesFilter = "all" | "dog" | "cat";
 // content and not an empty shell.
 export function FilteredAnimalList({ animals }: { animals: Animal[] }) {
   const param = useSearchParams().get("species");
-  const species: SpeciesFilter = param === "dog" || param === "cat" ? param : "all";
+  const species: SpeciesFilter =
+    param === "dog" || param === "cat" ? param : "all";
   return <AnimalList animals={animals} species={species} />;
 }
 
@@ -43,33 +43,13 @@ export function AnimalList({
   const visible =
     species === "all" ? animals : animals.filter((a) => a.species === species);
 
-  function details(animal: Animal) {
-    const parts: string[] = [];
-    if (animal.gender) parts.push(tAnimal(`gender.${animal.gender}`));
-    // Size is only asked for dogs.
-    if (animal.species === "dog" && animal.size?.length) {
-      const sizes = animal.size.toSorted(
-        (a, b) => SIZE_ORDER.indexOf(a) - SIZE_ORDER.indexOf(b),
-      );
-      parts.push(
-        sizes.length > 1
-          ? tAnimal("sizeRange", {
-              from: tAnimal(`size.${sizes[0]}`),
-              to: tAnimal(`size.${sizes[sizes.length - 1]}`),
-            })
-          : tAnimal(`size.${sizes[0]}`),
-      );
-    }
-    for (const trait of (animal.traits ?? []).slice(0, MAX_TRAITS_ON_CARD)) {
-      parts.push(tAnimal(`traits.${trait}`));
-    }
-    return parts.join(" • ");
-  }
-
   return (
     <>
       {hasBothSpecies && (
-        <nav aria-label={t("filter.label")} className="flex flex-wrap gap-2 pt-4">
+        <nav
+          aria-label={t("filter.label")}
+          className="flex flex-wrap gap-2 pt-4"
+        >
           {(["all", "dog", "cat"] as const).map((value) => (
             <Link
               key={value}
@@ -108,14 +88,11 @@ export function AnimalList({
                 className={`relative picture-placeholder blob-frame aspect-square w-full max-w-72 ${photo || !adopted ? `` : `bg-link`}`}
               >
                 {photo?.url && (
-                  <Image
-                    loader={sanityImageLoader}
+                  <SanityImage
                     src={photo.url}
                     alt={photo.alt ?? ""}
-                    fill
                     sizes="(min-width: 640px) 288px, 90vw"
-                    className="object-cover"
-                    style={{ objectPosition: hotspotPosition(photo.hotspot) }}
+                    hotspot={photo.hotspot}
                   />
                 )}
               </div>
@@ -129,29 +106,29 @@ export function AnimalList({
                   text-balance evens out the line lengths, so a wrap does not
                   leave one long line and a single orphaned word. */}
               <p className="text-balance text-center font-heading text-2xl">
-                {details(animal)}
+                {animalDetails(animal, tAnimal, {
+                  maxTraits: MAX_TRAITS_ON_CARD,
+                })}
               </p>
-              {animal.description && (
-                <p className="font-body">{animal.description}</p>
-              )}
+
               {/* mt-auto: an automatic top margin takes all the free space in this
                   flex column, which pushes the button to the card's bottom edge
                   (cards in a row are equally tall), even without a description. */}
               {!adopted && (
                 <div className="mt-auto flex w-full flex-col gap-1">
                   <Link
-                    href={{ pathname: "/contact", query: { dog: animal.slug } }}
-                    className="outlined-button font-bold"
-                  >
-                    <CircleQuestionMark aria-hidden="true" className="size-5" />
-                    {t("card.ask", { name: animal.name ?? "" })}
-                  </Link>
-                  <Link
-                    href={{ pathname: "/adopt", query: { dog: animal.slug } }}
+                    href={{ pathname: `/dogs/${animal.slug}` }}
                     className="filled-button font-bold"
                   >
-                    <PawPrint aria-hidden="true" className="size-5" />
-                    {t("card.adopt", { name: animal.name ?? "" })}
+                    {animal.species === "dog" ? (
+                      <Dog aria-hidden="true" className="size-5" />
+                    ) : animal.species === "cat" ? (
+                      <Cat aria-hidden="true" className="size-5" />
+                    ) : (
+                      <PawPrint aria-hidden="true" className="size-5" />
+                    )}
+
+                    {t("card.learnMore", { name: animal.name ?? "" })}
                   </Link>
                 </div>
               )}
