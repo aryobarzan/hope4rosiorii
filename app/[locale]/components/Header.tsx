@@ -8,7 +8,7 @@ import LanguageSwitcher from "./LanguageSwitcher";
 
 // No "Home" entry: the logo links home.
 const links = [
-  { href: "/dogs", key: "dogs" },
+  { href: "/animals", key: "dogs" },
   { href: "/adopt", key: "adopt" },
   { href: "/about", key: "about" },
   { href: "/contact", key: "contact" },
@@ -48,7 +48,7 @@ export default function Header() {
     return () => document.removeEventListener("keydown", onKeyDown);
   }, [open]);
 
-  // Links match their sub-pages too (e.g. /dogs/rex)
+  // Links match their sub-pages too (e.g. /animals/rex)
   const isActive = (href: string) =>
     pathname === href || pathname.startsWith(`${href}/`);
 

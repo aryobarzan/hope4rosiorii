@@ -44,8 +44,8 @@ export function AnimalList({
               key={value}
               href={
                 value === "all"
-                  ? "/dogs"
-                  : { pathname: "/dogs", query: { species: value } }
+                  ? "/animals"
+                  : { pathname: "/animals", query: { species: value } }
               }
               scroll={false}
               aria-current={species === value ? "true" : undefined}

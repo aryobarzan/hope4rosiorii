@@ -35,7 +35,7 @@ function Frame({
   if (!slug) return <div className={frameClass}>{children}</div>;
   return (
     <Link
-      href={{ pathname: `/dogs/${slug}` }}
+      href={{ pathname: `/animals/${slug}` }}
       aria-label={label}
       className={`${frameClass}`}
     >

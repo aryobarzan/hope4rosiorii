@@ -12,9 +12,12 @@ type Photo = {
 };
 
 // Shared by the close and arrow buttons: round, 44px touch target, readable on
-// any photo thanks to the solid white background.
+// any photo thanks to the solid background. Hover tints it pink and pressing
+// darkens it slightly and shrinks it a touch, so it feels clickable. `scale`
+// is its own property in Tailwind v4, so it does not fight the arrows'
+// -translate-y-1/2 centring.
 const overlayButton =
-  "absolute inline-flex size-11 cursor-pointer items-center justify-center rounded-full bg-card text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink";
+  "absolute inline-flex size-11 cursor-pointer items-center justify-center rounded-full bg-card text-ink transition-[background-color,scale] hover:bg-pale active:scale-90 active:bg-blush focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink";
 
 // A strip of thumbnails; tapping one opens the larger photo in an overlay.
 //

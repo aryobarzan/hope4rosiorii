@@ -52,7 +52,7 @@ export default async function LocaleLayout({
       <body className="flex min-h-full flex-col">
         <NextIntlClientProvider>
           {/* usePathname() is runtime data on routes whose params are not
-              known at build time (e.g. /dogs/[animal]), so with
+              known at build time (e.g. /animals/[animal]), so with
               cacheComponents it must sit inside Suspense. Static routes still
               prerender the header into the shell. */}
           <Suspense fallback={null}>

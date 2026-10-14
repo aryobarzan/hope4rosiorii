@@ -66,7 +66,7 @@ export default function AnimalCard({ animal }: { animal: Animal }) {
       {!adopted && (
         <div className="mt-auto flex w-full flex-col gap-1">
           <Link
-            href={{ pathname: `/dogs/${animal.slug}` }}
+            href={{ pathname: `/animals/${animal.slug}` }}
             className="filled-button font-bold"
           >
             {animal.species === "dog" ? (

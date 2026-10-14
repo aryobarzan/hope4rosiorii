@@ -12,8 +12,8 @@ const localeLike = /^[a-z]{2}(?:-[A-Za-z]{2})?$/;
 export default function proxy(request: NextRequest) {
   const [, first, ...rest] = request.nextUrl.pathname.split("/");
 
-  // /gn/dogs -> /en/dogs (otherwise next-intl would treat "gn" as a page and
-  // redirect to /en/gn/dogs, which is a 404)
+  // /gn/animals -> /en/animals (otherwise next-intl would treat "gn" as a page and
+  // redirect to /en/gn/animals, which is a 404)
   if (first && localeLike.test(first) && !hasLocale(routing.locales, first)) {
     const url = request.nextUrl.clone();
     url.pathname = `/${[routing.defaultLocale, ...rest].join("/")}`;

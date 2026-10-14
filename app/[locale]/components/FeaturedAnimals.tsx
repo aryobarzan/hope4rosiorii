@@ -40,7 +40,7 @@ export default async function FeaturedAnimals() {
         ))}
       </ul>
       <Link
-        href={{ pathname: `/dogs` }}
+        href={{ pathname: `/animals` }}
         className="outlined-button font-bold self-start"
       >
         <PawPrint aria-hidden="true" className="size-5" />

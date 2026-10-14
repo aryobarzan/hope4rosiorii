@@ -8,7 +8,7 @@ const linkClass =
   "rounded underline underline-offset-4 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white font-bold";
 
 const links = [
-  { href: "/dogs", key: "ourDogs", ns: "Footer" },
+  { href: "/animals", key: "ourDogs", ns: "Footer" },
   { href: "/adopt", key: "adopt", ns: "Nav" },
   { href: "/about", key: "about", ns: "Nav" },
   { href: "/contact", key: "contact", ns: "Nav" },

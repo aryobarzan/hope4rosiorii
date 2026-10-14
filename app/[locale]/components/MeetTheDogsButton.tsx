@@ -14,7 +14,7 @@ export default async function MeetTheDogsButton() {
 
   return (
     <Link
-      href={{ pathname: `/dogs` }}
+      href={{ pathname: `/animals` }}
       className="filled-button font-bold self-start"
     >
       <PawPrint aria-hidden="true" className="size-5" />
