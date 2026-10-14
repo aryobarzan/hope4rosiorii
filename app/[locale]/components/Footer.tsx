@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
+import { SiFacebook, SiInstagram, SiTiktok } from "react-icons/si";
 import { Link } from "@/i18n/navigation";
 import { getSiteSettings } from "@/lib/site-settings";
 
@@ -17,7 +18,13 @@ const links = [
 export default async function Footer() {
   const t = await getTranslations("Footer");
   const tNav = await getTranslations("Nav");
-  const { contactEmail } = await getSiteSettings();
+  const { contactEmail, facebookUrl, instagramUrl, tiktokUrl } =
+    await getSiteSettings();
+  const socials = [
+    { platform: "Facebook", href: facebookUrl, Icon: SiFacebook },
+    { platform: "Instagram", href: instagramUrl, Icon: SiInstagram },
+    { platform: "TikTok", href: tiktokUrl, Icon: SiTiktok },
+  ];
 
   return (
     <footer className="w-full bg-plum px-6 py-10 text-blush">
@@ -37,6 +44,23 @@ export default async function Footer() {
             </span>
           </div>
           <p>{t("tagline")}</p>
+          <ul className="flex gap-1">
+            {socials.map(({ platform, href, Icon }) => (
+              <li key={platform}>
+                {/* Brand names are not translated, so they double as the accessible name.
+                    noreferrer implies noopener. */}
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={platform}
+                  className="inline-flex h-11 w-11 items-center justify-center rounded-full hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                >
+                  <Icon className="h-6 w-6" aria-hidden />
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
         <nav
           aria-label={t("navLabel")}
@@ -62,4 +86,3 @@ export default async function Footer() {
     </footer>
   );
 }
-// TODO: add socials
