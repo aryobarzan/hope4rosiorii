@@ -359,8 +359,16 @@
       "exclusiveOption": "This answer can't be combined with the others.",
       "honestyRequired": "Please confirm that you answered all the questions honestly.",
       "contactRequired": "Please confirm that we may contact you.",
-      "consentRequired": "Please accept the privacy policy to send your request."
-    }
+      "consentRequired": "Please accept the privacy policy to send your request.",
+      "rateLimited": "Too many requests in a short time. Please try again later.",
+      "sendFailed": "Sorry, your request could not be sent. Please try again later.",
+      "invalid": "Please check your answers and try again."
+    },
+    "success": "Thank you! Your adoption request has been sent. A volunteer will read it and get back to you."
+  },
+  "AdoptionEmail": {
+    "subject": "New adoption request for {dogName}",
+    "language": "Website language"
   },
   "DonatePage": {
     "metadata": {

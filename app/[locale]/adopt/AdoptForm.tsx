@@ -1,6 +1,7 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useState } from "react";
+import { useLocale, useTranslations } from "next-intl";
 import { Controller, useForm } from "react-hook-form";
 import { ChevronDown, CircleAlert, Loader2, Send } from "lucide-react";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -18,6 +19,7 @@ import {
   type AdoptionInput,
   type AdoptionValues,
 } from "@/lib/schemas/adopt";
+import { sendAdoptionRequest } from "./actions";
 
 const linkClass =
   "rounded font-bold text-link underline underline-offset-4 hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink";
@@ -57,11 +59,16 @@ export default function AdoptForm({
   dogName?: string;
 }) {
   const t = useTranslations("AdoptPage");
+  const locale = useLocale();
+  const [status, setStatus] = useState<
+    "success" | "invalid" | "rateLimited" | "sendFailed" | null
+  >(null);
 
   const {
     register,
     control,
     handleSubmit,
+    reset,
     watch,
     formState: { errors, isSubmitting },
   } = useForm<AdoptionInput, unknown, AdoptionValues>({
@@ -119,11 +126,16 @@ export default function AdoptForm({
   const homeType = watch("homeType");
 
   async function onSubmit(values: AdoptionValues) {
-    // TODO: call the Server Action with `values` and the current locale
-    // (useLocale(); next/root-params doesn't work in Server Actions). The
-    // action re-validates with adoptionSchema, validates the locale with
-    // hasLocale, checks the honeypot, rate limits, and sends the email via Gmail SMTP.
-    console.log(values);
+    setStatus(null);
+    // The locale is passed explicitly: next/root-params doesn't work in
+    // Server Actions. The action re-validates everything on the server.
+    const result = await sendAdoptionRequest(locale, values);
+    if (result.ok) {
+      setStatus("success");
+      reset();
+    } else {
+      setStatus(result.error);
+    }
   }
 
   // Schema messages are keys - they have to be translated here
@@ -545,6 +557,19 @@ export default function AdoptForm({
       {/* Not disabled while invalid, unlike the contact form: with this many
           fields a dead button gives no hint what is missing. Submitting
           instead shows the errors and focuses the first one. */}
+      {/* role="status" / "alert" make screen readers announce the outcome */}
+      {status === "success" && (
+        <p role="status" className="font-bold">
+          {t("success")}
+        </p>
+      )}
+      {status && status !== "success" && (
+        <p role="alert" className="form-field-error flex items-start gap-1">
+          <CircleAlert aria-hidden="true" className="mt-px size-4 shrink-0" />
+          {t(`errors.${status}`)}
+        </p>
+      )}
+
       <div>
         <button
           type="submit"

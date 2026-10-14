@@ -361,8 +361,16 @@
       "exclusiveOption": "Cette réponse ne peut pas être combinée avec les autres.",
       "honestyRequired": "Veuillez confirmer que vous avez répondu honnêtement à toutes les questions.",
       "contactRequired": "Veuillez confirmer que nous pouvons vous contacter.",
-      "consentRequired": "Veuillez accepter la politique de confidentialité pour envoyer votre demande."
-    }
+      "consentRequired": "Veuillez accepter la politique de confidentialité pour envoyer votre demande.",
+      "rateLimited": "Trop de demandes en peu de temps. Veuillez réessayer plus tard.",
+      "sendFailed": "Désolé, votre demande n'a pas pu être envoyée. Veuillez réessayer plus tard.",
+      "invalid": "Veuillez vérifier vos réponses et réessayer."
+    },
+    "success": "Merci ! Votre demande d'adoption a bien été envoyée. Un bénévole la lira et vous répondra."
+  },
+  "AdoptionEmail": {
+    "subject": "Nouvelle demande d'adoption pour {dogName}",
+    "language": "Langue du site"
   },
   "DogsPage": {
     "metadata": {

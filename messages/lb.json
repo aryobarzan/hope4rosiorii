@@ -361,8 +361,16 @@
       "exclusiveOption": "Dës Äntwert kann net mat deenen aneren kombinéiert ginn.",
       "honestyRequired": "W.e.g. bestätegt, dass du all d'Froen éierlech beäntwert hues.",
       "contactRequired": "W.e.g. bestätegt, dass mir Kontakt mat dir ophuelen dierfen.",
-      "consentRequired": "W.e.g. akzeptéier d'Dateschutzerklärung, fir deng Ufro ze schécken."
-    }
+      "consentRequired": "W.e.g. akzeptéier d'Dateschutzerklärung, fir deng Ufro ze schécken.",
+      "rateLimited": "Ze vill Ufroen an ëmmer méi kuerzer Zäit. Probéiert et w.e.g. méi spéit nach eng Kéier.",
+      "sendFailed": "Entschëllegt, Är Ufro konnt net geschéckt ginn. Probéiert et w.e.g. méi spéit nach eng Kéier.",
+      "invalid": "Kontrolléiert w.e.g. Är Äntwerten a probéiert et nach eng Kéier."
+    },
+    "success": "Merci! Är Adoptiounsufro ass ugekomm. E Fräiwëllege list se a mellt sech bei Iech."
+  },
+  "AdoptionEmail": {
+    "subject": "Nei Adoptiounsufro fir {dogName}",
+    "language": "Sprooch vun der Websäit"
   },
   "DogsPage": {
     "metadata": {
