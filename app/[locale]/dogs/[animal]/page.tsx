@@ -188,7 +188,7 @@ export default async function AnimalPage({
             </h2>
             <div className="animal-status-card-grid mt-4">
               {animal.health.map((health) => (
-                <div key={health} className="animal-status-card">
+                <div key={health} className="prominent-link-card">
                   <HealthIcon health={health} />
                   <p className="text-xl font-bold">
                     {tAnimal(`health.${health}`)}

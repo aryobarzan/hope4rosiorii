@@ -4,7 +4,7 @@ import CopyButton from "./CopyButton";
 import DonationPicker from "./DonationPicker";
 import { getSiteSettings } from "@/lib/site-settings";
 import { getUpdates } from "@/lib/updates";
-import SanityImage from "../components/SanityImage";
+import UpdateRow from "../components/UpdateRow";
 
 const stepClass =
   "flex h-8 min-w-16 shrink-0 px-2 items-center justify-center rounded-full bg-white font-heading text-xl text-ink";
@@ -112,45 +112,7 @@ export default async function Donate() {
               the cards (the container's gap-1 is meant for the heading). */}
           <ul className="flex flex-col gap-4">
             {updates.map((update) => (
-              <li className="update-row" key={update._id}>
-                <div className="relative picture-placeholder blob-frame h-24 w-24 shrink-0">
-                  {update.image?.url && (
-                    <SanityImage
-                      src={update.image.url}
-                      alt={update.image.alt ?? ""}
-                      sizes="96px"
-                      hotspot={update.image.hotspot}
-                    />
-                  )}
-                </div>
-                <div className="flex min-w-0 flex-col gap-1">
-                  <div className="flex flex-wrap items-center gap-2">
-                    {update.date && (
-                      <time dateTime={update.date}>
-                        {format.dateTime(new Date(update.date), {
-                          dateStyle: "long",
-                          timeZone: "UTC",
-                        })}
-                      </time>
-                    )}
-                    <span className="shrink-0 rounded-full bg-pale px-3 py-0.5 font-bold text-ink">
-                      {t("updates.spent", {
-                        amount: format.number(update.amountSpent ?? 0, {
-                          style: "currency",
-                          currency: "EUR",
-                          minimumFractionDigits: Number.isInteger(update.amountSpent)
-                            ? 0
-                            : 2,
-                        }),
-                      })}
-                    </span>
-                  </div>
-                  <h3 className="font-heading text-2xl font-bold">
-                    {update.title}
-                  </h3>
-                  <p>{update.caption}</p>
-                </div>
-              </li>
+              <UpdateRow key={update._id} update={update} />
             ))}
           </ul>
         </div>

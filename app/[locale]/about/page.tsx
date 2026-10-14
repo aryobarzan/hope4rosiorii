@@ -1,32 +1,6 @@
 import { useTranslations } from "next-intl";
 import { SiFacebook, SiInstagram, SiTiktok } from "react-icons/si";
-
-const volunteers = [
-  {
-    id: 1,
-    name: "VICKY CONTATO",
-    position: "[position]",
-    caption: "[caption]",
-  },
-  {
-    id: 2,
-    name: "[NAME]",
-    position: "[position]",
-    caption: "[caption]",
-  },
-  {
-    id: 3,
-    name: "[NAME]",
-    position: "[position]",
-    caption: "[caption]",
-  },
-  {
-    id: 4,
-    name: "[NAME]",
-    position: "[position]",
-    caption: "[caption]",
-  },
-];
+import { getVolunteers } from "@/lib/volunteers";
 
 // TODO: replace with each volunteer's real profile URLs (placeholders for now)
 const socials = [
@@ -37,6 +11,7 @@ const socials = [
 
 export default function About() {
   const t = useTranslations("AboutPage");
+  const volunteers = getVolunteers();
 
   return (
     <div className="flex flex-col w-full">

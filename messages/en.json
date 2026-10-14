@@ -20,7 +20,43 @@
     "privacy": "Privacy policy"
   },
   "HomePage": {
-    "title": "Hello World!"
+    "eyebrow": "Volunteer-run · Non-profit",
+    "heading": "Rescued in Romania. Hoping for a <accent>home</accent> in Luxembourg.",
+    "description": "We bring dogs from Romania to Luxembourg and help them find families who love them. Everyone on our team is a volunteer, and every dog has someone who knows their name.",
+    "meetTheDogs": "Meet the dogs",
+    "adoptionHeading": "The long way home, in four steps",
+    "adoptionSteps": {
+      "1": {
+        "title": "Rescued",
+        "description": "Our partners in Romania take dogs off the street or out of overcrowded shelters."
+      },
+      "2": {
+        "title": "Cared for",
+        "description": "A vet checks each dog and a foster family gives them a first taste of home."
+      },
+      "3": {
+        "title": "The journey",
+        "description": "Volunteer drivers bring small groups of dogs to Luxembourg."
+      },
+      "4": {
+        "title": "Adopted",
+        "description": "You meet your dog, we talk it through, and then they come home with you."
+      }
+    },
+    "dogs": {
+      "eyebrow": "waiting right now",
+      "heading": "Could one of these be yours?",
+      "seeAll": "See all dogs"
+    },
+    "volunteers": {
+      "heading": "the volunteers behind the paws",
+      "meetAll": "Meet everyone"
+    },
+    "donations": {
+      "eyebrow": "where your money went",
+      "heading": "Fresh from the team",
+      "donate": "Donate"
+    }
   },
   "NotFound": {
     "title": "Unknown",

@@ -53,6 +53,12 @@ export async function getAnimal(slug: string, locale: string) {
   return animals.find((animal) => animal.slug === slug);
 }
 
+// The animal the home page highlights in its hero. One definition, so the
+// hero and the featured row agree on which animal is already on screen.
+export function getHighlightedAnimal(animals: Animal[]): Animal | undefined {
+  return animals[0];
+}
+
 // Alternative approach, kept for reference: infer the type from the function.
 //
 //   export async function getAnimals(locale: string) {

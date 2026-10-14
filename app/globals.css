@@ -343,7 +343,7 @@ body {
   }
   /* rounded-full text-link px-2 font-bold font-heading text-xl */
 
-  .animal-status-card {
+  .prominent-link-card {
     background-color: var(--color-link);
     color: white;
     border-radius: 2rem;

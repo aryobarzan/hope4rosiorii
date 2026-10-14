@@ -20,7 +20,43 @@
     "privacy": "Dateschutz"
   },
   "HomePage": {
-    "title": "Hallo Welt!"
+    "eyebrow": "Vu Fräiwëllegen gefouert · Ouni Gewënnzil",
+    "heading": "A Rumänien gerett. Si hoffen op en <accent>Doheem</accent> zu Lëtzebuerg.",
+    "description": "Mir bréngen Hënn aus Rumänien op Lëtzebuerg a hëllefen hinnen, Famillje ze fannen, déi si gär hunn. Jidderee vun eisem Team ass fräiwëlleg, a jiddwereen Hond huet een, deen säin Numm kennt.",
+    "meetTheDogs": "Léier d'Hënn kennen",
+    "adoptionHeading": "De laange Wee heem, a véier Schrëtt",
+    "adoptionSteps": {
+      "1": {
+        "title": "Gerett",
+        "description": "Eis Partner a Rumänien huelen Hënn vun der Strooss oder aus iwwerfëllte Refugen."
+      },
+      "2": {
+        "title": "Betreit",
+        "description": "E Veterinär kuckt all Hond no, an eng Pflegefamill gëtt him en éischte Goût vum Doheem."
+      },
+      "3": {
+        "title": "D'Rees",
+        "description": "Fräiwëlleg Chauffeure bréngen kleng Gruppe vun Hënn op Lëtzebuerg."
+      },
+      "4": {
+        "title": "Adoptéiert",
+        "description": "Du léiers däin Hond kennen, mir schwätzen alles duerch, an dann kënnt hie mat dir heem."
+      }
+    },
+    "dogs": {
+      "eyebrow": "si waarden elo",
+      "heading": "Kéint ee vun hinnen däin sinn?",
+      "seeAll": "All Hënn kucken"
+    },
+    "volunteers": {
+      "heading": "d'Fräiwëlleg hannert de Patten",
+      "meetAll": "Léier jiddereen kennen"
+    },
+    "donations": {
+      "eyebrow": "wou d'Geld higaangen ass",
+      "heading": "Frësch vum Team",
+      "donate": "Spenden"
+    }
   },
   "NotFound": {
     "title": "Onbekannt",

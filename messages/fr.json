@@ -20,7 +20,43 @@
     "privacy": "Politique de confidentialité"
   },
   "HomePage": {
-    "title": "Bonjour le monde !"
+    "eyebrow": "Géré par des bénévoles · À but non lucratif",
+    "heading": "Sauvés en Roumanie. Dans l'espoir d'un <accent>foyer</accent> au Luxembourg.",
+    "description": "Nous amenons des chiens de Roumanie au Luxembourg et les aidons à trouver des familles qui les aiment. Chaque membre de notre équipe est bénévole, et chaque chien a quelqu'un qui connaît son nom.",
+    "meetTheDogs": "Rencontrer les chiens",
+    "adoptionHeading": "Le long chemin vers la maison, en quatre étapes",
+    "adoptionSteps": {
+      "1": {
+        "title": "Sauvé",
+        "description": "Nos partenaires en Roumanie recueillent les chiens dans la rue ou dans des refuges surpeuplés."
+      },
+      "2": {
+        "title": "Soigné",
+        "description": "Un vétérinaire examine chaque chien et une famille d'accueil lui offre un premier goût du foyer."
+      },
+      "3": {
+        "title": "Le voyage",
+        "description": "Des chauffeurs bénévoles amènent de petits groupes de chiens au Luxembourg."
+      },
+      "4": {
+        "title": "Adopté",
+        "description": "Vous rencontrez votre chien, nous en discutons ensemble, puis il rentre à la maison avec vous."
+      }
+    },
+    "dogs": {
+      "eyebrow": "ils attendent en ce moment",
+      "heading": "L'un d'eux pourrait-il être le vôtre ?",
+      "seeAll": "Voir tous les chiens"
+    },
+    "volunteers": {
+      "heading": "les bénévoles derrière les pattes",
+      "meetAll": "Rencontrer tout le monde"
+    },
+    "donations": {
+      "eyebrow": "où est allé votre argent",
+      "heading": "Fraîchement arrivé de l'équipe",
+      "donate": "Faire un don"
+    }
   },
   "NotFound": {
     "title": "Inconnu",

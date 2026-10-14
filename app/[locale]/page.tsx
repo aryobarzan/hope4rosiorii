@@ -1,10 +1,119 @@
 import { useTranslations } from "next-intl";
+import { Suspense } from "react";
+import HighlightedAnimal, {
+  HighlightedAnimalSkeleton,
+} from "./components/HighlightedAnimal";
+import FeaturedAnimals from "./components/FeaturedAnimals";
+import MeetTheDogsButton from "./components/MeetTheDogsButton";
+import RecentUpdates from "./components/RecentUpdates";
+import SectionHeading from "./components/SectionHeading";
+import { UserGroup, HandCoins } from "lucide-react";
+import { Link } from "@/i18n/navigation";
+import { getVolunteers } from "@/lib/volunteers";
 
 export default function Home() {
   const t = useTranslations("HomePage");
+  const volunteers = getVolunteers();
+
   return (
-    <div className="page-container">
-      <h1 className="text-3xl font-semibold">{t("title")}</h1>
+    <div className="flex flex-col w-full">
+      <section className="page-container flex flex-col gap-8 pb-8 pt-8 md:flex-row ">
+        <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-1">
+            <p className="font-heading text-xl text-link">{t("eyebrow")}</p>
+            <h1 className="font-heading text-6xl font-bold">
+              {t.rich("heading", {
+                accent: (chunks) => (
+                  <span className="text-brand underline decoration-wavy decoration-4 underline-offset-8 px-1 decoration-brand">
+                    {chunks}
+                  </span>
+                ),
+              })}
+            </h1>
+          </div>
+          <p className="font-body">{t("description")}</p>
+          <Suspense>
+            <MeetTheDogsButton />
+          </Suspense>
+        </div>
+
+        <Suspense fallback={<HighlightedAnimalSkeleton />}>
+          <HighlightedAnimal />
+        </Suspense>
+      </section>
+
+      <section className="w-full bg-button">
+        <div className="page-container flex flex-col gap-1 pt-8 pb-8">
+          <SectionHeading heading={t("adoptionHeading")} light />
+          <div className="animal-status-card-grid mt-4">
+            {["1", "2", "3", "4"].map((step) => (
+              <div key={`AdoptionStep-${step}`} className="prominent-link-card">
+                <p className="font-heading text-2xl font-bold">0{step}</p>
+                <p className="font-heading text-2xl">
+                  {t(`adoptionSteps.${step}.title`)}
+                </p>
+                <p className="text-sm">
+                  {t(`adoptionSteps.${step}.description`)}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <Suspense>
+        <FeaturedAnimals />
+      </Suspense>
+
+      <section className="w-full bg-pale">
+        <div className="page-container flex flex-col gap-4 pt-8 pb-8">
+          <SectionHeading heading={t("volunteers.heading")} />
+          {/* Deliberately not cards (unlike the about page): just a photo and a
+              name. The full profiles are one click away on /about. */}
+          <ul className="flex flex-wrap justify-evenly gap-6 pt-2 pb-2">
+            {volunteers.map((volunteer) => (
+              <li
+                key={volunteer.id}
+                className="flex w-28 flex-col items-center gap-2"
+              >
+                {/* TODO: real photo (next/image, empty alt as the name follows) */}
+                <div className="picture-placeholder blob-frame h-24 w-24 bg-brand" />
+                <p className="text-balance text-center font-heading text-2xl font-bold">
+                  {volunteer.name}
+                </p>
+              </li>
+            ))}
+          </ul>
+          <Link
+            href={{ pathname: `/about` }}
+            className="outlined-button font-bold self-start"
+          >
+            {<UserGroup aria-hidden="true" className="size-5" />}
+
+            {t("volunteers.meetAll")}
+          </Link>
+        </div>
+      </section>
+
+      <section className="page-container flex flex-col gap-8 pb-8 pt-8 md:flex-row ">
+        <div className="flex w-full flex-col gap-8">
+          <SectionHeading
+            eyebrow={t("donations.eyebrow")}
+            heading={t("donations.heading")}
+          />
+          <Suspense>
+            <RecentUpdates />
+          </Suspense>
+          <Link
+            href={{ pathname: `/donate` }}
+            className="filled-button font-bold self-start"
+          >
+            {<HandCoins aria-hidden="true" className="size-5" />}
+
+            {t("donations.donate")}
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }

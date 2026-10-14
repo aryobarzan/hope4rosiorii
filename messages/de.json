@@ -20,7 +20,43 @@
     "privacy": "Datenschutz"
   },
   "HomePage": {
-    "title": "Hallo Welt!"
+    "eyebrow": "Ehrenamtlich geführt · Gemeinnützig",
+    "heading": "In Rumänien gerettet. Auf der Suche nach einem <accent>Zuhause</accent> in Luxemburg.",
+    "description": "Wir bringen Hunde aus Rumänien nach Luxemburg und helfen ihnen, Familien zu finden, die sie lieben. Alle in unserem Team sind Ehrenamtliche, und jeder Hund hat jemanden, der seinen Namen kennt.",
+    "meetTheDogs": "Lerne die Hunde kennen",
+    "adoptionHeading": "Der lange Weg nach Hause, in vier Schritten",
+    "adoptionSteps": {
+      "1": {
+        "title": "Gerettet",
+        "description": "Unsere Partner in Rumänien holen Hunde von der Straße oder aus überfüllten Tierheimen."
+      },
+      "2": {
+        "title": "Versorgt",
+        "description": "Jeder Hund wird tierärztlich untersucht, und eine Pflegefamilie gibt ihm einen ersten Vorgeschmack auf ein Zuhause."
+      },
+      "3": {
+        "title": "Die Reise",
+        "description": "Ehrenamtliche Fahrerinnen und Fahrer bringen kleine Gruppen von Hunden nach Luxemburg."
+      },
+      "4": {
+        "title": "Adoptiert",
+        "description": "Du lernst deinen Hund kennen, wir sprechen alles durch, und dann zieht er bei dir ein."
+      }
+    },
+    "dogs": {
+      "eyebrow": "warten gerade jetzt",
+      "heading": "Könnte einer von ihnen deiner sein?",
+      "seeAll": "Alle Hunde ansehen"
+    },
+    "volunteers": {
+      "heading": "die Ehrenamtlichen hinter den Pfoten",
+      "meetAll": "Alle kennenlernen"
+    },
+    "donations": {
+      "eyebrow": "wohin dein Geld geflossen ist",
+      "heading": "Frisch vom Team",
+      "donate": "Spenden"
+    }
   },
   "NotFound": {
     "title": "Unbekannt",
