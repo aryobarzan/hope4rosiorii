@@ -394,5 +394,7 @@ body {
   .blob-frame {
     border-radius: 60% 40% 55% 45% / 55% 45% 60% 40%;
     overflow: hidden;
+    /* box-shadow: offset-x offset-y blur spread color */
+    box-shadow: 0 4px 12px 4px rgb(from var(--color-brand) r g b / 0.25);
   }
 }

@@ -37,7 +37,7 @@ function Frame({
     <Link
       href={{ pathname: `/dogs/${slug}` }}
       aria-label={label}
-      className={frameClass}
+      className={`${frameClass}`}
     >
       {children}
     </Link>
@@ -68,10 +68,7 @@ export default async function HighlightedAnimal() {
       <p className="font-heading text-5xl font-bold">{animal.name}</p>
       {/* Link from next-intl, so the locale prefix is kept. Without a slug
           there is no detail page to go to, so the frame is a plain div. */}
-      <Frame
-        slug={animal.slug}
-        label={photo?.url ? undefined : name}
-      >
+      <Frame slug={animal.slug} label={photo?.url ? undefined : name}>
         {photo?.url && (
           <SanityImage
             src={photo.url}
