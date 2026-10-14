@@ -26,6 +26,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col w-full">
+      {/* Hero */}
       <section className="page-container flex flex-col gap-8 pb-8 pt-8 md:flex-row ">
         <div className="flex flex-col gap-8">
           <div className="flex flex-col gap-1">
@@ -50,17 +51,20 @@ export default function Home() {
           <HighlightedAnimal />
         </Suspense>
       </section>
-
+      {/* Adoption steps */}
       <section className="w-full bg-button">
         <div className="page-container flex flex-col gap-1 pt-8 pb-8">
           <SectionHeading heading={t("adoptionHeading")} light />
           <div className="animal-status-card-grid mt-4">
             {["1", "2", "3", "4"].map((step) => (
               <div key={`AdoptionStep-${step}`} className="prominent-link-card">
-                <p className="font-heading text-2xl font-bold">0{step}</p>
-                <p className="font-heading text-2xl">
-                  {t(`adoptionSteps.${step}.title`)}
-                </p>
+                <div className="flex flex-col">
+                  {" "}
+                  <p className="font-heading text-2xl">0{step}</p>
+                  <p className="font-heading text-2xl">
+                    {t(`adoptionSteps.${step}.title`)}
+                  </p>
+                </div>
                 <p className="text-sm">
                   {t(`adoptionSteps.${step}.description`)}
                 </p>
@@ -69,16 +73,16 @@ export default function Home() {
           </div>
         </div>
       </section>
-
+      {/* Featured animals */}
       <Suspense>
         <FeaturedAnimals />
       </Suspense>
-
+      {/* Featured volunteers */}
       <section className="w-full bg-pale">
         <div className="page-container flex flex-col gap-4 pt-8 pb-8">
           <SectionHeading heading={t("volunteers.heading")} />
           {/* Deliberately not cards (unlike the about page): just a photo and a
-              name. The full profiles are one click away on /about. */}
+              name. */}
           <ul className="flex flex-wrap justify-evenly gap-6 pt-2 pb-2">
             {volunteers.map((volunteer) => (
               <li
@@ -103,7 +107,7 @@ export default function Home() {
           </Link>
         </div>
       </section>
-
+      {/* Featured donation updates. */}
       <section className="page-container flex flex-col gap-8 pb-8 pt-8 md:flex-row ">
         <div className="flex w-full flex-col gap-8">
           <SectionHeading
