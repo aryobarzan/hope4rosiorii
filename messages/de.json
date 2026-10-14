@@ -108,8 +108,7 @@
         ],
         "items": [
           "Vercel, das die Website hostet und die Formularverarbeitung ausführt.",
-          "Resend, das Formularübermittlungen per E-Mail an uns zustellt.",
-          "Google (Gmail), das das Postfach bereitstellt, in dem unser Team sie empfängt."
+          "Google (Gmail), das uns die Formularübermittlungen zustellt und das Postfach hostet, in dem unser Team sie erhält."
         ]
       },
       {
@@ -191,10 +190,21 @@
       "required": "Dieses Feld ist erforderlich.",
       "invalidEmail": "Bitte gib eine gültige E-Mail-Adresse ein.",
       "tooLong": "Dieser Text ist zu lang.",
-      "consentRequired": "Bitte akzeptiere die Datenschutzerklärung, um deine Nachricht zu senden."
+      "consentRequired": "Bitte akzeptiere die Datenschutzerklärung, um deine Nachricht zu senden.",
+      "rateLimited": "Zu viele Nachrichten in kurzer Zeit. Bitte versuchen Sie es später erneut.",
+      "sendFailed": "Leider konnte Ihre Nachricht nicht gesendet werden. Bitte versuchen Sie es später erneut.",
+      "invalid": "Bitte überprüfen Sie Ihre Angaben und versuchen Sie es erneut."
     },
     "followUs": "Folge uns",
-    "adoptPrompt": "Möchtest du adoptieren? Nutze das <link>Adoptionsformular</link>."
+    "adoptPrompt": "Möchtest du adoptieren? Nutze das <link>Adoptionsformular</link>.",
+    "success": "Danke! Ihre Nachricht wurde gesendet. Wir melden uns bald bei Ihnen."
+  },
+  "ContactEmail": {
+    "subject": "Neue Nachricht von der Website: {reason}",
+    "name": "Name",
+    "email": "E-Mail",
+    "reason": "Grund",
+    "language": "Sprache der Website"
   },
   "AboutPage": {
     "metadata": {

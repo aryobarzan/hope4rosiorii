@@ -1,6 +1,7 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useState } from "react";
+import { useLocale, useTranslations } from "next-intl";
 import { useForm } from "react-hook-form";
 import {
   ChevronDown,
@@ -20,6 +21,7 @@ import {
   type ContactInput,
   type ContactValues,
 } from "@/lib/schemas/contact";
+import { sendContactMessage } from "./actions";
 
 const linkClass =
   "rounded font-bold text-link underline underline-offset-4 hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink";
@@ -32,10 +34,15 @@ const iconClass = "size-5 shrink-0 text-muted";
 // looked the slug up, so it is a real dog and not text taken from the URL.
 export default function ContactForm({ dogName }: { dogName?: string }) {
   const t = useTranslations("ContactPage");
+  const locale = useLocale();
+  const [status, setStatus] = useState<
+    "success" | "invalid" | "rateLimited" | "sendFailed" | null
+  >(null);
 
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors, isSubmitting, isValid },
   } = useForm<ContactInput, unknown, ContactValues>({
     resolver: zodResolver(contactSchema),
@@ -58,9 +65,16 @@ export default function ContactForm({ dogName }: { dogName?: string }) {
   };
 
   async function onSubmit(values: ContactValues) {
-    // TODO: call the Server Action, which re-validates with contactSchema,
-    // checks the honeypot, rate limits, and sends the email via Resend.
-    console.log(values);
+    setStatus(null);
+    // The locale is passed explicitly: next/root-params doesn't work in
+    // Server Actions. The action re-validates everything on the server.
+    const result = await sendContactMessage(locale, values);
+    if (result.ok) {
+      setStatus("success");
+      reset();
+    } else {
+      setStatus(result.error);
+    }
   }
 
   const fieldError = (field: keyof ContactInput) => {
@@ -211,6 +225,19 @@ export default function ContactForm({ dogName }: { dogName?: string }) {
         </label>
         {fieldError("consent")}
       </div>
+
+      {/* role="status" / "alert" make screen readers announce the outcome */}
+      {status === "success" && (
+        <p role="status" className="font-bold">
+          {t("success")}
+        </p>
+      )}
+      {status && status !== "success" && (
+        <p role="alert" className="form-field-error flex items-start gap-1">
+          <CircleAlert aria-hidden="true" className="mt-px size-4 shrink-0" />
+          {t(`errors.${status}`)}
+        </p>
+      )}
 
       <div className="flex flex-row items-center gap-2">
         <button

@@ -108,8 +108,7 @@
         ],
         "items": [
           "Vercel, qui héberge le site et exécute le traitement des formulaires.",
-          "Resend, qui nous transmet les envois de formulaires par e-mail.",
-          "Google (Gmail), qui héberge la boîte de réception où notre équipe les reçoit."
+          "Google (Gmail), qui nous transmet les envois de formulaires et héberge la boîte mail où notre équipe les reçoit."
         ]
       },
       {
@@ -193,10 +192,21 @@
       "required": "Ce champ est obligatoire.",
       "invalidEmail": "Veuillez saisir une adresse e-mail valide.",
       "tooLong": "Ce texte est trop long.",
-      "consentRequired": "Veuillez accepter la politique de confidentialité pour envoyer votre message."
+      "consentRequired": "Veuillez accepter la politique de confidentialité pour envoyer votre message.",
+      "rateLimited": "Trop de messages en peu de temps. Veuillez réessayer plus tard.",
+      "sendFailed": "Désolé, votre message n'a pas pu être envoyé. Veuillez réessayer plus tard.",
+      "invalid": "Veuillez vérifier vos informations et réessayer."
     },
     "followUs": "Suivez-nous",
-    "adoptPrompt": "Vous souhaitez adopter ? Utilisez le <link>formulaire d'adoption</link>."
+    "adoptPrompt": "Vous souhaitez adopter ? Utilisez le <link>formulaire d'adoption</link>.",
+    "success": "Merci ! Votre message a bien été envoyé. Nous vous répondrons bientôt."
+  },
+  "ContactEmail": {
+    "subject": "Nouveau message du site : {reason}",
+    "name": "Nom",
+    "email": "E-mail",
+    "reason": "Motif",
+    "language": "Langue du site"
   },
   "AboutPage": {
     "metadata": {

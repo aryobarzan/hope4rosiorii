@@ -108,8 +108,7 @@
         ],
         "items": [
           "Vercel, dat d'Websäit hostet an d'Veraarbechtung vun de Formulairen ausféiert.",
-          "Resend, dat eis d'Formulairen per E-Mail zoustellt.",
-          "Google (Gmail), dat d'Postfach hostet, an dem eist Team se kritt."
+          "Google (Gmail), dat eis d'Formulairen zoustellt an d'Postfach hostet, an dem eist Team se kritt."
         ]
       },
       {
@@ -193,10 +192,21 @@
       "required": "Dëst Feld ass obligatoresch.",
       "invalidEmail": "Gitt w.e.g. eng gülteg E-Mail-Adress an.",
       "tooLong": "Dësen Text ass ze laang.",
-      "consentRequired": "Akzeptéiert w.e.g. d'Dateschutzerklärung, fir Är Noriicht ze schécken."
+      "consentRequired": "Akzeptéiert w.e.g. d'Dateschutzerklärung, fir Är Noriicht ze schécken.",
+      "rateLimited": "Ze vill Noriichten an ëmmer méi kuerzer Zäit. Probéiert et w.e.g. méi spéit nach eng Kéier.",
+      "sendFailed": "Entschëllegt, Är Noriicht konnt net geschéckt ginn. Probéiert et w.e.g. méi spéit nach eng Kéier.",
+      "invalid": "Kontrolléiert w.e.g. Är Angaben a probéiert et nach eng Kéier."
     },
     "followUs": "Follegt eis",
-    "adoptPrompt": "Wëllt Dir adoptéieren? Benotzt eise <link>Adoptiounsformular</link>."
+    "adoptPrompt": "Wëllt Dir adoptéieren? Benotzt eise <link>Adoptiounsformular</link>.",
+    "success": "Merci! Är Noriicht ass ugekomm. Mir mellen eis geschwënn bei Iech."
+  },
+  "ContactEmail": {
+    "subject": "Nei Noriicht vun der Websäit: {reason}",
+    "name": "Numm",
+    "email": "E-Mail",
+    "reason": "Grond",
+    "language": "Sprooch vun der Websäit"
   },
   "AboutPage": {
     "metadata": {

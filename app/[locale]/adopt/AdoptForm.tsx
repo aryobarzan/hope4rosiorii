@@ -122,7 +122,7 @@ export default function AdoptForm({
     // TODO: call the Server Action with `values` and the current locale
     // (useLocale(); next/root-params doesn't work in Server Actions). The
     // action re-validates with adoptionSchema, validates the locale with
-    // hasLocale, checks the honeypot, rate limits, and sends the email via Resend.
+    // hasLocale, checks the honeypot, rate limits, and sends the email via Gmail SMTP.
     console.log(values);
   }
 
