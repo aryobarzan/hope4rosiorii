@@ -27,7 +27,8 @@ const pinyonScript = Pinyon_Script({
 
 // TODO: replace with generateMetadata
 export const metadata: Metadata = {
-  title: "Hope 4 Rosiorii",
+  // Pages set a short title (e.g. "Donate"); the template appends the site name.
+  title: { default: "Hope 4 Rosiorii", template: "%s | Hope 4 Rosiorii" },
   description: "Dog adoption website",
 };
 

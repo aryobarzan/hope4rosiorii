@@ -373,6 +373,10 @@
     "adopt": "Adoptiere {name}"
   },
   "DonatePage": {
+    "metadata": {
+      "title": "Spenden",
+      "description": "Unterstütze Hope 4 Rosiorii, einen ehrenamtlichen Verein, der Hunde aus Rumänien rettet. Sieh, wie deine Spenden helfen."
+    },
     "eyebrow": "jeder Beitrag hilft einer Pfote",
     "heading": "Hilf einem Hund auf die Reise",
     "description": "Wir haben kein bezahltes Personal. Spenden zahlen Tierarzt, Futter, Transportboxen und den Sprit für die lange Fahrt aus Rumänien. Und wir zeigen dir immer, wohin das Geld geflossen ist.",

@@ -337,6 +337,10 @@
     }
   },
   "DonatePage": {
+    "metadata": {
+      "title": "Donate",
+      "description": "Support Hope 4 Rosiorii, a volunteer-run non-profit rescuing dogs from Romania. See how your donations help."
+    },
     "eyebrow": "every bit helps a paw",
     "heading": "Help a dog make the trip",
     "description": "We have no paid staff. Donations pay for vet care, food, crates and the fuel for the long drive from Romania. And we will always show you where the money went.",

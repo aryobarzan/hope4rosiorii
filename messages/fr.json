@@ -375,6 +375,10 @@
     "adopt": "Adopter {name}"
   },
   "DonatePage": {
+    "metadata": {
+      "title": "Faire un don",
+      "description": "Soutenez Hope 4 Rosiorii, une association bénévole qui sauve des chiens de Roumanie. Découvrez comment vos dons aident."
+    },
     "eyebrow": "chaque geste aide une patte",
     "heading": "Aidez un chien à faire le voyage",
     "description": "Nous n'avons aucun salarié. Les dons financent les soins vétérinaires, la nourriture, les caisses de transport et le carburant du long trajet depuis la Roumanie. Et nous vous montrerons toujours où est allé l'argent.",

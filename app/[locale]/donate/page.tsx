@@ -5,6 +5,22 @@ import DonationPicker from "./DonationPicker";
 import { getSiteSettings } from "@/lib/site-settings";
 import { getUpdates } from "@/lib/updates";
 import UpdateRow from "../components/UpdateRow";
+import { Metadata } from "next";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("DonatePage.metadata");
+  return {
+    title: t("title"),
+    description: t("description"),
+    // Controls how the link looks when shared on Facebook/Instagram.
+    // TODO: add an og image once the team provides one.
+    openGraph: {
+      title: t("title"),
+      description: t("description"),
+      type: "website",
+    },
+  };
+}
 
 const stepClass =
   "flex h-8 min-w-16 shrink-0 px-2 items-center justify-center rounded-full bg-white font-heading text-xl text-ink";

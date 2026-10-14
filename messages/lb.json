@@ -375,6 +375,10 @@
     "adopt": "Adoptéier {name}"
   },
   "DonatePage": {
+    "metadata": {
+      "title": "Spenden",
+      "description": "Ënnerstëtzt Hope 4 Rosiorii, e Veräin vu Fräiwëllegen, dee Hënn aus Rumänien rett. Kuckt, wéi Är Spende hëllefen."
+    },
     "eyebrow": "all Bëssen hëlleft enger Patt",
     "heading": "Hëllef engem Hond op d'Rees",
     "description": "Mir hunn kee bezuelte Personal. Spenden bezuele Veterinär, Iessen, Transportboxen an de Sprit fir déi laang Fuert vu Rumänien. A mir weisen dir ëmmer, wou d'Geld higaangen ass.",
