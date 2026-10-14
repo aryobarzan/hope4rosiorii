@@ -8,7 +8,7 @@ import SanityImage from "./SanityImage";
 
 const adoptBadge = "text-link font-bold font-heading text-xl";
 const adoptedBadge =
-  "bg-white rounded-full text-link px-2 font-bold font-heading text-xl";
+  "pill text-link font-heading text-xl";
 
 const MAX_TRAITS_ON_CARD = 2;
 

@@ -22,20 +22,20 @@ export default function PrivacyPolicy() {
   const sections = t.raw("sections") as Section[];
 
   return (
-    <div className="page-container pb-8 pt-8">
-      <h1 className="font-heading text-3xl">{t("title")}</h1>
-      <p className="mt-2 text-muted">{t("intro")}</p>
+    <div className="page-container page-section flex flex-col gap-8">
+      <div className="flex flex-col gap-2">
+        <h1 className="font-heading text-3xl">{t("title")}</h1>
+        <p className="text-muted">{t("intro")}</p>
+      </div>
 
       {sections.map((section) => (
-        <section key={section.title} className="mt-8">
+        <section key={section.title} className="flex flex-col gap-3">
           <h2 className="font-heading text-2xl">{section.title}</h2>
           {section.paragraphs?.map((paragraph) => (
-            <p key={paragraph} className="mt-3">
-              {paragraph}
-            </p>
+            <p key={paragraph}>{paragraph}</p>
           ))}
           {section.items && (
-            <ul className="mt-3 list-disc space-y-2 pl-6">
+            <ul className="flex list-disc flex-col gap-2 pl-6">
               {section.items.map((item) => (
                 <li key={item}>{item}</li>
               ))}

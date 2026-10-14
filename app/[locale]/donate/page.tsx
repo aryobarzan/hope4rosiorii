@@ -23,7 +23,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const stepClass =
-  "flex h-8 min-w-16 shrink-0 px-2 items-center justify-center rounded-full bg-white font-heading text-xl text-ink";
+  "pill h-8 min-w-16 shrink-0 py-0 font-heading text-xl";
 
 export default async function Donate() {
   const t = await getTranslations("DonatePage");
@@ -47,14 +47,16 @@ export default async function Donate() {
 
   return (
     <div className="flex flex-col w-full">
-      <section className="page-container flex flex-col gap-1 pb-8 pt-8">
-        <p className="font-heading text-xl text-link">{t("eyebrow")}</p>
-        <h1 className="font-heading text-5xl">{t("heading")}</h1>
-        <p>{t("description")}</p>
+      <section className="page-container page-section section-stack">
+        <div className="flex flex-col gap-1">
+          <p className="font-heading text-xl text-link">{t("eyebrow")}</p>
+          <h1 className="font-heading text-5xl">{t("heading")}</h1>
+          <p>{t("description")}</p>
+        </div>
         {/* One column on small screens. From lg: the picker on the left, and the
           gift and bank boxes stacked in a column on the right. items-start stops
           the columns stretching to the tallest one. */}
-        <div className="mt-4 flex flex-col gap-4 lg:flex-row lg:items-start">
+        <div className="flex flex-col gap-4 lg:flex-row lg:items-start">
           <DonationPicker />
           <div className="flex flex-col gap-4">
             <section className="flex flex-col gap-2 prominent-box">
@@ -119,13 +121,15 @@ export default async function Donate() {
         </div>
       </section>
       <section className="w-full bg-pale">
-        <div className="page-container flex flex-col gap-1 pt-8 pb-8">
-          <p className="font-heading text-xl text-link">
-            {t("updates.eyebrow")}
-          </p>
-          <h2 className="font-heading text-5xl mb-4">{t("updates.heading")}</h2>
+        <div className="page-container page-section section-stack">
+          <div className="flex flex-col gap-1">
+            <p className="font-heading text-xl text-link">
+              {t("updates.eyebrow")}
+            </p>
+            <h2 className="font-heading text-5xl">{t("updates.heading")}</h2>
+          </div>
           {/* A list, so assistive tech announces "list of N items"; gap-4 spaces
-              the cards (the container's gap-1 is meant for the heading). */}
+              the cards. */}
           <ul className="flex flex-col gap-4">
             {updates.map((update) => (
               <UpdateRow key={update._id} update={update} />

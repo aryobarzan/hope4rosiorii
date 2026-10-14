@@ -24,7 +24,7 @@ export default function About() {
   return (
     <div className="flex flex-col w-full">
       {/* Stacked on small screens; text left and picture right from md */}
-      <section className="page-container flex flex-col gap-8 pb-8 pt-8 md:flex-row md:items-center">
+      <section className="page-container page-section flex flex-col gap-8 md:flex-row md:items-center">
         <div className="flex flex-col gap-4">
           <div className="flex flex-col gap-1">
             <p className="font-heading text-xl text-link">{t("eyebrow")}</p>
@@ -53,9 +53,9 @@ export default function About() {
 
       {/* Full-bleed band: colour on the outer element, container inside */}
       <section className="w-full bg-pale">
-        <div className="page-container flex flex-col gap-1 pt-8 pb-8">
+        <div className="page-container page-section section-stack">
           <h2 className="font-heading text-5xl">{t("headingVolunteers")}</h2>
-          <ul className="volunteer-grid pt-4">
+          <ul className="volunteer-grid">
             {volunteers.map((volunteer) => (
               <li key={volunteer.id} className="volunteer-card">
                 <div className="picture-placeholder blob-frame w-24 h-24" />

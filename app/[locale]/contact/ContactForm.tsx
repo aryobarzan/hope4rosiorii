@@ -89,8 +89,8 @@ export default function ContactForm({ dogName }: { dogName?: string }) {
     >
       {/* flex-1 on email and name fields so they take up equal widths in the same row */}
       {/* min-w-0 ensures they do not shrink below their content's minimum width. */}
-      <div className="flex flex-row gap-2">
-        <div className="flex min-w-0 flex-1 flex-col gap-1">
+      <div className="flex flex-row gap-4">
+        <div className="flex min-w-0 flex-1 flex-col gap-2">
           <label htmlFor="name" className={labelClass}>
             <User aria-hidden="true" className={iconClass} />
             {t("name")}
@@ -106,7 +106,7 @@ export default function ContactForm({ dogName }: { dogName?: string }) {
           />
           {fieldError("name")}
         </div>
-        <div className="flex min-w-0 flex-1 flex-col gap-1">
+        <div className="flex min-w-0 flex-1 flex-col gap-2">
           <label htmlFor="email" className={labelClass}>
             <Mail aria-hidden="true" className={iconClass} />
             {t("email")}
@@ -124,51 +124,55 @@ export default function ContactForm({ dogName }: { dogName?: string }) {
         </div>
       </div>
 
-      <label htmlFor="reason" className={labelClass}>
-        <Tag aria-hidden="true" className={iconClass} />
-        {t("reason")}
-      </label>
-      <div className="relative">
-        <select
-          id="reason"
-          defaultValue=""
-          aria-invalid={!!errors.reason}
-          aria-describedby={describedBy("reason")}
-          className="input-field"
-          {...register("reason")}
-        >
-          <option value="" disabled>
-            {t("reasonPlaceholder")}
-          </option>
-          {contactReasons.map((key) => (
-            <option key={key} value={key}>
-              {t(`reasons.${key}`)}
+      <div className="flex flex-col gap-2">
+        <label htmlFor="reason" className={labelClass}>
+          <Tag aria-hidden="true" className={iconClass} />
+          {t("reason")}
+        </label>
+        <div className="relative">
+          <select
+            id="reason"
+            defaultValue=""
+            aria-invalid={!!errors.reason}
+            aria-describedby={describedBy("reason")}
+            className="input-field"
+            {...register("reason")}
+          >
+            <option value="" disabled>
+              {t("reasonPlaceholder")}
             </option>
-          ))}
-        </select>
-        {/* select.input-field has appearance: none, so draw the arrow ourselves */}
-        {/* absolute to position the arrow relative to the ancesor (div) */}
-        {/* top-1/2 moves top edge to middle of wrapper, so we shift it back up by -translate-y-1/2, i.e., half of its height. */}
-        {/* right-4 pins the arrow to the right edge with some padding */}
-        <ChevronDown
-          aria-hidden="true"
-          className="pointer-events-none absolute top-1/2 right-4 size-5 -translate-y-1/2"
-        />
+            {contactReasons.map((key) => (
+              <option key={key} value={key}>
+                {t(`reasons.${key}`)}
+              </option>
+            ))}
+          </select>
+          {/* select.input-field has appearance: none, so draw the arrow ourselves */}
+          {/* absolute to position the arrow relative to the ancesor (div) */}
+          {/* top-1/2 moves top edge to middle of wrapper, so we shift it back up by -translate-y-1/2, i.e., half of its height. */}
+          {/* right-4 pins the arrow to the right edge with some padding */}
+          <ChevronDown
+            aria-hidden="true"
+            className="pointer-events-none absolute top-1/2 right-4 size-5 -translate-y-1/2"
+          />
+        </div>
+        {fieldError("reason")}
       </div>
-      {fieldError("reason")}
 
-      <label htmlFor="message" className={labelClass}>
-        <MessageSquare aria-hidden="true" className={iconClass} />
-        {t("message")}
-      </label>
-      <textarea
-        id="message"
-        aria-invalid={!!errors.message}
-        aria-describedby={describedBy("message")}
-        className="input-field textarea-field"
-        {...register("message")}
-      />
-      {fieldError("message")}
+      <div className="flex flex-col gap-2">
+        <label htmlFor="message" className={labelClass}>
+          <MessageSquare aria-hidden="true" className={iconClass} />
+          {t("message")}
+        </label>
+        <textarea
+          id="message"
+          aria-invalid={!!errors.message}
+          aria-describedby={describedBy("message")}
+          className="input-field textarea-field"
+          {...register("message")}
+        />
+        {fieldError("message")}
+      </div>
 
       {/* Honeypot: clipped to 1px (sr-only) rather than pushed off-screen, which
           would widen the page and add a horizontal scrollbar. Skipped by
@@ -184,15 +188,15 @@ export default function ContactForm({ dogName }: { dogName?: string }) {
         />
       </div>
 
-      {/* gap-3, not gap-1: `.form-field-error` has a -0.25rem top margin that
-          offsets the gap, and unlike the inputs this label has no bottom margin */}
-      <div className="flex flex-col gap-3">
-        <label className="flex items-start gap-3">
+      {/* 44px touch target, checkbox centred on the first line of text (same
+          layout as the adoption form's checkboxes) */}
+      <div className="flex flex-col gap-2">
+        <label className="flex min-h-11 items-start gap-3 py-2">
           <input
             type="checkbox"
             aria-invalid={!!errors.consent}
             aria-describedby={describedBy("consent")}
-            className="mt-1 size-5 shrink-0 accent-button"
+            className="mt-0.5 size-5 shrink-0 accent-button"
             {...register("consent")}
           />
           <span>

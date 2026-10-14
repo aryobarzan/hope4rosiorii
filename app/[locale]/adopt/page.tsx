@@ -5,7 +5,7 @@ import { getCountryOptions } from "@/lib/countries";
 import { getAnimal } from "@/lib/animals";
 import AdoptForm from "./AdoptForm";
 const stepClass =
-  "flex size-8 shrink-0 items-center justify-center rounded-full bg-white font-heading text-ink text-xl";
+  "pill size-8 shrink-0 p-0 font-heading text-xl";
 
 // With cacheComponents, searchParams is runtime data and must be read inside
 // <Suspense>. Isolating it here keeps the rest of the page prerendered; only
@@ -47,12 +47,14 @@ export default async function Adopt({
   const countries = getCountryOptions(locale);
 
   return (
-    <div className="page-container flex flex-col gap-1 pb-8 pt-8">
-      <p className="font-heading text-xl text-link">{t("eyebrow")}</p>
-      <h1 className="font-heading text-5xl">{t("heading")}</h1>
+    <div className="page-container page-section section-stack">
+      <div className="flex flex-col gap-1">
+        <p className="font-heading text-xl text-link">{t("eyebrow")}</p>
+        <h1 className="font-heading text-5xl">{t("heading")}</h1>
+      </div>
       {/* Stacked on small screens; side by side from lg. items-start stops the
           box stretching to the form's height, so it only takes what it needs. */}
-      <div className="mt-4 flex flex-col gap-4 lg:flex-row lg:items-start">
+      <div className="flex flex-col gap-4 lg:flex-row lg:items-start">
         {/* The fallback is the plain form, so the layout does not jump. */}
         <Suspense fallback={<AdoptForm countries={countries} />}>
           <PrefilledAdoptForm

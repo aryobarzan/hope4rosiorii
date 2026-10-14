@@ -11,7 +11,7 @@ export function HighlightedAnimalSkeleton() {
   return (
     <div
       aria-hidden="true"
-      className="order-first flex w-full max-w-md flex-col items-center gap-2 md:order-0 md:ml-auto md:w-80 md:shrink-0 lg:w-md"
+      className="hero-aside"
     >
       <div className="picture-placeholder blob-frame aspect-square w-full max-w-64" />
     </div>
@@ -59,7 +59,7 @@ export default async function HighlightedAnimal() {
   const name = animal.name ?? "";
 
   return (
-    <div className="order-first flex w-full max-w-md flex-col items-center gap-2 md:order-0 md:ml-auto md:w-80 md:shrink-0 lg:w-md">
+    <div className="hero-aside">
       {animal.status === "available" && (
         <p className="text-link font-bold font-heading text-xl">
           {t("card.adoptMe")}

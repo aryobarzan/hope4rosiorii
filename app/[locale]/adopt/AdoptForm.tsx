@@ -163,7 +163,7 @@ export default function AdoptForm({
       multiline?: boolean;
     } = {},
   ) => (
-    <div className="flex min-w-0 flex-1 flex-col gap-1">
+    <div className="flex min-w-0 flex-1 flex-col gap-2">
       <label htmlFor={field} className="form-label">
         {t(`fields.${field}`)}
         {requiredMark(field)}
@@ -194,7 +194,7 @@ export default function AdoptForm({
   );
 
   const numberInput = (field: NumberField) => (
-    <div className="flex min-w-0 flex-1 flex-col gap-1">
+    <div className="flex min-w-0 flex-1 flex-col gap-2">
       <label htmlFor={field} className="form-label">
         {t(`fields.${field}`)}
         {requiredMark(field)}
@@ -225,7 +225,7 @@ export default function AdoptForm({
       </option>
     );
     return (
-      <div className="flex min-w-0 flex-1 flex-col gap-1">
+      <div className="flex min-w-0 flex-1 flex-col gap-2">
         <label htmlFor="country" className="form-label">
           {t("fields.country")}
           {requiredMark("country")}
@@ -393,7 +393,7 @@ export default function AdoptForm({
     <form
       onSubmit={handleSubmit(onSubmit)}
       noValidate
-      className="form-box gap-8"
+      className="form-box gap-6"
     >
       {section(
         "contact",
@@ -515,15 +515,15 @@ export default function AdoptForm({
         />
       </div>
 
-      {/* gap-3, not gap-1: `.form-field-error` has a -0.25rem top margin that
-          offsets the gap, and unlike the inputs this label has no bottom margin */}
-      <div className="flex flex-col gap-3">
-        <label className="flex items-start gap-3">
+      {/* Same label/checkbox layout as `acknowledgement`: 44px touch target,
+          checkbox centred on the first line of text */}
+      <div className="flex flex-col gap-2">
+        <label className="flex min-h-11 items-start gap-3 py-2">
           <input
             type="checkbox"
             aria-invalid={!!errors.consent}
             aria-describedby={describedBy("consent")}
-            className="mt-1 size-5 shrink-0 accent-button"
+            className="mt-0.5 size-5 shrink-0 accent-button"
             {...register("consent")}
           />
           <span>

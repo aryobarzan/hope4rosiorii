@@ -27,8 +27,10 @@ export default async function Footer() {
   ];
 
   return (
-    <footer className="w-full bg-plum px-6 py-10 text-blush">
-      <div className="mx-auto flex max-w-5xl flex-wrap gap-x-16 gap-y-8">
+    <footer className="w-full bg-plum text-blush">
+      {/* Same container as the page sections, so the footer's content lines up
+          with the content above it. */}
+      <div className="page-container page-section flex flex-wrap gap-x-16 gap-y-8">
         <div className="flex max-w-xs flex-col gap-2">
           <div className="flex items-center gap-4">
             {/* unoptimized: tiny local logo, keep under Hobby's image-transformation limit */}

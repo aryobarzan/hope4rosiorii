@@ -37,7 +37,7 @@ export function AnimalList({
       {hasBothSpecies && (
         <nav
           aria-label={t("filter.label")}
-          className="flex flex-wrap gap-2 pt-4"
+          className="flex flex-wrap gap-2"
         >
           {(["all", "dog", "cat"] as const).map((value) => (
             <Link
@@ -56,8 +56,8 @@ export function AnimalList({
           ))}
         </nav>
       )}
-      {visible.length === 0 && <p className="pt-4">{t("empty")}</p>}
-      <ul className="dog-grid pt-4">
+      {visible.length === 0 && <p>{t("empty")}</p>}
+      <ul className="dog-grid">
         {visible.map((animal) => (
           <AnimalCard key={animal._id} animal={animal} />
         ))}

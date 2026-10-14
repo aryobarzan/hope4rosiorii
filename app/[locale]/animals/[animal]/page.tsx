@@ -110,19 +110,19 @@ export default async function AnimalPage({
 
   return (
     <div className="flex flex-col w-full">
-      <section className="page-container flex flex-col gap-8 pb-8 pt-8 md:flex-row md:items-center">
+      <section className="page-container page-section flex flex-col gap-8 md:flex-row md:items-center">
         <div className="flex flex-col gap-4">
           <div className="flex flex-col gap-2">
             {(animal.location || animal.status) && (
               <ul className="mb-2 flex gap-1">
                 {animal.location && (
-                  <li className="animal-info-badge flex items-center gap-1">
+                  <li className="pill text-sm text-link">
                     <House aria-hidden="true" className="size-5" />
                     {tAnimal(`location.${animal.location}`)}
                   </li>
                 )}
                 {animal.status && (
-                  <li className="animal-info-badge">
+                  <li className="pill text-sm text-link">
                     {tAnimal(`status.${animal.status}`)}
                   </li>
                 )}
@@ -178,10 +178,7 @@ export default async function AnimalPage({
             </div>
           </div>
         </div>
-        {/* An explicit width: as a flex item with auto width, this column
-            shrink-wraps its text, and the square photo only gets whatever width
-            the text happens to need. */}
-        <div className="order-first flex w-full max-w-md flex-col items-center gap-2 md:order-0 md:ml-auto md:w-80 md:shrink-0 lg:w-md">
+        <div className="hero-aside">
           <div className="relative picture-placeholder blob-frame aspect-square w-full">
             {photo?.url && (
               <SanityImage
@@ -209,11 +206,11 @@ export default async function AnimalPage({
 
       {animal.health && animal.health.length > 0 && (
         <section className="w-full bg-button">
-          <div className="page-container flex flex-col gap-1 pt-8 pb-8">
+          <div className="page-container page-section section-stack">
             <h2 className="font-heading text-5xl text-white">
               {t("healthHeading")}
             </h2>
-            <div className="animal-status-card-grid mt-4">
+            <div className="animal-status-card-grid">
               {animal.health.map((health) => (
                 <div key={health} className="prominent-link-card">
                   <HealthIcon health={health} />
@@ -232,7 +229,7 @@ export default async function AnimalPage({
           nothing. */}
       {galleryPhotos.length > 1 && (
         <section className="w-full bg-pale">
-          <div className="page-container flex flex-col gap-4 pt-8 pb-8">
+          <div className="page-container page-section section-stack">
             <h2 className="font-heading text-5xl">{t("galleryHeading")}</h2>
             <AnimalGallery photos={galleryPhotos} name={name} />
           </div>

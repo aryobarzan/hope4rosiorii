@@ -48,8 +48,11 @@ export default function AnimalGallery({
 
   return (
     <>
-      {/* p-1: room for the focus outline, which overflow-x would clip */}
-      <ul className="flex gap-3 overflow-x-auto p-1">
+      {/* overflow-x-auto also clips vertically, so the padding has to cover the
+          blob's shadow (`.blob-frame`: about 20px below, 16px to the sides) and
+          the focus outline. The negative margin cancels it out, so the layout
+          is the same as without the padding. */}
+      <ul className="-mx-4 -my-5 flex gap-3 overflow-x-auto px-4 py-5">
         {photos.map((photo, index) => (
           <li key={photo.url} className="shrink-0">
             <button

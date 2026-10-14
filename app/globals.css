@@ -58,6 +58,35 @@ body {
     padding-inline: 1rem;
   }
 
+  /* Inner padding of every card and box (`.form-box`, `.dog-card`, ...). Smaller
+     on phones, where 2rem on each side of a card leaves little room for the
+     content. Use `p-(--card-padding)` for one-off boxes. */
+  :root {
+    --card-padding: 1.5rem;
+  }
+
+  @media (min-width: 40rem) {
+    :root {
+      --card-padding: 2rem;
+    }
+  }
+
+  /* Vertical padding of a page section. Combine with `.page-container` (or put
+     it on the inner element of a full-bleed band) so every section has the same
+     rhythm. */
+  .page-section {
+    padding-block: 2rem;
+  }
+
+  /* Heading group -> content (-> button) spacing inside a section. The heading
+     group itself is wrapped in its own `flex flex-col gap-1` element, so this
+     gap only separates blocks. */
+  .section-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
   .text-button {
     color: var(--color-button);
     font-weight: 500;
@@ -216,11 +245,11 @@ body {
   }
 
   .form-box {
-    padding: 32px;
+    padding: var(--card-padding);
     background-color: white;
     /* min() so the box can't overflow viewports narrower than 400px */
-    min-width: min(400px, 100%);
-    max-width: 800px;
+    min-width: min(25rem, 100%);
+    max-width: 50rem;
     border-radius: 2rem;
     display: flex;
     flex-direction: column;
@@ -234,7 +263,6 @@ body {
   .form-field-error {
     font-size: 0.8rem;
     color: #dc2626;
-    margin-top: -0.25rem;
   }
 
   .form-label {
@@ -242,24 +270,24 @@ body {
   }
 
   .prominent-box {
-    padding: 32px;
+    padding: var(--card-padding);
     background-color: var(--color-button);
     /* inherited by p inside it */
     color: white;
-    min-width: min(400px, 100%);
-    max-width: 800px;
+    min-width: min(25rem, 100%);
+    max-width: 50rem;
     border-radius: 2rem;
     display: flex;
     flex-direction: column;
   }
 
   .alternate-box {
-    padding: 32px;
+    padding: var(--card-padding);
     background-color: var(--color-pale);
     /* inherited by p inside it */
     color: var(--color-ink);
-    min-width: min(400px, 100%);
-    max-width: 800px;
+    min-width: min(25rem, 100%);
+    max-width: 50rem;
     border-radius: 2rem;
     display: flex;
     flex-direction: column;
@@ -267,7 +295,6 @@ body {
 
   .input-field {
     padding: 0.75rem 1rem;
-    margin: 0.25rem 0;
     /* A 1px border with a large radius renders jagged on standard-DPI screens
      (the curve can't be anti-aliased across a single pixel). 2px smooths it. */
     border: 1.5px solid var(--color-ink);
@@ -297,7 +324,7 @@ body {
     border-radius: 2rem;
     display: flex;
     flex-direction: column;
-    padding: 2rem;
+    padding: var(--card-padding);
     gap: 1rem;
   }
 
@@ -319,7 +346,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 2rem;
+    padding: var(--card-padding);
     gap: 1rem;
   }
 
@@ -333,15 +360,21 @@ body {
     gap: 1.5rem;
   }
 
-  .animal-info-badge {
+  /* Small rounded label (animal badges, "adopted" tag, update dates, step
+     numbers). One shared shape and padding; each use adds only its colour
+     (`text-link`, `bg-pale`, ...) and text size via utilities. Fixed-size
+     variants (a numbered circle) override the padding with `p-0` / `py-0`. */
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
     background-color: white;
-    color: var(--color-link);
-    border-radius: 2rem;
-    padding: 0.25rem 0.5rem;
-    font-weight: bold;
-    font-size: small;
+    color: var(--color-ink);
+    font-weight: 700;
   }
-  /* rounded-full text-link px-2 font-bold font-heading text-xl */
 
   .prominent-link-card {
     background-color: var(--color-link);
@@ -351,7 +384,7 @@ body {
     flex-direction: column;
     justify-content: start;
     align-items: start;
-    padding: 1.5rem;
+    padding: var(--card-padding);
     gap: 1rem;
     /* Safety net for very long words (e.g. "Infektiounskrankheeten"). `anywhere`
        and not `break-word`: only `anywhere` lowers the minimum width of the
@@ -361,8 +394,9 @@ body {
 
   .animal-status-card-grid {
     display: grid;
-    /* 12rem: wide enough for the longest word we have, with the padding */
-    grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+    /* 13rem: wide enough for the longest word we have, with the padding
+       (2rem each side; was 12rem when the cards had 1.5rem padding) */
+    grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
     gap: 1.5rem;
   }
 
@@ -372,7 +406,7 @@ body {
     border-radius: 2rem;
     display: flex;
     flex-direction: column;
-    padding: 2rem;
+    padding: var(--card-padding);
     gap: 1rem;
   }
 
@@ -380,6 +414,38 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
     gap: 1.5rem;
+  }
+
+  /* Photo column beside the hero text (home page highlight, animal detail,
+     and the skeleton for the former). Photo first when stacked on phones, then
+     a fixed-width column on the right: an explicit width, because as a flex
+     item with auto width the column would shrink-wrap its text and the square
+     photo would only get whatever width the text happens to need. */
+  .hero-aside {
+    order: -9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    max-width: 28rem;
+    /* centred while stacked; pushed to the right once beside the text */
+    margin-inline: auto;
+  }
+
+  @media (min-width: 48rem) {
+    .hero-aside {
+      order: 0;
+      margin-inline: auto 0;
+      width: 20rem;
+      flex-shrink: 0;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .hero-aside {
+      width: 28rem;
+    }
   }
 
   .picture-placeholder {

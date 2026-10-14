@@ -24,7 +24,7 @@ export default function UpdateRow({ update }: { update: DonationUpdate }) {
       </div>
       <div className="flex w-full min-w-0 flex-col gap-1">
         <div className="flex flex-wrap items-center gap-2">
-          <span className="shrink-0 rounded-full bg-pale px-3 py-0.5 font-bold text-ink">
+          <span className="pill shrink-0 bg-pale">
             {t("updates.spent", {
               amount: format.number(update.amountSpent ?? 0, {
                 style: "currency",

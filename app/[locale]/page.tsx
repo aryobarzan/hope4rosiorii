@@ -27,7 +27,7 @@ export default function Home() {
   return (
     <div className="flex flex-col w-full">
       {/* Hero */}
-      <section className="page-container flex flex-col gap-8 pb-8 pt-8 md:flex-row ">
+      <section className="page-container page-section flex flex-col gap-8 md:flex-row">
         <div className="flex flex-col gap-8">
           <div className="flex flex-col gap-1">
             <p className="font-heading text-xl text-link">{t("eyebrow")}</p>
@@ -53,9 +53,9 @@ export default function Home() {
       </section>
       {/* Adoption steps */}
       <section className="w-full bg-button">
-        <div className="page-container flex flex-col gap-1 pt-8 pb-8">
+        <div className="page-container page-section section-stack">
           <SectionHeading heading={t("adoptionHeading")} light />
-          <div className="animal-status-card-grid mt-4">
+          <div className="animal-status-card-grid">
             {["1", "2", "3", "4"].map((step) => (
               <div key={`AdoptionStep-${step}`} className="prominent-link-card">
                 <div className="flex flex-col">
@@ -79,11 +79,11 @@ export default function Home() {
       </Suspense>
       {/* Featured volunteers */}
       <section className="w-full bg-pale">
-        <div className="page-container flex flex-col gap-4 pt-8 pb-8">
+        <div className="page-container page-section section-stack">
           <SectionHeading heading={t("volunteers.heading")} />
           {/* Deliberately not cards (unlike the about page): just a photo and a
               name. */}
-          <ul className="flex flex-wrap justify-evenly gap-6 pt-2 pb-2">
+          <ul className="flex flex-wrap justify-evenly gap-6">
             {volunteers.map((volunteer) => (
               <li
                 key={volunteer.id}
@@ -108,8 +108,8 @@ export default function Home() {
         </div>
       </section>
       {/* Featured donation updates. */}
-      <section className="page-container flex flex-col gap-8 pb-8 pt-8 md:flex-row ">
-        <div className="flex w-full flex-col gap-8">
+      <section className="page-container page-section flex flex-col gap-8 md:flex-row">
+        <div className="section-stack w-full">
           <SectionHeading
             eyebrow={t("donations.eyebrow")}
             heading={t("donations.heading")}

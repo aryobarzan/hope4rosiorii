@@ -122,7 +122,7 @@ export default function DonationPicker() {
         </div>
       </fieldset>
 
-      <div className="flex flex-col gap-1">
+      <div className="flex flex-col gap-2">
         <label htmlFor={`${id}-custom`} className="form-label">
           {t("amountLabel")}
         </label>

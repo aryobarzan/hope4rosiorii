@@ -29,7 +29,7 @@ export default async function FeaturedAnimals() {
   if (shown.length === 0) return null;
 
   return (
-    <section className="page-container flex flex-col gap-8 pb-8 pt-8">
+    <section className="page-container page-section section-stack">
       <SectionHeading
         eyebrow={t("dogs.eyebrow")}
         heading={t("dogs.heading")}

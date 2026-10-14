@@ -20,14 +20,16 @@ export default async function Dogs() {
       Number(a.status === "adopted") - Number(b.status === "adopted"),
   );
   return (
-    <div className="page-container flex flex-col gap-1 pb-8 pt-8">
-      <p className="font-heading text-xl text-link">{t("eyebrow")}</p>
-      <h1 className="font-heading text-5xl">{t("heading")}</h1>
-      <p>{t("description")}</p>
+    <div className="page-container page-section section-stack">
+      <div className="flex flex-col gap-1">
+        <p className="font-heading text-xl text-link">{t("eyebrow")}</p>
+        <h1 className="font-heading text-5xl">{t("heading")}</h1>
+        <p>{t("description")}</p>
+      </div>
       <Suspense fallback={<AnimalList animals={sorted} species="all" />}>
         <FilteredAnimalList animals={sorted} />
       </Suspense>
-      <div className="flex flex-col md:flex-row md:items-center gap-4 bg-pale text-ink rounded-4xl px-6 py-6 mt-8">
+      <div className="flex flex-col md:flex-row md:items-center gap-4 bg-pale text-ink rounded-4xl p-(--card-padding)">
         <div className="flex flex-col gap-1">
           <p className="font-bold text-2xl font-heading">{t("help.title")}</p>
           <p>{t("help.body")}</p>

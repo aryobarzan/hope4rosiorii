@@ -38,12 +38,14 @@ export default async function Contact({
   const settings = await getSiteSettings();
 
   return (
-    <div className="page-container flex flex-col gap-1 pb-8 pt-8">
-      <p className="font-heading text-xl text-link">{t("eyebrow")}</p>
-      <h1 className="font-heading text-5xl">{t("heading")}</h1>
+    <div className="page-container page-section section-stack">
+      <div className="flex flex-col gap-1">
+        <p className="font-heading text-xl text-link">{t("eyebrow")}</p>
+        <h1 className="font-heading text-5xl">{t("heading")}</h1>
+      </div>
       {/* Stacked on small screens; side by side from lg. items-start stops the
           box stretching to the form's height, so it only takes what it needs. */}
-      <div className="mt-4 flex flex-col gap-4 lg:flex-row lg:items-start">
+      <div className="flex flex-col gap-4 lg:flex-row lg:items-start">
         {/* The fallback is the plain form, so the layout does not jump. */}
         <Suspense fallback={<ContactForm />}>
           <PrefilledContactForm searchParams={searchParams} />
