@@ -20,6 +20,9 @@
     "privacy": "Politique de confidentialité"
   },
   "HomePage": {
+    "metadata": {
+      "description": "Une association bénévole qui amène des chiens sauvés de Roumanie au Luxembourg. Découvrez les chiens qui attendent une famille."
+    },
     "eyebrow": "Géré par des bénévoles · À but non lucratif",
     "heading": "Sauvés en Roumanie. Dans l'espoir d'un <accent>foyer</accent> au Luxembourg.",
     "description": "Nous amenons des chiens de Roumanie au Luxembourg et les aidons à trouver des familles qui les aiment. Chaque membre de notre équipe est bénévole, et chaque chien a quelqu'un qui connaît son nom.",
@@ -164,6 +167,10 @@
     ]
   },
   "ContactPage": {
+    "metadata": {
+      "title": "Contact",
+      "description": "Des questions, des idées ou l'envie d'aider ? Contactez les bénévoles de Hope 4 Rosiorii."
+    },
     "eyebrow": "Dites bonjour",
     "heading": "Des questions ? Des idées ? Envie d'aider ?",
     "name": "Votre nom",
@@ -192,6 +199,10 @@
     "adoptPrompt": "Vous souhaitez adopter ? Utilisez le <link>formulaire d'adoption</link>."
   },
   "AboutPage": {
+    "metadata": {
+      "title": "À propos",
+      "description": "Faites la connaissance des bénévoles de Hope 4 Rosiorii, une association qui amène des chiens sauvés de Roumanie au Luxembourg."
+    },
     "eyebrow": "Notre histoire",
     "heading": "Quelques amis, beaucoup de chiens, un long chemin",
     "origins": "[Placeholder : comment Hope 4 Rosiorii a commencé]",
@@ -200,6 +211,10 @@
     "socialLabel": "{name} sur {platform}"
   },
   "AdoptPage": {
+    "metadata": {
+      "title": "Adopter un chien",
+      "description": "Prêt à offrir un foyer à un chien sauvé ? Envoyez-nous votre demande d'adoption et un bénévole vous contactera."
+    },
     "eyebrow": "le premier bonjour",
     "heading": "Demande d'adoption",
     "next": {
@@ -339,6 +354,10 @@
     }
   },
   "DogsPage": {
+    "metadata": {
+      "title": "Nos chiens",
+      "description": "Découvrez les chiens sauvés en Roumanie qui attendent une famille au Luxembourg. Un regard vous a fait sourire ? Dites-le-nous."
+    },
     "eyebrow": "ce sont tous de bons chiens",
     "heading": "Adopte-moi !",
     "description": "Tous les chiens présentés ici ont été sauvés en Roumanie, examinés par un vétérinaire et pris en charge par un bénévole. Vous avez trouvé quelqu’un qui vous fait sourire ? Dites-le-nous.",

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Suspense } from "react";
 import { getLocale, getTranslations } from "next-intl/server";
 import { getCountryOptions } from "@/lib/countries";
@@ -29,6 +30,11 @@ async function PrefilledAdoptForm({
       dogName={dog?.name ?? undefined}
     />
   );
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("AdoptPage.metadata");
+  return { title: t("title"), description: t("description") };
 }
 
 export default async function Adopt({

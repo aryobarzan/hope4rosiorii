@@ -1,10 +1,18 @@
+import type { Metadata } from "next";
 import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
 type Section = {
   title: string;
   paragraphs?: string[];
   items?: string[];
 };
+
+// Reuses the page's own title and intro, so there are no extra messages.
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("PrivacyPage");
+  return { title: t("title"), description: t("intro") };
+}
 
 // The policy lives in the message files as an ordered array of sections, so
 // adding or reordering a section only touches the JSON, not this component.

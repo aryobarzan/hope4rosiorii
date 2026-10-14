@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getFormatter, getTranslations } from "next-intl/server";
 import {
@@ -57,6 +58,32 @@ export async function generateStaticParams() {
   return params.length > 0
     ? params
     : routing.locales.map((locale) => ({ locale, animal: "__placeholder__" }));
+}
+
+// Title and description come from the animal itself (CMS content), so a shared
+// link to a dog shows that dog's name, text and main photo. An unknown slug
+// returns nothing here; the page itself answers with notFound().
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; animal: string }>;
+}): Promise<Metadata> {
+  const { locale, animal: slug } = await params;
+  const animal = await getAnimal(slug, locale);
+  if (!animal) return {};
+  const t = await getTranslations("AnimalPage");
+  const title = t("heading", { name: animal.name ?? "" });
+  const photoUrl = animal.gallery?.[0]?.url;
+  return {
+    title,
+    description: animal.description ?? undefined,
+    openGraph: {
+      title,
+      description: animal.description ?? undefined,
+      type: "website",
+      images: photoUrl ? [{ url: photoUrl }] : undefined,
+    },
+  };
 }
 
 export default async function AnimalPage({

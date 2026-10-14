@@ -1,4 +1,6 @@
+import type { Metadata } from "next";
 import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { Suspense } from "react";
 import HighlightedAnimal, {
   HighlightedAnimalSkeleton,
@@ -10,6 +12,13 @@ import SectionHeading from "./components/SectionHeading";
 import { UserGroup, HandCoins } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { getVolunteers } from "@/lib/volunteers";
+
+// No title: the layout's default ("Hope 4 Rosiorii") is the right one for the
+// home page, so only the description is translated.
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("HomePage.metadata");
+  return { description: t("description") };
+}
 
 export default function Home() {
   const t = useTranslations("HomePage");

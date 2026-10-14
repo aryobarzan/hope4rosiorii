@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Suspense } from "react";
 import { getLocale, getTranslations } from "next-intl/server";
 import { getAnimal } from "@/lib/animals";
@@ -21,6 +22,11 @@ async function PrefilledContactForm({
   // key: useForm only reads defaultValues on mount, so a different dog has to
   // remount the form or the previous dog's name would stay in the message.
   return <ContactForm key={dog?.slug ?? "no-dog"} dogName={dog?.name ?? undefined} />;
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("ContactPage.metadata");
+  return { title: t("title"), description: t("description") };
 }
 
 export default async function Contact({

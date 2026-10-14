@@ -1,4 +1,6 @@
+import type { Metadata } from "next";
 import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { SiFacebook, SiInstagram, SiTiktok } from "react-icons/si";
 import { getVolunteers } from "@/lib/volunteers";
 
@@ -8,6 +10,11 @@ const socials = [
   { platform: "Instagram", href: "https://instagram.com", Icon: SiInstagram },
   { platform: "TikTok", href: "https://tiktok.com", Icon: SiTiktok },
 ];
+
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("AboutPage.metadata");
+  return { title: t("title"), description: t("description") };
+}
 
 export default function About() {
   const t = useTranslations("AboutPage");

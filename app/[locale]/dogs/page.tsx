@@ -1,8 +1,14 @@
+import type { Metadata } from "next";
 import { Suspense } from "react";
 import { getLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { getAnimals } from "@/lib/animals";
 import { AnimalList, FilteredAnimalList } from "./AnimalList";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("DogsPage.metadata");
+  return { title: t("title"), description: t("description") };
+}
 
 export default async function Dogs() {
   const t = await getTranslations("DogsPage");

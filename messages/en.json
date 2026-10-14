@@ -20,6 +20,9 @@
     "privacy": "Privacy policy"
   },
   "HomePage": {
+    "metadata": {
+      "description": "A volunteer-run non-profit bringing rescued dogs from Romania to Luxembourg. Meet the dogs waiting for a family."
+    },
     "eyebrow": "Volunteer-run · Non-profit",
     "heading": "Rescued in Romania. Hoping for a <accent>home</accent> in Luxembourg.",
     "description": "We bring dogs from Romania to Luxembourg and help them find families who love them. Everyone on our team is a volunteer, and every dog has someone who knows their name.",
@@ -162,6 +165,10 @@
     ]
   },
   "ContactPage": {
+    "metadata": {
+      "title": "Contact",
+      "description": "Questions, ideas or want to help? Get in touch with the volunteers of Hope 4 Rosiorii."
+    },
     "eyebrow": "Say hello",
     "heading": "Questions? Ideas? Want to help?",
     "name": "Your name",
@@ -190,6 +197,10 @@
     "adoptPrompt": "Looking to adopt? Use the <link>adoption form</link>."
   },
   "AboutPage": {
+    "metadata": {
+      "title": "About us",
+      "description": "Meet the volunteers behind Hope 4 Rosiorii, a non-profit bringing rescued dogs from Romania to Luxembourg."
+    },
     "eyebrow": "Our story",
     "heading": "A few friends, a lot of dogs, one long road",
     "origins": "[Placeholder: how Hope 4 Rosiorii began]",
@@ -198,6 +209,10 @@
     "socialLabel": "{name} on {platform}"
   },
   "AdoptPage": {
+    "metadata": {
+      "title": "Adopt a dog",
+      "description": "Ready to give a rescued dog a home? Send us your adoption request and a volunteer will get in touch."
+    },
     "eyebrow": "the first hello",
     "heading": "Adoption request",
     "next": {
@@ -381,6 +396,10 @@
     }
   },
   "DogsPage": {
+    "metadata": {
+      "title": "Our dogs",
+      "description": "Meet the rescued dogs from Romania waiting for a family in Luxembourg. Found someone who makes you smile? Tell us."
+    },
     "eyebrow": "all of them are good dogs",
     "heading": "Adopt me!",
     "description": "Every dog here was rescued in Romania, checked by a vet and looked after by a volunteer. Found someone who makes you smile? Tell us.",

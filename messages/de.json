@@ -20,6 +20,9 @@
     "privacy": "Datenschutz"
   },
   "HomePage": {
+    "metadata": {
+      "description": "Ein ehrenamtlicher Verein, der gerettete Hunde aus Rumänien nach Luxemburg bringt. Lerne die Hunde kennen, die auf eine Familie warten."
+    },
     "eyebrow": "Ehrenamtlich geführt · Gemeinnützig",
     "heading": "In Rumänien gerettet. Auf der Suche nach einem <accent>Zuhause</accent> in Luxemburg.",
     "description": "Wir bringen Hunde aus Rumänien nach Luxemburg und helfen ihnen, Familien zu finden, die sie lieben. Alle in unserem Team sind Ehrenamtliche, und jeder Hund hat jemanden, der seinen Namen kennt.",
@@ -162,6 +165,10 @@
     ]
   },
   "ContactPage": {
+    "metadata": {
+      "title": "Kontakt",
+      "description": "Fragen, Ideen oder Lust zu helfen? Melde dich bei den Ehrenamtlichen von Hope 4 Rosiorii."
+    },
     "eyebrow": "Sag Hallo",
     "heading": "Fragen? Ideen? Möchtest du helfen?",
     "name": "Dein Name",
@@ -190,6 +197,10 @@
     "adoptPrompt": "Möchtest du adoptieren? Nutze das <link>Adoptionsformular</link>."
   },
   "AboutPage": {
+    "metadata": {
+      "title": "Über uns",
+      "description": "Lerne die Ehrenamtlichen hinter Hope 4 Rosiorii kennen, einem Verein, der gerettete Hunde aus Rumänien nach Luxemburg bringt."
+    },
     "eyebrow": "Unsere Geschichte",
     "heading": "Ein paar Freunde, viele Hunde, ein langer Weg",
     "origins": "[Placeholder: wie Hope 4 Rosiorii begonnen hat]",
@@ -198,6 +209,10 @@
     "socialLabel": "{name} auf {platform}"
   },
   "AdoptPage": {
+    "metadata": {
+      "title": "Einen Hund adoptieren",
+      "description": "Bereit, einem geretteten Hund ein Zuhause zu geben? Schick uns deine Adoptionsanfrage und ein Mitglied unseres Teams meldet sich bei dir."
+    },
     "eyebrow": "das erste Hallo",
     "heading": "Adoptionsanfrage",
     "next": {
@@ -337,6 +352,10 @@
     }
   },
   "DogsPage": {
+    "metadata": {
+      "title": "Unsere Hunde",
+      "description": "Lerne die geretteten Hunde aus Rumänien kennen, die in Luxemburg auf eine Familie warten. Hat dich einer zum Lächeln gebracht? Sag es uns."
+    },
     "eyebrow": "alles gute Hunde",
     "heading": "Adoptiere mich!",
     "description": "Alle Hunde hier wurden in Rumänien gerettet, vom Tierarzt untersucht und von Freiwilligen betreut. Hast du jemanden gefunden, der dich zum Lächeln bringt? Sag uns Bescheid.",

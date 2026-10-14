@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("NotFound");
+  return { title: t("title") };
+}
 
 export default function NotFound() {
   const t = useTranslations("NotFound");

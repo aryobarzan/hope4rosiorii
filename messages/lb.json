@@ -20,6 +20,9 @@
     "privacy": "Dateschutz"
   },
   "HomePage": {
+    "metadata": {
+      "description": "E Veräin vu Fräiwëllegen, dee gerettent Hënn aus Rumänien op Lëtzebuerg bréngt. Léier d'Hënn kennen, déi op eng Famill waarden."
+    },
     "eyebrow": "Vu Fräiwëllegen gefouert · Ouni Gewënnzil",
     "heading": "A Rumänien gerett. Si hoffen op en <accent>Doheem</accent> zu Lëtzebuerg.",
     "description": "Mir bréngen Hënn aus Rumänien op Lëtzebuerg a hëllefen hinnen, Famillje ze fannen, déi si gär hunn. Jidderee vun eisem Team ass fräiwëlleg, a jiddwereen Hond huet een, deen säin Numm kennt.",
@@ -164,6 +167,10 @@
     ]
   },
   "ContactPage": {
+    "metadata": {
+      "title": "Kontakt",
+      "description": "Froen, Iddien oder wëlls du hëllefen? Mell dech bei de Fräiwëllege vun Hope 4 Rosiorii."
+    },
     "eyebrow": "Sot Moien",
     "heading": "Froen? Iddien? Wëllt Dir hëllefen?",
     "name": "Ären Numm",
@@ -192,6 +199,10 @@
     "adoptPrompt": "Wëllt Dir adoptéieren? Benotzt eise <link>Adoptiounsformular</link>."
   },
   "AboutPage": {
+    "metadata": {
+      "title": "Iwwer eis",
+      "description": "Léier d'Fräiwëlleg hannert Hope 4 Rosiorii kennen, e Veräin deen gerettent Hënn aus Rumänien op Lëtzebuerg bréngt."
+    },
     "eyebrow": "Eis Geschicht",
     "heading": "E puer Frënn, vill Hënn, eng laang Strooss",
     "origins": "[Placeholder: wéi Hope 4 Rosiorii ugefaangen huet]",
@@ -200,6 +211,10 @@
     "socialLabel": "{name} op {platform}"
   },
   "AdoptPage": {
+    "metadata": {
+      "title": "En Hond adoptéieren",
+      "description": "Bereet, engem gerettenen Hond en Heem ze ginn? Schéck eis deng Adoptiounsufro an ee vun eise Fräiwëllege mellt sech bei dech."
+    },
     "eyebrow": "dat éischt Moien",
     "heading": "Adoptiounsufro",
     "next": {
@@ -339,6 +354,10 @@
     }
   },
   "DogsPage": {
+    "metadata": {
+      "title": "Eis Hënn",
+      "description": "Léier déi gerettent Hënn aus Rumänien kennen, déi zu Lëtzebuerg op eng Famill waarden. Hues du een fonnt, deen dech laache léisst? Sot et eis."
+    },
     "eyebrow": "all si gutt Hënn",
     "heading": "Adoptéier mech!",
     "description": "All Hond hei gouf a Rumänien gerett, vum Veterinär gekuckt a vun engem Fräiwëllegen betreit. Hues du een fonnt, deen dech laache léisst? Sot eis et.",
@@ -377,7 +396,7 @@
   "DonatePage": {
     "metadata": {
       "title": "Spenden",
-      "description": "Ënnerstëtzt Hope 4 Rosiorii, e Veräin vu Fräiwëllegen, dee Hënn aus Rumänien rett. Kuckt, wéi Är Spende hëllefen."
+      "description": "Ënnerstëtz Hope 4 Rosiorii, e Veräin vu Fräiwëllegen, dee Hënn aus Rumänien rett. Kuck, wéi deng Spende hëllefen."
     },
     "eyebrow": "all Bëssen hëlleft enger Patt",
     "heading": "Hëllef engem Hond op d'Rees",
