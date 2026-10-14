@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { SiFacebook, SiInstagram, SiTiktok } from "react-icons/si";
@@ -32,9 +33,22 @@ export default function About() {
           <p className="font-body">{t("origins")}</p>
           <p className="font-body">{t("values")}</p>
         </div>
-        {/* shrink-0 keeps it from being squashed by the text column.
-            TODO: replace with the real team photo (next/image, meaningful alt) */}
-        <div className="picture-placeholder blob-frame aspect-square w-full max-w-xs shrink-0 self-center md:w-80" />
+        {/* shrink-0 keeps it from being squashed by the text column. `fill`
+            + object-cover crops the landscape photo to the square blob.
+            unoptimized: a small local webp already sized for this slot, so it
+            does not use up Hobby's image-transformation limit (same as the
+            footer logo). It is the page's main picture, so it loads eagerly. */}
+        <div className="blob-frame relative aspect-square w-full max-w-xs shrink-0 self-center bg-pale md:w-80">
+          <Image
+            src="/images/header.webp"
+            alt={t("imageAlt")}
+            fill
+            sizes="320px"
+            className="object-cover"
+            unoptimized
+            loading="eager"
+          />
+        </div>
       </section>
 
       {/* Full-bleed band: colour on the outer element, container inside */}
