@@ -492,6 +492,7 @@
       "vaccinated": "Geimpft",
       "microchipped": "Gechippt",
       "dewormed": "Entwurmt",
+      "neutered": "Kastriert / sterilisiert",
       "tested": "Getestet",
       "testedCat": "Getestet (FIV/FeLV)",
       "euPassport": "EU-Heimtierausweis"
@@ -500,6 +501,7 @@
       "vaccinated": "Durch Impfungen vor häufigen Infektionskrankheiten geschützt.",
       "microchipped": "Trägt einen kleinen Chip unter der Haut mit einer eindeutigen Nummer.",
       "dewormed": "Gegen Darmwürmer und Flöhe behandelt.",
+      "neutered": "Wurde operiert, damit es keine ungewollten Welpen gibt.",
       "tested": "Auf häufige Infektionskrankheiten getestet.",
       "testedCat": "Auf die Katzenviren FIV und FeLV getestet.",
       "euPassport": "Das offizielle Dokument für Reisen mit einem Tier innerhalb der EU."

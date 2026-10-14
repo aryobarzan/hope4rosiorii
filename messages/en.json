@@ -492,6 +492,7 @@
       "vaccinated": "Vaccinated",
       "microchipped": "Microchipped",
       "dewormed": "Dewormed",
+      "neutered": "Neutered / spayed",
       "tested": "Tested",
       "testedCat": "Tested (FIV/FeLV)",
       "euPassport": "EU passport"
@@ -500,6 +501,7 @@
       "vaccinated": "Protected against common infectious diseases with vaccines.",
       "microchipped": "Has a tiny chip under the skin with a unique ID number.",
       "dewormed": "Treated against intestinal worms and fleas.",
+      "neutered": "Had an operation so there are no unwanted puppies.",
       "tested": "Tested for common infectious diseases.",
       "testedCat": "Tested for the cat viruses FIV and FeLV.",
       "euPassport": "The official document needed to travel with a pet within the EU."

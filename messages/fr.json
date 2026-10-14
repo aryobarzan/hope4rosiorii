@@ -494,6 +494,7 @@
       "vaccinated": "Vacciné",
       "microchipped": "Pucé",
       "dewormed": "Vermifugé",
+      "neutered": "Castré / stérilisé",
       "tested": "Testé",
       "testedCat": "Testé (FIV/FeLV)",
       "euPassport": "Passeport européen"
@@ -502,6 +503,7 @@
       "vaccinated": "Protégé contre les maladies infectieuses courantes grâce aux vaccins.",
       "microchipped": "Porte une puce sous la peau avec un numéro d'identification unique.",
       "dewormed": "Traité contre les vers intestinaux et les puces.",
+      "neutered": "A été opéré pour éviter les portées non désirées.",
       "tested": "Testé pour les maladies infectieuses courantes.",
       "testedCat": "Testé pour les virus félins FIV et FeLV.",
       "euPassport": "Le document officiel nécessaire pour voyager avec un animal dans l'UE."
