@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Link, usePathname } from "@/i18n/navigation";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { HandCoins } from "lucide-react";
 
 // No "Home" entry: the logo links home.
 const links = [
@@ -138,6 +139,7 @@ export default function Header() {
             onClick={close}
             className="filled-button mt-2 w-full lg:mt-0 lg:w-auto"
           >
+            <HandCoins aria-hidden="true" className="size-5" />
             {t("donate")}
           </Link>
         </nav>

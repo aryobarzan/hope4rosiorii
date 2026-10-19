@@ -121,6 +121,12 @@ body {
     background-color: var(--color-card);
   }
 
+  /* Pressed (mouse down / finger held). After :hover so it wins on touch
+     screens, where :hover sticks after a tap. */
+  .nav-link:active {
+    background-color: var(--color-blush);
+  }
+
   .nav-link:focus-visible {
     outline: 2px solid var(--color-ink);
     outline-offset: 2px;
@@ -145,6 +151,13 @@ body {
     .nav-link:hover {
       background-color: transparent;
       border-bottom-color: var(--color-button);
+    }
+
+    /* Pressed: underline plus a soft fill, so it differs from plain hover */
+    .nav-link:active {
+      background-color: var(--color-blush);
+      border-bottom-color: var(--color-button);
+      border-radius: 4px 4px 0 0;
     }
 
     .nav-link:focus-visible {
