@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { Suspense, type ReactNode } from "react";
-import { useTranslations } from "next-intl";
 import { getLocale, getTranslations } from "next-intl/server";
 import { getAnimal } from "@/lib/animals";
 import { getSiteSettings } from "@/lib/site-settings";
 import ContactForm from "./ContactForm";
 import AnimalPreviewCard from "../components/AnimalPreviewCard";
+import AnimalPreviewSkeleton from "../components/AnimalPreviewSkeleton";
 
 const linkClass =
   "rounded underline underline-offset-4 hover:bg-white/15 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white";
@@ -50,21 +50,6 @@ async function ContactAside({ children }: { children?: ReactNode }) {
       </div>
       {children}
     </aside>
-  );
-}
-
-// Fixed height, so the sidebar does not jump when the preview streams in.
-// With no ?dog= the box simply disappears below the contact details, so
-// nothing visible moves.
-function PreviewSkeleton() {
-  const t = useTranslations("AnimalPreview");
-  return (
-    <div
-      role="status"
-      className="h-96 animate-pulse rounded-3xl bg-pale motion-reduce:animate-none"
-    >
-      <span className="sr-only">{t("loading")}</span>
-    </div>
   );
 }
 
@@ -127,7 +112,7 @@ export default async function Contact({
             <>
               <ContactForm />
               <ContactAside>
-                <PreviewSkeleton />
+                <AnimalPreviewSkeleton />
               </ContactAside>
             </>
           }
