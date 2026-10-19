@@ -456,6 +456,11 @@
       "paypalNote": "Du schléisses deng Spend sécher op PayPal of."
     }
   },
+  "AnimalPreview": {
+    "contact": "Dir freet no",
+    "adoption": "Dir wëllt adoptéieren",
+    "loading": "D’Déier gëtt gelueden"
+  },
   "Age": {
     "months": "ca. {count, plural, one {# Mount} other {# Méint}}",
     "years": "ca. {count} Joer"

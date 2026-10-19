@@ -454,6 +454,11 @@
     "ask": "Ask about {name}",
     "adopt": "Adopt {name}"
   },
+  "AnimalPreview": {
+    "contact": "You're asking about",
+    "adoption": "You want to adopt",
+    "loading": "Loading the animal"
+  },
   "Age": {
     "months": "ca. {count, plural, one {# month} other {# months}}",
     "years": "ca. {count, plural, one {# year} other {# years}}"

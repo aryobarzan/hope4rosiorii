@@ -454,6 +454,11 @@
       "paypalNote": "Du schließt deine Spende sicher auf PayPal ab."
     }
   },
+  "AnimalPreview": {
+    "contact": "Du fragst nach",
+    "adoption": "Du möchtest adoptieren",
+    "loading": "Tier wird geladen"
+  },
   "Age": {
     "months": "ca. {count, plural, one {# Monat} other {# Monate}}",
     "years": "ca. {count, plural, one {# Jahr} other {# Jahre}}"

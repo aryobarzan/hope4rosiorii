@@ -456,6 +456,11 @@
       "paypalNote": "Vous finaliserez votre don en toute sécurité sur PayPal."
     }
   },
+  "AnimalPreview": {
+    "contact": "Vous vous renseignez sur",
+    "adoption": "Vous souhaitez adopter",
+    "loading": "Chargement de l’animal"
+  },
   "Age": {
     "months": "env. {count} mois",
     "years": "env. {count, plural, one {# an} other {# ans}}"

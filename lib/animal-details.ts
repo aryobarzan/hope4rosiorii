@@ -35,5 +35,5 @@ export function animalDetails(
   for (const trait of (animal.traits ?? []).slice(0, maxTraits)) {
     parts.push(tAnimal(`traits.${trait}`));
   }
-  return parts.join(" • ");
+  return parts.join(" · ");
 }

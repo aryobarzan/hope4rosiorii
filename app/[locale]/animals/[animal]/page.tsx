@@ -1,40 +1,15 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getFormatter, getTranslations } from "next-intl/server";
-import {
-  CircleQuestionMark,
-  ClipboardPlus,
-  House,
-  IdCard,
-  Microchip,
-  PawPrint,
-  Syringe,
-  Worm,
-  type LucideIcon,
-} from "lucide-react";
+import { CircleQuestionMark, House, PawPrint } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { ageParts } from "@/lib/age";
 import { animalDetails } from "@/lib/animal-details";
 import { getAnimal, getAnimals } from "@/lib/animals";
+import HealthIcon from "../../components/HealthIcon";
 import SanityImage from "../../components/SanityImage";
 import AnimalGallery from "./AnimalGallery";
-
-const HEALTH_ICONS: Record<string, LucideIcon> = {
-  vaccinated: Syringe,
-  microchipped: Microchip,
-  dewormed: Worm,
-  tested: ClipboardPlus,
-  testedCat: ClipboardPlus,
-  euPassport: IdCard,
-};
-
-// Decorative: the label next to it carries the meaning. An option the map does
-// not know yet (e.g. one an editor adds in Sanity) falls back to a generic icon.
-function HealthIcon({ health }: { health: string }) {
-  const Icon = HEALTH_ICONS[health] ?? ClipboardPlus;
-  return <Icon aria-hidden="true" className="size-5" />;
-}
 
 // Opt out of instant-navigation validation (dev-only, never blocks the build).
 // Everything on this page depends on `params`, so there is no useful shell to
