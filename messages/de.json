@@ -65,6 +65,11 @@
     "title": "Unbekannt",
     "description": "Entschuldigung, die gesuchte Seite existiert nicht."
   },
+  "ErrorPage": {
+    "title": "Etwas ist schiefgelaufen",
+    "description": "Entschuldigung, diese Seite konnte nicht geladen werden. Bitte versuchen Sie es erneut.",
+    "retry": "Erneut versuchen"
+  },
   "PrivacyPage": {
     "title": "Datenschutzerklärung",
     "intro": "Diese Erklärung beschreibt, welche personenbezogenen Daten wir über diese Website erheben, wofür wir sie verwenden und welche Rechte Sie haben.",

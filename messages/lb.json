@@ -65,6 +65,11 @@
     "title": "Onbekannt",
     "description": "Entschëllegt, d'Säit, déi Dir sicht, existéiert net."
   },
+  "ErrorPage": {
+    "title": "Et ass eppes schifgaangen",
+    "description": "Entschëllegt, dës Säit konnt net gelueden ginn. Probéiert w.e.g. nach eng Kéier.",
+    "retry": "Nach eng Kéier probéieren"
+  },
   "PrivacyPage": {
     "title": "Dateschutzerklärung",
     "intro": "Dës Erklärung beschreift, wéi eng perséinlech Donnéeën mir iwwer dës Websäit sammelen, firwat, a wéi eng Rechter Dir hutt.",

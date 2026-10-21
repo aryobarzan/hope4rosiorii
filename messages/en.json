@@ -65,6 +65,11 @@
     "title": "Unknown",
     "description": "Sorry, the page you're looking for does not exist."
   },
+  "ErrorPage": {
+    "title": "Something went wrong",
+    "description": "Sorry, this page could not be loaded. Please try again.",
+    "retry": "Try again"
+  },
   "PrivacyPage": {
     "title": "Privacy policy",
     "intro": "This policy explains what personal data we collect through this website, why, and what your rights are.",

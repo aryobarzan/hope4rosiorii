@@ -65,6 +65,11 @@
     "title": "Inconnu",
     "description": "Désolé, la page que vous recherchez n'existe pas."
   },
+  "ErrorPage": {
+    "title": "Une erreur s'est produite",
+    "description": "Désolé, cette page n'a pas pu être chargée. Veuillez réessayer.",
+    "retry": "Réessayer"
+  },
   "PrivacyPage": {
     "title": "Politique de confidentialité",
     "intro": "Cette politique explique quelles données personnelles nous collectons via ce site, pourquoi, et quels sont vos droits.",
