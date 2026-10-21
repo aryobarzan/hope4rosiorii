@@ -8,6 +8,6 @@ export default defineConfig({
   },
   test: {
     // Unit tests sit next to the code they test
-    include: ["lib/**/*.test.ts", "messages/**/*.test.ts"],
+    include: ["lib/**/*.test.ts", "app/**/*.test.ts", "messages/**/*.test.ts"],
   },
 });
