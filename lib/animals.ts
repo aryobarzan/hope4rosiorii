@@ -5,20 +5,10 @@
 // (app/api/revalidate/route.ts) calls revalidateTag with the changed
 // document's type, so editors see changes without a deploy.
 import { cacheLife, cacheTag } from "next/cache";
+import { monthsSince } from "@/lib/age";
 import { client } from "@/lib/sanity/client";
 import type { ANIMALS_QUERY_RESULT } from "@/sanity.types";
 import { ANIMALS_QUERY } from "@/lib/sanity/queries";
-
-// Months between the estimated birth date and now, rounded down, never negative.
-function monthsSince(date: string | null, now: Date): number | null {
-  if (!date) return null;
-  const born = new Date(date);
-  const months =
-    (now.getUTCFullYear() - born.getUTCFullYear()) * 12 +
-    (now.getUTCMonth() - born.getUTCMonth()) -
-    (now.getUTCDate() < born.getUTCDate() ? 1 : 0);
-  return Math.max(0, months);
-}
 
 // An animal as the query returns it, plus the fields computed in getAnimals.
 // Add any new computed field here too (see the note at the bottom of the file).
