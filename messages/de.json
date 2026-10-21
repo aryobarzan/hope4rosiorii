@@ -397,9 +397,22 @@
       "label": "Anzeigen",
       "all": "Alle",
       "dog": "Hunde",
-      "cat": "Katzen"
+      "cat": "Katzen",
+      "sizeLabel": "Größe",
+      "size": {
+        "small": "Klein",
+        "medium": "Mittel",
+        "large": "Groß"
+      },
+      "ageLabel": "Alter",
+      "age": {
+        "baby": "Unter 1 Jahr",
+        "young": "1 bis 3 Jahre",
+        "adult": "Über 3 Jahre"
+      }
     },
-    "empty": "Hier gibt es noch keine Tiere."
+    "empty": "Hier gibt es noch keine Tiere.",
+    "noMatch": "Keine Tiere passen zu diesen Filtern. Versuchen Sie eine andere Kombination."
   },
   "AnimalPage": {
     "notFound": "Das Tier wurde in unserer Übersicht nicht gefunden.",

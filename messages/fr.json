@@ -399,9 +399,22 @@
       "label": "Afficher",
       "all": "Tous",
       "dog": "Chiens",
-      "cat": "Chats"
+      "cat": "Chats",
+      "sizeLabel": "Taille",
+      "size": {
+        "small": "Petite",
+        "medium": "Moyenne",
+        "large": "Grande"
+      },
+      "ageLabel": "Âge",
+      "age": {
+        "baby": "Moins d'1 an",
+        "young": "1 à 3 ans",
+        "adult": "Plus de 3 ans"
+      }
     },
-    "empty": "Aucun animal à afficher pour le moment."
+    "empty": "Aucun animal à afficher pour le moment.",
+    "noMatch": "Aucun animal ne correspond à ces filtres. Essayez une autre combinaison."
   },
   "AnimalPage": {
     "notFound": "Cet animal est introuvable dans notre liste.",

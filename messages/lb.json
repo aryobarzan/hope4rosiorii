@@ -399,9 +399,22 @@
       "label": "Weisen",
       "all": "All",
       "dog": "Hënn",
-      "cat": "Kazen"
+      "cat": "Kazen",
+      "sizeLabel": "Gréisst",
+      "size": {
+        "small": "Kleng",
+        "medium": "Mëttel",
+        "large": "Grouss"
+      },
+      "ageLabel": "Alter",
+      "age": {
+        "baby": "Ënner 1 Joer",
+        "young": "1 bis 3 Joer",
+        "adult": "Iwwer 3 Joer"
+      }
     },
-    "empty": "Hei sinn nach keng Déieren."
+    "empty": "Hei sinn nach keng Déieren.",
+    "noMatch": "Keng Déieren passen zu dëse Filteren. Probéiert eng aner Kombinatioun."
   },
   "AnimalPage": {
     "notFound": "D'Déier gouf an eisem Verzeechnes net fonnt.",

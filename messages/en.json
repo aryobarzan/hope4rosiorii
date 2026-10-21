@@ -441,9 +441,22 @@
       "label": "Show",
       "all": "All",
       "dog": "Dogs",
-      "cat": "Cats"
+      "cat": "Cats",
+      "sizeLabel": "Size",
+      "size": {
+        "small": "Small",
+        "medium": "Medium",
+        "large": "Large"
+      },
+      "ageLabel": "Age",
+      "age": {
+        "baby": "Under 1 year",
+        "young": "1 to 3 years",
+        "adult": "Over 3 years"
+      }
     },
-    "empty": "No animals to show here yet."
+    "empty": "No animals to show here yet.",
+    "noMatch": "No animals match these filters. Try another combination."
   },
   "AnimalPage": {
     "notFound": "The animal could not be found in our listings.",
