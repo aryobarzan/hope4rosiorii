@@ -45,7 +45,10 @@ export default function Home() {
               <h1 className="font-heading text-6xl font-bold">
                 {t.rich("heading", {
                   accent: (chunks) => (
-                    <span className="text-brand underline decoration-wavy decoration-4 underline-offset-8 px-1 decoration-brand">
+                    // Brand pink is decorative only (2.7:1 on the page), so
+                    // the word is in button pink (4.1:1, enough for text this
+                    // large) and only the wavy underline keeps the brand pink
+                    <span className="text-button underline decoration-wavy decoration-4 underline-offset-8 px-1 decoration-brand">
                       {chunks}
                     </span>
                   ),
@@ -75,7 +78,7 @@ export default function Home() {
           />
           <SectionHeading heading={t("adoptionHeading")} light />
           <div className="animal-status-card-grid">
-            {["1", "2", "3", "4"].map((step) => (
+            {(["1", "2", "3", "4"] as const).map((step) => (
               <div key={`AdoptionStep-${step}`} className="prominent-link-card">
                 <div className="flex flex-col">
                   {" "}

@@ -1,6 +1,6 @@
 // Custom next/image loader that points straight at Sanity's image CDN, so
 // resizing is done by Sanity and does not count against Vercel Hobby's
-// image-transformation limit (see AGENTS.md). Use it with
+// image-transformation limit. Use it with
 // <Image loader={sanityImageLoader} />.
 //
 // `src` is the asset URL from the GROQ projection (`asset->url`).

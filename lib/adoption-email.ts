@@ -1,4 +1,4 @@
-import { createTranslator } from "next-intl";
+import { createTranslator, type Locale } from "next-intl";
 import type { AdoptionValues } from "@/lib/schemas/adopt";
 
 type Field = keyof AdoptionValues;
@@ -135,7 +135,7 @@ void _allQuestionsAreInTheEmail;
  */
 export function buildAdoptionEmail(
   values: AdoptionValues,
-  { locale, messages }: { locale: string; messages: Messages },
+  { locale, messages }: { locale: Locale; messages: Messages },
 ) {
   const t = createTranslator({ locale, messages, namespace: "AdoptPage" });
   const countryNames = new Intl.DisplayNames(locale, { type: "region" });

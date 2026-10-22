@@ -2,7 +2,7 @@ import { useFormatter, useTranslations } from "next-intl";
 import { PawPrint, Cat, Dog } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { ageParts } from "@/lib/age";
-import { animalDetails } from "@/lib/animal-details";
+import { animalDetails, type AnimalKey } from "@/lib/animal-details";
 import type { Animal } from "@/lib/animals";
 import HealthIcon from "./HealthIcon";
 import SanityImage from "./SanityImage";
@@ -65,7 +65,9 @@ export default function AnimalPreviewCard({
           <p>
             {tPage("goodWith", {
               list: format.list(
-                animal.goodWith.map((value) => tAnimal(`goodWith.${value}`)),
+                animal.goodWith.map((value) =>
+                  tAnimal(`goodWith.${value}` as AnimalKey),
+                ),
                 { type: "unit" },
               ),
             })}
@@ -79,7 +81,7 @@ export default function AnimalPreviewCard({
             {animal.health.map((health) => (
               <li key={health} className="pill text-sm text-link">
                 <HealthIcon health={health} />
-                {tAnimal(`health.${health}`)}
+                {tAnimal(`health.${health}` as AnimalKey)}
               </li>
             ))}
           </ul>

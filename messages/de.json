@@ -467,6 +467,7 @@
       "amountLabel": "Oder wähle einen eigenen Betrag (€)",
       "amountPlaceholder": "z. B. 40",
       "invalidAmount": "Bitte gib einen Betrag von mindestens {min} ein, z. B. 40.",
+      "amount": "{value} €",
       "donate": "{amount} spenden",
       "donateNoAmount": "Spenden",
       "paypalNote": "Du schließt deine Spende sicher auf PayPal ab."

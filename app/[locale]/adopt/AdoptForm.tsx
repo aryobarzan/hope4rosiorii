@@ -25,14 +25,24 @@ const linkClass =
   "rounded font-bold text-link underline underline-offset-4 hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink";
 
 type Field = keyof AdoptionInput;
+// The honeypot and the GDPR tick are not questions: they are rendered on their
+// own and have no label under `fields.*`, so the typed t("fields.x") must not
+// accept them
+type NotAQuestion = "website" | "consent";
 // Fields that take free text, and fields whose answer is a number
-type TextField = {
-  [K in Field]: AdoptionInput[K] extends string | undefined ? K : never;
-}[Field];
+type TextField = Exclude<
+  {
+    [K in Field]: AdoptionInput[K] extends string | undefined ? K : never;
+  }[Field],
+  NotAQuestion
+>;
 type NumberField = "squareMeters" | "dogHoursAloneDaily";
-type BooleanField = {
-  [K in Field]: AdoptionInput[K] extends boolean ? K : never;
-}[Field];
+type BooleanField = Exclude<
+  {
+    [K in Field]: AdoptionInput[K] extends boolean ? K : never;
+  }[Field],
+  NotAQuestion
+>;
 
 // "Other" free-text fields are optional in the schema, but required once their
 // "other" option is chosen (and they are only rendered then)

@@ -7,7 +7,7 @@ import { parseBody } from "next-sanity/webhook";
 // cacheTag used in lib/animals.ts, lib/updates.ts and lib/site-settings.ts.
 // Tags are not per locale, so one call
 // refreshes every language. No locale is needed here (next/root-params does
-// not work in Route Handlers, see AGENTS.md).
+// not work in Route Handlers yet).
 const ALLOWED_TAGS = new Set(["animal", "update", "siteSettings"]);
 
 type WebhookPayload = { tags?: string[] };

@@ -6,7 +6,10 @@
   --color-ink: #3a2a35;
   --color-muted: #6a5262;
   --color-button: #c93a72; /* white text, passes contrast */
-  --color-link: #a82f5f; /* darker button pink for text links, about 6.5:1 on white */
+  /* Pink for TEXT (links, eyebrows, outlined buttons). Darker than the button
+     pink, so it passes 4.5:1 on every background: 7.0:1 on white, 5.9:1 on the
+     page, 4.8:1 on the pale band. Also the fill of .prominent-link-card. */
+  --color-link: #a02b58;
   --color-brand: #ea5e8f; /* decorative only, not for body text */
   --color-pale: #f1cbda;
   --color-blush: #f8d3e3;
@@ -243,7 +246,10 @@ body {
 
   /* Used on links, so there is no :disabled state */
   .outlined-button {
-    color: var(--color-button);
+    /* Text uses the link pink: the button pink is only 4.1:1 on the page
+       background and 3.3:1 on the pale band. The border is not text, so it
+       keeps the button pink (3:1 is enough for it). */
+    color: var(--color-link);
     border: 1.5px solid var(--color-button);
   }
 

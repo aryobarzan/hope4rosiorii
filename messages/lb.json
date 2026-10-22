@@ -469,6 +469,7 @@
       "amountLabel": "Oder wiel deng eege Zomm (€)",
       "amountPlaceholder": "z. B. 40",
       "invalidAmount": "Gëff w.e.g. eng Zomm vun op d'mannst {min} an, z. B. 40.",
+      "amount": "{value} €",
       "donate": "{amount} spenden",
       "donateNoAmount": "Spenden",
       "paypalNote": "Du schléisses deng Spend sécher op PayPal of."

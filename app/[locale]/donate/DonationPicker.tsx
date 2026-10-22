@@ -47,12 +47,17 @@ export default function DonationPicker() {
   const customInvalid = custom.trim() !== "" && customAmount === null;
   const amount = custom.trim() !== "" ? customAmount : preset;
 
+  // Only the number goes through Intl; where the € sits comes from the
+  // translations ("€10" in English, "10 €" in the other languages). This
+  // component also renders in the browser, and `style: "currency"` can give a
+  // different pattern there than on the server (Luxembourgish: Node says
+  // "10 €", Chromium says "€10"), which makes React fail to hydrate.
   const formatAmount = (value: number) =>
-    format.number(value, {
-      style: "currency",
-      currency: "EUR",
-      minimumFractionDigits: Number.isInteger(value) ? 0 : 2,
-      maximumFractionDigits: 2,
+    t("amount", {
+      value: format.number(value, {
+        minimumFractionDigits: Number.isInteger(value) ? 0 : 2,
+        maximumFractionDigits: 2,
+      }),
     });
 
   const hostedButtonId = hostedButtonIds[frequency];

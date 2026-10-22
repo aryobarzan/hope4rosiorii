@@ -409,6 +409,7 @@
       "amountLabel": "Or choose your own amount (€)",
       "amountPlaceholder": "e.g. 40",
       "invalidAmount": "Please enter an amount of at least {min}, e.g. 40.",
+      "amount": "€{value}",
       "donate": "Donate {amount}",
       "donateNoAmount": "Donate",
       "paypalNote": "You’ll complete your donation securely on PayPal."

@@ -5,7 +5,7 @@ import { CircleQuestionMark, House, PawPrint } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { ageParts } from "@/lib/age";
-import { animalDetails } from "@/lib/animal-details";
+import { animalDetails, type AnimalKey } from "@/lib/animal-details";
 import { getAnimal, getAnimals } from "@/lib/animals";
 import HealthIcon from "../../components/HealthIcon";
 import SanityImage from "../../components/SanityImage";
@@ -115,7 +115,7 @@ export default async function AnimalPage({
                 {t("goodWith", {
                   list: format.list(
                     animal.goodWith.map((value) =>
-                      tAnimal(`goodWith.${value}`),
+                      tAnimal(`goodWith.${value}` as AnimalKey),
                     ),
                     { type: "unit" },
                   ),
@@ -190,9 +190,11 @@ export default async function AnimalPage({
                 <div key={health} className="prominent-link-card">
                   <HealthIcon health={health} />
                   <p className="text-xl font-bold">
-                    {tAnimal(`health.${health}`)}
+                    {tAnimal(`health.${health}` as AnimalKey)}
                   </p>
-                  <p className="text-sm">{tAnimal(`healthHint.${health}`)}</p>
+                  <p className="text-sm">
+                    {tAnimal(`healthHint.${health}` as AnimalKey)}
+                  </p>
                 </div>
               ))}
             </div>

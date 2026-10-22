@@ -469,6 +469,7 @@
       "amountLabel": "Ou choisissez votre propre montant (€)",
       "amountPlaceholder": "p. ex. 40",
       "invalidAmount": "Veuillez saisir un montant d'au moins {min}, p. ex. 40.",
+      "amount": "{value} €",
       "donate": "Faire un don de {amount}",
       "donateNoAmount": "Faire un don",
       "paypalNote": "Vous finaliserez votre don en toute sécurité sur PayPal."

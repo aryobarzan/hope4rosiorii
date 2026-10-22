@@ -65,7 +65,10 @@ export default function Header() {
       <div className="page-container flex items-center gap-2 py-2 lg:gap-8">
         <Link
           href="/"
-          aria-label={`Hope 4 Rosiorii – ${t("home")}`}
+          // WCAG 2.5.3 (Label in Name): the accessible name must contain the
+          // visible text, which is the name and the tagline. "Home" says where
+          // the link goes.
+          aria-label={`Hope 4 Rosiorii ${t("tagline")} – ${t("home")}`}
           aria-current={pathname === "/" ? "page" : undefined}
           onClick={close}
           className="mr-auto flex items-center gap-2 rounded focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink lg:mr-0"
@@ -84,6 +87,11 @@ export default function Header() {
             <span className="font-heading text-xl text-ink sm:text-2xl">
               Hope 4 Rosiorii
             </span>
+            {/* A space between the two lines: layout ignores it, but it keeps
+                the link's text "Hope 4 Rosiorii Dog rescue" and not
+                "...RosioriiDog rescue", which no accessible name could
+                contain (see the aria-label above) */}
+            {" "}
             <span className="hidden font-body text-sm uppercase sm:block">
               {t("tagline")}
             </span>

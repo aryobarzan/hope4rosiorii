@@ -97,7 +97,7 @@ function FilterGroup({
           // Hover mirrors the link buttons: outlined fills in, filled darkens
           isActive
             ? "bg-button text-white hover:bg-[color-mix(in_srgb,var(--color-button),black_15%)]"
-            : "text-button hover:bg-button hover:text-white"
+            : "text-link hover:bg-button hover:text-white"
         }`}
       >
         <span aria-hidden="true">
