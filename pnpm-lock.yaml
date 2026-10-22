@@ -167,11 +167,11 @@ importers:
   .:
     dependencies:
       '@hookform/resolvers':
-        specifier: ^5.9.2
-        version: 5.9.2(react-hook-form@7.90.0(@types/react@19.3.0)(react@19.3.1))(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
+        specifier: ^6
+        version: 6.0.0(react-hook-form@7.90.0(@types/react@19.3.0)(react@19.3.1))(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)
       lucide-react:
-        specifier: ^1.59.0
-        version: 1.59.0(@types/react@19.3.0)(react@19.3.1)
+        specifier: ^1.61.0
+        version: 1.61.0(@types/react@19.3.0)(react@19.3.1)
       next:
         specifier: 16.4.2
         version: 16.4.2(@babel/core@7.29.7(supports-color@8.1.1))(@playwright/test@1.64.1)(@types/node@24.19.2)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
@@ -182,8 +182,8 @@ importers:
         specifier: ^13.3.4
         version: 13.3.4(01d16bbc808c847892101d10bcc2a5d4)
       nodemailer:
-        specifier: ^10.1.6
-        version: 10.1.6
+        specifier: ^10.1.7
+        version: 10.1.7
       react:
         specifier: 19.3.1
         version: 19.3.1
@@ -1062,8 +1062,8 @@ packages:
   '@formatjs/intl-localematcher@0.8.14':
     resolution: {integrity: sha512-8O7V38QmbB11+ryJ3KM/znrzXtiqgpXzqNoqDsndHZZ5/zDKTTL+cf5F0mzXkQEwhx8IlWnqYvEovf2S5EwLTw==}
 
-  '@hookform/resolvers@5.9.2':
-    resolution: {integrity: sha512-RtjTnZqsC38s4NKp2XO3fD8IA5uyN4tB7McQ5C6uiMPcV+WWO8F+wVa3e+BXUpH2ScgxghAlwFRMVqjT9WChAQ==}
+  '@hookform/resolvers@6.0.0':
+    resolution: {integrity: sha512-6iBzQnB+YwAveVc8HUi6QYLITn5X+xNKRMFIcNXHZlvp2aTI7yWbj4n/JodXxirMCcBc4VCjb2aYAJh4x07mVw==}
     peerDependencies:
       '@sinclair/typebox': '>=0.25.24'
       '@standard-schema/spec': ^1.0.0
@@ -1077,7 +1077,7 @@ packages:
       class-transformer: '>=0.4.0'
       class-validator: '>=0.12.0'
       computed-types: ^1.0.0
-      effect: ^3.10.3
+      effect: ^4.0.0
       fluentvalidation-ts: ^3.0.0
       fp-ts: ^2.7.0
       io-ts: ^2.0.0
@@ -4729,8 +4729,8 @@ packages:
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
 
-  lucide-react@1.59.0:
-    resolution: {integrity: sha512-5qgMyyCPU6OvnKpLS2t693+ZtiqA8oaSweWoUows0BLFKFf6V75m4+CptpmohZHpD5IuOVIBXHBBiv2vpLJmtw==}
+  lucide-react@1.61.0:
+    resolution: {integrity: sha512-v2SQPPPNjnr+BlhL9Spuzmo5yR+hLkftfuE4E3jaxdNPgSH0hJKPcLJBP7yAta87jQNPsSERS59PJjCJ/CorBA==}
     peerDependencies:
       '@types/react': '*'
       react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
@@ -4943,8 +4943,8 @@ packages:
     resolution: {integrity: sha512-kQK9LGGFiHtrWiNhZtA7Qbw17AQz+dmsEKODRIVTXA9+e5MS/2gZEBhYJt13GrAz5/IOZKddH/0Z3TP/Zgo+yw==}
     engines: {node: '>=18'}
 
-  nodemailer@10.1.6:
-    resolution: {integrity: sha512-8j/UEmA4AXr51URr3Ob0h+RCBtr0NKJ76Y2P9wJT6Eu3dRyruj2ULh2e6aiKrGg8nlUj1oX6N5h8dHA82EouaQ==}
+  nodemailer@10.1.7:
+    resolution: {integrity: sha512-OQa6FDln5fLttmqSbjDiRYvFDOFNrBqfiOwHPlEbURil3b+vPB1v8xpi+Sp46drzNDlsTnNsS502vthmz56r4w==}
     engines: {node: '>=20.0.0'}
 
   normalize-path@3.0.0:
@@ -7292,7 +7292,7 @@ snapshots:
     dependencies:
       '@formatjs/fast-memoize': 3.1.7
 
-  '@hookform/resolvers@5.9.2(react-hook-form@7.90.0(@types/react@19.3.0)(react@19.3.1))(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)':
+  '@hookform/resolvers@6.0.0(react-hook-form@7.90.0(@types/react@19.3.0)(react@19.3.1))(valibot@1.5.0(typescript@6.0.3))(zod@4.6.7)':
     dependencies:
       '@standard-schema/utils': 0.3.0
       react-hook-form: 7.90.0(@types/react@19.3.0)(react@19.3.1)
@@ -11166,7 +11166,7 @@ snapshots:
     dependencies:
       yallist: 3.1.1
 
-  lucide-react@1.59.0(@types/react@19.3.0)(react@19.3.1):
+  lucide-react@1.61.0(@types/react@19.3.0)(react@19.3.1):
     dependencies:
       react: 19.3.1
     optionalDependencies:
@@ -11366,7 +11366,7 @@ snapshots:
 
   node-releases@2.0.57: {}
 
-  nodemailer@10.1.6: {}
+  nodemailer@10.1.7: {}
 
   normalize-path@3.0.0: {}
 

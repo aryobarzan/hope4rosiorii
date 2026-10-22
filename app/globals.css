@@ -90,21 +90,6 @@ body {
     gap: 1.5rem;
   }
 
-  .text-button {
-    color: var(--color-button);
-    font-weight: 500;
-    cursor: pointer;
-    user-select: none;
-  }
-
-  .text-button:hover {
-    color: rgb(from var(--color-button) r g b / 0.8);
-  }
-
-  .text-button:active {
-    color: rgb(from var(--color-button) r g b / 0.6);
-  }
-
   /* Header navigation link. Text stays ink for contrast; the pink is only used
      for the underline. Mobile first: a full-width row in the menu panel, with a
      background for hover and the current page. */
