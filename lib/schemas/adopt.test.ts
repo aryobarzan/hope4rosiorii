@@ -1,58 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { adoptionSchema } from "./adopt";
-
-const text = "Some answer";
-
-// A complete, valid request. Each test changes only what it checks.
-const valid = {
-  name: "Anna Muller",
-  email: "anna@example.com",
-  phone: "+352 621 123 456",
-  street: "Rue de la Gare",
-  houseNumber: "12A",
-  postalCode: "1234",
-  city: "Luxembourg",
-  country: "LU",
-  birthDate: "1990-05-17",
-  employed: "yes",
-  dogName: "Rex",
-  householdMembers: ["partner"],
-  everyoneInHouseholdAgreesWithAdoption: true,
-  priorDogExperience: ["hadDogsInPast"],
-  hasShelterDogExperience: false,
-  ownedPets: ["none"],
-  positionOnCastration: text,
-  fencedGarden: "yes",
-  floor: "Ground floor",
-  planToMoveOrRenovate: false,
-  squareMeters: 90,
-  neighbourhood: text,
-  closestGrassField: text,
-  dogHoursAloneDaily: 4,
-  dailyWalks: text,
-  offLimitsAreas: text,
-  estimatedCosts: text,
-  plannedDaysOff: text,
-  canPickUpDogAtMeetingPoint: true,
-  consultedOtherShelters: false,
-  preferences: text,
-  whyShelterDog: text,
-  awareOfBehaviourChangeAfterArrival: true,
-  expectedBehaviourAfterArrival: text,
-  wouldHireDogTrainer: true,
-  hasReasonsToReturnDog: false,
-  hasReturnedDogBefore: false,
-  willKeepDogUntilRehomed: true,
-  hasEmergencyCareOption: true,
-  dogStaysWithIfSeparation: text,
-  consentToCheckupAfterAdoption: true,
-  earliestMoveInDate: "2030-01-01",
-  otherQuestions: text,
-  answeredHonestly: true,
-  consentToContact: true,
-  consent: true,
-  website: "",
-};
+import { validAdoption as valid } from "./adopt.fixture";
 
 // Message keys per field path
 function errors(overrides: Record<string, unknown> = {}) {
