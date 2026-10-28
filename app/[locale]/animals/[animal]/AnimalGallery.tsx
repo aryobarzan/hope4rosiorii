@@ -49,10 +49,12 @@ export default function AnimalGallery({
   return (
     <>
       {/* overflow-x-auto also clips vertically, so the padding has to cover the
-          blob's shadow (`.blob-frame`: about 20px below, 16px to the sides) and
-          the focus outline. The negative margin cancels it out, so the layout
-          is the same as without the padding. */}
-      <ul className="-mx-4 -my-5 flex gap-3 overflow-x-auto px-4 py-5">
+          blob's shadow (about 24px below when raised on hover, 14px to the
+          sides) and the focus outline. The negative margin cancels it out, so
+          the layout is the same as without the padding. The side padding stays
+          at 16px, the page gutter, so the strip never causes a horizontal
+          page scroll. */}
+      <ul className="-mx-4 -my-7 flex gap-3 overflow-x-auto px-4 py-7">
         {photos.map((photo, index) => (
           <li key={photo.url} className="shrink-0">
             <button
@@ -65,7 +67,7 @@ export default function AnimalGallery({
                 setOpenIndex(index);
                 dialog.current?.showModal();
               }}
-              className="blob-frame relative block size-28 cursor-pointer bg-pale focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink md:size-32"
+              className="blob-frame relative block size-28 cursor-pointer bg-pale transition-[scale,box-shadow] duration-200 hover:shadow-[0_10px_14px_0_rgb(from_var(--color-brand)_r_g_b/0.4)] motion-safe:hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink md:size-32"
             >
               {/* Empty alt: the button's label names the action, the picture
                   itself is decoration here. */}
