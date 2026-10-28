@@ -35,12 +35,22 @@ export default function AnimalCard({ animal }: { animal: Animal }) {
         className={`relative picture-placeholder blob-frame aspect-square w-full max-w-72 ${photo || !adopted ? `` : `bg-link`}`}
       >
         {photo?.url && (
-          <SanityImage
-            src={photo.url}
-            alt={photo.alt ?? ""}
-            sizes="(min-width: 640px) 288px, 90vw"
-            hotspot={photo.hotspot}
-          />
+          <Link
+            href={{ pathname: `/animals/${animal.slug}` }}
+            className="absolute inset-0"
+            // Same destination as the "Learn more" button below, so keep this
+            // one out of the tab order and the accessibility tree: it is only
+            // a bigger click target for mouse and touch users.
+            tabIndex={-1}
+            aria-hidden="true"
+          >
+            <SanityImage
+              src={photo.url}
+              alt={photo.alt ?? ""}
+              sizes="(min-width: 640px) 288px, 90vw"
+              hotspot={photo.hotspot}
+            />
+          </Link>
         )}
       </div>
       {age && (
