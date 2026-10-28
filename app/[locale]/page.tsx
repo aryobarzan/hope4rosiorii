@@ -9,7 +9,15 @@ import FeaturedAnimals from "./components/FeaturedAnimals";
 import MeetTheDogsButton from "./components/MeetTheDogsButton";
 import RecentUpdates from "./components/RecentUpdates";
 import SectionHeading from "./components/SectionHeading";
-import { UserGroup, HandCoins, PawPrint, Rose } from "lucide-react";
+import {
+  UserGroup,
+  HandCoins,
+  PawPrint,
+  Rose,
+  LineDotLeftHorizontal,
+  LineDotRightHorizontal,
+  GitCommitHorizontal,
+} from "lucide-react";
 import DecorativeIcon from "./components/DecorativeIcon";
 import { Link } from "@/i18n/navigation";
 import { getVolunteers } from "@/lib/volunteers";
@@ -81,8 +89,28 @@ export default function Home() {
             {(["1", "2", "3", "4"] as const).map((step) => (
               <div key={`AdoptionStep-${step}`} className="prominent-link-card">
                 <div className="flex flex-col">
-                  {" "}
-                  <p className="font-heading text-2xl">0{step}</p>
+                  {step === "1" && (
+                    <LineDotLeftHorizontal
+                      aria-hidden="true"
+                      focusable="false"
+                      className="size-5"
+                    />
+                  )}
+                  {(step === "2" || step === "3") && (
+                    <GitCommitHorizontal
+                      aria-hidden="true"
+                      focusable="false"
+                      className="size-5"
+                    />
+                  )}
+                  {step === "4" && (
+                    <LineDotRightHorizontal
+                      aria-hidden="true"
+                      focusable="false"
+                      className="size-5"
+                      fill="currentColor"
+                    />
+                  )}
                   <p className="font-heading text-2xl">
                     {t(`adoptionSteps.${step}.title`)}
                   </p>
