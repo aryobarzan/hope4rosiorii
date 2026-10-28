@@ -23,7 +23,6 @@ export default async function Dogs() {
   return (
     <div className="page-container page-section section-stack">
       <div className="flex flex-col gap-1">
-        <p className="font-heading text-xl text-link">{t("eyebrow")}</p>
         <h1 className="font-heading text-5xl">{t("heading")}</h1>
         <p>{t("description")}</p>
       </div>

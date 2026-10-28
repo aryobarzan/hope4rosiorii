@@ -160,10 +160,7 @@ export default function Home() {
       {/* Featured donation updates. */}
       <section className="page-container page-section flex flex-col gap-8 md:flex-row">
         <div className="section-stack w-full">
-          <SectionHeading
-            eyebrow={t("donations.eyebrow")}
-            heading={t("donations.heading")}
-          />
+          <SectionHeading heading={t("donations.heading")} />
           <Suspense>
             <RecentUpdates />
           </Suspense>

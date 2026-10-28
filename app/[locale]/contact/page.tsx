@@ -99,7 +99,6 @@ export default async function Contact({
   return (
     <div className="page-container page-section section-stack">
       <div className="flex flex-col gap-1">
-        <p className="font-heading text-xl text-link">{t("eyebrow")}</p>
         <h1 className="font-heading text-5xl">{t("heading")}</h1>
       </div>
       {/* Stacked on small screens; side by side from lg. items-start stops the

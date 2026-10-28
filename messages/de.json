@@ -56,8 +56,7 @@
       "meetAll": "Alle kennenlernen"
     },
     "donations": {
-      "eyebrow": "wohin dein Geld geflossen ist",
-      "heading": "Frisch vom Team",
+      "heading": "Wohin deine Spenden geflossen sind",
       "donate": "Spenden"
     }
   },
@@ -173,7 +172,6 @@
       "title": "Kontakt",
       "description": "Fragen, Ideen oder Lust zu helfen? Melde dich bei den Ehrenamtlichen von Hope 4 Rosiorii."
     },
-    "eyebrow": "Sag Hallo",
     "heading": "Fragen? Ideen? Möchtest du helfen?",
     "name": "Dein Name",
     "email": "E-Mail",
@@ -216,8 +214,7 @@
       "title": "Über uns",
       "description": "Lerne die Ehrenamtlichen hinter Hope 4 Rosiorii kennen, einem Verein, der gerettete Hunde aus Rumänien nach Luxemburg bringt."
     },
-    "eyebrow": "Unsere Geschichte",
-    "heading": "Ein paar Freunde, viele Hunde, ein langer Weg",
+    "heading": "Unsere Geschichte",
     "origins": "[Placeholder: wie Hope 4 Rosiorii begonnen hat]",
     "values": "[Placeholder: Prüfung der Adoptanten, Pflegestellen, Vermittlung, alles in der Freizeit von Ehrenamtlichen]",
     "imageAlt": "Ein geretteter Hund, der sich an einen Zaun drückt und in die Kamera schaut",
@@ -229,7 +226,6 @@
       "title": "Einen Hund adoptieren",
       "description": "Bereit, einem geretteten Hund ein Zuhause zu geben? Schick uns deine Adoptionsanfrage und ein Mitglied unseres Teams meldet sich bei dir."
     },
-    "eyebrow": "das erste Hallo",
     "heading": "Adoptionsanfrage",
     "next": {
       "heading": "Wie es weitergeht",
@@ -380,7 +376,6 @@
       "title": "Unsere Hunde",
       "description": "Lerne die geretteten Hunde aus Rumänien kennen, die in Luxemburg auf eine Familie warten. Hat dich einer zum Lächeln gebracht? Sag es uns."
     },
-    "eyebrow": "alles gute Hunde",
     "heading": "Adoptiere mich!",
     "description": "Alle Hunde hier wurden in Rumänien gerettet, vom Tierarzt untersucht und von Freiwilligen betreut. Hast du jemanden gefunden, der dich zum Lächeln bringt? Sag uns Bescheid.",
     "card": {
@@ -433,7 +428,6 @@
       "title": "Spenden",
       "description": "Unterstütze Hope 4 Rosiorii, einen ehrenamtlichen Verein, der Hunde aus Rumänien rettet. Sieh, wie deine Spenden helfen."
     },
-    "eyebrow": "jeder Beitrag hilft einer Pfote",
     "heading": "Hilf einem Hund auf die Reise",
     "description": "Wir haben kein bezahltes Personal. Spenden zahlen Tierarzt, Futter, Transportboxen und den Sprit für die lange Fahrt aus Rumänien. Und wir zeigen dir immer, wohin das Geld geflossen ist.",
     "updates": {

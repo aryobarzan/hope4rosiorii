@@ -56,8 +56,7 @@
       "meetAll": "Rencontrer tout le monde"
     },
     "donations": {
-      "eyebrow": "où est allé votre argent",
-      "heading": "Fraîchement arrivé de l'équipe",
+      "heading": "Où sont allés vos dons",
       "donate": "Faire un don"
     }
   },
@@ -175,7 +174,6 @@
       "title": "Contact",
       "description": "Des questions, des idées ou l'envie d'aider ? Contactez les bénévoles de Hope 4 Rosiorii."
     },
-    "eyebrow": "Dites bonjour",
     "heading": "Des questions ? Des idées ? Envie d'aider ?",
     "name": "Votre nom",
     "email": "E-mail",
@@ -218,8 +216,7 @@
       "title": "À propos",
       "description": "Faites la connaissance des bénévoles de Hope 4 Rosiorii, une association qui amène des chiens sauvés de Roumanie au Luxembourg."
     },
-    "eyebrow": "Notre histoire",
-    "heading": "Quelques amis, beaucoup de chiens, un long chemin",
+    "heading": "Notre histoire",
     "origins": "[Placeholder : comment Hope 4 Rosiorii a commencé]",
     "values": "[Placeholder : vérification des adoptants, familles d'accueil, mise en relation, le tout sur le temps libre des bénévoles]",
     "imageAlt": "Un chien secouru pressé contre un grillage, qui regarde l'objectif",
@@ -231,7 +228,6 @@
       "title": "Adopter un chien",
       "description": "Prêt à offrir un foyer à un chien sauvé ? Envoyez-nous votre demande d'adoption et un bénévole vous contactera."
     },
-    "eyebrow": "le premier bonjour",
     "heading": "Demande d'adoption",
     "next": {
       "heading": "Et ensuite ?",
@@ -382,7 +378,6 @@
       "title": "Nos chiens",
       "description": "Découvrez les chiens sauvés en Roumanie qui attendent une famille au Luxembourg. Un regard vous a fait sourire ? Dites-le-nous."
     },
-    "eyebrow": "ce sont tous de bons chiens",
     "heading": "Adopte-moi !",
     "description": "Tous les chiens présentés ici ont été sauvés en Roumanie, examinés par un vétérinaire et pris en charge par un bénévole. Vous avez trouvé quelqu’un qui vous fait sourire ? Dites-le-nous.",
     "card": {
@@ -435,7 +430,6 @@
       "title": "Faire un don",
       "description": "Soutenez Hope 4 Rosiorii, une association bénévole qui sauve des chiens de Roumanie. Découvrez comment vos dons aident."
     },
-    "eyebrow": "chaque geste aide une patte",
     "heading": "Aidez un chien à faire le voyage",
     "description": "Nous n'avons aucun salarié. Les dons financent les soins vétérinaires, la nourriture, les caisses de transport et le carburant du long trajet depuis la Roumanie. Et nous vous montrerons toujours où est allé l'argent.",
     "updates": {

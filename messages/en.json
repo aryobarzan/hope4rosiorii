@@ -56,8 +56,7 @@
       "meetAll": "Meet everyone"
     },
     "donations": {
-      "eyebrow": "where your money went",
-      "heading": "Fresh from the team",
+      "heading": "Where your donations went",
       "donate": "Donate"
     }
   },
@@ -173,7 +172,6 @@
       "title": "Contact",
       "description": "Questions, ideas or want to help? Get in touch with the volunteers of Hope 4 Rosiorii."
     },
-    "eyebrow": "Say hello",
     "heading": "Questions? Ideas? Want to help?",
     "name": "Your name",
     "email": "Email",
@@ -216,8 +214,7 @@
       "title": "About us",
       "description": "Meet the volunteers behind Hope 4 Rosiorii, a non-profit bringing rescued dogs from Romania to Luxembourg."
     },
-    "eyebrow": "Our story",
-    "heading": "A few friends, a lot of dogs, one long road",
+    "heading": "Our story",
     "origins": "[Placeholder: how Hope 4 Rosiorii began]",
     "values": "[Placeholder: vetting, fostering, matching, everything on volunteer time]",
     "imageAlt": "A rescue dog pressed up against a fence, looking at the camera",
@@ -229,7 +226,6 @@
       "title": "Adopt a dog",
       "description": "Ready to give a rescued dog a home? Send us your adoption request and a volunteer will get in touch."
     },
-    "eyebrow": "the first hello",
     "heading": "Adoption request",
     "next": {
       "heading": "What happens next",
@@ -380,7 +376,6 @@
       "title": "Donate",
       "description": "Support Hope 4 Rosiorii, a volunteer-run non-profit rescuing dogs from Romania. See how your donations help."
     },
-    "eyebrow": "every bit helps a paw",
     "heading": "Help a dog make the trip",
     "description": "We have no paid staff. Donations pay for vet care, food, crates and the fuel for the long drive from Romania. And we will always show you where the money went.",
     "impact": {
@@ -425,7 +420,6 @@
       "title": "Our dogs",
       "description": "Meet the rescued dogs from Romania waiting for a family in Luxembourg. Found someone who makes you smile? Tell us."
     },
-    "eyebrow": "all of them are good dogs",
     "heading": "Adopt me!",
     "description": "Every dog here was rescued in Romania, checked by a vet and looked after by a volunteer. Found someone who makes you smile? Tell us.",
     "card": {

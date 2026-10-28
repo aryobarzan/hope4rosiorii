@@ -6,9 +6,7 @@ import { animalDetails } from "@/lib/animal-details";
 import type { Animal } from "@/lib/animals";
 import SanityImage from "./SanityImage";
 
-const adoptBadge = "text-link font-bold font-heading text-xl";
-const adoptedBadge =
-  "pill text-link font-heading text-xl";
+const adoptedBadge = "pill text-link font-heading text-xl";
 
 const MAX_TRAITS_ON_CARD = 2;
 
@@ -27,9 +25,7 @@ export default function AnimalCard({ animal }: { animal: Animal }) {
 
   return (
     <li className="dog-card" data-adopted={adopted}>
-      <p className={adopted ? adoptedBadge : adoptBadge}>
-        {adopted ? t("card.adopted") : t("card.adoptMe")}
-      </p>
+      {adopted && <p className={adoptedBadge}>{t("card.adopted")}</p>}
       <p className="font-heading text-4xl font-bold">{animal.name}</p>
 
       {/* Fills the card up to 18rem and stays square. A fixed w-72 overflowed

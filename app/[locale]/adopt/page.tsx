@@ -88,10 +88,7 @@ export default async function Adopt({
 
   return (
     <div className="page-container page-section section-stack">
-      <div className="flex flex-col gap-1">
-        <p className="font-heading text-xl text-link">{t("eyebrow")}</p>
-        <h1 className="font-heading text-5xl">{t("heading")}</h1>
-      </div>
+      <h1 className="font-heading text-5xl">{t("heading")}</h1>
       {/* Stacked on small screens; side by side from lg. items-start stops the
           box stretching to the form's height, so it only takes what it needs. */}
       <div className="flex flex-col gap-4 lg:flex-row lg:items-start">
