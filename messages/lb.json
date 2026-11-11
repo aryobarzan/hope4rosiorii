@@ -130,9 +130,7 @@
       },
       {
         "title": "Är Rechter",
-        "paragraphs": [
-          "No der DSGVO hutt Dir d'Recht op:"
-        ],
+        "paragraphs": ["No der DSGVO hutt Dir d'Recht op:"],
         "items": [
           "Zougrëff op déi perséinlech Donnéeën, déi mir iwwer Iech hunn;",
           "Korrektur vun onrichtegen Donnéeën;",
@@ -466,7 +464,7 @@
       "amount": "{value} €",
       "donate": "{amount} spenden",
       "donateNoAmount": "Spenden",
-      "paypalNote": "Du schléisses deng Spend sécher op PayPal of."
+      "paypalNote": "Du schléiss deng Spend sécher iwwer PayPal of."
     }
   },
   "AnimalPreview": {
