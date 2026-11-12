@@ -106,6 +106,14 @@
         ]
       },
       {
+        "title": "Videos von YouTube",
+        "paragraphs": [
+          "Einige Tierseiten zeigen Videos, die bei YouTube, einem Dienst von Google, gehostet werden. Beim Öffnen einer Seite wird nichts von YouTube geladen. Ein Video wird erst geladen, nachdem Sie auf die Abspielschaltfläche gedrückt haben, und wir verwenden dafür die Adresse des erweiterten Datenschutzmodus von YouTube (youtube-nocookie.com).",
+          "Wenn Sie auf Abspielen drücken, verbindet sich Ihr Browser mit YouTube. Google erhält dann technische Daten wie Ihre IP-Adresse und Informationen zu Ihrem Gerät und Browser und kann Informationen auf Ihrem Gerät speichern oder auslesen, zum Beispiel Cookies, wie in der Datenschutzerklärung von Google beschrieben (policies.google.com/privacy). Wir erhalten diese Daten nicht und können nicht beeinflussen, was Google damit tut. Mit dem Abspielen stimmen Sie dem zu; wenn Sie das nicht möchten, spielen Sie die Videos einfach nicht ab.",
+          "Links zu anderen Seiten, etwa Instagram oder Facebook, öffnen sich nur, wenn Sie darauf klicken, und führen Sie zu diesen Seiten, die ihre eigenen Datenschutzerklärungen anwenden."
+        ]
+      },
+      {
         "title": "Wer Daten für uns verarbeitet",
         "paragraphs": [
           "Für den Betrieb der Website und den Empfang Ihrer Nachrichten nutzen wir Dienstleister, die Daten in unserem Auftrag verarbeiten:"
@@ -156,7 +164,8 @@
       {
         "title": "Cookies",
         "paragraphs": [
-          "Diese Website verwendet keine Werbe- oder Tracking-Cookies. Sie kann ein kleines, technisch notwendiges Cookie speichern, um Ihre Sprachauswahl zu merken."
+          "Diese Website verwendet keine Werbe- oder Tracking-Cookies. Sie kann ein kleines, technisch notwendiges Cookie speichern, um Ihre Sprachauswahl zu merken.",
+          "Eine Ausnahme sind YouTube-Videos: Wenn Sie eines abspielen, kann YouTube eigene Cookies setzen (siehe „Videos von YouTube\" oben)."
         ]
       },
       {
@@ -416,7 +425,13 @@
     "galleryPrevious": "Vorheriges Foto",
     "galleryNext": "Nächstes Foto",
     "ask": "Frag nach {name}",
-    "adopt": "Adoptiere {name}"
+    "adopt": "Adoptiere {name}",
+    "videosHeading": "Videos",
+    "videoTitle": "Video von {name}",
+    "videoPlay": "Video abspielen",
+    "videoPrivacy": "Das Video wird von YouTube geladen, sobald Sie auf Abspielen drücken.",
+    "videoWatchOn": "Auf {platform} ansehen",
+    "videoNewTab": "(öffnet in einem neuen Tab)"
   },
   "DonatePage": {
     "metadata": {

@@ -106,6 +106,14 @@
         ]
       },
       {
+        "title": "Videoe vu YouTube",
+        "paragraphs": [
+          "Verschidden Déierensäite weisen Videoen, déi op YouTube, engem Service vu Google, gehost sinn. Wann Dir eng Säit opmaacht, gëtt näischt vu YouTube geluecht. E Video gëtt eréischt gelueden, wann Dir op säi Play-Knäppchen dréckt, an mir benotzen dofir d'Adress vum erweiderten Dateschutzmodus vun YouTube (youtube-nocookie.com).",
+          "Wann Dir op Play dréckt, verbënnt sech Äre Browser mat YouTube. Google kritt dann technesch Donnéeën, wéi Är IP-Adress an Informatiounen iwwer Äert Apparat an Äre Browser, a kann Informatiounen op Ärem Apparat späicheren oder ausliesen, zum Beispill Cookien, wéi et an der Dateschutzerklärung vu Google beschriwwe gëtt (policies.google.com/privacy). Mir kréien dës Donnéeën net a kënnen net kontrolléieren, wat Google domat mécht. Wann Dir op Play dréckt, akzeptéiert Dir dat; wann Dir dat net wëllt, spillt d'Videoen einfach net of.",
+          "Linken op aner Säiten, wéi Instagram oder Facebook, ginn nëmmen op, wann Dir drop klickt, a féieren Iech op Säiten, déi hir eegen Dateschutzerklärung uwenden."
+        ]
+      },
+      {
         "title": "Wien Donnéeë fir eis veraarbecht",
         "paragraphs": [
           "Fir d'Websäit ze bedreiwen an Är Noriichten ze kréien, notze mir Déngschtleeschter, déi Donnéeë fir eis veraarbechten:"
@@ -156,7 +164,8 @@
       {
         "title": "Cookien",
         "paragraphs": [
-          "Dës Websäit benotzt keng Reklamm- oder Tracking-Cookien. Si kann e klenge, technesch néidege Cookie späicheren, fir sech Är Sproochewiel ze mierken."
+          "Dës Websäit benotzt keng Reklamm- oder Tracking-Cookien. Si kann e klenge, technesch néidege Cookie späicheren, fir sech Är Sproochewiel ze mierken.",
+          "Eng Ausnahm sinn d'YouTube-Videoen: wann Dir ee spillt, kann YouTube seng eege Cookien setzen (kuckt \"Videoe vu YouTube\" uewen)."
         ]
       },
       {
@@ -416,7 +425,13 @@
     "galleryPrevious": "Virescht Foto",
     "galleryNext": "Nächst Foto",
     "ask": "Frot no {name}",
-    "adopt": "Adoptéier {name}"
+    "adopt": "Adoptéier {name}",
+    "videosHeading": "Videoen",
+    "videoTitle": "Video vum {name}",
+    "videoPlay": "Video ofspillen",
+    "videoPrivacy": "D'Video gëtt vu YouTube gelueden, wann Dir op Play dréckt.",
+    "videoWatchOn": "Op {platform} kucken",
+    "videoNewTab": "(mécht an engem neien Tab op)"
   },
   "DonatePage": {
     "metadata": {

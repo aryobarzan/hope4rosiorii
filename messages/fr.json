@@ -106,6 +106,14 @@
         ]
       },
       {
+        "title": "Vidéos YouTube",
+        "paragraphs": [
+          "Certaines pages d'animaux affichent des vidéos hébergées sur YouTube, un service de Google. Rien n'est chargé depuis YouTube lorsque vous ouvrez une page. Une vidéo ne se charge qu'après que vous avez appuyé sur son bouton de lecture, et nous utilisons l'adresse en mode de confidentialité renforcée de YouTube (youtube-nocookie.com).",
+          "Lorsque vous appuyez sur lecture, votre navigateur se connecte à YouTube. Google reçoit alors des données techniques telles que votre adresse IP et des informations sur votre appareil et votre navigateur, et peut enregistrer ou lire des informations sur votre appareil, par exemple des cookies, comme décrit dans la politique de confidentialité de Google (policies.google.com/privacy). Nous ne recevons pas ces données et ne pouvons pas contrôler l'usage qu'en fait Google. En appuyant sur lecture, vous l'acceptez ; si vous préférez ne pas le faire, ne lancez simplement pas les vidéos.",
+          "Les liens vers d'autres sites, comme Instagram ou Facebook, ne s'ouvrent que si vous cliquez dessus et vous mènent vers ces sites, qui appliquent leur propre politique de confidentialité."
+        ]
+      },
+      {
         "title": "Qui traite des données pour nous",
         "paragraphs": [
           "Pour faire fonctionner le site et recevoir vos messages, nous faisons appel à des prestataires qui traitent des données pour notre compte :"
@@ -158,7 +166,8 @@
       {
         "title": "Cookies",
         "paragraphs": [
-          "Ce site n'utilise pas de cookies publicitaires ni de suivi. Il peut enregistrer un petit cookie techniquement nécessaire pour mémoriser votre choix de langue."
+          "Ce site n'utilise pas de cookies publicitaires ni de suivi. Il peut enregistrer un petit cookie techniquement nécessaire pour mémoriser votre choix de langue.",
+          "L'exception concerne les vidéos YouTube : si vous en lancez une, YouTube peut déposer ses propres cookies (voir « Vidéos YouTube » ci-dessus)."
         ]
       },
       {
@@ -418,7 +427,13 @@
     "galleryPrevious": "Photo précédente",
     "galleryNext": "Photo suivante",
     "ask": "Se renseigner sur {name}",
-    "adopt": "Adopter {name}"
+    "adopt": "Adopter {name}",
+    "videosHeading": "Vidéos",
+    "videoTitle": "Vidéo de {name}",
+    "videoPlay": "Lire la vidéo",
+    "videoPrivacy": "La vidéo se charge depuis YouTube lorsque vous appuyez sur lecture.",
+    "videoWatchOn": "Voir sur {platform}",
+    "videoNewTab": "(s'ouvre dans un nouvel onglet)"
   },
   "DonatePage": {
     "metadata": {

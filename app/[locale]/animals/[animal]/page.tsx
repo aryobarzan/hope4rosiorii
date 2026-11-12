@@ -10,6 +10,7 @@ import { getAnimal, getAnimals } from "@/lib/animals";
 import HealthIcon from "../../components/HealthIcon";
 import SanityImage from "../../components/SanityImage";
 import AnimalGallery from "./AnimalGallery";
+import AnimalVideos from "./AnimalVideos";
 
 // Opt out of instant-navigation validation (dev-only, never blocks the build).
 // Everything on this page depends on `params`, so there is no useful shell to
@@ -211,6 +212,10 @@ export default async function AnimalPage({
             <AnimalGallery photos={galleryPhotos} name={name} />
           </div>
         </section>
+      )}
+
+      {animal.videos && animal.videos.length > 0 && (
+        <AnimalVideos videos={animal.videos} name={name} />
       )}
     </div>
   );

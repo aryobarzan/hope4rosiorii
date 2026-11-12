@@ -106,6 +106,14 @@
         ]
       },
       {
+        "title": "Videos from YouTube",
+        "paragraphs": [
+          "Some animal pages show videos hosted on YouTube, a service of Google. Nothing is loaded from YouTube when you open a page. A video only loads after you press its play button, and we use YouTube's privacy-enhanced address (youtube-nocookie.com).",
+          "When you press play, your browser connects to YouTube. Google then receives technical data such as your IP address and information about your device and browser, and may store or read information on your device, for example cookies, as described in Google's privacy policy (policies.google.com/privacy). We do not receive this data and cannot control what Google does with it. By pressing play you accept this; if you prefer not to, simply do not play the videos.",
+          "Links to other sites, such as Instagram or Facebook, only open when you click them and take you to those sites, which apply their own privacy policies."
+        ]
+      },
+      {
         "title": "Who processes data for us",
         "paragraphs": [
           "To run the website and receive your messages we use service providers that process data on our behalf:"
@@ -156,7 +164,8 @@
       {
         "title": "Cookies",
         "paragraphs": [
-          "This website does not use advertising or tracking cookies. It may store a small, technically necessary cookie to remember your language choice."
+          "This website does not use advertising or tracking cookies. It may store a small, technically necessary cookie to remember your language choice.",
+          "The exception is YouTube videos: if you play one, YouTube may set its own cookies (see \"Videos from YouTube\" above)."
         ]
       },
       {
@@ -460,7 +469,13 @@
     "galleryPrevious": "Previous photo",
     "galleryNext": "Next photo",
     "ask": "Ask about {name}",
-    "adopt": "Adopt {name}"
+    "adopt": "Adopt {name}",
+    "videosHeading": "Videos",
+    "videoTitle": "Video of {name}",
+    "videoPlay": "Play video",
+    "videoPrivacy": "The video loads from YouTube when you press play.",
+    "videoWatchOn": "Watch on {platform}",
+    "videoNewTab": "(opens in a new tab)"
   },
   "AnimalPreview": {
     "contact": "You're asking about",
