@@ -139,6 +139,17 @@ export type Animal = {
   }>;
   arrivalDate?: string;
   featured?: boolean;
+  adoptedDate?: string;
+  adoptedMessage?: LocalizedText;
+  adoptedPhotos?: Array<{
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+    _key: string;
+  }>;
 };
 
 export type Slug = {
