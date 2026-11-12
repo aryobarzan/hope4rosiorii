@@ -35,12 +35,12 @@ test("choosing an option in a dropdown updates the address", async ({ page }) =>
 });
 
 test("a shared address opens with its dropdowns set", async ({ page }) => {
-  await page.goto("/en/animals?size=large&age=baby");
+  await page.goto("/en/animals?size=large&age=puppy");
 
   await expect(
     page.getByRole("combobox", { name: filter.sizeLabel, exact: true }),
   ).toHaveValue("large");
   await expect(
     page.getByRole("combobox", { name: filter.ageLabel, exact: true }),
-  ).toHaveValue("baby");
+  ).toHaveValue("puppy");
 });

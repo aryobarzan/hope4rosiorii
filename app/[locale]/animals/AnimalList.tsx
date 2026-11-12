@@ -8,11 +8,13 @@ import {
   AGES,
   SIZES,
   SPECIES,
+  type AgeStage,
   type Filters,
   filterAnimals,
   filtersHref,
   hasActiveFilters,
   parseFilters,
+  resolveSpecies,
 } from "@/lib/animal-filters";
 import AnimalCard from "../components/AnimalCard";
 
@@ -30,8 +32,10 @@ function withFilter(filters: Filters, name: keyof Filters, value: string) {
   return {
     ...filters,
     [name]: value,
-    // Cats have no size, so a size left over from before would hide them all
-    ...(name === "species" && value === "cat" && { size: "all" }),
+    // Size and age stages depend on the species (cats have no size, and dogs
+    // and cats have different age stages), so a choice left over from the
+    // other species would hide every animal
+    ...(name === "species" && { size: "all", age: "all" }),
   } as Filters;
 }
 
@@ -44,23 +48,27 @@ function FilterGroup({
   values,
   labelFor,
   filters,
+  allowAll = true,
 }: {
   label: string;
   name: keyof Filters;
   values: readonly string[];
   labelFor: (value: string) => string;
   filters: Filters;
+  // The species group has no "All": one species is always chosen
+  allowAll?: boolean;
 }) {
   const t = useTranslations("DogsPage");
   const router = useRouter();
 
   // "All" is shared by every group, so labelFor only sees real values
-  const options = ["all", ...values].map((value) => ({
+  const options = (allowAll ? ["all", ...values] : values).map((value) => ({
     value,
     text: value === "all" ? t("filter.all") : labelFor(value),
   }));
   const current = options.find((option) => option.value === filters[name]);
-  const isActive = filters[name] !== "all";
+  // Without "All" there is no neutral state, so the pill always shows a choice
+  const isActive = !allowAll || filters[name] !== "all";
 
   return (
     <>
@@ -133,18 +141,23 @@ function FilterGroup({
 
 export function AnimalList({
   animals,
-  filters,
+  filters: requested,
 }: {
   animals: Animal[];
   filters: Filters;
 }) {
   const t = useTranslations("DogsPage");
+  const tAge = useTranslations("Age");
+  // If the default species (dogs) has no animals but cats do, show the cats
+  const filters = resolveSpecies(animals, requested);
 
   // A filter group only appears when it can change the result
   const hasBothSpecies = new Set(animals.map((a) => a.species)).size > 1;
   const hasSizes =
-    filters.species !== "cat" && animals.some((a) => a.size?.length);
-  const hasAges = animals.some((a) => a.ageMonths !== null);
+    filters.species === "dog" && animals.some((a) => a.size?.length);
+  const hasAges = animals.some(
+    (a) => a.species === filters.species && a.ageMonths !== null,
+  );
 
   const visible = filterAnimals(animals, filters);
 
@@ -161,6 +174,7 @@ export function AnimalList({
               values={SPECIES}
               labelFor={(value) => t(`filter.${value as "dog" | "cat"}`)}
               filters={filters}
+              allowAll={false}
             />
           )}
           {hasSizes && (
@@ -176,8 +190,8 @@ export function AnimalList({
             <FilterGroup
               label={t("filter.ageLabel")}
               name="age"
-              values={AGES}
-              labelFor={(value) => t(`filter.age.${value as (typeof AGES)[number]}`)}
+              values={AGES[filters.species]}
+              labelFor={(value) => tAge(`stage.${value as AgeStage}`)}
               filters={filters}
             />
           )}

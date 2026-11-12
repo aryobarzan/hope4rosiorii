@@ -18,7 +18,7 @@ export const ANIMALS_QUERY = defineQuery(`
     goodWith,
     health,
     location,
-    videoUrl,
+    videos,
     featured,
     arrivalDate,
     "description": select(

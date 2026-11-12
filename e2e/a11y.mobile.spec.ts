@@ -11,7 +11,7 @@ const addresses = [
     pages.map(([name, path]) => [`${name} (${locale})`, `/${locale}${path}`] as const),
   ),
   // The filter dropdowns with a choice made look different (filled)
-  ["animals with filters chosen", "/en/animals?size=small&age=baby"] as const,
+  ["animals with filters chosen", "/en/animals?size=small&age=puppy"] as const,
 ];
 
 for (const [name, address] of addresses) {

@@ -1,4 +1,4 @@
-import { ageParts } from "@/lib/age";
+import { ageLine } from "@/lib/age";
 import { getAnimals, getHighlightedAnimal } from "@/lib/animals";
 import { getLocale, getTranslations } from "next-intl/server";
 import SanityImage from "./SanityImage";
@@ -52,8 +52,8 @@ export default async function HighlightedAnimal() {
   const animal = getHighlightedAnimal(animals);
   // Nothing to highlight yet: render nothing, not an empty box.
   if (!animal) return null;
-  const age = animal.ageMonths == null ? null : ageParts(animal.ageMonths);
   const tAge = await getTranslations("Age");
+  const age = ageLine(animal, tAge);
   const tAnimal = await getTranslations("Animal");
   const photo = animal.gallery?.[0];
   const name = animal.name ?? "";
@@ -84,7 +84,7 @@ export default async function HighlightedAnimal() {
       </Frame>
       {age && (
         <p className="font-heading text-2xl">
-          {tAge(age.unit, { count: age.count })}
+          {age}
         </p>
       )}
       <p className="text-balance text-center font-heading text-2xl">

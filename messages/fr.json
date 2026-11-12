@@ -401,12 +401,7 @@
         "medium": "Moyenne",
         "large": "Grande"
       },
-      "ageLabel": "Âge",
-      "age": {
-        "baby": "Moins d'1 an",
-        "young": "1 à 3 ans",
-        "adult": "Plus de 3 ans"
-      }
+      "ageLabel": "Âge"
     },
     "empty": "Aucun animal à afficher pour le moment.",
     "noMatch": "Aucun animal ne correspond à ces filtres. Essayez une autre combinaison."
@@ -476,7 +471,19 @@
   },
   "Age": {
     "months": "env. {count} mois",
-    "years": "env. {count, plural, one {# an} other {# ans}}"
+    "years": "env. {count, plural, one {# an} other {# ans}}",
+    "stage": {
+      "puppy": "Chiot",
+      "juvenile": "Juvénile",
+      "youngAdult": "Jeune adulte",
+      "matureAdult": "Adulte mature",
+      "senior": "Sénior",
+      "kitten": "Chaton",
+      "junior": "Junior",
+      "adult": "Adulte",
+      "mature": "Mature",
+      "superSenior": "Super sénior"
+    }
   },
   "Animal": {
     "species": {

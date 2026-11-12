@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
 import { PawPrint, Cat, Dog } from "lucide-react";
 import { Link } from "@/i18n/navigation";
-import { ageParts } from "@/lib/age";
+import { ageLine } from "@/lib/age";
 import { animalDetails } from "@/lib/animal-details";
 import type { Animal } from "@/lib/animals";
 import SanityImage from "./SanityImage";
@@ -21,7 +21,7 @@ export default function AnimalCard({ animal }: { animal: Animal }) {
 
   const adopted = animal.status === "adopted";
   const photo = animal.gallery?.[0];
-  const age = animal.ageMonths == null ? null : ageParts(animal.ageMonths);
+  const age = ageLine(animal, tAge);
 
   return (
     <li className="dog-card" data-adopted={adopted}>
@@ -55,7 +55,7 @@ export default function AnimalCard({ animal }: { animal: Animal }) {
       </div>
       {age && (
         <p className="font-heading text-2xl font-bold">
-          {tAge(age.unit, { count: age.count })}
+          {age}
         </p>
       )}
       {/* The card's align-items: center centres this paragraph's box, not

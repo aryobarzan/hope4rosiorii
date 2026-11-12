@@ -4,7 +4,7 @@ import { getFormatter, getTranslations } from "next-intl/server";
 import { CircleQuestionMark, House, PawPrint } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
-import { ageParts } from "@/lib/age";
+import { ageLine } from "@/lib/age";
 import { animalDetails, type AnimalKey } from "@/lib/animal-details";
 import { getAnimal, getAnimals } from "@/lib/animals";
 import HealthIcon from "../../components/HealthIcon";
@@ -71,8 +71,8 @@ export default async function AnimalPage({
   const animal = await getAnimal(slug, locale);
   if (!animal) notFound();
   const t = await getTranslations("AnimalPage");
-  const age = animal.ageMonths == null ? null : ageParts(animal.ageMonths);
   const tAge = await getTranslations("Age");
+  const age = ageLine(animal, tAge);
   const tAnimal = await getTranslations("Animal");
   const format = await getFormatter();
   const photo = animal.gallery?.[0];
@@ -170,7 +170,7 @@ export default async function AnimalPage({
           </div>
           {age && (
             <p className="font-heading text-2xl font-bold">
-              {tAge(age.unit, { count: age.count })}
+              {age}
             </p>
           )}
           <p className="text-balance text-center font-heading text-2xl">

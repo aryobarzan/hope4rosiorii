@@ -399,12 +399,7 @@
         "medium": "Mëttel",
         "large": "Grouss"
       },
-      "ageLabel": "Alter",
-      "age": {
-        "baby": "Ënner 1 Joer",
-        "young": "1 bis 3 Joer",
-        "adult": "Iwwer 3 Joer"
-      }
+      "ageLabel": "Alter"
     },
     "empty": "Hei sinn nach keng Déieren.",
     "noMatch": "Keng Déieren passen zu dëse Filteren. Probéiert eng aner Kombinatioun."
@@ -474,7 +469,19 @@
   },
   "Age": {
     "months": "ca. {count, plural, one {# Mount} other {# Méint}}",
-    "years": "ca. {count} Joer"
+    "years": "ca. {count} Joer",
+    "stage": {
+      "puppy": "Welpel",
+      "juvenile": "Jugendlechen",
+      "youngAdult": "Jonken Erwuessenen",
+      "matureAdult": "Reifen Erwuessenen",
+      "senior": "Senior",
+      "kitten": "Kazebaby",
+      "junior": "Jonk Kaz",
+      "adult": "Erwuessen",
+      "mature": "Reif",
+      "superSenior": "Super-Senior"
+    }
   },
   "Animal": {
     "species": {

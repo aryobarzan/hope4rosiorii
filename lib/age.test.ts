@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { ageParts, monthsSince } from "./age";
+import { ageLine, ageParts, monthsSince } from "./age";
 
 // Dates are UTC midnight, matching how monthsSince reads them
 const at = (iso: string) => new Date(`${iso}T00:00:00Z`);
@@ -37,5 +37,25 @@ describe("ageParts", () => {
     expect(ageParts(17)).toEqual({ unit: "years", count: 1 });
     expect(ageParts(18)).toEqual({ unit: "years", count: 2 });
     expect(ageParts(60)).toEqual({ unit: "years", count: 5 });
+  });
+});
+
+describe("ageLine", () => {
+  // Echoes the key and count, so the test checks what is asked for, not wording
+  const t = (key: string, values?: { count: number }) =>
+    values ? `${key}(${values.count})` : key;
+
+  it("puts the stage before the approximate age", () => {
+    expect(ageLine({ species: "dog", ageMonths: 5 }, t)).toBe(
+      "stage.puppy · months(5)",
+    );
+    expect(ageLine({ species: "cat", ageMonths: 200 }, t)).toBe(
+      "stage.superSenior · years(17)",
+    );
+  });
+
+  it("shows only the age without a species, and nothing without an age", () => {
+    expect(ageLine({ species: null, ageMonths: 5 }, t)).toBe("months(5)");
+    expect(ageLine({ species: "dog", ageMonths: null }, t)).toBeNull();
   });
 });

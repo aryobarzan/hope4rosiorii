@@ -6,6 +6,7 @@ import en from "../messages/en.json";
 // what is marked as selected, and that the list and its messages agree. Which
 // animals match which filter is covered by the unit tests.
 const filter = en.DogsPage.filter;
+const age = en.Age;
 
 test.describe("animal filters (large screens: rows of links)", () => {
   const sizeRow = (page: import("@playwright/test").Page) =>
@@ -37,26 +38,44 @@ test.describe("animal filters (large screens: rows of links)", () => {
     // address is built from the filters that are active when it is rendered
     await sizeRow(page).getByRole("link", { name: filter.size.medium, exact: true }).click();
     await expect(page).toHaveURL(/\/en\/animals\?size=medium$/);
-    await ageRow(page).getByRole("link", { name: filter.age.adult, exact: true }).click();
-    await expect(page).toHaveURL(/\/en\/animals\?size=medium&age=adult$/);
+    await ageRow(page).getByRole("link", { name: age.stage.matureAdult, exact: true }).click();
+    await expect(page).toHaveURL(/\/en\/animals\?size=medium&age=matureAdult$/);
 
     await sizeRow(page).getByRole("link", { name: filter.all, exact: true }).click();
-    await expect(page).toHaveURL(/\/en\/animals\?age=adult$/);
+    await expect(page).toHaveURL(/\/en\/animals\?age=matureAdult$/);
 
     await ageRow(page).getByRole("link", { name: filter.all, exact: true }).click();
     await expect(page).toHaveURL(/\/en\/animals$/);
   });
 
+  test("one species is always chosen, and each has its own age stages", async ({
+    page,
+  }) => {
+    await page.goto("/en/animals");
+    const species = page.getByRole("navigation", { name: filter.label, exact: true });
+    // Only runs where both species exist in the CMS
+    test.skip((await species.count()) === 0, "needs both dogs and cats");
+
+    await expect(species.getByRole("link", { name: filter.all, exact: true })).toHaveCount(0);
+    await expect(species.getByRole("link", { name: filter.dog, exact: true })).toHaveAttribute("aria-current", "true");
+    await expect(ageRow(page).getByRole("link", { name: age.stage.puppy, exact: true })).toBeVisible();
+
+    await species.getByRole("link", { name: filter.cat, exact: true }).click();
+    await expect(page).toHaveURL(/\/en\/animals\?species=cat$/);
+    await expect(ageRow(page).getByRole("link", { name: age.stage.kitten, exact: true })).toBeVisible();
+    await expect(ageRow(page).getByRole("link", { name: age.stage.puppy, exact: true })).toHaveCount(0);
+  });
+
   test("a shared address opens with its filters already applied", async ({
     page,
   }) => {
-    await page.goto("/en/animals?size=large&age=young");
+    await page.goto("/en/animals?size=large&age=youngAdult");
 
     await expect(
       sizeRow(page).getByRole("link", { name: filter.size.large, exact: true }),
     ).toHaveAttribute("aria-current", "true");
     await expect(
-      ageRow(page).getByRole("link", { name: filter.age.young, exact: true }),
+      ageRow(page).getByRole("link", { name: age.stage.youngAdult, exact: true }),
     ).toHaveAttribute("aria-current", "true");
   });
 

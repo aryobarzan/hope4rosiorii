@@ -399,12 +399,7 @@
         "medium": "Mittel",
         "large": "Groß"
       },
-      "ageLabel": "Alter",
-      "age": {
-        "baby": "Unter 1 Jahr",
-        "young": "1 bis 3 Jahre",
-        "adult": "Über 3 Jahre"
-      }
+      "ageLabel": "Alter"
     },
     "empty": "Hier gibt es noch keine Tiere.",
     "noMatch": "Keine Tiere passen zu diesen Filtern. Versuchen Sie eine andere Kombination."
@@ -474,7 +469,19 @@
   },
   "Age": {
     "months": "ca. {count, plural, one {# Monat} other {# Monate}}",
-    "years": "ca. {count, plural, one {# Jahr} other {# Jahre}}"
+    "years": "ca. {count, plural, one {# Jahr} other {# Jahre}}",
+    "stage": {
+      "puppy": "Welpe",
+      "juvenile": "Junghund",
+      "youngAdult": "Junger Erwachsener",
+      "matureAdult": "Reifer Erwachsener",
+      "senior": "Senior",
+      "kitten": "Kätzchen",
+      "junior": "Junior",
+      "adult": "Erwachsen",
+      "mature": "Reif",
+      "superSenior": "Supersenior"
+    }
   },
   "Animal": {
     "species": {
