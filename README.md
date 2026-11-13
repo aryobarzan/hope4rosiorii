@@ -1,18 +1,23 @@
 # Hope 4 Rosiorii
 
-Website for **Hope 4 Rosiorii**, a volunteer-run non-profit that brings rescue dogs from Romania to Luxembourg for adoption. Visitors can meet the animals, send an adoption request, contact the team and donate.
+![Screenshot of the Hope 4 Rosiorii home page](https://res.cloudinary.com/jnv7oicy/image/upload/v1794534209/home-cropped.png)
 
-The site is available in Luxembourgish (the default), English, French and German. Pages: Home, Our dogs (listing and detail), Adopt (multi-step request), About and team (with a contact form), Donate (with updates on how the money was used) and a privacy policy.
+Website for **Hope 4 Rosiorii**, a non-profit association that brings rescue dogs from Romania to Luxembourg for adoption. Visitors can view the animals, send an adoption request, contact the team and donate.
+
+The site is available in Luxembourgish (the default), English, French and German. Pages: Home, Dogs (listing and detail), Adopt (multi-step request), About us, Contact, Donate (with updates on how the money was used) and a privacy policy.
+
+A preview of the website is live here: https://hope4rosiorii.vercel.app/  
+Following some iterations in collaboration with the association's volunteers, the website is expected to rely on the domain **hope4rosiorii.lu**.
 
 ## Stack
 
-- [Next.js](https://nextjs.org) (App Router, Cache Components) with TypeScript and Tailwind CSS
-- [next-intl](https://next-intl.dev) for the four languages, with locale-prefixed routes (`/lb`, `/en`, `/fr`, `/de`)
-- [Sanity](https://www.sanity.io) as the CMS (animals, donation updates, site settings). The studio lives in a separate repository, `studio-hope-4-rosiorii`
-- React Hook Form and Zod for the forms; the same Zod schema runs in the browser and again in the Server Action
-- Gmail SMTP (`nodemailer`) to email form submissions to the team. Nothing is stored
-- Vitest and Playwright for tests; GitHub Actions for CI
-- Hosted on Vercel (Hobby plan)
+- **Next.js** (App Router, Cache Components) with TypeScript 6.x and Tailwind CSS.
+- **next-intl** for the four languages, with locale-prefixed routes (`/lb`, `/en`, `/fr`, `/de`).
+- **Sanity** as the CMS (animals, donation updates, site settings). The studio lives in a separate repository.
+- **React Hook Form** and **Zod** for the forms. the same Zod schema runs in the browser and again in the Server Action.
+- **Gmail SMTP** (`nodemailer`) to email form submissions to the team.
+- **Vitest** and **Playwright** for tests, **GitHub Actions** for CI.
+- **Vercel** for hosting (Hobby plan).
 
 ## Getting started
 
@@ -28,19 +33,19 @@ Create a `.env.local` file in the project root (it is git-ignored) with the vari
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000); it redirects to the language your browser asks for, or to `/lb`.
+Open [http://localhost:3000](http://localhost:3000); it redirects to the language your browser asks for, or to `/lb` as the default.
 
 ### Environment variables
 
-| Variable | Needed | What it is |
-|---|---|---|
-| `NEXT_PUBLIC_SANITY_PROJECT_ID` | yes | Sanity project. Not a secret; the value is in the studio's README |
-| `NEXT_PUBLIC_SANITY_DATASET` | yes | Sanity dataset, `production` |
-| `SANITY_REVALIDATE_SECRET` | yes | Secret that signs the Sanity webhook (see below). Any long random string, the same on both sides |
-| `GMAIL_USER` | for forms | The association's Gmail address, which sends the form emails |
-| `GMAIL_APP_PASSWORD` | for forms | A Google [App Password](https://support.google.com/accounts/answer/185833) for that account (needs 2-step verification), not the account password |
-| `MAIL_TO` | no | Where form emails go. Defaults to `GMAIL_USER` |
-| `SITE_URL` | no | Public address, used in the sitemap. Defaults to `https://hope4rosiorii.lu` |
+| Variable                        | Needed    | What it is                                                                                                                                        |
+| ------------------------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `NEXT_PUBLIC_SANITY_PROJECT_ID` | yes       | Sanity project. Not a secret; the value is in the studio's README                                                                                 |
+| `NEXT_PUBLIC_SANITY_DATASET`    | yes       | Sanity dataset, `production`                                                                                                                      |
+| `SANITY_REVALIDATE_SECRET`      | yes       | Secret that signs the Sanity webhook (see below). Any long random string, the same on both sides                                                  |
+| `GMAIL_USER`                    | for forms | The association's Gmail address, which sends the form emails                                                                                      |
+| `GMAIL_APP_PASSWORD`            | for forms | A Google [App Password](https://support.google.com/accounts/answer/185833) for that account (needs 2-step verification), not the account password |
+| `MAIL_TO`                       | no        | Where form emails go. Defaults to `GMAIL_USER`                                                                                                    |
+| `SITE_URL`                      | no        | Public address, used in the sitemap. Defaults to `https://hope4rosiorii.lu`                                                                       |
 
 `VERCEL_ENV` is set by Vercel itself. Only the `production` deployment is indexed by search engines; every other deployment serves a `robots.txt` that disallows everything.
 
@@ -48,22 +53,22 @@ The same variables go into the project's settings on Vercel.
 
 ## Scripts
 
-| Command | What it does |
-|---|---|
-| `pnpm dev` | Development server |
-| `pnpm build` / `pnpm start` | Production build, and serve it |
-| `pnpm lint` | ESLint |
-| `pnpm test` | Unit tests (Vitest) |
-| `pnpm test:watch` | Unit tests, re-running on every change |
-| `pnpm test:e2e` | End-to-end tests (Playwright); see [Testing](#testing) |
+| Command                     | What it does                                           |
+| --------------------------- | ------------------------------------------------------ |
+| `pnpm dev`                  | Development server                                     |
+| `pnpm build` / `pnpm start` | Production build / serve it                            |
+| `pnpm lint`                 | ESLint                                                 |
+| `pnpm test`                 | Unit tests (Vitest)                                    |
+| `pnpm test:watch`           | Unit tests, re-running on every change                 |
+| `pnpm test:e2e`             | End-to-end tests (Playwright); see [Testing](#testing) |
 
 `tsc` needs the route types that Next generates, which are git-ignored. On a fresh checkout run `pnpm exec next typegen` before `pnpm exec tsc --noEmit`.
 
-## Content: the Sanity studio
+## Content Management System: Sanity.io
 
-Volunteers edit content in the hosted studio. The schemas live in the separate `studio-hope-4-rosiorii` repository, whose README explains how to run and deploy it.
+Volunteers edit content (dogs, donation updates, site settings) via the Sanity.io dashboard. The schemas live in a separate repository, whose README explains how to run and deploy it.
 
-- **Types:** `sanity.types.ts` in this repo is generated from the studio's schemas (`pnpm typegen` in the studio). Regenerate it after changing a schema.
+- **Types:** `sanity.types.ts` in this repo is generated from the studio's schemas (`pnpm typegen` in the studio). It must be regenerated it changing a schema.
 - **Reading:** pages never query Sanity directly. They call the functions in `lib/animals.ts`, `lib/updates.ts` and `lib/site-settings.ts`, which cache the results and tag them (`animal`, `update`, `siteSettings`).
 - **Publishing:** when content changes, a Sanity webhook calls `POST /api/revalidate`, which checks the signature (`SANITY_REVALIDATE_SECRET`) and invalidates the matching tag, so the change shows without a deploy. The route expects a body like `{ "tags": ["animal"] }` (the changed document's type).
 - **Images** are served from Sanity's CDN through a custom loader (`lib/sanity/image.ts`), which keeps them under Vercel Hobby's image-transformation limit.
@@ -71,9 +76,9 @@ Volunteers edit content in the hosted studio. The schemas live in the separate `
 ## Languages
 
 - UI text lives in `messages/{lb,en,fr,de}.json`. Every string the visitor sees goes through `next-intl`; none are written into components.
-- `lb.json` is the reference. Add a new message to **all four** files; a unit test fails if the keys or the `{placeholders}` differ.
+- `lb.json` is the reference. A unit test fails if the keys or the `{placeholders}` differ.
 - Message keys are type-checked (`global.d.ts`): a misspelled key is a compile error.
-- CMS content falls back to Luxembourgish when a translation is missing.
+- CMS content falls back to Luxembourgish when a translation is missing, e.g., the description for an animal.
 
 ## Project layout
 
@@ -135,4 +140,25 @@ Add a file name to run only some tests, for example `pnpm exec playwright test c
 
 ## Deployment
 
-Vercel builds and deploys the site on every push. Keep it within the Hobby plan: the site is donation-only (no online payments for fees, merchandise or tickets, no ads or affiliate links), and images go through Sanity's CDN. The domain is `hope4rosiorii.lu`.
+Vercel builds and deploys the site on every push to the main branch. Keep it within the Hobby plan: the site is donation-only (no online payments for fees, merchandise or tickets, no ads or affiliate links), and images go through Sanity's CDN.
+
+## Screenshots
+
+<table>
+  <tr>
+    <td width="50%"><a href="https://res.cloudinary.com/jnv7oicy/image/upload/v1794534158/home.png"><img src="https://res.cloudinary.com/jnv7oicy/image/upload/c_fill,g_north,w_800,h_500/v1794534158/home.png" alt="Screenshot of the home page" /></a><br /><strong>Home Page</strong><br /><sub>Highlights the adoption steps, a few animals, the volunteers and the latest donation updates from the team.</sub></td>
+    <td width="50%"><a href="https://res.cloudinary.com/jnv7oicy/image/upload/v1794534158/animals.png"><img src="https://res.cloudinary.com/jnv7oicy/image/upload/c_fill,g_north,w_800,h_500/v1794534158/animals.png" alt="Screenshot of the animals list page" /></a><br /><strong>Dogs Page</strong><br /><sub>All available animals, with size and age filters along with preview cards for each animal.</sub></td>
+  </tr>
+ <tr>
+    <td width="50%"><a href="https://res.cloudinary.com/jnv7oicy/image/upload/v1794534158/animal-elli.png"><img src="https://res.cloudinary.com/jnv7oicy/image/upload/c_fill,g_north,w_800,h_500/v1794534158/animal-elli.png" alt="Screenshot of a dog's detail page" /></a><br /><strong>Dog Detail Page</strong><br /><sub>Includes a description, current location, health status, image gallery and videos.</sub></td>
+    <td width="50%"><a href="https://res.cloudinary.com/jnv7oicy/image/upload/v1794534157/about.png"><img src="https://res.cloudinary.com/jnv7oicy/image/upload/c_fill,g_north,w_800,h_500/v1794534157/about.png" alt="Screenshot of the about us page" /></a><br /><strong>About Us Page</strong><br /><sub>The history of the association and the team of volunteers.</sub></td>
+  </tr>
+   <tr>
+    <td width="50%"><a href="https://res.cloudinary.com/jnv7oicy/image/upload/v1794534159/adopt-elli.png"><img src="https://res.cloudinary.com/jnv7oicy/image/upload/c_fill,g_north,w_800,h_500/v1794534159/adopt-elli.png" alt="Screenshot of the adoption form" /></a><br /><strong>Adoption Form</strong><br /><sub>Extensive adoption form, with a preview of the dog the user wants to send the request for.</sub></td>
+    <td width="50%"><a href="https://res.cloudinary.com/jnv7oicy/image/upload/v1794534157/contact.png"><img src="https://res.cloudinary.com/jnv7oicy/image/upload/c_fill,g_north,w_800,h_500/v1794534157/contact.png" alt="Screenshot of the contact form" /></a><br /><strong>Contact form</strong><br /><sub>A simple form with a reason dropdown.</sub></td>
+  </tr>
+  <tr>
+    <td width="50%"><a href="https://res.cloudinary.com/jnv7oicy/image/upload/v1794534158/donate.png"><img src="https://res.cloudinary.com/jnv7oicy/image/upload/c_fill,g_north,w_800,h_500/v1794534158/donate.png" alt="Screenshot of the donate page" /></a><br /><strong>Donate Page</strong><br /><sub>Amount picker that redirects to PayPal, the association's bank details and a list of the latest donation updates from the team.</sub></td>
+    <td width="50%"><a href="https://res.cloudinary.com/jnv7oicy/image/upload/v1794534157/donate-lb.png"><img src="https://res.cloudinary.com/jnv7oicy/image/upload/c_fill,g_north,w_800,h_500/v1794534157/donate-lb.png" alt="Screenshot of the donate page in Luxembourgish" /></a><br /><strong>Donate Page (Luxembourgish)</strong><br /><sub>The donation page, in Luxembourgish.</sub></td>
+  </tr>
+</table>
