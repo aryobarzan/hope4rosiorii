@@ -162,3 +162,8 @@ Vercel builds and deploys the site on every push to the main branch. Keep it wit
     <td width="50%"><a href="https://res.cloudinary.com/jnv7oicy/image/upload/v1794534157/donate-lb.png"><img src="https://res.cloudinary.com/jnv7oicy/image/upload/c_fill,g_north,w_800,h_500/v1794534157/donate-lb.png" alt="Screenshot of the donate page in Luxembourgish" /></a><br /><strong>Donate Page (Luxembourgish)</strong><br /><sub>The donation page, in Luxembourgish.</sub></td>
   </tr>
 </table>
+
+---
+
+All rights reserved.  
+Source available for viewing only. See [LICENSE](./LICENSE).
