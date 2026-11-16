@@ -8,7 +8,7 @@ import en from "../messages/en.json";
 const filter = en.DogsPage.filter;
 const age = en.Age;
 
-test.describe("animal filters (large screens: rows of links)", () => {
+test.describe("animal filters (large screens: sidebar of links)", () => {
   const sizeRow = (page: import("@playwright/test").Page) =>
     page.getByRole("navigation", { name: filter.sizeLabel, exact: true });
   const ageRow = (page: import("@playwright/test").Page) =>
@@ -110,5 +110,85 @@ test.describe("animal filters (large screens: rows of links)", () => {
         shown === 0 ? 1 : 0,
       );
     }
+  });
+});
+
+// The needs on offer depend on the animals in the CMS, so these tests use
+// addresses (which show a chosen need whether or not an animal has it) instead
+// of clicking options that may not exist.
+test.describe("special needs filter (large screens)", () => {
+  const blind = en.Animal.specialNeeds.blind;
+  const chips = (page: import("@playwright/test").Page) =>
+    page.getByRole("list", { name: filter.active, exact: true });
+
+  test("a shared address shows the chosen need as a chip and ticks the box", async ({
+    page,
+  }) => {
+    await page.goto("/en/animals?needs=blind");
+
+    await expect(chips(page)).toContainText(blind);
+    const sidebar = page.getByRole("complementary", { name: filter.title });
+    await expect(
+      sidebar.getByRole("checkbox", { name: filter.needsAny, exact: true }),
+    ).toBeChecked();
+    // Specific needs are chosen, so the list is open with the need ticked
+    await expect(
+      sidebar.getByRole("checkbox", { name: blind, exact: true }),
+    ).toBeChecked();
+  });
+
+  test("removing the chip clears the need from the address", async ({ page }) => {
+    await page.goto("/en/animals?needs=blind");
+
+    await chips(page)
+      .getByRole("link", { name: `Remove filter: ${blind}` })
+      .click();
+
+    await expect(page).toHaveURL(/\/en\/animals$/);
+  });
+
+  test("'any special need' shows as a chip, and 'Clear all' removes it", async ({
+    page,
+  }) => {
+    await page.goto("/en/animals?needs=any");
+    await expect(chips(page)).toContainText(filter.needsAny);
+
+    await chips(page).getByRole("link", { name: filter.clearAll, exact: true }).click();
+
+    await expect(page).toHaveURL(/\/en\/animals$/);
+  });
+
+  test("unknown needs in the address are ignored", async ({ page }) => {
+    await page.goto("/en/animals?needs=flying");
+    await expect(chips(page)).toHaveCount(0);
+  });
+});
+
+test.describe("gender filter (large screens)", () => {
+  // Like the needs, the gender group only shows when the CMS has both genders,
+  // or when the address already names one, so the test uses an address.
+  test("a shared address marks the gender, shows a chip, and the chip removes it", async ({
+    page,
+  }) => {
+    await page.goto("/en/animals?gender=female");
+
+    const group = page.getByRole("navigation", { name: filter.genderLabel, exact: true });
+    await expect(
+      group.getByRole("link", { name: en.Animal.gender.female, exact: true }),
+    ).toHaveAttribute("aria-current", "true");
+
+    await page
+      .getByRole("list", { name: filter.active, exact: true })
+      .getByRole("link", { name: `Remove filter: ${filter.genderLabel}: ${en.Animal.gender.female}` })
+      .click();
+
+    await expect(page).toHaveURL(/\/en\/animals$/);
+  });
+
+  test("an unknown gender in the address is ignored", async ({ page }) => {
+    await page.goto("/en/animals?gender=robot");
+    await expect(
+      page.getByRole("list", { name: filter.active, exact: true }),
+    ).toHaveCount(0);
   });
 });

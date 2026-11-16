@@ -1,9 +1,10 @@
 import { useTranslations } from "next-intl";
-import { PawPrint, Cat, Dog } from "lucide-react";
+import { PawPrint, Cat, Dog, Heart } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { ageLine } from "@/lib/age";
 import { animalDetails } from "@/lib/animal-details";
 import type { Animal } from "@/lib/animals";
+import { knownSpecialNeeds } from "@/lib/special-needs";
 import SanityImage from "./SanityImage";
 
 const adoptedBadge = "pill text-link font-heading text-xl";
@@ -22,6 +23,10 @@ export default function AnimalCard({ animal }: { animal: Animal }) {
   const adopted = animal.status === "adopted";
   const photo = animal.gallery?.[0];
   const age = ageLine(animal, tAge);
+  // Only a hint that this animal has special needs; the details are on its
+  // page. Adopted animals do not show it.
+  const hasSpecialNeeds =
+    !adopted && knownSpecialNeeds(animal.specialNeeds).length > 0;
 
   return (
     <li className="dog-card" data-adopted={adopted}>
@@ -54,17 +59,24 @@ export default function AnimalCard({ animal }: { animal: Animal }) {
         )}
       </div>
       {age && (
-        <p className="font-heading text-2xl font-bold">
-          {age}
-        </p>
+        <p className="text-balance text-center text-xl font-bold">{age}</p>
       )}
       {/* The card's align-items: center centres this paragraph's box, not
           the text inside it. text-center centres each wrapped line, and
           text-balance evens out the line lengths, so a wrap does not
           leave one long line and a single orphaned word. */}
-      <p className="text-balance text-center font-heading text-2xl">
+      <p className="text-balance text-center text-lg font-semibold">
         {animalDetails(animal, tAnimal, { maxTraits: MAX_TRAITS_ON_CARD })}
       </p>
+
+      {/* Not a link, so it has no hover or pressed state and does not look
+          like the clickable filter chips. */}
+      {hasSpecialNeeds && (
+        <p className="pill bg-pale text-ink font-bold">
+          <Heart aria-hidden="true" className="size-4" />
+          {t("card.specialNeeds")}
+        </p>
+      )}
 
       {/* mt-auto: an automatic top margin takes all the free space in this
           flex column, which pushes the button to the card's bottom edge

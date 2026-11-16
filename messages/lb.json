@@ -390,7 +390,8 @@
     "card": {
       "adoptMe": "Adoptéier mech!",
       "adopted": "Adoptéiert!",
-      "learnMore": "Liest iwwer {name}"
+      "learnMore": "Liest iwwer {name}",
+      "specialNeeds": "Besonnesch Bedierfnesser"
     },
     "help": {
       "title": "Net sécher, wéi ee Hond zu dir passt?",
@@ -408,7 +409,19 @@
         "medium": "Mëttel",
         "large": "Grouss"
       },
-      "ageLabel": "Alter"
+      "ageLabel": "Alter",
+      "genderLabel": "Geschlecht",
+      "title": "Filteren",
+      "open": "Filteren",
+      "openCount": "Filteren ({count})",
+      "show": "{count, plural, one {# Déier} other {# Déieren}} weisen",
+      "close": "Filteren zoumaachen",
+      "clearAll": "Alles zerécksetzen",
+      "remove": "Filter ewechhuelen: {name}",
+      "active": "Aktiv Filteren",
+      "needsLabel": "Besonnesch Bedierfnesser",
+      "needsAny": "All besonnesch Bedierfnesser",
+      "needsNarrow": "Spezifesch Bedierfnesser wielen"
     },
     "empty": "Hei sinn nach keng Déieren.",
     "noMatch": "Keng Déieren passen zu dëse Filteren. Probéiert eng aner Kombinatioun."
@@ -418,6 +431,8 @@
     "eyebrow": "Véierbeenege Frënd",
     "heading": "Iwwer {name}",
     "healthHeading": "Gesondheet",
+    "specialNeedsHeading": "Besonnesch Bedierfnesser",
+    "behavioursHeading": "Gutt ze wëssen iwwert d'Verhalen",
     "goodWith": "Versteet sech gutt mat {list}",
     "galleryHeading": "Galerie",
     "galleryOpen": "Foto {index} vun {total} vergréisseren",
@@ -486,7 +501,7 @@
     "months": "ca. {count, plural, one {# Mount} other {# Méint}}",
     "years": "ca. {count} Joer",
     "stage": {
-      "puppy": "Welpel",
+      "puppy": "Welpen",
       "juvenile": "Jugendlechen",
       "youngAdult": "Jonken Erwuessenen",
       "matureAdult": "Reifen Erwuessenen",
@@ -545,6 +560,38 @@
       "tested": "Op heefeg Infektiounskrankheeten getest.",
       "testedCat": "Op d'Kazevirussen FIV a FeLV getest.",
       "euPassport": "Dat offiziellt Dokument fir mat engem Déier duerch d'EU ze reesen."
+    },
+    "specialNeedCategory": {
+      "physical": "Kierperlech",
+      "neurological": "Neurologesch",
+      "chronic": "Chronesch"
+    },
+    "specialNeeds": {
+      "blind": "Blann / visuell behënnert",
+      "deaf": "Daaf / héiergeschiedegt",
+      "tripawd": "Dräibeeneg / amputéiert",
+      "paralysis": "Lähmung",
+      "cerebellarHypoplasia": "Kleinhirnsyndrom (Wackelkatzen-Syndrom)",
+      "ivdd": "IVDD (Bandscheiwenvirfall)",
+      "degenerativeMyelopathy": "Degenerativ Myelopathie (DM)",
+      "radialNerveParalysis": "Radialisnerv-Lähmung",
+      "epilepsy": "Epilepsie / Krampfufäll",
+      "vestibularDisease": "Vestibularkrankheet",
+      "hydrocephalus": "Hydrozephalus",
+      "cognitiveDysfunction": "Kognitiv Dysfunktioun (Demenz)",
+      "diabetes": "Diabetis",
+      "heartworm": "Häerzwuerm-positiv",
+      "fiv": "FIV-positiv",
+      "felv": "FeLV-positiv",
+      "allergies": "Allergien",
+      "incontinence": "Inkontinenz",
+      "other": "Anerer (kuck Notiz)"
+    },
+    "behaviours": {
+      "separationAnxiety": "Trennungsangscht",
+      "underSocialized": "Wéineg sozialiséiert",
+      "reactive": "Reaktiv / reagéiert un der Leen",
+      "resourceGuarding": "Verteidegt Ressourcen"
     },
     "goodWith": {
       "dogs": "Hënn",

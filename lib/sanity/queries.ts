@@ -19,6 +19,8 @@ export const ANIMALS_QUERY = defineQuery(`
     health,
     location,
     videos,
+    specialNeeds,
+    behaviours,
     featured,
     arrivalDate,
     "description": select(
@@ -32,6 +34,12 @@ export const ANIMALS_QUERY = defineQuery(`
       $locale == "fr" => coalesce(adoptionNote.fr, adoptionNote.lb),
       $locale == "de" => coalesce(adoptionNote.de, adoptionNote.lb),
       adoptionNote.lb
+    ),
+    "specialNeedsNote": select(
+      $locale == "en" => coalesce(specialNeedsNote.en, specialNeedsNote.lb),
+      $locale == "fr" => coalesce(specialNeedsNote.fr, specialNeedsNote.lb),
+      $locale == "de" => coalesce(specialNeedsNote.de, specialNeedsNote.lb),
+      specialNeedsNote.lb
     ),
     "gallery": gallery[defined(asset)]{
       alt,

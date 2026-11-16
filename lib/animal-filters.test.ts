@@ -4,11 +4,13 @@ import {
   AGES,
   SPECIES,
   ageBand,
+  availableNeeds,
   filterAnimals,
   filtersHref,
   hasActiveFilters,
   noFilters,
   resolveSpecies,
+  toggleNeed,
   type Filters,
   parseFilters,
 } from "./animal-filters";
@@ -32,6 +34,8 @@ describe("parseFilters", () => {
       species: "dog",
       size: "small",
       age: "puppy",
+      gender: "all",
+      needs: [],
     });
   });
 
@@ -198,6 +202,8 @@ describe("filterAnimals", () => {
       species: "dog",
       size: "medium",
       age: "matureAdult",
+      gender: "all",
+      needs: [],
     });
     expect(ids(result)).toEqual(["range", "wide"]);
   });
@@ -212,12 +218,20 @@ describe("resolveSpecies", () => {
     expect(resolveSpecies([dog], noFilters)).toBe(noFilters);
   });
 
-  it("switches to cats when there are no dogs, and resets size and age", () => {
-    const stale: Filters = { species: "dog", size: "small", age: "puppy" };
+  it("switches to cats when there are no dogs, and resets size, age and needs", () => {
+    const stale: Filters = {
+      species: "dog",
+      size: "small",
+      age: "puppy",
+      gender: "male",
+      needs: ["blind"],
+    };
     expect(resolveSpecies([cat], stale)).toEqual({
       species: "cat",
       size: "all",
       age: "all",
+      gender: "male", // gender applies to both species, so it stays
+      needs: [],
     });
   });
 
@@ -232,9 +246,11 @@ describe("hasActiveFilters", () => {
     expect(hasActiveFilters({ ...noFilters, species: "cat" })).toBe(false);
   });
 
-  it("is true once a size or an age is chosen", () => {
+  it("is true once a size, an age, a gender or a need is chosen", () => {
+    expect(hasActiveFilters({ ...noFilters, gender: "female" })).toBe(true);
     expect(hasActiveFilters({ ...noFilters, age: "senior" })).toBe(true);
     expect(hasActiveFilters({ ...noFilters, size: "small" })).toBe(true);
+    expect(hasActiveFilters({ ...noFilters, needs: ["any"] })).toBe(true);
   });
 });
 
@@ -249,7 +265,13 @@ describe("filtersHref", () => {
       query: { size: "large" },
     });
     expect(
-      filtersHref({ species: "dog", size: "small", age: "puppy" }),
+      filtersHref({
+        species: "dog",
+        size: "small",
+        age: "puppy",
+        gender: "all",
+        needs: [],
+      }),
     ).toEqual({
       pathname: "/animals",
       query: { size: "small", age: "puppy" },
@@ -257,9 +279,157 @@ describe("filtersHref", () => {
   });
 
   it("keeps the species when it is not the default", () => {
-    expect(filtersHref({ species: "cat", size: "all", age: "kitten" })).toEqual({
+    expect(
+      filtersHref({
+        species: "cat",
+        size: "all",
+        age: "kitten",
+        gender: "all",
+        needs: [],
+      }),
+    ).toEqual({
       pathname: "/animals",
       query: { species: "cat", age: "kitten" },
+    });
+  });
+
+  it("writes the needs as one comma-separated value", () => {
+    expect(filtersHref({ ...noFilters, needs: ["any"] })).toEqual({
+      pathname: "/animals",
+      query: { needs: "any" },
+    });
+    expect(filtersHref({ ...noFilters, needs: ["blind", "deaf"] })).toEqual({
+      pathname: "/animals",
+      query: { needs: "blind,deaf" },
+    });
+  });
+});
+
+describe("special needs", () => {
+  const blind = animal({ _id: "blind", specialNeeds: ["blind"] });
+  const blindDeaf = animal({ _id: "bd", specialNeeds: ["blind", "deaf"] });
+  const diabetic = animal({ _id: "diabetic", specialNeeds: ["diabetes"] });
+  const healthy = animal({ _id: "healthy", specialNeeds: [] });
+  const unknown = animal({ _id: "unknown", specialNeeds: null });
+  const felv = animal({
+    _id: "felv",
+    species: "cat",
+    specialNeeds: ["felv", "allergies"],
+  });
+  const all = [blind, blindDeaf, diabetic, healthy, unknown, felv];
+
+  describe("parseFilters", () => {
+    it("reads one need, several needs, or 'any'", () => {
+      expect(parseFilters(new URLSearchParams("needs=any")).needs).toEqual([
+        "any",
+      ]);
+      expect(parseFilters(new URLSearchParams("needs=blind")).needs).toEqual([
+        "blind",
+      ]);
+      expect(
+        parseFilters(new URLSearchParams("needs=blind,deaf")).needs,
+      ).toEqual(["blind", "deaf"]);
+    });
+
+    it("puts needs in display order and drops duplicates and unknown values", () => {
+      expect(
+        parseFilters(new URLSearchParams("needs=diabetes,flying,blind,blind"))
+          .needs,
+      ).toEqual(["blind", "diabetes"]);
+      expect(parseFilters(new URLSearchParams("needs=flying")).needs).toEqual(
+        [],
+      );
+    });
+
+    it("lets 'any' win over specific needs", () => {
+      expect(
+        parseFilters(new URLSearchParams("needs=blind,any")).needs,
+      ).toEqual(["any"]);
+    });
+  });
+
+  describe("filterAnimals", () => {
+    const dogs = noFilters;
+
+    it("'any' keeps animals with at least one need", () => {
+      expect(ids(filterAnimals(all, { ...dogs, needs: ["any"] }))).toEqual([
+        "blind",
+        "bd",
+        "diabetic",
+      ]);
+    });
+
+    it("matches animals with ANY of the chosen needs", () => {
+      expect(ids(filterAnimals(all, { ...dogs, needs: ["blind"] }))).toEqual([
+        "blind",
+        "bd",
+      ]);
+      expect(
+        ids(filterAnimals(all, { ...dogs, needs: ["deaf", "diabetes"] })),
+      ).toEqual(["bd", "diabetic"]);
+    });
+
+    it("combines with the other filters and respects the species", () => {
+      expect(
+        ids(filterAnimals(all, { ...dogs, size: "small", needs: ["any"] })),
+      ).toEqual([]);
+      expect(
+        ids(filterAnimals(all, { ...dogs, species: "cat", needs: ["any"] })),
+      ).toEqual(["felv"]);
+    });
+  });
+
+  describe("availableNeeds", () => {
+    it("lists only the needs the species has, in display order", () => {
+      expect(availableNeeds(all, "dog")).toEqual(["blind", "deaf", "diabetes"]);
+      expect(availableNeeds(all, "cat")).toEqual(["felv", "allergies"]);
+    });
+
+    it("is empty when no animal has a need", () => {
+      expect(availableNeeds([healthy, unknown], "dog")).toEqual([]);
+    });
+  });
+
+  describe("toggleNeed", () => {
+    it("adds and removes a need, keeping display order", () => {
+      expect(toggleNeed([], "deaf")).toEqual(["deaf"]);
+      expect(toggleNeed(["deaf"], "blind")).toEqual(["blind", "deaf"]);
+      expect(toggleNeed(["blind", "deaf"], "blind")).toEqual(["deaf"]);
+    });
+
+    it("replaces 'any' with the picked need", () => {
+      expect(toggleNeed(["any"], "deaf")).toEqual(["deaf"]);
+    });
+  });
+});
+
+describe("gender", () => {
+  const female = animal({ _id: "f", gender: "female" });
+  const male = animal({ _id: "m", gender: "male" });
+  const unknown = animal({ _id: "u", gender: null });
+  const all = [female, male, unknown];
+
+  it("is read from the address, and unknown values are ignored", () => {
+    expect(parseFilters(new URLSearchParams("gender=female")).gender).toBe(
+      "female",
+    );
+    expect(parseFilters(new URLSearchParams("gender=other")).gender).toBe("all");
+  });
+
+  it("keeps only animals of that gender", () => {
+    expect(ids(filterAnimals(all, { ...noFilters, gender: "female" }))).toEqual([
+      "f",
+    ]);
+    expect(ids(filterAnimals(all, { ...noFilters, gender: "male" }))).toEqual([
+      "m",
+    ]);
+    expect(ids(filterAnimals(all, noFilters))).toEqual(["f", "m", "u"]);
+  });
+
+  it("goes into the address", () => {
+    expect(filtersHref({ ...noFilters, gender: "male" })).toEqual({
+      pathname: "/animals",
+      query: { gender: "male" },
     });
   });
 });

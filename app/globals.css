@@ -358,6 +358,12 @@ body {
     background-color: var(--color-pale);
   }
 
+  /* The filter sheet (a modal <dialog>) does not stop the page behind it from
+     scrolling by itself */
+  body:has(dialog[open]) {
+    overflow: hidden;
+  }
+
   .dog-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));

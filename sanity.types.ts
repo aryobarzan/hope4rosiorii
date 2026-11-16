@@ -125,6 +125,9 @@ export type Animal = {
   traits?: Array<string>;
   goodWith?: Array<string>;
   health?: Array<string>;
+  specialNeeds?: Array<string>;
+  behaviours?: Array<string>;
+  specialNeedsNote?: LocalizedText;
   location?: "shelter" | "foster" | "luxembourg";
   adoptionNote?: LocalizedText;
   videos?: Array<string>;
@@ -277,7 +280,7 @@ export type AllSanitySchemaTypes =
 
 // Source: ../hope4rosiorii/lib/sanity/queries.ts
 // Variable: ANIMALS_QUERY
-// Query: *[_type == "animal" && defined(slug.current)] | order(arrivalDate desc) {    _id,    "slug": slug.current,    name,    species,    status,    gender,    estimatedBirthDate,    size,    traits,    goodWith,    health,    location,    videos,    featured,    arrivalDate,    "description": select(      $locale == "en" => coalesce(description.en, description.lb),      $locale == "fr" => coalesce(description.fr, description.lb),      $locale == "de" => coalesce(description.de, description.lb),      description.lb    ),    "adoptionNote": select(      $locale == "en" => coalesce(adoptionNote.en, adoptionNote.lb),      $locale == "fr" => coalesce(adoptionNote.fr, adoptionNote.lb),      $locale == "de" => coalesce(adoptionNote.de, adoptionNote.lb),      adoptionNote.lb    ),    "gallery": gallery[defined(asset)]{      alt,      "url": asset->url,      "width": asset->metadata.dimensions.width,      "height": asset->metadata.dimensions.height,      "hotspot": hotspot{x, y}    }  }
+// Query: *[_type == "animal" && defined(slug.current)] | order(arrivalDate desc) {    _id,    "slug": slug.current,    name,    species,    status,    gender,    estimatedBirthDate,    size,    traits,    goodWith,    health,    location,    videos,    specialNeeds,    behaviours,    featured,    arrivalDate,    "description": select(      $locale == "en" => coalesce(description.en, description.lb),      $locale == "fr" => coalesce(description.fr, description.lb),      $locale == "de" => coalesce(description.de, description.lb),      description.lb    ),    "adoptionNote": select(      $locale == "en" => coalesce(adoptionNote.en, adoptionNote.lb),      $locale == "fr" => coalesce(adoptionNote.fr, adoptionNote.lb),      $locale == "de" => coalesce(adoptionNote.de, adoptionNote.lb),      adoptionNote.lb    ),    "specialNeedsNote": select(      $locale == "en" => coalesce(specialNeedsNote.en, specialNeedsNote.lb),      $locale == "fr" => coalesce(specialNeedsNote.fr, specialNeedsNote.lb),      $locale == "de" => coalesce(specialNeedsNote.de, specialNeedsNote.lb),      specialNeedsNote.lb    ),    "gallery": gallery[defined(asset)]{      alt,      "url": asset->url,      "width": asset->metadata.dimensions.width,      "height": asset->metadata.dimensions.height,      "hotspot": hotspot{x, y}    }  }
 export type ANIMALS_QUERY_RESULT = Array<{
   _id: string;
   slug: string | null;
@@ -292,10 +295,13 @@ export type ANIMALS_QUERY_RESULT = Array<{
   health: Array<string> | null;
   location: "foster" | "luxembourg" | "shelter" | null;
   videos: Array<string> | null;
+  specialNeeds: Array<string> | null;
+  behaviours: Array<string> | null;
   featured: boolean | null;
   arrivalDate: string | null;
   description: string | null;
   adoptionNote: string | null;
+  specialNeedsNote: string | null;
   gallery: Array<{
     alt: string | null;
     url: string | null;

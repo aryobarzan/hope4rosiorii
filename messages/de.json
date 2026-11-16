@@ -390,7 +390,8 @@
     "card": {
       "adoptMe": "Adoptiere mich!",
       "adopted": "Adoptiert!",
-      "learnMore": "Mehr über {name} lesen"
+      "learnMore": "Mehr über {name} lesen",
+      "specialNeeds": "Besondere Bedürfnisse"
     },
     "help": {
       "title": "Unsicher, welcher Hund zu dir passt?",
@@ -408,7 +409,19 @@
         "medium": "Mittel",
         "large": "Groß"
       },
-      "ageLabel": "Alter"
+      "ageLabel": "Alter",
+      "genderLabel": "Geschlecht",
+      "title": "Filter",
+      "open": "Filter",
+      "openCount": "Filter ({count})",
+      "show": "{count, plural, one {# Tier anzeigen} other {# Tiere anzeigen}}",
+      "close": "Filter schließen",
+      "clearAll": "Alle zurücksetzen",
+      "remove": "Filter entfernen: {name}",
+      "active": "Aktive Filter",
+      "needsLabel": "Besondere Bedürfnisse",
+      "needsAny": "Beliebiges besonderes Bedürfnis",
+      "needsNarrow": "Bestimmte Bedürfnisse wählen"
     },
     "empty": "Hier gibt es noch keine Tiere.",
     "noMatch": "Keine Tiere passen zu diesen Filtern. Versuchen Sie eine andere Kombination."
@@ -418,6 +431,8 @@
     "eyebrow": "vierbeiniger Freund",
     "heading": "Über {name}",
     "healthHeading": "Gesundheit",
+    "specialNeedsHeading": "Besondere Bedürfnisse",
+    "behavioursHeading": "Gut zu wissen zum Verhalten",
     "goodWith": "Versteht sich gut mit {list}",
     "galleryHeading": "Galerie",
     "galleryOpen": "Foto {index} von {total} vergrößern",
@@ -545,6 +560,38 @@
       "tested": "Auf häufige Infektionskrankheiten getestet.",
       "testedCat": "Auf die Katzenviren FIV und FeLV getestet.",
       "euPassport": "Das offizielle Dokument für Reisen mit einem Tier innerhalb der EU."
+    },
+    "specialNeedCategory": {
+      "physical": "Körperlich",
+      "neurological": "Neurologisch",
+      "chronic": "Chronisch"
+    },
+    "specialNeeds": {
+      "blind": "Blind / sehbehindert",
+      "deaf": "Taub / hörbehindert",
+      "tripawd": "Dreibeinig / amputiert",
+      "paralysis": "Lähmung",
+      "cerebellarHypoplasia": "Kleinhirnhypoplasie (Wackelkatzen-Syndrom)",
+      "ivdd": "Bandscheibenvorfall (IVDD)",
+      "degenerativeMyelopathy": "Degenerative Myelopathie (DM)",
+      "radialNerveParalysis": "Lähmung des Radialisnervs",
+      "epilepsy": "Epilepsie / Krampfanfälle",
+      "vestibularDisease": "Vestibularsyndrom",
+      "hydrocephalus": "Hydrozephalus",
+      "cognitiveDysfunction": "Kognitive Dysfunktion (Demenz)",
+      "diabetes": "Diabetes",
+      "heartworm": "Herzwurm-positiv",
+      "fiv": "FIV-positiv",
+      "felv": "FeLV-positiv",
+      "allergies": "Allergien",
+      "incontinence": "Inkontinenz",
+      "other": "Sonstiges (siehe Hinweis)"
+    },
+    "behaviours": {
+      "separationAnxiety": "Trennungsangst",
+      "underSocialized": "Wenig sozialisiert",
+      "reactive": "Reaktiv / leinenreaktiv",
+      "resourceGuarding": "Ressourcenverteidigung"
     },
     "goodWith": {
       "dogs": "Hunden",

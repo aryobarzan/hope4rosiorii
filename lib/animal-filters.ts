@@ -2,9 +2,11 @@
 // (?species=cat&age=junior), so a filtered view can be shared. This file is
 // plain TypeScript with no React, so the same rules can be reused anywhere.
 import type { Animal } from "@/lib/animals";
+import { SPECIAL_NEEDS, type SpecialNeed } from "@/lib/special-needs";
 
 export const SPECIES = ["dog", "cat"] as const;
 export const SIZES = ["small", "medium", "large"] as const;
+export const GENDERS = ["female", "male"] as const;
 
 export type Species = (typeof SPECIES)[number];
 // The species shown when the address names none. It is left out of the URL.
@@ -33,6 +35,13 @@ type Option<T extends readonly string[]> = "all" | T[number];
 export type SizeFilter = Option<typeof SIZES>;
 export type AgeStage = (typeof AGES)[Species][number];
 export type AgeFilter = "all" | AgeStage;
+export type GenderFilter = Option<typeof GENDERS>;
+
+// "any" means any special need at all. Otherwise the list holds the specific
+// needs the visitor picked, and an animal matches if it has at least one of
+// them. An empty list means no filter.
+export const NEEDS_ANY = "any";
+export type NeedsFilterValue = SpecialNeed | typeof NEEDS_ANY;
 
 // A species is always chosen (there is no "all"), so each one can show its own
 // age stages.
@@ -40,12 +49,16 @@ export type Filters = {
   species: Species;
   size: SizeFilter;
   age: AgeFilter;
+  gender: GenderFilter;
+  needs: readonly NeedsFilterValue[];
 };
 
 export const noFilters: Filters = {
   species: DEFAULT_SPECIES,
   size: "all",
   age: "all",
+  gender: "all",
+  needs: [],
 };
 
 // Anything that is not a known value (typos, old links) falls back
@@ -57,6 +70,15 @@ function pick<T extends string, F>(
   return allowed.find((option) => option === value) ?? fallback;
 }
 
+// ?needs=any, or ?needs=blind,deaf. Unknown values are dropped, "any" wins over
+// specific ones, and the result is in display order so the same choice always
+// gives the same address.
+function parseNeeds(value: string | null): readonly NeedsFilterValue[] {
+  const given = (value ?? "").split(",");
+  if (given.includes(NEEDS_ANY)) return [NEEDS_ANY];
+  return SPECIAL_NEEDS.filter((need) => given.includes(need));
+}
+
 export function parseFilters(params: {
   get(name: string): string | null;
 }): Filters {
@@ -66,6 +88,8 @@ export function parseFilters(params: {
     size: pick(params.get("size"), SIZES, "all"),
     // Checked against this species' stages: ?species=dog&age=kitten is ignored
     age: pick<AgeStage, "all">(params.get("age"), AGES[species], "all"),
+    gender: pick(params.get("gender"), GENDERS, "all"),
+    needs: parseNeeds(params.get("needs")),
   };
 }
 
@@ -88,44 +112,87 @@ function matchesSize(animal: Animal, size: (typeof SIZES)[number]): boolean {
   return Math.min(...indexes) <= wanted && wanted <= Math.max(...indexes);
 }
 
+function matchesNeeds(animal: Animal, needs: Filters["needs"]): boolean {
+  if (needs.length === 0) return true;
+  const has = animal.specialNeeds ?? [];
+  if (needs.includes(NEEDS_ANY)) return has.length > 0;
+  return needs.some((need) => has.includes(need));
+}
+
+// The needs that at least one animal of the species has, in display order.
+// The filter only offers these, so no option leads to an empty list.
+export function availableNeeds(
+  animals: Animal[],
+  species: Species,
+): SpecialNeed[] {
+  const present = new Set(
+    animals
+      .filter((animal) => animal.species === species)
+      .flatMap((animal) => animal.specialNeeds ?? []),
+  );
+  return SPECIAL_NEEDS.filter((need) => present.has(need));
+}
+
+// The needs after ticking or unticking one. Picking a specific need replaces
+// "any".
+export function toggleNeed(
+  needs: Filters["needs"],
+  need: SpecialNeed,
+): SpecialNeed[] {
+  const current = needs.filter((value) => value !== NEEDS_ANY);
+  const next = current.includes(need)
+    ? current.filter((value) => value !== need)
+    : [...current, need];
+  return SPECIAL_NEEDS.filter((value) => next.includes(value));
+}
+
 export function filterAnimals(animals: Animal[], filters: Filters): Animal[] {
   return animals.filter(
     (animal) =>
       animal.species === filters.species &&
       (filters.size === "all" || matchesSize(animal, filters.size)) &&
+      (filters.gender === "all" || animal.gender === filters.gender) &&
       (filters.age === "all" ||
         (animal.ageMonths !== null &&
-          ageBand(filters.species, animal.ageMonths) === filters.age)),
+          ageBand(filters.species, animal.ageMonths) === filters.age)) &&
+      matchesNeeds(animal, filters.needs),
   );
 }
 
 // A species with no animals is a dead end, and when only one species exists
 // the species buttons are hidden. So if the chosen species has no animals and
-// the other one has, show the other one (with size and age reset, as they
-// belonged to the first).
+// the other one has, show the other one (with size, age and needs reset, as
+// they belonged to the first).
 export function resolveSpecies(animals: Animal[], filters: Filters): Filters {
   const present = new Set(animals.map((animal) => animal.species));
   if (present.has(filters.species)) return filters;
   const other = SPECIES.find((species) => present.has(species));
-  return other ? { ...filters, species: other, size: "all", age: "all" } : filters;
+  return other ? { ...filters, species: other, size: "all", age: "all", needs: [] } : filters;
 }
 
-// The species always counts as chosen, so only size and age make a view
+// The species always counts as chosen, so only size, age, gender and needs make a view
 // "filtered".
 export function hasActiveFilters(filters: Filters): boolean {
-  return filters.size !== "all" || filters.age !== "all";
+  return (
+    filters.size !== "all" ||
+    filters.age !== "all" ||
+    filters.gender !== "all" ||
+    filters.needs.length > 0
+  );
 }
 
 // Link target for a set of filters. Default values ("all", and the default
 // species) are left out of the URL, so the unfiltered page keeps the plain
 // /animals address.
 export function filtersHref(filters: Filters) {
-  const query = Object.fromEntries(
-    Object.entries(filters).filter(
+  const { needs, ...single } = filters;
+  const query: Record<string, string> = Object.fromEntries(
+    Object.entries(single).filter(
       ([name, value]) =>
         value !== "all" && !(name === "species" && value === DEFAULT_SPECIES),
     ),
   );
+  if (needs.length > 0) query.needs = needs.join(",");
   return Object.keys(query).length === 0
     ? "/animals"
     : { pathname: "/animals", query };

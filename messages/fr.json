@@ -392,7 +392,8 @@
     "card": {
       "adoptMe": "Adopte-moi !",
       "adopted": "Adopté !",
-      "learnMore": "En savoir plus sur {name}"
+      "learnMore": "En savoir plus sur {name}",
+      "specialNeeds": "Besoins particuliers"
     },
     "help": {
       "title": "Vous ne savez pas quel chien vous convient ?",
@@ -410,7 +411,19 @@
         "medium": "Moyenne",
         "large": "Grande"
       },
-      "ageLabel": "Âge"
+      "ageLabel": "Âge",
+      "genderLabel": "Sexe",
+      "title": "Filtres",
+      "open": "Filtres",
+      "openCount": "Filtres ({count})",
+      "show": "{count, plural, one {Voir # animal} other {Voir # animaux}}",
+      "close": "Fermer les filtres",
+      "clearAll": "Tout effacer",
+      "remove": "Retirer le filtre : {name}",
+      "active": "Filtres actifs",
+      "needsLabel": "Besoins particuliers",
+      "needsAny": "Tout besoin particulier",
+      "needsNarrow": "Choisir des besoins précis"
     },
     "empty": "Aucun animal à afficher pour le moment.",
     "noMatch": "Aucun animal ne correspond à ces filtres. Essayez une autre combinaison."
@@ -420,6 +433,8 @@
     "eyebrow": "un ami à quatre pattes",
     "heading": "À propos de {name}",
     "healthHeading": "Santé",
+    "specialNeedsHeading": "Besoins particuliers",
+    "behavioursHeading": "Comportement : bon à savoir",
     "goodWith": "S’entend bien avec : {list}",
     "galleryHeading": "Galerie",
     "galleryOpen": "Agrandir la photo {index} sur {total}",
@@ -547,6 +562,38 @@
       "tested": "Testé pour les maladies infectieuses courantes.",
       "testedCat": "Testé pour les virus félins FIV et FeLV.",
       "euPassport": "Le document officiel nécessaire pour voyager avec un animal dans l'UE."
+    },
+    "specialNeedCategory": {
+      "physical": "Physique",
+      "neurological": "Neurologique",
+      "chronic": "Chronique"
+    },
+    "specialNeeds": {
+      "blind": "Aveugle / malvoyant",
+      "deaf": "Sourd / malentendant",
+      "tripawd": "Trois pattes / amputé",
+      "paralysis": "Paralysie",
+      "cerebellarHypoplasia": "Hypoplasie cérébelleuse (syndrome du chat qui titube)",
+      "ivdd": "Hernie discale (IVDD)",
+      "degenerativeMyelopathy": "Myélopathie dégénérative (MD)",
+      "radialNerveParalysis": "Paralysie du nerf radial",
+      "epilepsy": "Épilepsie / crises",
+      "vestibularDisease": "Syndrome vestibulaire",
+      "hydrocephalus": "Hydrocéphalie",
+      "cognitiveDysfunction": "Dysfonctionnement cognitif (démence)",
+      "diabetes": "Diabète",
+      "heartworm": "Positif à la dirofilariose",
+      "fiv": "Positif au FIV",
+      "felv": "Positif au FeLV",
+      "allergies": "Allergies",
+      "incontinence": "Incontinence",
+      "other": "Autre (voir la note)"
+    },
+    "behaviours": {
+      "separationAnxiety": "Anxiété de séparation",
+      "underSocialized": "Peu socialisé",
+      "reactive": "Réactif / réactif en laisse",
+      "resourceGuarding": "Protection des ressources"
     },
     "goodWith": {
       "dogs": "chiens",

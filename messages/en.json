@@ -434,7 +434,8 @@
     "card": {
       "adoptMe": "Adopt me!",
       "adopted": "Adopted!",
-      "learnMore": "Read about {name}"
+      "learnMore": "Read about {name}",
+      "specialNeeds": "Special needs"
     },
     "help": {
       "title": "Not sure which dog fits?",
@@ -452,7 +453,19 @@
         "medium": "Medium",
         "large": "Large"
       },
-      "ageLabel": "Age"
+      "ageLabel": "Age",
+      "genderLabel": "Gender",
+      "title": "Filters",
+      "open": "Filters",
+      "openCount": "Filters ({count})",
+      "show": "Show {count, plural, one {# animal} other {# animals}}",
+      "close": "Close filters",
+      "clearAll": "Clear all",
+      "remove": "Remove filter: {name}",
+      "active": "Active filters",
+      "needsLabel": "Special needs",
+      "needsAny": "Any special need",
+      "needsNarrow": "Choose specific needs"
     },
     "empty": "No animals to show here yet.",
     "noMatch": "No animals match these filters. Try another combination."
@@ -462,6 +475,8 @@
     "eyebrow": "furry friend",
     "heading": "About {name}",
     "healthHeading": "Health",
+    "specialNeedsHeading": "Special needs",
+    "behavioursHeading": "Good to know about behaviour",
     "goodWith": "Good with {list}",
     "galleryHeading": "Gallery",
     "galleryOpen": "Enlarge photo {index} of {total}",
@@ -545,6 +560,38 @@
       "tested": "Tested for common infectious diseases.",
       "testedCat": "Tested for the cat viruses FIV and FeLV.",
       "euPassport": "The official document needed to travel with a pet within the EU."
+    },
+    "specialNeedCategory": {
+      "physical": "Physical",
+      "neurological": "Neurological",
+      "chronic": "Chronic"
+    },
+    "specialNeeds": {
+      "blind": "Blind / visually impaired",
+      "deaf": "Deaf / hearing impaired",
+      "tripawd": "Three-legged / amputee",
+      "paralysis": "Paralysis",
+      "cerebellarHypoplasia": "Cerebellar hypoplasia (wobbly cat syndrome)",
+      "ivdd": "IVDD (slipped disc)",
+      "degenerativeMyelopathy": "Degenerative myelopathy (DM)",
+      "radialNerveParalysis": "Radial nerve paralysis",
+      "epilepsy": "Epilepsy / seizures",
+      "vestibularDisease": "Vestibular disease",
+      "hydrocephalus": "Hydrocephalus",
+      "cognitiveDysfunction": "Cognitive dysfunction (dementia)",
+      "diabetes": "Diabetes",
+      "heartworm": "Heartworm positive",
+      "fiv": "FIV positive",
+      "felv": "FeLV positive",
+      "allergies": "Allergies",
+      "incontinence": "Incontinence",
+      "other": "Other (see note)"
+    },
+    "behaviours": {
+      "separationAnxiety": "Separation anxiety",
+      "underSocialized": "Under-socialized",
+      "reactive": "Reactive / leash-reactive",
+      "resourceGuarding": "Resource guarding"
     },
     "goodWith": {
       "dogs": "dogs",

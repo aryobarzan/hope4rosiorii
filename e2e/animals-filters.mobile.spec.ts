@@ -1,46 +1,89 @@
-import { expect, test } from "@playwright/test";
+import { expect, test, type Page } from "@playwright/test";
 import en from "../messages/en.json";
 
-// Runs in the "mobile" project (a phone-sized screen). Below the sm
-// breakpoint each filter group is a dropdown, not a row of links.
+// Runs in the "mobile" project (a phone-sized screen). Below the lg breakpoint
+// the size and age filters live in a sheet opened by one "Filters" button; the
+// species links stay on the page.
 const filter = en.DogsPage.filter;
 
-test("filters are dropdowns on a small screen, not rows of links", async ({
+const openButton = (page: Page) =>
+  page.getByRole("button", { name: /^Filters/ });
+const sheet = (page: Page) =>
+  page.getByRole("dialog", { name: filter.title, exact: true });
+
+test("the filters are behind one button, and the sidebar is hidden", async ({
   page,
 }) => {
   await page.goto("/en/animals");
 
-  await expect(
-    page.getByRole("combobox", { name: filter.sizeLabel, exact: true }),
-  ).toBeVisible();
-  await expect(
-    page.getByRole("combobox", { name: filter.ageLabel, exact: true }),
-  ).toBeVisible();
+  await expect(openButton(page)).toBeVisible();
+  await expect(sheet(page)).toBeHidden();
+  await expect(page.getByRole("complementary", { name: filter.title })).toBeHidden();
   await expect(
     page.getByRole("navigation", { name: filter.sizeLabel, exact: true }),
   ).toBeHidden();
 });
 
-test("choosing an option in a dropdown updates the address", async ({ page }) => {
+test("choosing an option in the sheet updates the address and the button", async ({
+  page,
+}) => {
   await page.goto("/en/animals");
-  const size = page.getByRole("combobox", { name: filter.sizeLabel, exact: true });
+  await openButton(page).click();
+  await expect(sheet(page)).toBeVisible();
 
-  await size.selectOption({ label: filter.size.small });
+  await sheet(page)
+    .getByRole("navigation", { name: filter.sizeLabel, exact: true })
+    .getByRole("link", { name: filter.size.small, exact: true })
+    .click();
 
   await expect(page).toHaveURL(/\/en\/animals\?size=small$/);
-  await expect(size).toHaveValue("small");
+  // The sheet stays open, so more than one filter can be set in a row
+  await expect(sheet(page)).toBeVisible();
 
-  await size.selectOption({ label: filter.all });
-  await expect(page).toHaveURL(/\/en\/animals$/);
+  await sheet(page).getByRole("button", { name: /^Show/ }).click();
+  await expect(sheet(page)).toBeHidden();
+  await expect(
+    page.getByRole("button", { name: "Filters (1)", exact: true }),
+  ).toBeVisible();
 });
 
-test("a shared address opens with its dropdowns set", async ({ page }) => {
+test("an active filter shows as a chip that removes it", async ({ page }) => {
+  await page.goto("/en/animals?size=large");
+  const chips = page.getByRole("list", { name: filter.active, exact: true });
+
+  await expect(chips).toBeVisible();
+  await chips
+    .getByRole("link", { name: `Remove filter: ${filter.sizeLabel}: ${filter.size.large}` })
+    .click();
+
+  await expect(page).toHaveURL(/\/en\/animals$/);
+  await expect(chips).toHaveCount(0);
+});
+
+test("Escape closes the sheet", async ({ page }) => {
+  await page.goto("/en/animals");
+  await openButton(page).click();
+  await expect(sheet(page)).toBeVisible();
+
+  await page.keyboard.press("Escape");
+
+  await expect(sheet(page)).toBeHidden();
+});
+
+test("a shared address opens with its filters marked in the sheet", async ({
+  page,
+}) => {
   await page.goto("/en/animals?size=large&age=puppy");
+  await openButton(page).click();
 
   await expect(
-    page.getByRole("combobox", { name: filter.sizeLabel, exact: true }),
-  ).toHaveValue("large");
+    sheet(page)
+      .getByRole("navigation", { name: filter.sizeLabel, exact: true })
+      .getByRole("link", { name: filter.size.large, exact: true }),
+  ).toHaveAttribute("aria-current", "true");
   await expect(
-    page.getByRole("combobox", { name: filter.ageLabel, exact: true }),
-  ).toHaveValue("puppy");
+    sheet(page)
+      .getByRole("navigation", { name: filter.ageLabel, exact: true })
+      .getByRole("link", { name: en.Age.stage.puppy, exact: true }),
+  ).toHaveAttribute("aria-current", "true");
 });

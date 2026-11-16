@@ -7,6 +7,7 @@ import { routing } from "@/i18n/routing";
 import { ageLine } from "@/lib/age";
 import { animalDetails, type AnimalKey } from "@/lib/animal-details";
 import { getAnimal, getAnimals } from "@/lib/animals";
+import { knownBehaviours, knownSpecialNeeds } from "@/lib/special-needs";
 import HealthIcon from "../../components/HealthIcon";
 import SanityImage from "../../components/SanityImage";
 import AnimalGallery from "./AnimalGallery";
@@ -83,6 +84,8 @@ export default async function AnimalPage({
   );
   const name = animal.name ?? "";
   const adopted = animal.status === "adopted";
+  const specialNeeds = knownSpecialNeeds(animal.specialNeeds);
+  const behaviours = knownBehaviours(animal.behaviours);
 
   return (
     <div className="flex flex-col w-full">
@@ -170,15 +173,52 @@ export default async function AnimalPage({
             )}
           </div>
           {age && (
-            <p className="font-heading text-2xl font-bold">
-              {age}
-            </p>
+            <p className="text-balance text-center text-xl font-bold">{age}</p>
           )}
-          <p className="text-balance text-center font-heading text-2xl">
+          <p className="text-balance text-center text-lg font-semibold">
             {animalDetails(animal, tAnimal)}
           </p>
         </div>
       </section>
+
+      {/* Empty lists mean "not recorded", so nothing is shown for them. */}
+      {(specialNeeds.length > 0 ||
+        behaviours.length > 0 ||
+        animal.specialNeedsNote) && (
+        <section className="w-full bg-card">
+          <div className="page-container page-section section-stack">
+            {specialNeeds.length > 0 && (
+              <div className="flex flex-col gap-3">
+                <h2 className="font-heading text-5xl">{t("specialNeedsHeading")}</h2>
+                <ul className="flex flex-wrap gap-2">
+                  {specialNeeds.map((need) => (
+                    <li key={need} className="pill bg-pale text-ink">
+                      {tAnimal(`specialNeeds.${need}`)}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {behaviours.length > 0 && (
+              <div className="flex flex-col gap-3">
+                <h2 className="font-heading text-5xl">{t("behavioursHeading")}</h2>
+                <ul className="flex flex-wrap gap-2">
+                  {behaviours.map((behaviour) => (
+                    <li key={behaviour} className="pill bg-pale text-ink">
+                      {tAnimal(`behaviours.${behaviour}`)}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {animal.specialNeedsNote && (
+              <p className="font-body whitespace-pre-line">
+                {animal.specialNeedsNote}
+              </p>
+            )}
+          </div>
+        </section>
+      )}
 
       {animal.health && animal.health.length > 0 && (
         <section className="w-full bg-button">

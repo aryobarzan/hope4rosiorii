@@ -3,14 +3,14 @@ import { expect, test } from "@playwright/test";
 import { pages } from "./pages";
 
 // The same axe scan as a11y.spec.ts, on a phone-sized screen. Small screens
-// show different things (the menu button, the filter dropdowns), and so can
+// show different things (the menu button, the filter button), and so can
 // have their own problems. Two languages are enough here: the layout does not
 // depend on the language, and the full matrix runs on desktop.
 const addresses = [
   ...(["lb", "en"] as const).flatMap((locale) =>
     pages.map(([name, path]) => [`${name} (${locale})`, `/${locale}${path}`] as const),
   ),
-  // The filter dropdowns with a choice made look different (filled)
+  // The filter button with a choice made looks different (filled)
   ["animals with filters chosen", "/en/animals?size=small&age=puppy"] as const,
 ];
 
@@ -49,6 +49,19 @@ test("the open mobile menu has no accessibility violations", async ({ page }) =>
   await expect(
     page.getByRole("navigation", { name: "Main navigation" }),
   ).toBeVisible();
+
+  const results = await new AxeBuilder({ page })
+    .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"])
+    .analyze();
+
+  expect(results.violations.map((violation) => violation.id)).toEqual([]);
+});
+
+// Same for the filter sheet: it is closed in the scans above.
+test("the open filter sheet has no accessibility violations", async ({ page }) => {
+  await page.goto("/en/animals?size=small&needs=blind");
+  await page.getByRole("button", { name: /^Filters/ }).click();
+  await expect(page.getByRole("dialog", { name: "Filters", exact: true })).toBeVisible();
 
   const results = await new AxeBuilder({ page })
     .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"])
