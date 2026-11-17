@@ -62,6 +62,23 @@
       "donate": "Donate"
     }
   },
+  "EventsPage": {
+    "metadata": {
+      "title": "Events",
+      "description": "Meet the volunteers of Hope 4 Rosiorii at our stands and events, and find out how you can help rescued dogs from Romania."
+    },
+    "title": "Events",
+    "intro": "We regularly organize stands to meet with potential adoptees or to spread the word about our cause. Come say hi at one of our events!",
+    "loading": "Loading events…",
+    "upcomingHeading": "Upcoming events",
+    "noUpcoming": "No events are planned at the moment. Check back soon!",
+    "pastHeading": "Past events ({count})",
+    "card": {
+      "cancelled": "Cancelled",
+      "today": "Today",
+      "happeningNow": "Happening now"
+    }
+  },
   "NotFound": {
     "title": "Unknown",
     "description": "Sorry, the page you're looking for does not exist."

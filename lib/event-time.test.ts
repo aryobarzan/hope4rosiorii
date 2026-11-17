@@ -1,5 +1,10 @@
 import { describe, expect, it } from "vitest";
-import { getNextEvent, splitEvents } from "@/lib/event-time";
+import {
+  eventDayParts,
+  eventStatus,
+  getNextEvent,
+  splitEvents,
+} from "@/lib/event-time";
 
 type TestEvent = {
   slug: string;
@@ -39,6 +44,54 @@ describe("splitEvents", () => {
     const { upcoming, past } = splitEvents([a, b, c, d], new Date("2026-11-17T00:00:00Z"));
     expect(upcoming.map((e) => e.slug)).toEqual(["b", "a"]);
     expect(past.map((e) => e.slug)).toEqual(["d", "c"]);
+  });
+});
+
+describe("eventStatus", () => {
+  // 10:00 Luxembourg on 6 Dec 2026 (UTC+1).
+  const start = "2026-12-06T09:00:00Z";
+
+  it("is upcoming on an earlier day", () => {
+    expect(eventStatus(make({ startDate: start }), new Date("2026-12-04T12:00:00Z"))).toBe("upcoming");
+  });
+
+  it("is today before an event without an end starts, and after", () => {
+    const e = make({ startDate: start });
+    expect(eventStatus(e, new Date("2026-12-06T07:00:00Z"))).toBe("today");
+    // Still "today", not "ongoing": there is no end to say it is running.
+    expect(eventStatus(e, new Date("2026-12-06T13:00:00Z"))).toBe("today");
+  });
+
+  it("is ongoing between start and end", () => {
+    const e = make({ startDate: start, endDate: "2026-12-06T15:00:00Z" });
+    expect(eventStatus(e, new Date("2026-12-06T07:00:00Z"))).toBe("today");
+    expect(eventStatus(e, new Date("2026-12-06T12:00:00Z"))).toBe("ongoing");
+  });
+
+  it("is ongoing on the middle day of a multi-day event", () => {
+    const e = make({ startDate: start, endDate: "2026-12-08T15:00:00Z" });
+    expect(eventStatus(e, new Date("2026-12-07T12:00:00Z"))).toBe("ongoing");
+  });
+
+  it("is past after the end", () => {
+    const e = make({ startDate: start, endDate: "2026-12-06T15:00:00Z" });
+    expect(eventStatus(e, new Date("2026-12-06T15:01:00Z"))).toBe("past");
+  });
+
+  it("uses the Luxembourg day, not the UTC day", () => {
+    // 23:30 UTC on 5 Dec is already 00:30 on 6 Dec in Luxembourg.
+    expect(eventStatus(make({ startDate: start }), new Date("2026-12-05T23:30:00Z"))).toBe("today");
+  });
+});
+
+describe("eventDayParts", () => {
+  it("returns the Luxembourg day and a short month", () => {
+    // 23:30 UTC on 5 Dec is 6 Dec in Luxembourg.
+    expect(eventDayParts("2026-12-05T23:30:00Z", "en")).toEqual({ day: "06", month: "Dec" });
+  });
+
+  it("drops the trailing dot of French short months", () => {
+    expect(eventDayParts("2026-12-06T09:00:00Z", "fr").month).toBe("déc");
   });
 });
 

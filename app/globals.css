@@ -410,6 +410,170 @@ body {
     gap: 1.5rem;
   }
 
+  /* Events */
+  .event-card {
+    background-color: white;
+    color: var(--color-ink);
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--card-padding);
+    gap: 1rem;
+  }
+
+  /* Cancelled: same pale fill as an adopted dog card, so "no longer
+     available" looks the same across the site. */
+  .event-card[data-cancelled="true"] {
+    background-color: var(--color-pale);
+    color: var(--color-muted);
+  }
+
+  .event-card[data-cancelled="true"] .event-card-title {
+    text-decoration: line-through;
+  }
+
+  .event-card[data-cancelled="true"] .event-card-photo {
+    filter: grayscale(1);
+    opacity: 0.7;
+  }
+  /* Past events (the archive): same white card, but quieter. Muted text and a
+     slightly faded photo, no strike-through, so it reads as "over" and not as
+     "cancelled". A cancelled past event keeps the cancelled look, hence the
+     data-cancelled="false" in these selectors. */
+  .event-card[data-status="past"][data-cancelled="false"] {
+    color: var(--color-muted);
+  }
+
+  .event-card[data-status="past"][data-cancelled="false"] .event-card-photo {
+    filter: saturate(0.5);
+    opacity: 0.85;
+  }
+
+  /* Calendar leaf on the photo's top-left corner */
+  .event-card-leaf {
+    position: absolute;
+    top: -0.25rem;
+    left: -0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.125rem;
+    min-width: 2.75rem;
+    padding: 0.375rem 0.5rem;
+    border-radius: 0.75rem;
+    background-color: var(--color-link);
+    color: white;
+    box-shadow: 0 2px 6px rgb(from var(--color-ink) r g b / 0.25);
+    transform: rotate(-4deg);
+  }
+
+  /* Over or cancelled: the leaf loses its pink so it does not shout */
+  .event-card[data-status="past"] .event-card-leaf,
+  .event-card[data-cancelled="true"] .event-card-leaf {
+    background-color: var(--color-muted);
+  }
+
+  /* Archive of past events: a collapsed <details> */
+  .event-archive {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .event-archive > summary {
+    display: flex;
+    align-items: center;
+    /* Text at the start, arrow at the far end, like the chevron on the cards */
+    justify-content: space-between;
+    min-height: 2.75rem;
+    /* Room around the text, so the hover background does not hug it */
+    padding: 0.25rem 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    font-family: var(--font-heading);
+    font-size: 1.875rem;
+    color: var(--color-link);
+  }
+
+  /* White, not blush: the row sits on the page colour, and blush is too close
+     to it to see (same reasoning as .nav-link). Pressed goes to blush. */
+  .event-archive > summary:hover {
+    background-color: var(--color-card);
+  }
+
+  .event-archive > summary:active {
+    background-color: var(--color-blush);
+  }
+
+  .event-archive-arrow {
+    width: 1.75rem;
+    height: 1.75rem;
+    flex-shrink: 0;
+  }
+
+  .event-archive[open] .event-archive-arrow {
+    transform: rotate(180deg);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .event-archive-arrow {
+      transition: transform 150ms ease;
+    }
+  }
+
+  .event-archive > summary:focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 2px;
+  }
+
+  /* Hover: a soft shadow in the brand pink, and a small lift where motion is
+     welcome. Pressed: the card settles back and fills with pale pink. Written
+     after :hover so it wins on touch screens, where :hover sticks after a tap. */
+  .event-card:hover {
+    box-shadow: 0 6px 16px 2px rgb(from var(--color-brand) r g b / 0.3);
+  }
+
+  .event-card:active {
+    background-color: var(--color-pale);
+    box-shadow: none;
+  }
+
+  /* The cancelled card is already pale, so pressing it goes to blush */
+  .event-card[data-cancelled="true"]:active {
+    background-color: var(--color-blush);
+  }
+
+  .event-card:focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .event-card {
+      transition:
+        transform 150ms ease,
+        box-shadow 150ms ease,
+        background-color 150ms ease;
+    }
+
+    .event-card:hover {
+      transform: translateY(-2px);
+    }
+
+    .event-card:active {
+      transform: translateY(0);
+    }
+  }
+
+  .event-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  /* Events */
+
   .volunteer-card {
     background-color: white;
     color: var(--color-ink);

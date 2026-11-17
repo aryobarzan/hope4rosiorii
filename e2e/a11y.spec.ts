@@ -9,6 +9,36 @@ import { locales, pages } from "./pages";
 // with a screen reader, so it complements a manual check and does not replace
 // one.
 
+// The plain scan above cannot see inside a closed <details>, and the events
+// page keeps its past events in one. Open it first, so the faded past cards
+// and their calendar leaves are checked too. (The upcoming list, with the pills
+// and the cancelled style, is scanned either way, as far as the team has
+// published events of that kind.)
+for (const locale of locales) {
+  test(`events page in ${locale} has no accessibility violations with the archive open`, async ({
+    page,
+  }) => {
+    await page.goto(`/${locale}/events`);
+    await page.waitForLoadState("networkidle");
+    await page
+      .locator("details.event-archive")
+      .evaluateAll((all) =>
+        all.forEach((d) => ((d as HTMLDetailsElement).open = true)),
+      );
+
+    const results = await new AxeBuilder({ page })
+      .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"])
+      .analyze();
+
+    expect(
+      results.violations.map((v) => ({
+        rule: v.id,
+        targets: v.nodes.map((n) => n.target.join(" ")),
+      })),
+    ).toEqual([]);
+  });
+}
+
 for (const locale of locales) {
   for (const [name, path] of pages) {
     test(`${name} page in ${locale} has no accessibility violations`, async ({

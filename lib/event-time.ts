@@ -55,3 +55,53 @@ export function getNextEvent<T extends EventTimes>(
 ): T | undefined {
   return splitEvents(events, now).upcoming.find((e) => !e.cancelled);
 }
+
+export type EventStatus = "upcoming" | "today" | "ongoing" | "past";
+
+// Where an event stands right now, for the pill and the archive styling.
+// "ongoing" needs a known end: without one we cannot say it is still running
+// (an event that starts at 14:00 would otherwise read "happening now" until
+// midnight), so it is "today" for the rest of its day.
+export function eventStatus(event: EventTimes, now: Date): EventStatus {
+  const t = now.getTime();
+  if (eventEnd(event) <= t) return "past";
+  const start = new Date(event.startDate).getTime();
+  if (event.endDate && start <= t) return "ongoing";
+  if (dayInLuxembourg.format(start) === dayInLuxembourg.format(t)) {
+    return "today";
+  }
+  return "upcoming";
+}
+
+// Day and month for the calendar leaf on the card, in Luxembourg time.
+// Month is the short name without a trailing dot ("déc." becomes "déc").
+export function eventDayParts(iso: string, locale: string) {
+  const parts = new Intl.DateTimeFormat(locale, {
+    timeZone: EVENT_TIME_ZONE,
+    day: "2-digit",
+    month: "short",
+  }).formatToParts(new Date(iso));
+  const get = (type: string) =>
+    parts.find((p) => p.type === type)?.value ?? "";
+  return { day: get("day"), month: get("month").replace(/\.$/, "") };
+}
+
+export function formatEventDate(
+  event: {
+    startDate: string;
+    endDate?: string | null;
+    allDay?: boolean | null;
+  },
+  locale: string,
+): string {
+  const fmt = new Intl.DateTimeFormat(locale, {
+    timeZone: EVENT_TIME_ZONE,
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+    ...(event.allDay ? {} : { hour: "2-digit", minute: "2-digit" }),
+  });
+  const start = new Date(event.startDate);
+  if (!event.endDate) return fmt.format(start);
+  return fmt.formatRange(start, new Date(event.endDate));
+}

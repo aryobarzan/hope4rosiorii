@@ -8,6 +8,7 @@ import { siteUrl } from "@/lib/site-url";
 const staticPaths = [
   "",
   "/animals",
+  "/events",
   "/adopt",
   "/about",
   "/contact",

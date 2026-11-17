@@ -62,6 +62,23 @@
       "donate": "Spenden"
     }
   },
+  "EventsPage": {
+    "metadata": {
+      "title": "Evenementer",
+      "description": "Triff d'Fräiwëlleg vun Hope 4 Rosiorii op eise Stänn an Evenementer a gesi wéi s du de gerettenen Hënn aus Rumänien hëllefe kanns."
+    },
+    "title": "Evenementer",
+    "intro": "Mir organiséieren regelméisseg Stänn, fir potenziell Adoptanten ze treffen oder fir eis Aarbecht bekannt ze maachen. Kommt bei engem vun eisen Evenementer laanscht a sot Moien!",
+    "loading": "Evenementer ginn gelueden…",
+    "upcomingHeading": "Kommend Evenementer",
+    "noUpcoming": "Momentan sinn keng Evenementer geplangt. Kuckt gär geleeëntlech nees eran!",
+    "pastHeading": "Vergaangen Evenementer ({count})",
+    "card": {
+      "cancelled": "Ofgesot",
+      "today": "Haut",
+      "happeningNow": "Leeft elo"
+    }
+  },
   "NotFound": {
     "title": "Onbekannt",
     "description": "Entschëllegt, d'Säit, déi Dir sicht, existéiert net."

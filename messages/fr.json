@@ -62,6 +62,23 @@
       "donate": "Faire un don"
     }
   },
+  "EventsPage": {
+    "metadata": {
+      "title": "Événements",
+      "description": "Rencontrez les bénévoles de Hope 4 Rosiorii lors de nos stands et événements, et découvrez comment aider les chiens sauvés de Roumanie."
+    },
+    "title": "Événements",
+    "intro": "Nous organisons régulièrement des stands pour rencontrer de futurs adoptants ou faire connaître notre cause. Venez nous dire bonjour lors d'un de nos événements !",
+    "loading": "Chargement des événements…",
+    "upcomingHeading": "Événements à venir",
+    "noUpcoming": "Aucun événement n'est prévu pour le moment. Repassez bientôt !",
+    "pastHeading": "Événements passés ({count})",
+    "card": {
+      "cancelled": "Annulé",
+      "today": "Aujourd'hui",
+      "happeningNow": "En cours"
+    }
+  },
   "NotFound": {
     "title": "Inconnu",
     "description": "Désolé, la page que vous recherchez n'existe pas."

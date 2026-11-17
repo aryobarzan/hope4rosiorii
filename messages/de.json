@@ -62,6 +62,23 @@
       "donate": "Spenden"
     }
   },
+  "EventsPage": {
+    "metadata": {
+      "title": "Veranstaltungen",
+      "description": "Triff die Ehrenamtlichen von Hope 4 Rosiorii bei unseren Ständen und Veranstaltungen und erfahre, wie du geretteten Hunden aus Rumänien helfen kannst."
+    },
+    "title": "Veranstaltungen",
+    "intro": "Wir organisieren regelmäßig Stände, um mit möglichen Adoptanten ins Gespräch zu kommen oder auf unser Anliegen aufmerksam zu machen. Kommt gerne bei einer unserer Veranstaltungen vorbei!",
+    "loading": "Veranstaltungen werden geladen…",
+    "upcomingHeading": "Kommende Veranstaltungen",
+    "noUpcoming": "Zurzeit sind keine Veranstaltungen geplant. Schaut bald wieder vorbei!",
+    "pastHeading": "Vergangene Veranstaltungen ({count})",
+    "card": {
+      "cancelled": "Abgesagt",
+      "today": "Heute",
+      "happeningNow": "Läuft gerade"
+    }
+  },
   "NotFound": {
     "title": "Unbekannt",
     "description": "Entschuldigung, die gesuchte Seite existiert nicht."

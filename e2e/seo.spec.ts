@@ -11,6 +11,7 @@ test.describe("sitemap.xml", () => {
     expect(response.status()).toBe(200);
     for (const locale of locales) {
       expect(xml).toContain(`/${locale}/animals</loc>`);
+      expect(xml).toContain(`/${locale}/events</loc>`);
       expect(xml).toContain(`hreflang="${locale}"`);
     }
     expect(xml).toContain('hreflang="x-default"');

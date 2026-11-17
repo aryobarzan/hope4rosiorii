@@ -5,6 +5,7 @@ export const locales = ["lb", "en", "fr", "de"] as const;
 export const pages = [
   ["home", ""],
   ["animals", "/animals"],
+  ["events", "/events"],
   ["adopt", "/adopt"],
   ["about", "/about"],
   ["contact", "/contact"],

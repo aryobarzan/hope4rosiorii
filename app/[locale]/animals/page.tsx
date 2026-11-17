@@ -17,8 +17,7 @@ export default async function Dogs() {
   const animals = await getAnimals(locale);
   // Adoptable animals first, adopted ones last
   const sorted = animals.toSorted(
-    (a, b) =>
-      Number(a.status === "adopted") - Number(b.status === "adopted"),
+    (a, b) => Number(a.status === "adopted") - Number(b.status === "adopted"),
   );
   return (
     <div className="page-container page-section section-stack">
@@ -44,7 +43,3 @@ export default async function Dogs() {
     </div>
   );
 }
-
-// TODO: additional animal info (health, good with, location, adoption note,
-// video) / separate animal-specific page
-// TODO: animal selected preview in contact / adopt pages
