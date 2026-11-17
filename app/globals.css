@@ -126,9 +126,11 @@ body {
     font-weight: 700;
   }
 
-  /* `lg` (64rem) is where the header becomes a single row: inline links with an
-     underline instead of a background. */
-  @media (min-width: 64rem) {
+  /* `xl` (80rem) is where the header becomes a single row: inline links with an
+     underline instead of a background. Keep in sync with the `xl:` classes in
+     Header.tsx. It is `xl`, not `lg`, because the Luxembourgish labels do not
+     fit one row any earlier. */
+  @media (min-width: 80rem) {
     .nav-link {
       display: inline-flex;
       padding: 0 0.5rem;

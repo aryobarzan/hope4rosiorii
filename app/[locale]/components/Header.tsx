@@ -61,10 +61,12 @@ export default function Header() {
   return (
     // Sticky needs an opaque background, or the page scrolls visibly behind it.
     // The bar is full width; the inner container keeps the content aligned
-    // with the pages. `relative` is already implied by `sticky`, so the mobile
-    // menu panel can be positioned against the header.
+    // with the pages, except that it is wider on purpose: `max-w-7xl` (80rem)
+    // overrides the 64rem of `.page-container`, to give the longer
+    // Luxembourgish labels room. `relative` is already implied by `sticky`, so
+    // the mobile menu panel can be positioned against the header.
     <header className="sticky top-0 z-50 border-b-2 border-pale bg-page">
-      <div className="page-container flex items-center gap-2 py-2 lg:gap-8">
+      <div className="page-container flex max-w-7xl items-center gap-2 py-2 xl:gap-6">
         <Link
           href="/"
           // WCAG 2.5.3 (Label in Name): the accessible name must contain the
@@ -73,7 +75,7 @@ export default function Header() {
           aria-label={`Hope 4 Rosiorii ${t("tagline")} – ${t("home")}`}
           aria-current={pathname === "/" ? "page" : undefined}
           onClick={close}
-          className="mr-auto flex items-center gap-2 rounded focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink lg:mr-0"
+          className="mr-auto flex items-center gap-2 rounded focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink xl:mr-0"
         >
           {/* unoptimized: tiny local logo, keep under Hobby's image-transformation limit */}
           <Image
@@ -82,7 +84,7 @@ export default function Header() {
             height={64}
             alt=""
             unoptimized
-            className="size-12 lg:size-16"
+            className="size-12 xl:size-16"
           />
           {/* Below 352px the logo has to do on its own */}
           <span className="flex flex-col max-[22rem]:hidden">
@@ -101,7 +103,7 @@ export default function Header() {
 
         {/* DOM order is logo, menu button, nav, language switcher, so that
             keyboard users reach the panel right after the button that opens
-            it. Below `lg` the nav is a panel under the bar, above it a row. */}
+            it. Below `xl` the nav is a panel under the bar, above it a row. */}
         <button
           ref={menuButton}
           type="button"
@@ -109,7 +111,7 @@ export default function Header() {
           aria-expanded={open}
           aria-controls={navId}
           onClick={() => setOpenedAt(open ? null : pathname)}
-          className="inline-flex size-11 shrink-0 cursor-pointer items-center justify-center rounded-full border-2 border-pale bg-card text-ink transition-colors hover:border-button focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink lg:hidden"
+          className="inline-flex size-11 shrink-0 cursor-pointer items-center justify-center rounded-full border-2 border-pale bg-card text-ink transition-colors hover:border-button focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink xl:hidden"
         >
           <svg
             aria-hidden="true"
@@ -128,7 +130,7 @@ export default function Header() {
         <nav
           id={navId}
           aria-label={t("label")}
-          className={`${open ? "flex" : "hidden"} absolute inset-x-0 top-full flex-col gap-1 border-b-2 border-pale bg-page px-4 py-4 lg:static lg:ml-auto lg:flex lg:flex-row lg:items-center lg:gap-4 lg:border-0 lg:bg-transparent lg:p-0`}
+          className={`${open ? "flex" : "hidden"} absolute inset-x-0 top-full flex-col gap-1 border-b-2 border-pale bg-page px-4 py-4 xl:static xl:ml-auto xl:flex xl:flex-row xl:items-center xl:gap-4 xl:border-0 xl:bg-transparent xl:p-0`}
         >
           {links.map(({ href, key }) => (
             <Link
@@ -146,7 +148,7 @@ export default function Header() {
             href="/donate"
             aria-current={isActive("/donate") ? "page" : undefined}
             onClick={close}
-            className="filled-button mt-2 w-full lg:mt-0 lg:w-auto"
+            className="filled-button mt-2 w-full xl:mt-0 xl:w-auto"
           >
             <HandCoins aria-hidden="true" className="size-5" />
             {t("donate")}
