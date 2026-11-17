@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^6.0.1",
+    "@portabletext/react": "^8.0.1",
     "lucide-react": "^1.72.0",
     "next": "16.4.6",
     "next-intl": "^4.15.0",
@@ -41,5 +42,5 @@
   "engines": {
     "node": ">=24"
   },
-  "packageManager": "pnpm@12.18.0"
+  "packageManager": "pnpm@12.21.0"
 }
