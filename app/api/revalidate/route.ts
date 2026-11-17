@@ -4,11 +4,17 @@ import { parseBody } from "next-sanity/webhook";
 
 // Sanity webhook target. The webhook's projection sends the changed
 // document's type, e.g. { "tags": ["animal"] }, and the same string is the
-// cacheTag used in lib/animals.ts, lib/updates.ts and lib/site-settings.ts.
+// cacheTag used in lib/animals.ts, lib/updates.ts, lib/site-settings.ts, lib/posts.ts and lib/events.ts.
 // Tags are not per locale, so one call
 // refreshes every language. No locale is needed here (next/root-params does
 // not work in Route Handlers yet).
-const ALLOWED_TAGS = new Set(["animal", "update", "siteSettings"]);
+const ALLOWED_TAGS = new Set([
+  "animal",
+  "update",
+  "siteSettings",
+  "post",
+  "event",
+]);
 
 type WebhookPayload = { tags?: string[] };
 

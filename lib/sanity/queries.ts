@@ -88,3 +88,81 @@ export const SITE_SETTINGS_QUERY = defineQuery(`
     impactAmounts
   }
 `);
+
+// News posts, newest first. `body` is Portable Text, resolved to one language
+// like the other localized fields.
+export const POSTS_QUERY = defineQuery(`
+  *[_type == "post" && defined(slug.current)] | order(publishedAt desc) {
+    _id,
+    "slug": slug.current,
+    publishedAt,
+    "title": select(
+      $locale == "en" => coalesce(title.en, title.lb),
+      $locale == "fr" => coalesce(title.fr, title.lb),
+      $locale == "de" => coalesce(title.de, title.lb),
+      title.lb
+    ),
+    "body": select(
+      $locale == "en" => coalesce(body.en, body.lb),
+      $locale == "fr" => coalesce(body.fr, body.lb),
+      $locale == "de" => coalesce(body.de, body.lb),
+      body.lb
+    ),
+    "coverImage": coverImage{
+      alt,
+      "url": asset->url,
+      "width": asset->metadata.dimensions.width,
+      "height": asset->metadata.dimensions.height,
+      "hotspot": hotspot{x, y}
+    },
+    "relatedEvent": relatedEvent->{
+      "slug": slug.current,
+      startDate,
+      "title": select(
+        $locale == "en" => coalesce(title.en, title.lb),
+        $locale == "fr" => coalesce(title.fr, title.lb),
+        $locale == "de" => coalesce(title.de, title.lb),
+        title.lb
+      )
+    },
+    "relatedAnimals": relatedAnimals[]->{
+      "slug": slug.current,
+      name
+    }
+  }
+`);
+
+// All events, soonest first. "Upcoming" is NOT decided here: it depends on the
+// current time, which must not be frozen into a cached result. lib/events.ts
+// splits upcoming and past at render time.
+export const EVENTS_QUERY = defineQuery(`
+  *[_type == "event" && defined(slug.current) && defined(startDate)] | order(startDate asc) {
+    _id,
+    "slug": slug.current,
+    startDate,
+    endDate,
+    allDay,
+    cancelled,
+    location{name, address, mapUrl},
+    externalUrl,
+    "title": select(
+      $locale == "en" => coalesce(title.en, title.lb),
+      $locale == "fr" => coalesce(title.fr, title.lb),
+      $locale == "de" => coalesce(title.de, title.lb),
+      title.lb
+    ),
+    "body": select(
+      $locale == "en" => coalesce(body.en, body.lb),
+      $locale == "fr" => coalesce(body.fr, body.lb),
+      $locale == "de" => coalesce(body.de, body.lb),
+      body.lb
+    ),
+    "coverImage": coverImage{
+      alt,
+      "url": asset->url,
+      "width": asset->metadata.dimensions.width,
+      "height": asset->metadata.dimensions.height,
+      "hotspot": hotspot{x, y}
+    }
+  }
+`);

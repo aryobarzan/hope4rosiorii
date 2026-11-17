@@ -579,3 +579,97 @@ export type SITE_SETTINGS_QUERY_RESULT =
       } | null;
     }
   | null;
+
+// Source: ../hope4rosiorii/lib/sanity/queries.ts
+// Variable: POSTS_QUERY
+// Query: *[_type == "post" && defined(slug.current)] | order(publishedAt desc) {    _id,    "slug": slug.current,    publishedAt,    "title": select(      $locale == "en" => coalesce(title.en, title.lb),      $locale == "fr" => coalesce(title.fr, title.lb),      $locale == "de" => coalesce(title.de, title.lb),      title.lb    ),    "body": select(      $locale == "en" => coalesce(body.en, body.lb),      $locale == "fr" => coalesce(body.fr, body.lb),      $locale == "de" => coalesce(body.de, body.lb),      body.lb    ),    "coverImage": coverImage{      alt,      "url": asset->url,      "width": asset->metadata.dimensions.width,      "height": asset->metadata.dimensions.height,      "hotspot": hotspot{x, y}    },    "relatedEvent": relatedEvent->{      "slug": slug.current,      startDate,      "title": select(        $locale == "en" => coalesce(title.en, title.lb),        $locale == "fr" => coalesce(title.fr, title.lb),        $locale == "de" => coalesce(title.de, title.lb),        title.lb      )    },    "relatedAnimals": relatedAnimals[]->{      "slug": slug.current,      name    }  }
+export type POSTS_QUERY_RESULT = Array<{
+  _id: string;
+  slug: string | null;
+  publishedAt: string | null;
+  title: string | null;
+  body: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "blockquote" | "h2" | "h3" | "normal";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  }> | null;
+  coverImage: {
+    alt: string | null;
+    url: string | null;
+    width: number | null;
+    height: number | null;
+    hotspot: {
+      x: number | null;
+      y: number | null;
+    } | null;
+  } | null;
+  relatedEvent: {
+    slug: string | null;
+    startDate: string | null;
+    title: string | null;
+  } | null;
+  relatedAnimals: Array<{
+    slug: string | null;
+    name: string | null;
+  }> | null;
+}>;
+
+// Source: ../hope4rosiorii/lib/sanity/queries.ts
+// Variable: EVENTS_QUERY
+// Query: *[_type == "event" && defined(slug.current) && defined(startDate)] | order(startDate asc) {    _id,    "slug": slug.current,    startDate,    endDate,    allDay,    cancelled,    location{name, address, mapUrl},    externalUrl,    "title": select(      $locale == "en" => coalesce(title.en, title.lb),      $locale == "fr" => coalesce(title.fr, title.lb),      $locale == "de" => coalesce(title.de, title.lb),      title.lb    ),    "body": select(      $locale == "en" => coalesce(body.en, body.lb),      $locale == "fr" => coalesce(body.fr, body.lb),      $locale == "de" => coalesce(body.de, body.lb),      body.lb    ),    "coverImage": coverImage{      alt,      "url": asset->url,      "width": asset->metadata.dimensions.width,      "height": asset->metadata.dimensions.height,      "hotspot": hotspot{x, y}    }  }
+export type EVENTS_QUERY_RESULT = Array<{
+  _id: string;
+  slug: string | null;
+  startDate: string | null;
+  endDate: string | null;
+  allDay: boolean | null;
+  cancelled: boolean | null;
+  location: {
+    name: string | null;
+    address: string | null;
+    mapUrl: string | null;
+  } | null;
+  externalUrl: string | null;
+  title: string | null;
+  body: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "blockquote" | "h2" | "h3" | "normal";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  }> | null;
+  coverImage: {
+    alt: string | null;
+    url: string | null;
+    width: number | null;
+    height: number | null;
+    hotspot: {
+      x: number | null;
+      y: number | null;
+    } | null;
+  } | null;
+}>;
