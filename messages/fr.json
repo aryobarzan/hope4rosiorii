@@ -5,6 +5,8 @@
     "about": "À propos",
     "dogs": "Nos chiens",
     "adopt": "Adopter",
+    "events": "Événements",
+    "news": "Nouvelles",
     "contact": "Contact",
     "donate": "Faire un don",
     "tagline": "Sauvetage de chiens",
@@ -138,9 +140,7 @@
       },
       {
         "title": "Vos droits",
-        "paragraphs": [
-          "En vertu du RGPD, vous avez le droit de :"
-        ],
+        "paragraphs": ["En vertu du RGPD, vous avez le droit de :"],
         "items": [
           "accéder aux données personnelles que nous détenons à votre sujet ;",
           "faire rectifier des données inexactes ;",

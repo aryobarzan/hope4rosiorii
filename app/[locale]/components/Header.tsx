@@ -11,6 +11,8 @@ import { HandCoins } from "lucide-react";
 const links = [
   { href: "/animals", key: "dogs" },
   { href: "/adopt", key: "adopt" },
+  { href: "/events", key: "events" },
+  { href: "/news", key: "news" },
   { href: "/about", key: "about" },
   { href: "/contact", key: "contact" },
 ] as const;
@@ -90,8 +92,7 @@ export default function Header() {
             {/* A space between the two lines: layout ignores it, but it keeps
                 the link's text "Hope 4 Rosiorii Dog rescue" and not
                 "...RosioriiDog rescue", which no accessible name could
-                contain (see the aria-label above) */}
-            {" "}
+                contain (see the aria-label above) */}{" "}
             <span className="hidden font-body text-sm uppercase sm:block">
               {t("tagline")}
             </span>
