@@ -4,13 +4,18 @@ import proxy from "./proxy";
 
 // proxy.ts makes one slug check per kind of page. Both are replaced by mocks
 // the tests can control; vi.hoisted makes them exist before vi.mock runs.
-const { animalExists, eventExists } = vi.hoisted(() => ({
+const { animalExists, eventExists, postExists } = vi.hoisted(() => ({
   animalExists: vi.fn(),
   eventExists: vi.fn(),
+  postExists: vi.fn(),
 }));
 vi.mock("@/lib/slug-exists", () => ({
   createSlugCheck: (type: string) =>
-    type === "animal" ? animalExists : eventExists,
+    type === "animal"
+      ? animalExists
+      : type === "event"
+        ? eventExists
+        : postExists,
 }));
 
 // next-intl's own routing is not what is tested here, only what proxy.ts does
@@ -148,5 +153,35 @@ describe("proxy: event pages", () => {
     await proxy(request("/en/events"));
 
     expect(eventExists).not.toHaveBeenCalled();
+  });
+});
+
+describe("proxy: news pages", () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+    vi.mocked(postExists).mockResolvedValue(true);
+  });
+
+  it("lets a known post through, asking the post lookup only", async () => {
+    const response = await proxy(request("/en/news/new-arrivals"));
+
+    expect(postExists).toHaveBeenCalledWith("new-arrivals");
+    expect(animalExists).not.toHaveBeenCalled();
+    expect(eventExists).not.toHaveBeenCalled();
+    expect(passedOn(response)).toBe(true);
+  });
+
+  it("rewrites an unknown post to the 404 address", async () => {
+    vi.mocked(postExists).mockResolvedValue(false);
+
+    const response = await proxy(request("/de/news/nope"));
+
+    expect(rewrittenTo(response)).toBe("http://localhost/de/animal-not-found");
+  });
+
+  it("does not look anything up for the news list", async () => {
+    await proxy(request("/en/news"));
+
+    expect(postExists).not.toHaveBeenCalled();
   });
 });

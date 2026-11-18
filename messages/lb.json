@@ -62,6 +62,18 @@
       "donate": "Spenden"
     }
   },
+  "NewsPage": {
+    "metadata": {
+      "title": "Neiegkeeten",
+      "description": "Liest déi lescht Neiegkeeten iwwer d'Aktivitéite vun eiser Associatioun."
+    },
+    "title": "Neiegkeeten",
+    "intro": "Neiegkeeten vun eise Fräiwëllegen: Rettungen, Arrivéeën, Adoptiounen an alles, wat ronderëm Hope 4 Rosiorii geschitt.",
+    "noPosts": "Nach keng Neiegkeeten. Kuckt gär geleeëntlech nees eran!",
+    "card": {
+      "untitled": "Neiegkeet"
+    }
+  },
   "EventsPage": {
     "metadata": {
       "title": "Evenementer",
@@ -84,13 +96,24 @@
     "notFoundTitle": "Evenement net fonnt",
     "untitled": "Evenement",
     "backToEvents": "All Evenementer",
-    "share": "Deelen",
-    "linkCopied": "Link kopéiert",
     "learnMore": "Méi gewuer ginn",
     "opensInNewTab": "(mécht an engem neien Tab op)",
     "addToCalendar": "Zum Kalenner derbäisetzen",
     "calendarGoogle": "Google Kalenner",
     "calendarOther": "Anere (Apple, Outlook …)"
+  },
+  "ShareButton": {
+    "share": "Deelen",
+    "linkCopied": "Link kopéiert"
+  },
+  "PostPage": {
+    "notFound": "Dës Neiegkeet gouf an eisem Verzeechnes net fonnt.",
+    "notFoundTitle": "Neiegkeet net fonnt",
+    "untitled": "Neiegkeet",
+    "untitledEvent": "Evenement",
+    "backToNews": "All Neiegkeeten",
+    "relatedEvent": "Verbonnen Evenement",
+    "relatedAnimals": "Verbonnen Déieren"
   },
   "NotFound": {
     "title": "Onbekannt",

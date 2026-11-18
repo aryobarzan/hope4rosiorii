@@ -9,7 +9,7 @@ import { Check, Share } from "lucide-react";
 // the component needs no props about the URL and renders the same on the
 // server and in the browser.
 export default function ShareButton({ title }: { title: string }) {
-  const t = useTranslations("EventPage");
+  const t = useTranslations("ShareButton");
   const [copied, setCopied] = useState(false);
   const timer = useRef<ReturnType<typeof setTimeout>>(undefined);
 

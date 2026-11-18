@@ -596,7 +596,59 @@ body {
     flex-direction: column;
     gap: 1.5rem;
   }
-  /* Events */
+
+  /* News: same card language as .event-card (white, rounded, pink glow on
+     hover), kept as its own class so the event states (cancelled, past) do
+     not leak in. */
+  .post-card {
+    background-color: white;
+    color: var(--color-ink);
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--card-padding);
+    gap: 1rem;
+  }
+
+  .post-card:hover {
+    box-shadow: 0 6px 16px 2px rgb(from var(--color-brand) r g b / 0.3);
+  }
+
+  .post-card:active {
+    background-color: var(--color-pale);
+    box-shadow: none;
+  }
+
+  .post-card:focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .post-card {
+      transition:
+        transform 150ms ease,
+        box-shadow 150ms ease,
+        background-color 150ms ease;
+    }
+
+    .post-card:hover {
+      transform: translateY(-2px);
+    }
+
+    .post-card:active {
+      transform: translateY(0);
+    }
+  }
+
+  .post-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  /* News */
 
   .volunteer-card {
     background-color: white;

@@ -62,6 +62,18 @@
       "donate": "Donate"
     }
   },
+  "NewsPage": {
+    "metadata": {
+      "title": "News",
+      "description": "Read the latest news about our association's activities."
+    },
+    "title": "News",
+    "intro": "The latest about our activities: rescues, arrivals, adoptions and everything happening around Hope 4 Rosiorii.",
+    "noPosts": "No news yet. Check back soon!",
+    "card": {
+      "untitled": "News post"
+    }
+  },
   "EventsPage": {
     "metadata": {
       "title": "Events",
@@ -84,13 +96,24 @@
     "notFoundTitle": "Event not found",
     "untitled": "Event",
     "backToEvents": "All events",
-    "share": "Share",
-    "linkCopied": "Link copied",
     "learnMore": "Learn more",
     "opensInNewTab": "(opens in a new tab)",
     "addToCalendar": "Add to calendar",
     "calendarGoogle": "Google Calendar",
     "calendarOther": "Other (Apple, Outlook…)"
+  },
+  "ShareButton": {
+    "share": "Share",
+    "linkCopied": "Link copied"
+  },
+  "PostPage": {
+    "notFound": "This news post could not be found in our listings.",
+    "notFoundTitle": "News post not found",
+    "untitled": "News post",
+    "untitledEvent": "Event",
+    "backToNews": "All news",
+    "relatedEvent": "Related event",
+    "relatedAnimals": "Related animals"
   },
   "NotFound": {
     "title": "Unknown",

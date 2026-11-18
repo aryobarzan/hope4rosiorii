@@ -19,7 +19,7 @@ import { excerpt } from "@/lib/portable-text";
 import { safeHttpUrl } from "@/lib/safe-url";
 import { Link } from "@/i18n/navigation";
 import EventStatusPill from "../EventStatusPill";
-import ShareButton from "../ShareButton";
+import ShareButton from "../../components/ShareButton";
 import AddToCalendar from "../AddToCalendar";
 import { googleCalendarUrl, toCalendarEvent } from "@/lib/event-calendar";
 

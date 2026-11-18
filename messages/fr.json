@@ -62,6 +62,18 @@
       "donate": "Faire un don"
     }
   },
+  "NewsPage": {
+    "metadata": {
+      "title": "Actualités",
+      "description": "Lisez les dernières actualités sur les activités de notre association."
+    },
+    "title": "Actualités",
+    "intro": "Les nouvelles de nos bénévoles : sauvetages, arrivées, adoptions et tout ce qui se passe autour de Hope 4 Rosiorii.",
+    "noPosts": "Pas encore d'actualités. Repassez bientôt !",
+    "card": {
+      "untitled": "Actualité"
+    }
+  },
   "EventsPage": {
     "metadata": {
       "title": "Événements",
@@ -84,13 +96,24 @@
     "notFoundTitle": "Événement introuvable",
     "untitled": "Événement",
     "backToEvents": "Tous les événements",
-    "share": "Partager",
-    "linkCopied": "Lien copié",
     "learnMore": "En savoir plus",
     "opensInNewTab": "(s'ouvre dans un nouvel onglet)",
     "addToCalendar": "Ajouter au calendrier",
     "calendarGoogle": "Google Agenda",
     "calendarOther": "Autre (Apple, Outlook…)"
+  },
+  "ShareButton": {
+    "share": "Partager",
+    "linkCopied": "Lien copié"
+  },
+  "PostPage": {
+    "notFound": "Cette actualité est introuvable dans notre liste.",
+    "notFoundTitle": "Actualité introuvable",
+    "untitled": "Actualité",
+    "untitledEvent": "Événement",
+    "backToNews": "Toutes les actualités",
+    "relatedEvent": "Événement lié",
+    "relatedAnimals": "Animaux concernés"
   },
   "NotFound": {
     "title": "Inconnu",
