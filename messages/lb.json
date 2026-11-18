@@ -79,6 +79,19 @@
       "happeningNow": "Leeft elo"
     }
   },
+  "EventPage": {
+    "notFound": "Dëst Evenement gouf an eisem Verzeechnes net fonnt.",
+    "notFoundTitle": "Evenement net fonnt",
+    "untitled": "Evenement",
+    "backToEvents": "All Evenementer",
+    "share": "Deelen",
+    "linkCopied": "Link kopéiert",
+    "learnMore": "Méi gewuer ginn",
+    "opensInNewTab": "(mécht an engem neien Tab op)",
+    "addToCalendar": "Zum Kalenner derbäisetzen",
+    "calendarGoogle": "Google Kalenner",
+    "calendarOther": "Anere (Apple, Outlook …)"
+  },
   "NotFound": {
     "title": "Onbekannt",
     "description": "Entschëllegt, d'Säit, déi Dir sicht, existéiert net."

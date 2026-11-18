@@ -2,22 +2,31 @@ import { hasLocale } from "next-intl";
 import createMiddleware from "next-intl/middleware";
 import { type NextRequest, NextResponse } from "next/server";
 import { routing } from "./i18n/routing";
-import { animalExists } from "./lib/animal-slugs";
+import { createSlugCheck } from "./lib/slug-exists";
 
 const intlProxy = createMiddleware(routing);
 
 // Looks like a locale code ("gn", "pt-BR") but isn't one of ours
 const localeLike = /^[a-z]{2}(?:-[A-Za-z]{2})?$/;
 
-// An animal's page: /en/animals/elli (a trailing slash is fine)
-const animalPage = /^\/([^/]+)\/animals\/([^/]+)\/?$/;
+// A detail page: /en/animals/elli or /en/events/halloween (a trailing slash is
+// fine)
+const detailPage = /^\/([^/]+)\/(animals|events)\/([^/]+)\/?$/;
+
+// Which lookup answers "does this slug exist?" for each kind of detail page
+// (see lib/slug-exists.ts; each check keeps its own memory of answers)
+const slugExists = {
+  animals: createSlugCheck("animal"),
+  events: createSlugCheck("event"),
+};
 
 // An address that no page matches, so app/[locale]/[...rest] answers it with
-// notFound() and its 404. Used to turn an unknown animal into a real 404.
+// notFound() and its 404. Used to turn an unknown animal or event into a real
+// 404 (the name is historical; it serves both).
 const NOT_FOUND_ADDRESS = "animal-not-found";
 
 // A slug is plain text in the address. Anything that does not decode, or that
-// is absurdly long, cannot be an animal.
+// is absurdly long, cannot be a real one.
 function readSlug(segment: string) {
   try {
     const slug = decodeURIComponent(segment);
@@ -39,16 +48,17 @@ export default async function proxy(request: NextRequest) {
     return NextResponse.redirect(url);
   }
 
-  // An unknown animal gets a real 404. This has to happen here, before the
-  // page: an animal page that was not prerendered starts streaming at once, so
-  // by the time the page finds out the animal is missing, the status is
+  // An unknown animal or event gets a real 404. This has to happen here, before
+  // the page: a detail page that was not prerendered starts streaming at once,
+  // so by the time the page finds out the document is missing, the status is
   // already 200 and all notFound() can add is a noindex tag.
-  const animal = request.nextUrl.pathname.match(animalPage);
-  if (animal && hasLocale(routing.locales, animal[1])) {
-    const slug = readSlug(animal[2]);
-    if (slug === null || !(await animalExists(slug))) {
+  const detail = request.nextUrl.pathname.match(detailPage);
+  if (detail && hasLocale(routing.locales, detail[1])) {
+    const slug = readSlug(detail[3]);
+    const exists = slugExists[detail[2] as keyof typeof slugExists];
+    if (slug === null || !(await exists(slug))) {
       const url = request.nextUrl.clone();
-      url.pathname = `/${animal[1]}/${NOT_FOUND_ADDRESS}`;
+      url.pathname = `/${detail[1]}/${NOT_FOUND_ADDRESS}`;
       return NextResponse.rewrite(url);
     }
   }

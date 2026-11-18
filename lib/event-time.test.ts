@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   eventDayParts,
   eventStatus,
+  formatEventParts,
   getNextEvent,
   splitEvents,
 } from "@/lib/event-time";
@@ -100,5 +101,33 @@ describe("getNextEvent", () => {
     const cancelled = make({ slug: "c", cancelled: true, startDate: "2027-01-01T10:00:00Z" });
     const ok = make({ slug: "ok", startDate: "2027-02-01T10:00:00Z" });
     expect(getNextEvent([cancelled, ok], new Date("2026-11-17T00:00:00Z"))?.slug).toBe("ok");
+  });
+});
+
+describe("formatEventParts", () => {
+  it("has no end for an event without one", () => {
+    const { start, end } = formatEventParts(
+      { startDate: "2026-12-06T13:00:00Z" },
+      "en",
+    );
+    expect(start).toContain("2026");
+    expect(end).toBeNull();
+  });
+
+  it("shows only the time on the end of a same-day event", () => {
+    const { end } = formatEventParts(
+      { startDate: "2026-12-06T13:00:00Z", endDate: "2026-12-06T16:00:00Z" },
+      "en",
+    );
+    // Newer ICU versions put a narrow no-break space before "PM"; \s matches it.
+    expect(end).toMatch(/^05:00\sPM$/);
+  });
+
+  it("shows the full date when the event spans several days", () => {
+    const { end } = formatEventParts(
+      { startDate: "2026-12-06T13:00:00Z", endDate: "2026-12-07T16:00:00Z" },
+      "en",
+    );
+    expect(end).toContain("Dec");
   });
 });

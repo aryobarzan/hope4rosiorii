@@ -1,9 +1,17 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { NextRequest } from "next/server";
-import { animalExists } from "@/lib/animal-slugs";
 import proxy from "./proxy";
 
-vi.mock("@/lib/animal-slugs", () => ({ animalExists: vi.fn() }));
+// proxy.ts makes one slug check per kind of page. Both are replaced by mocks
+// the tests can control; vi.hoisted makes them exist before vi.mock runs.
+const { animalExists, eventExists } = vi.hoisted(() => ({
+  animalExists: vi.fn(),
+  eventExists: vi.fn(),
+}));
+vi.mock("@/lib/slug-exists", () => ({
+  createSlugCheck: (type: string) =>
+    type === "animal" ? animalExists : eventExists,
+}));
 
 // next-intl's own routing is not what is tested here, only what proxy.ts does
 // before it. The stand-in just passes the request on, like NextResponse.next().
@@ -104,5 +112,41 @@ describe("proxy: animal pages", () => {
     expect(response.headers.get("location")).toBe(
       "http://localhost/lb/animals/elli",
     );
+  });
+});
+
+describe("proxy: event pages", () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+    vi.mocked(eventExists).mockResolvedValue(true);
+  });
+
+  it("lets a known event through, asking the event lookup only", async () => {
+    const response = await proxy(request("/en/events/halloween"));
+
+    expect(eventExists).toHaveBeenCalledWith("halloween");
+    expect(animalExists).not.toHaveBeenCalled();
+    expect(passedOn(response)).toBe(true);
+  });
+
+  it("rewrites an unknown event to the 404 address", async () => {
+    vi.mocked(eventExists).mockResolvedValue(false);
+
+    const response = await proxy(request("/fr/events/nope"));
+
+    expect(rewrittenTo(response)).toBe("http://localhost/fr/animal-not-found");
+  });
+
+  it("answers an undecodable event address with a 404, without a lookup", async () => {
+    const response = await proxy(request("/en/events/%E0%A4%A"));
+
+    expect(eventExists).not.toHaveBeenCalled();
+    expect(rewrittenTo(response)).toContain("animal-not-found");
+  });
+
+  it("does not look anything up for the events list", async () => {
+    await proxy(request("/en/events"));
+
+    expect(eventExists).not.toHaveBeenCalled();
   });
 });

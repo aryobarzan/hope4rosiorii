@@ -86,6 +86,41 @@ export function eventDayParts(iso: string, locale: string) {
   return { day: get("day"), month: get("month").replace(/\.$/, "") };
 }
 
+// Start and end as separate strings, so the page can put each in its own
+// <time> element (machines read both). On a same-day event the end shows only
+// the time: "6 Dec 2026, 14:00" to "17:00".
+export function formatEventParts(
+  event: {
+    startDate: string;
+    endDate?: string | null;
+    allDay?: boolean | null;
+  },
+  locale: string,
+): { start: string; end: string | null } {
+  const timeOptions: Intl.DateTimeFormatOptions = event.allDay
+    ? {}
+    : { hour: "2-digit", minute: "2-digit" };
+  const full = new Intl.DateTimeFormat(locale, {
+    timeZone: EVENT_TIME_ZONE,
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+    ...timeOptions,
+  });
+  const start = new Date(event.startDate);
+  if (!event.endDate) return { start: full.format(start), end: null };
+  const end = new Date(event.endDate);
+  const sameDay = dayInLuxembourg.format(start) === dayInLuxembourg.format(end);
+  const endFormat =
+    sameDay && !event.allDay
+      ? new Intl.DateTimeFormat(locale, {
+          timeZone: EVENT_TIME_ZONE,
+          ...timeOptions,
+        })
+      : full;
+  return { start: full.format(start), end: endFormat.format(end) };
+}
+
 export function formatEventDate(
   event: {
     startDate: string;
@@ -104,4 +139,10 @@ export function formatEventDate(
   const start = new Date(event.startDate);
   if (!event.endDate) return fmt.format(start);
   return fmt.formatRange(start, new Date(event.endDate));
+}
+
+// The calendar day an instant falls on in Luxembourg, as "2026-12-06". Used for
+// all-day events in calendar files, which name a day, not an instant.
+export function luxembourgDay(iso: string): string {
+  return dayInLuxembourg.format(new Date(iso));
 }

@@ -73,6 +73,23 @@ for (const locale of locales) {
   });
 }
 
+// Same for events: the event page streams too, so proxy.ts answers the 404.
+for (const locale of locales) {
+  test(`an unknown event is a 404 on the first and on every later visit (${locale})`, async ({
+    page,
+  }) => {
+    const address = `/${locale}/events/no-such-event-${Date.now()}`;
+
+    for (const visit of ["first", "second"]) {
+      const response = await page.goto(address);
+      expect(response?.status(), `${visit} visit`).toBe(404);
+    }
+
+    await expect(page).toHaveURL(new RegExp(`${address}$`));
+    await expect(page.getByRole("heading", { level: 1 })).toHaveCount(1);
+  });
+}
+
 test("an unknown animal address shows the not-found page", async ({ page }) => {
   await page.goto("/en/animals/no-such-animal");
 

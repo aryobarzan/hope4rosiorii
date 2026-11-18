@@ -79,6 +79,19 @@
       "happeningNow": "En cours"
     }
   },
+  "EventPage": {
+    "notFound": "Cet événement est introuvable dans notre liste.",
+    "notFoundTitle": "Événement introuvable",
+    "untitled": "Événement",
+    "backToEvents": "Tous les événements",
+    "share": "Partager",
+    "linkCopied": "Lien copié",
+    "learnMore": "En savoir plus",
+    "opensInNewTab": "(s'ouvre dans un nouvel onglet)",
+    "addToCalendar": "Ajouter au calendrier",
+    "calendarGoogle": "Google Agenda",
+    "calendarOther": "Autre (Apple, Outlook…)"
+  },
   "NotFound": {
     "title": "Inconnu",
     "description": "Désolé, la page que vous recherchez n'existe pas."

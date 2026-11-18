@@ -8,9 +8,12 @@ import {
   type Mock,
 } from "vitest";
 import { client } from "@/lib/sanity/client";
-import { animalExists } from "./animal-slugs";
+import { createSlugCheck } from "./slug-exists";
 
 vi.mock("@/lib/sanity/client", () => ({ client: { fetch: vi.fn() } }));
+
+// One checker is enough here: the memory and timing logic is the same for every type.
+const animalExists = createSlugCheck("animal");
 
 // The remembered answers live in module memory and are shared by all tests, so
 // every test uses its own slug.

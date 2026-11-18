@@ -79,6 +79,19 @@
       "happeningNow": "Läuft gerade"
     }
   },
+  "EventPage": {
+    "notFound": "Diese Veranstaltung wurde in unserer Übersicht nicht gefunden.",
+    "notFoundTitle": "Veranstaltung nicht gefunden",
+    "untitled": "Veranstaltung",
+    "backToEvents": "Alle Veranstaltungen",
+    "share": "Teilen",
+    "linkCopied": "Link kopiert",
+    "learnMore": "Mehr erfahren",
+    "opensInNewTab": "(öffnet in einem neuen Tab)",
+    "addToCalendar": "Zum Kalender hinzufügen",
+    "calendarGoogle": "Google Kalender",
+    "calendarOther": "Andere (Apple, Outlook …)"
+  },
   "NotFound": {
     "title": "Unbekannt",
     "description": "Entschuldigung, die gesuchte Seite existiert nicht."
