@@ -57,6 +57,14 @@
       "heading": "les bénévoles derrière les pattes",
       "meetAll": "Rencontrer tout le monde"
     },
+    "events": {
+      "heading": "Notre prochain événement",
+      "viewAll": "Tous les événements"
+    },
+    "news": {
+      "heading": "Dernières actualités",
+      "viewAll": "Toutes les actualités"
+    },
     "donations": {
       "heading": "Où sont allés vos dons",
       "donate": "Faire un don"

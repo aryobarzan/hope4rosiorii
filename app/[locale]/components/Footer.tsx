@@ -10,6 +10,8 @@ const linkClass =
 const links = [
   { href: "/animals", key: "ourDogs", ns: "Footer" },
   { href: "/adopt", key: "adopt", ns: "Nav" },
+  { href: "/events", key: "events", ns: "Nav" },
+  { href: "/news", key: "news", ns: "Nav" },
   { href: "/about", key: "about", ns: "Nav" },
   { href: "/contact", key: "contact", ns: "Nav" },
   { href: "/donate", key: "donate", ns: "Nav" },

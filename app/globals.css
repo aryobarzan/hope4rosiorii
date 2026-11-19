@@ -81,6 +81,15 @@ body {
     padding-block: 2rem;
   }
 
+  /* Plain (unbanded) sections that follow each other, like the home page's
+     event, news and donation sections: only the first keeps its top padding, so
+     the gap between two of them is 2rem, not 4rem. A section that follows a
+     coloured band keeps its own top padding, and so does the first one when
+     the one before it is left out (no upcoming event, no posts). */
+  .tight-section + .tight-section {
+    padding-top: 0;
+  }
+
   /* Heading group -> content (-> button) spacing inside a section. The heading
      group itself is wrapped in its own `flex flex-col gap-1` element, so this
      gap only separates blocks. */

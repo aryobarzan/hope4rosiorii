@@ -57,6 +57,14 @@
       "heading": "die Ehrenamtlichen hinter den Pfoten",
       "meetAll": "Alle kennenlernen"
     },
+    "events": {
+      "heading": "Unsere nächste Veranstaltung",
+      "viewAll": "Alle Veranstaltungen"
+    },
+    "news": {
+      "heading": "Neueste Neuigkeiten",
+      "viewAll": "Alle Neuigkeiten"
+    },
     "donations": {
       "heading": "Wohin deine Spenden geflossen sind",
       "donate": "Spenden"

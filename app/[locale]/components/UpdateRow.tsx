@@ -44,7 +44,7 @@ export default function UpdateRow({ update }: { update: DonationUpdate }) {
             </time>
           )}
         </div>
-        <h3 className="font-heading text-2xl font-bold">{update.title}</h3>
+        <h3 className="text-2xl font-bold">{update.title}</h3>
         <p>{update.caption}</p>
       </div>
     </li>

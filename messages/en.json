@@ -57,6 +57,14 @@
       "heading": "the volunteers behind the paws",
       "meetAll": "Meet everyone"
     },
+    "events": {
+      "heading": "Our next event",
+      "viewAll": "All events"
+    },
+    "news": {
+      "heading": "Latest news",
+      "viewAll": "All news"
+    },
     "donations": {
       "heading": "Where your donations went",
       "donate": "Donate"

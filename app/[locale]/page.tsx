@@ -7,6 +7,9 @@ import HighlightedAnimal, {
 } from "./components/HighlightedAnimal";
 import FeaturedAnimals from "./components/FeaturedAnimals";
 import MeetTheDogsButton from "./components/MeetTheDogsButton";
+import LatestNewsSection from "./components/LatestNewsSection";
+import NextEventSection from "./components/NextEventSection";
+import NextEventSkeleton from "./components/NextEventSkeleton";
 import RecentUpdates from "./components/RecentUpdates";
 import SectionHeading from "./components/SectionHeading";
 import {
@@ -157,8 +160,16 @@ export default function Home() {
           </Link>
         </div>
       </section>
+      {/* Next event and latest news. Each renders its own <section> and
+          nothing at all when it has no content. */}
+      <Suspense fallback={<NextEventSkeleton />}>
+        <NextEventSection />
+      </Suspense>
+      <Suspense>
+        <LatestNewsSection />
+      </Suspense>
       {/* Featured donation updates. */}
-      <section className="page-container page-section flex flex-col gap-8 md:flex-row">
+      <section className="page-container page-section tight-section flex flex-col gap-8 md:flex-row">
         <div className="section-stack w-full">
           <SectionHeading heading={t("donations.heading")} />
           <Suspense>
