@@ -17,6 +17,7 @@
     "tagline": "A volunteer-run non-profit bringing rescued dogs from Romania to Luxembourg.",
     "explore": "Explore",
     "ourDogs": "Our dogs",
+    "happyEndings": "Happy Endings",
     "sayHello": "Say hello",
     "navLabel": "Footer navigation",
     "privacy": "Privacy policy"
@@ -487,6 +488,19 @@
       "spent": "Spent: {amount}"
     }
   },
+  "HappyEndingsPage": {
+    "metadata": {
+      "title": "Happy Endings",
+      "description": "These dogs and cats found a family. See how they are doing now."
+    },
+    "title": "Happy Endings",
+    "intro": "These animals found their new homes. Thank you to everyone who gave them a chance.",
+    "empty": "The first adoptions will appear here as soon as an animal finds its new home.",
+    "card": {
+      "adoptedOn": "Adopted in {date}",
+      "story": "Read about {name}"
+    }
+  },
   "DogsPage": {
     "metadata": {
       "title": "Our dogs",
@@ -542,6 +556,8 @@
     "behavioursHeading": "Good to know about behaviour",
     "goodWith": "Good with {list}",
     "galleryHeading": "Gallery",
+    "backToHappyEndings": "All happy endings",
+    "adoptedHeading": "How they are doing now",
     "galleryOpen": "Enlarge photo {index} of {total}",
     "galleryClose": "Close",
     "galleryPrevious": "Previous photo",

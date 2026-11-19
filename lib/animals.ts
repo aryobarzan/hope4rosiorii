@@ -43,6 +43,23 @@ export async function getAnimal(slug: string, locale: string) {
   return animals.find((animal) => animal.slug === slug);
 }
 
+// Animals waiting for a family: everything that is not adopted (pending ones
+// stay here until the adoption is final).
+export function adoptable(animals: Animal[]): Animal[] {
+  return animals.filter((animal) => animal.status !== "adopted");
+}
+
+// Happy endings: adopted animals, most recent adoption first. An animal
+// without `adoptedDate` (the editor has not filled it in) sorts as if it left
+// on its arrival date, so it still appears, just further down. ISO dates
+// compare correctly as plain strings.
+export function happyEndings(animals: Animal[]): Animal[] {
+  const when = (a: Animal) => a.adoptedDate ?? a.arrivalDate ?? "";
+  return animals
+    .filter((animal) => animal.status === "adopted")
+    .toSorted((a, b) => when(b).localeCompare(when(a)));
+}
+
 // The animal the home page highlights in its hero. One definition, so the
 // hero and the featured row agree on which animal is already on screen.
 export function getHighlightedAnimal(animals: Animal[]): Animal | undefined {

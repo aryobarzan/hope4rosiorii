@@ -17,6 +17,7 @@
     "tagline": "Une association à but non lucratif, gérée par des bénévoles, qui amène des chiens sauvés de Roumanie au Luxembourg.",
     "explore": "Explorer",
     "ourDogs": "Nos chiens",
+    "happyEndings": "Happy Endings",
     "sayHello": "Dites bonjour",
     "navLabel": "Navigation du pied de page",
     "privacy": "Politique de confidentialité"
@@ -443,6 +444,19 @@
     "subject": "Nouvelle demande d'adoption pour {dogName}",
     "language": "Langue du site"
   },
+  "HappyEndingsPage": {
+    "metadata": {
+      "title": "Happy Endings",
+      "description": "Ces chiens et ces chats ont trouvé une famille. Découvrez de leurs nouvelles."
+    },
+    "title": "Happy Endings",
+    "intro": "Ces animaux ont trouvé leur nouveau foyer. Merci à tous ceux qui leur ont donné une chance.",
+    "empty": "Les premières adoptions apparaîtront ici dès qu'un animal aura trouvé son nouveau foyer.",
+    "card": {
+      "adoptedOn": "Adopté en {date}",
+      "story": "En savoir plus sur {name}"
+    }
+  },
   "DogsPage": {
     "metadata": {
       "title": "Nos chiens",
@@ -498,6 +512,8 @@
     "behavioursHeading": "Comportement : bon à savoir",
     "goodWith": "S’entend bien avec : {list}",
     "galleryHeading": "Galerie",
+    "backToHappyEndings": "Tous les happy endings",
+    "adoptedHeading": "Des nouvelles aujourd'hui",
     "galleryOpen": "Agrandir la photo {index} sur {total}",
     "galleryClose": "Fermer",
     "galleryPrevious": "Photo précédente",

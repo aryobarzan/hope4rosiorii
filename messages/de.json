@@ -17,6 +17,7 @@
     "tagline": "Ein ehrenamtlich geführter, gemeinnütziger Verein, der gerettete Hunde aus Rumänien nach Luxemburg bringt.",
     "explore": "Entdecken",
     "ourDogs": "Unsere Hunde",
+    "happyEndings": "Happy Endings",
     "sayHello": "Sag Hallo",
     "navLabel": "Fußnavigation",
     "privacy": "Datenschutz"
@@ -443,6 +444,19 @@
     "subject": "Neue Adoptionsanfrage für {dogName}",
     "language": "Sprache der Website"
   },
+  "HappyEndingsPage": {
+    "metadata": {
+      "title": "Happy Endings",
+      "description": "Diese Hunde und Katzen haben eine Familie gefunden. Schau, wie es ihnen heute geht."
+    },
+    "title": "Happy Endings",
+    "intro": "Diese Tiere haben ihr neues Zuhause gefunden. Danke an alle, die ihnen eine Chance gegeben haben.",
+    "empty": "Die ersten Adoptionen erscheinen hier, sobald ein Tier sein neues Zuhause gefunden hat.",
+    "card": {
+      "adoptedOn": "Adoptiert im {date}",
+      "story": "Mehr über {name}"
+    }
+  },
   "DogsPage": {
     "metadata": {
       "title": "Unsere Hunde",
@@ -498,6 +512,8 @@
     "behavioursHeading": "Gut zu wissen zum Verhalten",
     "goodWith": "Versteht sich gut mit {list}",
     "galleryHeading": "Galerie",
+    "backToHappyEndings": "Alle Happy Endings",
+    "adoptedHeading": "Wie es heute geht",
     "galleryOpen": "Foto {index} von {total} vergrößern",
     "galleryClose": "Schließen",
     "galleryPrevious": "Vorheriges Foto",

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getFormatter, getTranslations } from "next-intl/server";
-import { CircleQuestionMark, House, PawPrint } from "lucide-react";
+import { ArrowLeft, CircleQuestionMark, House, PawPrint } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { ageLine } from "@/lib/age";
@@ -84,6 +84,22 @@ export default async function AnimalPage({
   );
   const name = animal.name ?? "";
   const adopted = animal.status === "adopted";
+  // Photos from after the adoption (Happy Endings), same shape as above
+  const adoptedPhotos = (animal.adoptedPhotos ?? []).flatMap(
+    ({ url, alt, hotspot }) => (url ? [{ url, alt, hotspot }] : []),
+  );
+  // Same text as on the Happy Endings card. `adoptedDate` has no time, so
+  // format it in UTC to keep any timezone from moving it to another month.
+  const tHappy = await getTranslations("HappyEndingsPage.card");
+  const adoptedOn = animal.adoptedDate
+    ? tHappy("adoptedOn", {
+        date: format.dateTime(new Date(animal.adoptedDate), {
+          month: "long",
+          year: "numeric",
+          timeZone: "UTC",
+        }),
+      })
+    : null;
   const specialNeeds = knownSpecialNeeds(animal.specialNeeds);
   const behaviours = knownBehaviours(animal.behaviours);
 
@@ -91,6 +107,12 @@ export default async function AnimalPage({
     <div className="flex flex-col w-full">
       <section className="page-container page-section flex flex-col gap-8 md:flex-row md:items-center">
         <div className="flex flex-col gap-4">
+          {adopted && (
+            <Link href="/happy-endings" className="back-link self-start">
+              <ArrowLeft aria-hidden="true" className="size-4" />
+              {t("backToHappyEndings")}
+            </Link>
+          )}
           <div className="flex flex-col gap-2">
             {(animal.location || animal.status) && (
               <ul className="mb-2 flex gap-1">
@@ -181,10 +203,33 @@ export default async function AnimalPage({
         </div>
       </section>
 
+      {/* The Happy Endings story: only for adopted animals with a message or
+          photos. Photos need the family's consent (see the studio schema). */}
+      {adopted &&
+        (adoptedOn || animal.adoptedMessage || adoptedPhotos.length > 0) && (
+        <section className="w-full bg-button text-white">
+          <div className="page-container page-section section-stack">
+            <div className="flex flex-col gap-1">
+              <h2 className="font-heading text-5xl">{t("adoptedHeading")}</h2>
+              {adoptedOn && <p className="text-xl font-bold">{adoptedOn}</p>}
+            </div>
+            {animal.adoptedMessage && (
+              <p className="font-body whitespace-pre-line">
+                {animal.adoptedMessage}
+              </p>
+            )}
+            {adoptedPhotos.length > 0 && (
+              <AnimalGallery photos={adoptedPhotos} name={name} />
+            )}
+          </div>
+        </section>
+      )}
+
       {/* Empty lists mean "not recorded", so nothing is shown for them. */}
-      {(specialNeeds.length > 0 ||
-        behaviours.length > 0 ||
-        animal.specialNeedsNote) && (
+      {!adopted &&
+        (specialNeeds.length > 0 ||
+          behaviours.length > 0 ||
+          animal.specialNeedsNote) && (
         <section className="w-full bg-card">
           <div className="page-container page-section section-stack">
             {specialNeeds.length > 0 && (
@@ -220,7 +265,7 @@ export default async function AnimalPage({
         </section>
       )}
 
-      {animal.health && animal.health.length > 0 && (
+      {!adopted && animal.health && animal.health.length > 0 && (
         <section className="w-full bg-button">
           <div className="page-container page-section section-stack">
             <h2 className="font-heading text-5xl text-white">

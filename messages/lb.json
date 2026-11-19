@@ -17,6 +17,7 @@
     "tagline": "Eng vu Fräiwëllegen gefouert Associatioun ouni Gewënnzil, déi gerette Hënn aus Rumänien op Lëtzebuerg bréngt.",
     "explore": "Entdeckt",
     "ourDogs": "Eis Hënn",
+    "happyEndings": "Happy Endings",
     "sayHello": "Sot Moien",
     "navLabel": "Fussnavigatioun",
     "privacy": "Dateschutz"
@@ -443,6 +444,19 @@
     "subject": "Nei Adoptiounsufro fir {dogName}",
     "language": "Sprooch vun der Websäit"
   },
+  "HappyEndingsPage": {
+    "metadata": {
+      "title": "Happy Endings",
+      "description": "Dës Hënn a Kaze hunn eng Famill fonnt. Kuck, wéi et hinne geet."
+    },
+    "title": "Happy Endings",
+    "intro": "Dës Déieren hunn hiert neit Doheem fonnt. Merci un all, déi hinne eng Chance gi hunn.",
+    "empty": "Hei erschéngen déi éischt Adoptiounen, soubal en Déier säin neit Doheem fonnt huet.",
+    "card": {
+      "adoptedOn": "Adoptéiert am {date}",
+      "story": "Liest iwwer {name}"
+    }
+  },
   "DogsPage": {
     "metadata": {
       "title": "Eis Hënn",
@@ -498,6 +512,8 @@
     "behavioursHeading": "Gutt ze wëssen iwwert d'Verhalen",
     "goodWith": "Versteet sech gutt mat {list}",
     "galleryHeading": "Galerie",
+    "backToHappyEndings": "Zréck bei all Happy Endings",
+    "adoptedHeading": "Wéi et haut geet",
     "galleryOpen": "Foto {index} vun {total} vergréisseren",
     "galleryClose": "Zoumaachen",
     "galleryPrevious": "Virescht Foto",

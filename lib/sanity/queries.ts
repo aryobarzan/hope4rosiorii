@@ -23,6 +23,20 @@ export const ANIMALS_QUERY = defineQuery(`
     behaviours,
     featured,
     arrivalDate,
+    adoptedDate,
+    "adoptedMessage": select(
+      $locale == "en" => coalesce(adoptedMessage.en, adoptedMessage.lb),
+      $locale == "fr" => coalesce(adoptedMessage.fr, adoptedMessage.lb),
+      $locale == "de" => coalesce(adoptedMessage.de, adoptedMessage.lb),
+      adoptedMessage.lb
+    ),
+    "adoptedPhotos": adoptedPhotos[defined(asset)]{
+      alt,
+      "url": asset->url,
+      "width": asset->metadata.dimensions.width,
+      "height": asset->metadata.dimensions.height,
+      "hotspot": hotspot{x, y}
+    },
     "description": select(
       $locale == "en" => coalesce(description.en, description.lb),
       $locale == "fr" => coalesce(description.fr, description.lb),

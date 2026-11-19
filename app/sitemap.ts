@@ -10,6 +10,7 @@ import { getPosts } from "@/lib/posts";
 const staticPaths = [
   "",
   "/animals",
+  "/happy-endings",
   "/events",
   "/adopt",
   "/news",

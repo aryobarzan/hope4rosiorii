@@ -9,6 +9,7 @@ const linkClass =
 
 const links = [
   { href: "/animals", key: "ourDogs", ns: "Footer" },
+  { href: "/happy-endings", key: "happyEndings", ns: "Footer" },
   { href: "/adopt", key: "adopt", ns: "Nav" },
   { href: "/events", key: "events", ns: "Nav" },
   { href: "/news", key: "news", ns: "Nav" },
