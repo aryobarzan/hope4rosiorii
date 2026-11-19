@@ -30,10 +30,7 @@ export default async function FeaturedAnimals() {
 
   return (
     <section className="page-container page-section section-stack">
-      <SectionHeading
-        eyebrow={t("dogs.eyebrow")}
-        heading={t("dogs.heading")}
-      />
+      <SectionHeading heading={t("dogs.heading")} />
       <ul className="dog-grid">
         {shown.map((animal) => (
           <AnimalCard key={animal._id} animal={animal} />

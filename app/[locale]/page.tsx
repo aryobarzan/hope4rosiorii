@@ -6,6 +6,7 @@ import HighlightedAnimal, {
   HighlightedAnimalSkeleton,
 } from "./components/HighlightedAnimal";
 import FeaturedAnimals from "./components/FeaturedAnimals";
+import HappyEndingsSection from "./components/HappyEndingsSection";
 import MeetTheDogsButton from "./components/MeetTheDogsButton";
 import LatestNewsSection from "./components/LatestNewsSection";
 import NextEventSection from "./components/NextEventSection";
@@ -129,6 +130,10 @@ export default function Home() {
       {/* Featured animals */}
       <Suspense>
         <FeaturedAnimals />
+      </Suspense>
+      {/* Happy endings: recent adoptions. Renders nothing until there are any. */}
+      <Suspense>
+        <HappyEndingsSection />
       </Suspense>
       {/* Featured volunteers */}
       <section className="w-full bg-pale">

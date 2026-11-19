@@ -49,8 +49,11 @@
         "description": "Du lernst deinen Hund kennen, wir sprechen alles durch, und dann zieht er bei dir ein."
       }
     },
+    "happyEndings": {
+      "heading": "Happy Endings",
+      "viewAll": "Alle Happy Endings ansehen"
+    },
     "dogs": {
-      "eyebrow": "warten gerade jetzt",
       "heading": "Könnte einer von ihnen deiner sein?",
       "seeAll": "Alle Hunde ansehen"
     },
@@ -443,6 +446,11 @@
   "AdoptionEmail": {
     "subject": "Neue Adoptionsanfrage für {dogName}",
     "language": "Sprache der Website"
+  },
+  "AnimalsSwitch": {
+    "label": "Tiere",
+    "available": "Suchen ein Zuhause",
+    "happyEndings": "Happy Endings"
   },
   "HappyEndingsPage": {
     "metadata": {

@@ -49,8 +49,11 @@
         "description": "Vous rencontrez votre chien, nous en discutons ensemble, puis il rentre à la maison avec vous."
       }
     },
+    "happyEndings": {
+      "heading": "Happy Endings",
+      "viewAll": "Voir tous les happy endings"
+    },
     "dogs": {
-      "eyebrow": "ils attendent en ce moment",
       "heading": "L'un d'eux pourrait-il être le vôtre ?",
       "seeAll": "Voir tous les chiens"
     },
@@ -443,6 +446,11 @@
   "AdoptionEmail": {
     "subject": "Nouvelle demande d'adoption pour {dogName}",
     "language": "Langue du site"
+  },
+  "AnimalsSwitch": {
+    "label": "Animaux",
+    "available": "Cherchent une famille",
+    "happyEndings": "Happy Endings"
   },
   "HappyEndingsPage": {
     "metadata": {

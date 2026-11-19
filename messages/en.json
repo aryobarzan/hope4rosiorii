@@ -49,8 +49,11 @@
         "description": "You meet your dog, we talk it through, and then they come home with you."
       }
     },
+    "happyEndings": {
+      "heading": "Happy Endings",
+      "viewAll": "See all happy endings"
+    },
     "dogs": {
-      "eyebrow": "waiting right now",
       "heading": "Could one of these be yours?",
       "seeAll": "See all dogs"
     },
@@ -487,6 +490,11 @@
       "heading": "Updates from the team",
       "spent": "Spent: {amount}"
     }
+  },
+  "AnimalsSwitch": {
+    "label": "Animals",
+    "available": "Looking for a home",
+    "happyEndings": "Happy Endings"
   },
   "HappyEndingsPage": {
     "metadata": {

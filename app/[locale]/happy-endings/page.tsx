@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getLocale, getTranslations } from "next-intl/server";
 import { getAnimals, happyEndings } from "@/lib/animals";
+import AnimalsSwitch from "../components/AnimalsSwitch";
 import HappyEndingCard from "./HappyEndingCard";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -20,6 +21,7 @@ export default async function HappyEndings() {
         <h1 className="font-heading text-5xl">{t("title")}</h1>
         <p>{t("intro")}</p>
       </div>
+      <AnimalsSwitch current="happyEndings" />
       {animals.length === 0 ? (
         <p>{t("empty")}</p>
       ) : (

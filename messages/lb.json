@@ -49,8 +49,11 @@
         "description": "Du léiers däin Hond kennen, mir schwätzen alles duerch, an dann kënnt hie mat dir heem."
       }
     },
+    "happyEndings": {
+      "heading": "Happy Endings",
+      "viewAll": "All Happy Endings kucken"
+    },
     "dogs": {
-      "eyebrow": "si waarden elo",
       "heading": "Kéint ee vun hinnen däin sinn?",
       "seeAll": "All Hënn kucken"
     },
@@ -443,6 +446,11 @@
   "AdoptionEmail": {
     "subject": "Nei Adoptiounsufro fir {dogName}",
     "language": "Sprooch vun der Websäit"
+  },
+  "AnimalsSwitch": {
+    "label": "Déieren",
+    "available": "Sichen eng Famill",
+    "happyEndings": "Happy Endings"
   },
   "HappyEndingsPage": {
     "metadata": {

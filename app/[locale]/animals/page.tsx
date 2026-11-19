@@ -4,6 +4,7 @@ import { getLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { adoptable, getAnimals } from "@/lib/animals";
 import { noFilters } from "@/lib/animal-filters";
+import AnimalsSwitch from "../components/AnimalsSwitch";
 import { AnimalList, FilteredAnimalList } from "./AnimalList";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -22,6 +23,7 @@ export default async function Dogs() {
         <h1 className="font-heading text-5xl">{t("heading")}</h1>
         <p>{t("description")}</p>
       </div>
+      <AnimalsSwitch current="available" />
       <Suspense fallback={<AnimalList animals={animals} filters={noFilters} />}>
         <FilteredAnimalList animals={animals} />
       </Suspense>
