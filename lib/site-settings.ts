@@ -16,7 +16,7 @@ const SETTINGS_DEFAULTS = {
   bank: {
     iban: "LU96 0030 7235 0218 1000",
     bic: "BGLLLULL",
-    accountName: "[account name]",
+    accountName: "HOPE 4 ROSIORII",
   },
   impactAmounts: { food: 5, vaccination: 50, crate: 50, journey: 100 },
 };
