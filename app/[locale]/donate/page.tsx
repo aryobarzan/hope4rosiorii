@@ -113,7 +113,13 @@ export default async function Donate() {
                   <CopyButton value={bank.bic} field={t("bank.bic")} />
                 </dd>
                 <dt className="font-bold">{t("bank.accountName")}</dt>
-                <dd>{bank.accountName}</dd>
+                <dd className="flex items-center gap-1">
+                  <span className="select-all">{bank.accountName}</span>
+                  <CopyButton
+                    value={bank.accountName}
+                    field={t("bank.accountName")}
+                  />
+                </dd>
               </dl>
             </section>
           </div>
